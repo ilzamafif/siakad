@@ -47,9 +47,16 @@ if (strlen($kode) == 1) {
 
     echo label('telp', 'Nomor Telpon/HP');
     echo input('number', 'telp', "class='form-control'")."</br>";
+
+    echo label('alamat_lengkap', 'Alamat Lengkap');
+    echo input('text', 'alamat_lengkap', "class='form-control'")."<br>";
+
     echo "</div>";
 
     echo "<div class='col-md-6'>";
+    echo label('email', 'Email');
+    echo input('email', 'email', "class='form-control'")."<br>";
+
     echo label('nip', 'NIP');
     echo input('number', 'nip', "class='form-control'")."<br>";
 
@@ -237,8 +244,10 @@ if (isset($_POST['submit'])) {
   $source     = $_FILES['foto']['tmp_name'];
   $target     = "../images/guru/";
   $namafoto   = $jadikode.".jpg";
+  $email  = anti_inject($_POST['email']);
+  $alamat_lengkap  = anti_inject($_POST['alamat_lengkap']);
 
-  if (empty(trim($nama_guru)) || empty(trim($tmp_lahir)) || empty(trim($tgl_lahir)) || empty(trim($jk)) || empty(trim($jenis_ptk))) {
+  if (empty(trim($nama_guru)) || empty(trim($tmp_lahir)) || empty(trim($tgl_lahir)) || empty(trim($jk)) || empty(trim($jenis_ptk) || empty(trim($email)) || empty(trim($alamat_lengkap)))) {
     echo "<script>sweetAlert('Oops!', 'Form tidak boleh kosong!', 'error');</script>";
     echo notice(0);
   } else {
@@ -250,10 +259,10 @@ if (isset($_POST['submit'])) {
       $idm = anti_inject($_POST['id_mapel']);
       $idm = explode(",", $idm);
 
-      $ins = insert('tbl_guru', 'id, nama_guru, password, nip, jenis_ptk, id_card', "NULL, '$nama_guru', '$pass', '$nip', '$jenis_ptk', '$id_card'");
+      $insert = insert('tbl_guru', 'id, nama_guru, password, nip, jenis_ptk, id_card', "NULL, '$nama_guru', '$pass', '$nip', '$jenis_ptk', '$id_card'");
       $last_id = mysqli_insert_id($link);
 
-      $in_detail = insert('detail_guru', 'id, id_guru, jk, telp, tmp_lahir, tgl_lahir', "NULL, '$last_id', '$jk', '$telp', '$tmp_lahir', '$tgl_lahir'");
+      $in_detail = insert('detail_guru', 'id, id_guru, jk, telp, tmp_lahir, tgl_lahir, email, alamat_lengkap', "NULL, '$last_id', '$jk', '$telp', '$tmp_lahir', '$tgl_lahir', '$email', '$alamat_lengkap'");
 
       foreach ($idm as $id_mapel) :        
         $insert = insert('tbl_guru_mapel', "id, id_guru, id_mapel", "NULL, '$last_id', '$id_mapel'");
@@ -264,7 +273,7 @@ if (isset($_POST['submit'])) {
       $insert = insert('tbl_guru', 'id, nama_guru, password, nip, jenis_ptk, id_card', "NULL, '$nama_guru', '$pass', '$nip', '$jenis_ptk', '$id_card'");
       $last_id = mysqli_insert_id($link);
       
-      $in_detail = insert('detail_guru', 'id, id_guru, jk, telp, tmp_lahir, tgl_lahir', "NULL, '$last_id', '$jk', '$telp', '$tmp_lahir', '$tgl_lahir'");
+      $in_detail = insert('detail_guru', 'id, id_guru, jk, telp, tmp_lahir, tgl_lahir, email, alamat_lengkap', "NULL, '$last_id', '$jk', '$telp', '$tmp_lahir', '$tgl_lahir', '$email', '$alamat_lengkap'");
 
     }
 

@@ -24,6 +24,7 @@ RewriteRule ^edit-guru/([0-9]+)$ index.php?page=edit-guru&id=$1
 RewriteRule ^ubah-foto/([0-9]+)$ index.php?page=ubah-foto&id=$1
 RewriteRule ^delete-guru/([0-9]+)$ index.php?page=delete-guru&id=$1
 RewriteRule ^tambah-guru$ index.php?page=tambah-guru
+RewriteRule ^detail-guru/([0-9]+)$ index.php?page=detail-guru&id=$1
 
 #siswa
 

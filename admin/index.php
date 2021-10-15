@@ -369,6 +369,8 @@ $up = mysqli_num_rows($jur_up);
                 include_once 'inc/delete-guru.php';
               } else if($page == "tambah-guru") {
                 include_once 'inc/tambah-guru.php';
+              } else if($page == "detail-guru") {
+                include_once 'inc/detail-guru.php';
 
               //Routing halaman siswa
               } else if($page == "siswa") {

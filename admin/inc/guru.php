@@ -45,7 +45,8 @@ $lv = @$_SESSION['adm']['super'];
         </td>
         <td class="ctr">
           <a href="ubah-foto/<?= $g['id']; ?>" class="btn btn-primary">Ubah Foto</a>
-          <a href="edit-guru/<?= $g['id']; ?>" class="btn btn-success">Edit</a>
+          <a href="edit-guru/<?= $g['id']; ?>" class="btn btn-warning">Edit</a>
+          <a href="detail-guru/<?= $g['id']; ?>" class="btn btn-success">Detail</a>
           <?php if($lv == "1"){ ?>
           <a onclick="return konfirmasi()" href="delete-guru/<?= $g['id']; ?>" class="btn btn-danger">Hapus</a>
           <?php } ?>

@@ -30,13 +30,19 @@ $g = mysqli_fetch_assoc($sel_gid);
 
         echo label('id_card', 'No. ID Card');
         echo input('number', 'id_card', "class='form-control' value='$g[id_card]' disabled")."</br>";
-
+        
+        echo label('alamat_lengkap', 'Alamat Lengkap');
+        echo input('text', 'alamat_lengkap', "class='form-control' value='$g[alamat_lengkap]'")."<br>";
+        
         echo input('submit', 'submit', "class='btn btn-primary' value='Simpan'")." &nbsp; ";
         echo "<a href=".base("admin/guru")." class='btn btn-default'>Kembali</a>";
-      ?>
+        ?>
     </div>
     <div class="col-md-6">
       <?php
+        echo label('email', 'Email');
+        echo input('email', 'email', "class='form-control' value='$g[email]'")."<br>";
+  
         echo label('nip', 'NIP');
         echo input('number', 'nip', "class='form-control' value='$g[nip]'")."</br>";
 
@@ -75,12 +81,14 @@ if (isset($_POST['submit'])) {
   $tmp_lahir = anti_inject($_POST['tmp_lahir']);
   $tgl_lahir = @$_POST['tgl_lahir'];
   $jenis_ptk = anti_inject($_POST['jenis_ptk']);
+  $email  = anti_inject($_POST['email']);
+  $alamat_lengkap  = anti_inject($_POST['alamat_lengkap']);
 
   if (empty(trim($nama_guru))) {
     echo "<script>sweetAlert('Oops!', 'Form tidak boleh ada yang kosong!', 'error');</script>";
   } else {
     $upd_guru = update('tbl_guru', "nama_guru = '$nama_guru', jenis_ptk = '$jenis_ptk', nip = '$nip'", "id = '$id'");
-    $upd_dtl  = update('detail_guru', "jk = '$jk', telp = '$telp', tmp_lahir = '$tmp_lahir', tgl_lahir = '$tgl_lahir'", "id_guru='$id'");
+    $upd_dtl  = update('detail_guru', "jk = '$jk', telp = '$telp', tmp_lahir = '$tmp_lahir', tgl_lahir = '$tgl_lahir', email = '$email', alamat_lengkap = '$alamat_lengkap'", "id_guru='$id'");
 
     if ($upd_guru === TRUE && $upd_dtl === TRUE) {
       echo "<script>swal('Yosh!', 'Data guru berhasil diperbarui!', 'success');</script>";
