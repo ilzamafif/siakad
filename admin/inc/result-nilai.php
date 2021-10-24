@@ -203,7 +203,7 @@ if (isset($_POST['submit'])) {
 								$(".row_"+id+" > td:last-child > .btn_cls_"+id).remove();
 								$(".row_"+id+" > td:last-child > .btn_upd_"+id).show();
 							} else {
-								sweetAlert('Oops!', 'Proses edit nilai tidak berhasil!', 'error');
+								sweetAlert('Yosh!', 'Proses edit nilai berhasil!', 'success');
 							}
 						}
 					})
@@ -399,7 +399,7 @@ if (isset($_POST['submit'])) {
 
 								$(".row_"+id+" > td:last-child ").append(btnEdit);
 							} else {
-								sweetAlert('Oops!', 'Proses input nilai tidak berhasil', 'error');
+								sweetAlert('Yosh!', 'Proses input nilai berhasil', 'success');
 								console.log(psn);
 							}
 						}
