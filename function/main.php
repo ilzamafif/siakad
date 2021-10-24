@@ -170,6 +170,17 @@ function gabung($table1, $table2, $condition, $params=NULL)
 	return get($sql);
 }
 
+function gabung3($table1, $table2, $table3, $condition, $condition2, $params=NULL)
+{
+	if ($params != NULL) {
+		$sql = "SELECT * FROM $table1 JOIN $table2 ON $condition JOIN $table3 ON $condition2 WHERE $params ";
+	} else {
+		$sql = "SELECT * FROM $table1 JOIN $table2 ON $condition JOIN $table3 ON $condition2";
+	}
+
+	return get($sql);
+}
+
 function open_form($act, $method, $attr)
 {
 	return "<form action='$act' method='$method' $attr >";

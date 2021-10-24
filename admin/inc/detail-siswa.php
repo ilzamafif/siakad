@@ -1,7 +1,7 @@
 <?php
 $id = anti_inject(@$_GET['id']);
 $id = abs((int) $id);
-$siswa = gabung('tbl_kelas', 'tbl_siswa', 'tbl_kelas.nama_kelas = tbl_siswa.rombel', "tbl_siswa.id = '$id'");
+$siswa = gabung3('tbl_kelas', 'tbl_siswa', 'tbl_ortu_siswa', 'tbl_kelas.nama_kelas = tbl_siswa.rombel', 'tbl_siswa.id = tbl_ortu_siswa.id_siswa', "tbl_siswa.id = '$id'");
 $s = mysqli_fetch_assoc($siswa);
 ?>
 
@@ -10,7 +10,7 @@ $s = mysqli_fetch_assoc($siswa);
     padding-bottom: 30px;
   }
 </style>
-<div class="col-md-6">
+<div class="col-md-4">
   <table class="table">
     <tr>
       <td>Nama Lengkap</td>
@@ -63,12 +63,76 @@ $s = mysqli_fetch_assoc($siswa);
       <td><?= $s['tempat']; ?>, <?= $s['tanggal_lahir']; ?></td>
     </tr>
   </table>
+</div>
+<div class="col-md-4">
+  <table class="table">
+    <tr>
+      <td>Nama Ayah</td>
+      <td>:</td>
+      <td><?= $s['nama_ayah']; ?></td>
+    </tr>
+    <tr>
+      <td>Nama Ibu</td>
+      <td>:</td>
+      <td><?= $s['nama_ibu']; ?></td>
+    </tr>
+    <tr>
+      <td>Pekerjaan Ayah</td>
+      <td>:</td>
+      <td><?= $s['pekerjaan_ayah']; ?></td>
+    </tr>
+    <tr>
+      <td>Pekerjaan Ibu</td>
+      <td>:</td>
+      <td><?= $s['pekerjaan_ibu']; ?></td>
+    </tr>
+    <tr>
+      <td>Tempat lahir Ayah</td>
+      <td>:</td>
+      <td><?= $s['tempat_lahir_ayah']; ?></td>
+    </tr>
+    <tr>
+      <td>Tempat lahir Ibu</td>
+      <td>:</td>
+      <td><?= $s['tempat_lahir_ibu']; ?></td>
+    </tr>
+    <tr>
+      <td>Tanggal lahir Ayah</td>
+      <td>:</td>
+      <td><?= $s['tanggal_lahir_ayah']; ?></td>
+    </tr>
+    <tr>
+      <td>Tanggal lahir Ibu</td>
+      <td>:</td>
+      <td><?= $s['tanggal_lahir_ibu']; ?></td>
+    </tr>
+    <tr>
+      <td>Alamat Ayah</td>
+      <td>:</td>
+      <td><?= $s['alamat_ayah']; ?></td>
+    </tr>
+    <tr>
+      <td>Alamat Ibu</td>
+      <td>:</td>
+      <td><?= $s['alamat_ibu']; ?></td>
+    </tr>
+    <tr>
+      <td>No. Telp Ayah</td>
+      <td>:</td>
+      <td><?= $s['telp_ayah']; ?></td>
+    </tr>
+    <tr>
+      <td>No. Telp Ibu</td>
+      <td>:</td>
+      <td><?= $s['telp_ayah']; ?>, <?= $s['tanggal_lahir']; ?></td>
+    </tr>
+  </table>
   <br>
   <a href="<?= base('admin/tambah-ortu/'. $s['id'].''); ?>" class="btn btn-primary">Tambah Ortu</a>
   <a href="<?= base('admin/edit-siswa/'.$s["id"].''); ?>" class="btn btn-primary">Edit</a>
   <a href="<?= base('admin/siswa');?>" class="btn btn-default">Kembali</a>
 </div>
-<div class="col-md-6">
+<div class="col-md-4">
 
   <?php if($s['jk'] == "L"){ ?>
     <img src="<?= base('images/siswa/male.jpg'); ?>" width="300px" class="img img-responsive" alt="" />
