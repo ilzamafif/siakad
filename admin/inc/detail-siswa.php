@@ -64,6 +64,7 @@ $s = mysqli_fetch_assoc($siswa);
     </tr>
   </table>
   <br>
+  <a href="<?= base('admin/tambah-ortu/'. $s['id'].''); ?>" class="btn btn-primary">Tambah Ortu</a>
   <a href="<?= base('admin/edit-siswa/'.$s["id"].''); ?>" class="btn btn-primary">Edit</a>
   <a href="<?= base('admin/siswa');?>" class="btn btn-default">Kembali</a>
 </div>

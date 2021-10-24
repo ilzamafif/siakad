@@ -383,6 +383,8 @@ $up = mysqli_num_rows($jur_up);
                 include_once 'inc/tambah-siswa.php';
               } else if($page == "edit-siswa") {
                 include_once 'inc/edit-siswa.php';
+              } else if($page == "tambah-ortu") {
+                include_once 'inc/tambah-ortu.php';
 
               //Routing Nilai
               } else if($page == "nilai") {

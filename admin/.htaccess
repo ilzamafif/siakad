@@ -33,6 +33,7 @@ RewriteRule ^tambah-siswa$ index.php?page=tambah-siswa
 RewriteRule ^detail-siswa/([0-9]+)$ index.php?page=detail-siswa&id=$1
 RewriteRule ^delete-siswa/([0-9]+)$ index.php?page=hapus-siswa&id=$1
 RewriteRule ^edit-siswa/([0-9]+)$ index.php?page=edit-siswa&id=$1
+RewriteRule ^tambah-ortu/([0-9]+)$ index.php?page=tambah-ortu&id=$1
 
 #nilai
 
