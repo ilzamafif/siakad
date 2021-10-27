@@ -13,4 +13,11 @@ function cek_idcard($id_card)
 
   return get($sql);
 }
+
+function cek_email($email)
+{
+  $sql = "SELECT * FROM tbl_siswa WHERE email = '$email' ";
+
+  return get($sql);
+}
 ?>

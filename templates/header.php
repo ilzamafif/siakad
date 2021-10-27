@@ -62,17 +62,24 @@ $hasil = substr($server, 8);
 						</li>
 
 						<?php
-							if ($hasil == "admin/index.php" || $hasil == "guru/index.php"){
+							if ($hasil == "admin/index.php" || $hasil == "guru/index.php" || $hasil == "siswa/index.php")
+							{
 								$potong = substr($hasil, 0, -10);
-								if ($potong == "admin") { ?>
+								if ($potong == "admin") 
+								{ 
+								?>
 
-						<li class="active"><a href="<?= base('admin/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+								<li class="active"><a href="<?= base('admin/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
-						<?php	} else if ($potong == "guru") { ?>
+								<?php	} else if ($potong == "guru") { ?>
 
-						<li class="active"><a href="<?= base('guru/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+								<li class="active"><a href="<?= base('guru/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
-						<?php 	}
+								<?php	} else if ($potong == "siswa") { ?>
+
+								<li class="active"><a href="<?= base('siswa/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+
+								<?php	}
 							} else { ?>
 
 							<?php if($file == "index.php") { ?>
