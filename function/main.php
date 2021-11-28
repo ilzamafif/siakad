@@ -3,7 +3,7 @@ ob_start();
 
 function base($folder)
 {
-	$url = "http://localhost:8080/siakad/".$folder;
+	$url = "http://localhost/siakad/".$folder;
 
 	return $url;
 }
