@@ -95,6 +95,37 @@ $xyz = $cekmgg%2;
             <hr>
 
             <div class="panel panel-primary">
+
+              <div class="panel-heading">
+                Link Login
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                  <tr>
+                    <td>Admin</td>
+                    <td>:</td>
+                    <td><a href="admin/login.php">Admin</a></td>
+                  </tr>
+                  <tr>
+                    <td>Waka</td>
+                    <td>:</td>
+                    <td><a href="waka/login.php">Waka</a></td>
+                  </tr>
+                  <tr>
+                    <td>Guru</td>
+                    <td>:</td>
+                    <td><a href="guru/login.php">Guru</a></td>
+                  </tr>
+                  <tr>
+                    <td>Siswa</td>
+                    <td>:</td>
+                    <td><a href="siswa/login.php">Siswa</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel panel-primary">
               <div class="panel-heading">
                 Keterangan :
               </div>
