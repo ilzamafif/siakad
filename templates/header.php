@@ -62,7 +62,7 @@ $hasil = substr($server, 8);
 						</li>
 
 						<?php
-							if ($hasil == "admin/index.php" || $hasil == "guru/index.php" || $hasil == "siswa/index.php")
+							if ($hasil == "waka/index.php" || $hasil == "admin/index.php" || $hasil == "guru/index.php" || $hasil == "siswa/index.php")
 							{
 								$potong = substr($hasil, 0, -10);
 								if ($potong == "admin") 
@@ -78,6 +78,10 @@ $hasil = substr($server, 8);
 								<?php	} else if ($potong == "siswa") { ?>
 
 								<li class="active"><a href="<?= base('siswa/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+
+							<?php	} else if ($potong == "waka") { ?>
+
+								<li class="active"><a href="<?= base('waka/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
 								<?php	}
 							} else { ?>

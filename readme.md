@@ -13,3 +13,5 @@ Aplikasi Sistem Informasi Akademik untuk Sekolah Menengah Kejuruan
 - master
 	- tahun pelajaran
 	- kelas (tambah, edit, hapus, baca, detail, import, export pdf, export excel. export semua)
+	- logout, navbar waka
+	
