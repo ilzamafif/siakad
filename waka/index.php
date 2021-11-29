@@ -1,9 +1,7 @@
 <?php
 include_once '../function/core.php';
-$lv = @$_SESSION['adm']['super'];
-
-if (empty($_SESSION['adm']['user']) && empty($_SESSION['adm']['pass'])) {
-  redirect(base('admin/login'));
+if (empty($_SESSION['waka']['user']) && empty($_SESSION['waka']['pass'])) {
+  redirect(base('waka/login'));
 }
 $page = @$_GET['page'];
 
@@ -52,7 +50,7 @@ $up = mysqli_num_rows($jur_up);
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Admin Dashboard Page</title>
+    <title>Waka Dashboard Page</title>
   </head>
   <link rel="stylesheet" href="<?= base('assets/css/admin.css'); ?>" media="screen" title="no title">
   <link rel="stylesheet" href="<?= base('assets/css/bootstrap.css'); ?>" media="screen" title="no title">
@@ -195,35 +193,35 @@ $up = mysqli_num_rows($jur_up);
         <div class="row">
           <div class="collapse navbar-collapse navbar-left">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="<?= base('admin/dashboard'); ?>">Dashboard</a></li>
+              <li class="active"><a href="<?= base('waka/dashboard'); ?>">Dashboard</a></li>
               <li class="dropdown data-utama">
                 <a class="dropdown-toggle" id="dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Master Data <span class="caret"></span> </a>
                 <ul class="dropdown-menu menu-data">
-                  <li><a href="<?= base('admin/jadwal'); ?>">Data Jadwal</a></li>
-                  <li><a href="<?= base('admin/guru'); ?>">Data Guru</a></li>
-                  <li><a href="<?= base('admin/siswa'); ?>">Data Siswa</a></li>
+                  <li><a href="<?= base('waka/jadwal'); ?>">Data Jadwal</a></li>
+                  <li><a href="<?= base('waka/guru'); ?>">Data Guru</a></li>
+                  <li><a href="<?= base('waka/siswa'); ?>">Data Siswa</a></li>
                 </ul>
               </li>
               <li class="dropdown data-nilai">
                 <a class="dropdown-toggle" id="dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nilai <span class="caret"></span></a>
                 <ul class="dropdown-menu menu-nilai">
-                  <li><a href="<?= base('admin/nilai'); ?>">Lihat Nilai</a></li>
-                  <li><a href="<?= base('admin/entry-nilai'); ?>">Entry Nilai</a></li>
+                  <li><a href="<?= base('waka/nilai'); ?>">Lihat Nilai</a></li>
+                  <li><a href="<?= base('waka/entry-nilai'); ?>">Entry Nilai</a></li>
                 </ul>
               </li>
-              <li><a href="<?= base('admin/kelas'); ?>">Kelas</a></li>
+              <li><a href="<?= base('waka/kelas'); ?>">Kelas</a></li>
               <li class="dropdown data-mapel">
-                <a href="<?= base('admin/mata-pelajaran'); ?>">Mata Pelajaran  <span class="caret"></span></a>
+                <a href="<?= base('waka/mata-pelajaran'); ?>">Mata Pelajaran  <span class="caret"></span></a>
                 <ul class="dropdown-menu menu-mapel">
-                  <li><a href="<?= base('admin/data-deskripsi'); ?>">Deskripsi</a></li>
-                  <li><a href="<?= base('admin/data-kkm'); ?>">KKM</a></li>
+                  <li><a href="<?= base('waka/data-deskripsi'); ?>">Deskripsi</a></li>
+                  <li><a href="<?= base('waka/data-kkm'); ?>">KKM</a></li>
                 </ul>
               </li>
-              <li><a href="<?= base('admin/absensi-harian'); ?>">Absensi Harian</a></li>
-              <li><a href="<?= base('admin/rekap-absensi'); ?>">Rekap Absen</a></li>
-              <li><a href="<?= base('admin/pesan'); ?>">Pesan</a></li>
-              <li><a href="<?= base('admin/pengumuman'); ?>">Pengumuman</a></li>
-              <li><a href="<?= base('admin/pengaturan'); ?>">Pengaturan</a></li>
+              <li><a href="<?= base('waka/absensi-harian'); ?>">Absensi Harian</a></li>
+              <li><a href="<?= base('waka/rekap-absensi'); ?>">Rekap Absen</a></li>
+              <li><a href="<?= base('waka/pesan'); ?>">Pesan</a></li>
+              <li><a href="<?= base('waka/pengumuman'); ?>">Pengumuman</a></li>
+              <li><a href="<?= base('waka/pengaturan'); ?>">Pengaturan</a></li>
             </ul>
           </div>
         </div> <!-- end of class row -->

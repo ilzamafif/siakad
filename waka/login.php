@@ -1,7 +1,7 @@
 <?php
 include_once '../function/core.php';
 
-if (isset($_SESSION['adm']['user']) && isset($_SESSION['adm']['pass'])) {
+if (isset($_SESSION['waka']['user']) && isset($_SESSION['waka']['pass'])) {
   redirect('dashboard');
 }
 
@@ -13,7 +13,7 @@ $tp = mysqli_fetch_object($sqltp);
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login Administrator</title>
+    <title>Login Waka</title>
   </head>
   <link rel="stylesheet" href="<?= base('assets/css/admin.css'); ?>" media="screen" title="no title">
   <link rel="stylesheet" href="<?= base('assets/css/bootstrap.css'); ?>" media="screen" title="no title">
@@ -46,13 +46,6 @@ $tp = mysqli_fetch_object($sqltp);
 
               <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
               <br>
-
-              <select class="form-control" name="level">
-                <option value="">-- Select Level --</option>
-                <option value="1">Administrator</option>
-                <option value="2">Operator</option>
-              </select>
-              <br>
               <input type="submit" name="submit" class="btn btn-primary form-control" value="Log In">
             </form>
           </div> <!-- end of panel body -->
@@ -70,45 +63,36 @@ $tp = mysqli_fetch_object($sqltp);
 if (isset($_POST['submit'])) {
   $username   = anti_inject($_POST['username']);
   $password   = anti_inject($_POST['password']);
-  $level      = anti_inject($_POST['level']);
 
   if (empty(trim($username)) || empty(trim($password))) {
     echo "<script>sweetAlert('Oops!', 'Kolom Username dan Password harus diisi!', 'error');</script>";
     echo notice(0);
   } else {
-    if (empty($level)) {
-      echo "<script>sweetAlert('Oops!', 'Pilih level terlebih dahulu!', 'error');</script>";
-      echo notice(0);
-    } else {
-      $cekuname = cekuname($username);
-      $ceknow   = mysqli_num_rows($cekuname);
+      $cekusname = cekusname($username);
+      $ceknow   = mysqli_num_rows($cekusname);
 
       if ($ceknow != 0) {
-        $data = mysqli_fetch_assoc($cekuname);
+        $data = mysqli_fetch_assoc($cekusname);
 
         //Checking password match
         $cekpass  = password_verify($password, $data['password']);
 
         if ($cekpass === TRUE && $level == $data['super']) {
-          @$_SESSION['adm']['user']  = $data['username'];
-          @$_SESSION['adm']['pass']  = $data['password'];
-          @$_SESSION['adm']['super'] = $data['super'];
-          @$_SESSION['adm']['id']    = $data['id'];
+          @$_SESSION['waka']['user']  = $data['username'];
+          @$_SESSION['waka']['pass']  = $data['password'];
+          @$_SESSION['waka']['id']    = $data['id'];
           @$_SESSION['thn_ajaran']   = $tp->tahun_ajaran;
           redirect('dashboard');
         } else {
           echo "<script>sweetAlert('Oops!', 'Username atau Password tidak cocok!', 'error');</script>";
           echo notice(0);
         }
-
       } else {
         echo "<script>sweetAlert('Oops!', 'Username atau Password salah!', 'error');</script>";
         echo notice(0);
       }
 
-    }
-  }
-
+  } 
 }
 
 ?>

@@ -7,6 +7,13 @@ function cekuname($username)
   return get($sql);
 }
 
+function cekusname($username)
+{
+  $sql = "SELECT * FROM tbl_waka WHERE username = '$username' ";
+
+  return get($sql);
+}
+
 function cek_idcard($id_card)
 {
   $sql = "SELECT * FROM tbl_guru WHERE id_card = '$id_card' ";
