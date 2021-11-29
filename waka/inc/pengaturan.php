@@ -1,10 +1,9 @@
 <?php
-$sqladmin = select('*','tbl_admin');
 $no = 1;
 
-$id = @$_SESSION['adm']['id'];
-$adm_id = select("*", "tbl_admin", "id=$id");
-$ad  = mysqli_fetch_assoc($adm_id);
+$id = @$_SESSION['waka']['id'];
+$waka_id = select("*", "tbl_waka", "id=$id");
+$ad  = mysqli_fetch_assoc($waka_id);
 
 $rt = select("*", "tbl_info", "id=1 LIMIT 1");
 $run = mysqli_fetch_assoc($rt);
@@ -16,18 +15,7 @@ $sqlps = select("*", "profil_sekolah", "id=1 LIMIT 1");
 $ps = mysqli_fetch_object($sqlps);
 ?>
 
-<?php if($lv == "1"){ ?>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#list:first").attr({
-      'class':'tab-pane active'
-    });
-    $(".nav-tabs > li:first").attr({
-      'class':'active'
-    });
-  });
-</script>
-<?php } else { ?>
+<?php if(!empty(@$id)){ ?>
   <script type="text/javascript">
     $(document).ready(function() {
       $("#semester").attr({
@@ -39,14 +27,10 @@ $ps = mysqli_fetch_object($sqlps);
     });
   </script>
 <?php } ?>
+
 <div class="col-md-12">
   <div class="tablet">
     <ul class="nav nav-tabs" role="tablist">
-    <?php if($lv == "1"): ?>
-      <li role="presentation"  class="active">
-        <a href="#list" aria-controls="details" role="tab" data-toggle="tab">Manajemen Pengguna</a>
-      </li>
-    <?php endif; ?>
     <li role="presentation">
       <a href="#profil-sekolah" aria-controls="profil-sekolah" role="tab" data-toggle="tab">Profil Sekolah</a>
     </li>
@@ -62,48 +46,6 @@ $ps = mysqli_fetch_object($sqlps);
     </ul>
 
     <div class="tab-content">
-    <?php if($lv == "1"): ?>
-      <div class="tab-pane" role="tabpanel" id="list">
-
-        <button type="button" data-toggle="modal" data-target="#add-admin" class="btn btn-default">Tambah Admin</button>
-
-        <table class="table table-bordered" id="list-data" style="text-align:center !important;">
-          <thead>
-            <tr style="text-align:center !important;">
-              <th class="ctr">No.</th>
-              <th class="ctr">Username</th>
-              <th class="ctr">Password</th>
-              <th class="ctr">Hak Akses</th>
-              <th class="ctr">Opsi</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <?php while ($adm = mysqli_fetch_assoc($sqladmin)): ?>
-
-            <tr>
-              <td><?= $no++; ?></td>
-              <td><?= $adm['username']; ?></td>
-              <td>*****</td>
-              <td>
-                <?php if ($adm['super'] == 1) {
-                  echo "Administrator";
-                } else {
-                  echo "Operator";
-                }?>
-              </td>
-              <td class="ctr">
-                <a href="edit-admin/<?= $adm['id']; ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a onclick="return konfirmasi()" href="delete-admin/<?= $adm['id']; ?>" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></a>
-              </td>
-            </tr>
-
-          <?php endwhile; ?>
-
-          </tbody>
-        </table>
-      </div>
-    <?php endif; ?>
     <div class="tab-pane" role="tabpanel" id="profil-sekolah">
       <b>Profil Sekolah</b>
       <br>
@@ -197,7 +139,7 @@ $ps = mysqli_fetch_object($sqlps);
         <br>
 
         <label for="tahun_ajaran">Tahun Pelajaran</label>
-        <input type="text" name="tahun_ajaran" class="form-control" value="<?= $sms['tahun_ajaran']; ?>" placeholder="contoh : 2016/2017">
+        <input type="text" name="tahun_ajaran" class="form-control" value="<?= $sms['tahun_ajaran']; ?>" placeholder="contoh : 2021/2022">
         <br>
 
         <input type="submit" name="sub_semester" class="btn btn-primary" value="Simpan">
@@ -239,35 +181,6 @@ $ps = mysqli_fetch_object($sqlps);
   </div>
 </div>
 
-<div class="modal fade" id="add-admin" tabindex="-1" role="dialog" aria-labelledby="add-adminlabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="add-adminlabel">Tambah Admin Baru</h4>
-      </div> <!-- end of modal header -->
-      <div class="modal-body">
-        <?= open_form('proses-tambah-admin', 'post', "class='form-group'"); ?>
-        <br>
-        <?= input('text', 'username', "class='form-control' placeholder='Username...'"); ?>
-        <br>
-        <?= input('password', 'password', "class='form-control' placeholder='Password'"); ?>
-        <br>
-        <select class="form-control" name="super">
-          <option value="">-- Select Level --</option>
-          <option value="1">Administrator</option>
-          <option value="2">Operator</option>
-        </select>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="add_admin" class="btn btn-primary">Simpan</button>
-        <?= close_form(); ?>
-      </div> <!-- end of modal footer -->
-    </div> <!-- end of modal -content -->
-  </div>
-</div>
 <div class="modal fade" id="edit-sekolah" tabindex="-1" role="dialog" aria-labelledby="add-adminlabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -373,7 +286,7 @@ if (isset($_POST['submit'])) {
 
       if ($confpass === TRUE) {
 
-        $update = update('tbl_admin', "password = '$newpass'", "id = '$id'");
+        $update = update('tbl_waka', "password = '$newpass'", "id = '$id'");
 
         if ($update === TRUE) {
           echo "<script>swal('Yosh!', 'Password berhasil diperbarui!', 'success');</script>";

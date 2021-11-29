@@ -8,6 +8,7 @@ use Dompdf\Dompdf;
 $sqlkls = select("*", "tbl_kelas");
 $thn_ajaran = @$_SESSION['thn_ajaran'];
 $no = 1;
+
 $html = "
 	<style>
 		#main-content{

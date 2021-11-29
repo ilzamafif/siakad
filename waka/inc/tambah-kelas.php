@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
       } else {
         echo "<script>sweetAlert('Oops!', 'Gagal menambahkan kelas baru!', 'error');</script>";
         echo notice(0);
-        echo location(base('admin/kelas'));
+        echo location(base('waka/kelas'));
       }
 
     }

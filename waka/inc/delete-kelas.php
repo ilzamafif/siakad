@@ -14,7 +14,7 @@ if (delete('tbl_kelas', $id) === TRUE) {
 <script type="text/javascript">
   $(document).ready(function() {
     $('button.confirm').on("click", function() {
-      window.location='<?= base("admin/kelas"); ?>';
+      window.location='<?= base("waka/kelas"); ?>';
     });
   });
 </script>

@@ -76,11 +76,11 @@ if (isset($_POST['submit'])) {
       if($insert === TRUE) {
         echo "<script>swal('Yosh!', 'Berhasil memperbarui data kelas!', 'success');</script>";
         echo notice(1);
-        echo location(base('admin/kelas'));
+        echo location(base('waka/kelas'));
       } else {
         echo "<script>sweetAlert('Oops!', 'Gagal memperbarui data kelas!', 'error');</script>";
         echo notice(0);
-        echo location(base('admin/kelas'));
+        echo location(base('waka/kelas'));
       }
 
     }
@@ -92,6 +92,6 @@ if (isset($_POST['submit'])) {
 ?>
 <script type="text/javascript">
   $("#back").click(function() {
-    window.location='<?= base("admin/kelas");?>';
+    window.location='<?= base("waka/kelas");?>';
   });
 </script>

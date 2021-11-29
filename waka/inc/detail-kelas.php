@@ -11,9 +11,9 @@ $total = mysqli_num_rows($hitsql);
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $(".row > .col-sm-6:first").append('<a href="<?= base("admin/kelas");?>" class="btn btn-primary">Kembali</a> ');
-    $(".row > .col-sm-6:first").append(' <a href="<?= base("admin/export-kelas/".base64_encode($kls->nama_kelas));?>" target="_blank" class="btn btn-default">Export PDF</a>')
-    $(".row > .col-sm-6:first").append(' <a href="<?= base("admin/export.php?data=detail_kelas&id=".$kls->id);?>" class="btn btn-success">Export Ms. Excel</a>');
+    $(".row > .col-sm-6:first").append('<a href="<?= base("waka/kelas");?>" class="btn btn-primary">Kembali</a> ');
+    $(".row > .col-sm-6:first").append(' <a href="<?= base("waka/export-kelas/".base64_encode($kls->nama_kelas));?>" target="_blank" class="btn btn-default">Export PDF</a>')
+    $(".row > .col-sm-6:first").append(' <a href="<?= base("waka/export.php?data=detail_kelas&id=".$kls->id);?>" class="btn btn-success">Export Ms. Excel</a>');
   })
 </script>
 <div class="col-md-12">

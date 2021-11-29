@@ -1,17 +1,16 @@
 <?php
 $sqlkelas = select('*', 'tbl_kelas');
 $no = 1;
-$lv = @$_SESSION['adm']['super'];
 ?>
 <script type="text/javascript">
   $(document).ready(function() {
     $(".row > .col-sm-6:first").append(
       '<a href="tambah-kelas" class="btn btn-primary">Tambah Data Kelas</a>'
     );
-    var btn_pdf = "<a href='<?= base('admin/export-kelas-pdf') ?>' target='_blank' class='btn btn-default'>Export PDF</a></div>";
+    var btn_pdf = "<a href='<?= base('waka/export-kelas-pdf') ?>' target='_blank' class='btn btn-default'>Export PDF</a></div>";
     var btn_excel = "<a href='export.php?data=kelas' class='btn btn-success'>Export Ms. Excel</a></div>";
 
-    $(".row > .col-sm-6:first").append(' <a href="<?= base('admin/import-kelas'); ?>" class="btn btn-info">Import Kelas</a>');
+    $(".row > .col-sm-6:first").append(' <a href="<?= base('waka/import-kelas'); ?>" class="btn btn-info">Import Kelas</a>');
     $(".row > .col-sm-6:first").append(' '+btn_pdf+' '+btn_excel);
     $(".close").click(function() {
       $('.col-md-12 > .col-md-3').attr({
@@ -61,10 +60,9 @@ $lv = @$_SESSION['adm']['super'];
           <a href="detail-kelas/<?= $k['id']; ?>"><?= $tot_siswa; ?></a>
         </td>
         <td class="ctr">
-          <a href="edit-kelas/<?= $k['id']; ?>" class="btn btn-success">Edit</a>
-          <?php if($lv == "1"): ?>
+          <a href="edit-kelas/<?= $k['id']; ?>" class="btn btn-warning">Edit</a>
+          <a href="detail-kelas/<?= $k['id']; ?>" class="btn btn-success">Detail</a>
           <a onclick="return konfirmasi()" href="delete-kelas/<?= $k['id']; ?>" class="btn btn-danger">Hapus</a>
-        <?php endif; ?>
         </td>
       </tr>
 

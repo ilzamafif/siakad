@@ -209,7 +209,7 @@ if (isset($_GET['kelas'])) {
 
 	
 } else {
-	redirect(base('admin/dashboard'));
+	redirect(base('waka/dashboard'));
 }
 
 ?>

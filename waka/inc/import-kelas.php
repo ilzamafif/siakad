@@ -7,8 +7,8 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<center>
-						<a href="<?=base('admin/download/file/sample_kelas.xlsx');?>" class="btn btn-success">Download Template</a>
-						<a href="<?=base('admin/kelas');?>" class="btn btn-primary">Kembali</a>
+						<a href="<?=base('waka/download/file/sample_kelas.xlsx');?>" class="btn btn-success">Download Template</a>
+						<a href="<?=base('waka/kelas');?>" class="btn btn-primary">Kembali</a>
 					</center>
 					<br>
 					<form action="" class="form form-group" method="post" enctype="multipart/form-data">
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
 				if ($ins) {
 					echo "<script>swal('Yosh!', 'Data kelas berhasil diimport!', 'success');</script>";
 					echo notice(1);
-					echo location(base('admin/kelas'));
+					echo location(base('waka/kelas'));
 				} else {
 					echo "<script>sweetAlert('Oops!', 'Data kelas Gagal diimport!', 'error');</script>";
 					echo notice(0);	

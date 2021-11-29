@@ -82,9 +82,9 @@ if (isset($_GET['data'])) {
   } else if($data == "absensi-kelas") {
     include_once 'inc/absen-kelas.php';
   } else {
-    redirect(base('admin/dashboard'));
+    redirect(base('waka/dashboard'));
   }
 } else {
-  redirect(base('admin/dashboard'));
+  redirect(base('waka/dashboard'));
 }
 ?>
