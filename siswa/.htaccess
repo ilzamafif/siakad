@@ -12,3 +12,5 @@ RewriteEngine On
 RewriteRule ^dashboard$ index.php
 RewriteRule ^login$ login.php
 RewriteRule ^logout$ logout.php
+
+RewriteRule ^pengaturan$ index.php?page=pengaturan
