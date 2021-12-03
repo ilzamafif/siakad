@@ -1,6 +1,6 @@
 <?php
 include_once '../function/core.php';
-if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['nis']) && isset($_SESSION['token'])) {
+if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && isset($_SESSION['token'])) {
   redirect(base('siswa/dashboard'));
 } else {
 ?>
@@ -46,7 +46,7 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['nis']) && is
             cache   : false,
             data    : {
               email   : email,
-              nama : nama
+              nama_guru : nama
             },
             success : function(result){
               if (result == "1") {
@@ -90,7 +90,7 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['nis']) && is
         <div class="box-content">
           <?php
             echo open_form('', 'post', "class='form-group'");
-            echo input('email', 'email', "class='form-control' placeholder='Email' autofocus oninput='maxChars(this, 30)' maxLength='30' max='99999' min='00000'")."<br>";
+            echo input('email', 'email', "class='form-control' placeholder='Email' autofocus oninput='maxChars(this, 5) min='00000'")."<br>";
             echo input('password', 'password', "class='form-control' placeholder='Password'")."<br>";
             echo input('submit', 'submit', "class='btn btn-primary form-control' value='Login'")."<br>";
             echo close_form();
@@ -143,28 +143,27 @@ if (isset($_POST['submit'])) {
     echo notice(0);
   } else {
 
-    $email = cek_email($email);
-    $ceknow   = mysqli_num_rows($email);
+    $cekSiswa = cekSiswa($email);
+    $ceknow   = mysqli_num_rows($cekSiswa);
 
     if ($ceknow != 0) {
-      $data = mysqli_fetch_object($email);
-      
-      $cekpass = $password == $data->nis ? TRUE : FALSE;
+      $data = mysqli_fetch_object($cekSiswa);
+
+      //Checking password match
+      $cekpass = password_verify($password, $data->password);
 
       if ($cekpass === TRUE) {
         $smstr  = select('*', 'tbl_semester', "id=1 LIMIT 1");
         $sms    = mysqli_fetch_object($smstr);
-
         $token                       = md5(sha1($data->email));
-        @$_SESSION['token']          = $token;
+        @$_SESSION['token_siswa']          = $token;
         @$_SESSION['semester']       = $sms->semester;
         @$_SESSION['thn_ajaran']     = $sms->tahun_ajaran;
-        @$_SESSION['siswa']['pass'] = $data->password;
-        @$_SESSION['siswa']['email'] = $data->email;
-        @$_SESSION['siswa']['nama'] = $data->nama;
-        @$_SESSION['siswa']['id'] = $data->id;
-        @$_SESSION['siswa']['nis'] = $data->nis;
-        @$_SESSION['siswa']['nisn'] = $data->nisn;
+        @$_SESSION['siswa']['pass']   = $data->password;
+        @$_SESSION['siswa']['email']  = $data->email;
+        @$_SESSION['siswa']['nama']   = $data->nama;
+        @$_SESSION['siswa']['id']     = $data->id;
+        @$_SESSION['siswa']['nis']    = $data->nis;
 
         redirect('dashboard');
 

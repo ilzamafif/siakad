@@ -2,17 +2,19 @@
 ob_start();
 error_reporting(0);
 include_once '../function/core.php';
-if (empty($_SESSION['siswa']['email']) && empty($_SESSION['siswa']['nis']) && empty($_SESSION['token'])) {
+if (empty($_SESSION['siswa']['email']) && empty($_SESSION['siswa']['password']) && empty($_SESSION['token_siswa'])) {
   redirect(base('siswa/login'));
 }
 $id = @$_SESSION['siswa']['id'];
-$siswa = gabung('tbl_kelas', 'tbl_siswa', 'tbl_kelas.nama_kelas = tbl_siswa.rombel' ,"tbl_siswa.id = '$id'");
+$siswa = gabung('tbl_kelas', 'tbl_siswa', 'tbl_kelas.nama_kelas = tbl_siswa.rombel', "tbl_siswa.id = '$id'");
 $x = mysqli_fetch_object($siswa);
 $no =1;
-$data = gabung('tbl_harian','tbl_guru', 'tbl_harian.idg = tbl_guru.id', "tbl_harian.idg='$id' ORDER BY tbl_harian.id DESC");
-
+// $data = gabung('tbl_harian','tbl_guru', 'tbl_harian.idg = tbl_guru.id', "tbl_harian.idg='$id' ORDER BY tbl_harian.id DESC");
 $page = @$_GET['page'];
-$nama = @$_SESSION['siswa']['nama'];
+
+$wk = @$_SESSION['siswa']['nama'];
+$cekyo = mysqli_num_rows($siswa);
+$k = mysqli_fetch_object($cekwk);
 $email = @$_SESSION['siswa']['email'];
 ?>
 
@@ -74,7 +76,7 @@ $email = @$_SESSION['siswa']['email'];
           <div class="panel-heading" style="text-align:center;">
               <img src="<?= base('images/siswa/male'); ?>.jpg" width="80px" class="img img-responsive" style="margin-left:55px;margin-top:15px;" alt=""  data-toggle="modal" data-target="#ubah-foto" />
               <p>
-                <strong><?= $x->nama; ?></strong>
+                <strong><?= $x->nama . ' ' . $x->kelas; ?></strong>
               </p>
               <p style="font-size: 12px;">* Klik untuk mengubah foto</p>
           </div>
