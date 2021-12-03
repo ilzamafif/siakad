@@ -105,6 +105,7 @@ if (isset($_POST['submit'])) {
   $tempat         = anti_inject($_POST['tempat']);
   $nomer_telp     = anti_inject($_POST['nomer_telp']);
   $tanggal_lahir  = anti_inject($_POST['tanggal_lahir']);
+  $pass       = password_hash("123456", PASSWORD_DEFAULT, ['cost'=>12]);
 
   $source = $_FILES['foto']['tmp_name'];
   $target = "../images/siswa/";
@@ -125,7 +126,7 @@ if (isset($_POST['submit'])) {
   } else {
 
     move_uploaded_file($source, $target.$namaft);
-    $insert = insert('tbl_siswa', "id, nis, nisn, nama, kelas, rombel, jk, tempat, tanggal_lahir, alamat_lengkap, email, nomer_telp", "NULL, '$nis', '$nisn', '$nama', '$kelas', '$rombel', '$jk', '$tempat', '$tanggal_lahir', '$alamat_lengkap', '$email', '$nomer_telp'");
+    $insert = insert('tbl_siswa', "id, nis, nisn, nama, kelas, rombel, jk, tempat, tanggal_lahir, alamat_lengkap, email, nomer_telp, password", "NULL, '$nis', '$nisn', '$nama', '$kelas', '$rombel', '$jk', '$tempat', '$tanggal_lahir', '$alamat_lengkap', '$email', '$nomer_telp', '$pass'");
 
     if ($insert === TRUE) {
       echo "
