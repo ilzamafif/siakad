@@ -44,18 +44,30 @@ $cekwali = $cekyo;
   <li role="presentation" id="nilai">
     <a href="#" class="click-nilai"><span class="glyphicon glyphicon-file"></span>&nbsp; Nilai &nbsp; <span class="caret"></span></a>
     <ul class="nav nav-pills nav-stacked" id="list-nilai">
-      <?php if($file == "index.php") { ?>
+      <li role="presentation" class="lihat-nilai">
+        <a href="<?= base('siswa/lihat-nilai');?>" class=""><span class="glyphicon glyphicon-file"></span>&nbsp; Lihat Nilai</a>
+      </li>
+      <?php if($cekyo != 0): ?>
 
-      <li class="active"><a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a></li>
-      <li><a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a></li>
+      <li role="presentation" class="nilai-rapot">
+        <a href="<?= base('siswa/nilai-rapot');?>"><span class="glyphicon glyphicon-book"></span>&nbsp; Nilai Rapot</a>
+      </li>
+      <li role="presentation" class="data-rapot">
+        <a href="<?= base('siswa/input-data-rapot');?>"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Input Data Rapot</a>
+      </li>
 
-      <?php } else if($file == "pulang.php") { ?>
-
-      <li><a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a></li>
-      <li  class="active"><a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a></li>
-
-      <?php } ?>
+      <?php endif; ?>
+      
+      <li role="presentation" class="entry-nilai">
+        <a href="<?= base('siswa/opsi-entry') ?>"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Entry Nilai Rapot</a>
+      </li>
     </ul>
+  </li>
+  <li role="presentation" class="pengaturan">
+    <a href="<?= base('siswa/pengaturan');?>"><span class="glyphicon glyphicon-cog"></span>&nbsp; Pengaturan</a>
+  </li>
+  <li role="<?= base('siswa/presentation" class="hub-admin">
+    <a href="hubungi-admin');?>"><span class="glyphicon glyphicon-earphone"></span>&nbsp; Hub. Admin</a>
   </li>
   <li role="presentation" style="height: 600px;background: #eee;">&nbsp;</li>
 </ul>

@@ -29,13 +29,12 @@ $page = @$_GET['page'];
   <hr>
   <?php
     if ($cekyo != 0) {
-      echo "Anda adalah Wali Kelas dari <b>".$k->nama_kelas."</b><br>";
-      echo "Klik <a class='btn-link' href='".base('guru/data-siswa')."'>Di sini</a> untuk melihat Data Siswa";
+      echo "Anda adalah Siswa Kelas dari <b>".$x->kelas."</b><br>";
     }
 
   ?>
 </div> <!-- end of class col-md-6 -->
-<div class="col-md-6">
+<!-- <div class="col-md-6">
   <h4>Kehadiran Anda :</h4>
   <table class="table table-bordered" id="list-data">
     <thead>
@@ -63,7 +62,7 @@ $page = @$_GET['page'];
 
     </tbody>
   </table>
-</div> <!-- end of claa col md 6 -->
+</div>  -->
 
 <?php
   } else if($page == "data-jadwal") {
