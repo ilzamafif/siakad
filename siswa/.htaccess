@@ -14,3 +14,4 @@ RewriteRule ^login$ login.php
 RewriteRule ^logout$ logout.php
 
 RewriteRule ^pengaturan$ index.php?page=pengaturan
+RewriteRule ^hubungi-admin$ index.php?page=hubungi-admin
