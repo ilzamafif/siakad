@@ -1,17 +1,16 @@
 #SISTEM  INFORMASI AKADEMIK SMA-SMK
 Aplikasi Sistem Informasi Akademik untuk Sekolah Menengah Kejuruan
 
-## waka
-- halaman dashboard (oke)
+## Contoh Akses
 
-- setting
-	- ganti password
-	- running text
-	- semester
-	- profil sekolah
-
-- master
-	- tahun pelajaran
-	- kelas (tambah, edit, hapus, baca, detail, import, export pdf, export excel. export semua)
-	- logout, navbar waka
+### Guru
+- id = 00001
+- pass = 123456
 	
+### Siswa
+- id = alfi@war.com
+- pass = 123456
+
+### Waka
+- waka
+- waka

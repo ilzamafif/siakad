@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2021 at 08:11 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Waktu pembuatan: 03 Des 2021 pada 12.12
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `absensi_siswa`
+-- Struktur dari tabel `absensi_siswa`
 --
 
 CREATE TABLE `absensi_siswa` (
@@ -37,7 +37,7 @@ CREATE TABLE `absensi_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `absensi_siswa`
+-- Dumping data untuk tabel `absensi_siswa`
 --
 
 INSERT INTO `absensi_siswa` (`id`, `id_siswa`, `sakit`, `izin`, `tnp_ket`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `absensi_siswa` (`id`, `id_siswa`, `sakit`, `izin`, `tnp_ket`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_rapot`
+-- Struktur dari tabel `data_rapot`
 --
 
 CREATE TABLE `data_rapot` (
@@ -69,7 +69,7 @@ CREATE TABLE `data_rapot` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_rapot`
+-- Dumping data untuk tabel `data_rapot`
 --
 
 INSERT INTO `data_rapot` (`id`, `id_siswa`, `deskripsi_sikap`, `catatan`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `data_rapot` (`id`, `id_siswa`, `deskripsi_sikap`, `catatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_guru`
+-- Struktur dari tabel `detail_guru`
 --
 
 CREATE TABLE `detail_guru` (
@@ -96,138 +96,140 @@ CREATE TABLE `detail_guru` (
   `tmp_lahir` varchar(100) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `pangkat` varchar(50) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `alamat_lengkap` varchar(200) NOT NULL,
   `lain` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detail_guru`
+-- Dumping data untuk tabel `detail_guru`
 --
 
-INSERT INTO `detail_guru` (`id`, `id_guru`, `jk`, `telp`, `tmp_lahir`, `tgl_lahir`, `pangkat`, `lain`) VALUES
-(1, 1, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(2, 2, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(3, 3, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(4, 4, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(5, 5, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(6, 6, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(7, 7, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(8, 8, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(9, 9, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(10, 10, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(11, 11, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(12, 12, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(13, 13, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(14, 14, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(15, 15, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(16, 16, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(17, 17, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(18, 18, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(19, 19, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(20, 20, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(21, 21, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(22, 22, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(23, 23, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(24, 24, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(25, 25, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(26, 26, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(27, 27, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(28, 28, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(29, 29, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(30, 30, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(31, 31, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(32, 32, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(33, 33, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(34, 34, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(35, 35, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(36, 36, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(37, 37, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(38, 38, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(39, 39, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(40, 40, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(41, 41, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(42, 42, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(43, 43, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(44, 44, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(45, 45, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(46, 46, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(47, 47, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(48, 48, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(49, 49, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(50, 50, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(51, 51, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(52, 52, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(53, 53, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(54, 54, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(55, 55, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(56, 56, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(57, 57, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(58, 58, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(59, 59, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(60, 60, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(61, 61, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(62, 62, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(63, 63, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(64, 64, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(65, 65, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(66, 66, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(67, 67, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(68, 68, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(69, 69, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(70, 70, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(71, 71, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(72, 72, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(73, 73, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(74, 74, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(75, 75, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(76, 76, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(77, 77, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(78, 78, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(79, 79, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(80, 80, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(81, 81, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(82, 82, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(83, 83, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(84, 84, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(85, 85, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(86, 86, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(87, 87, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(88, 88, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(89, 89, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(90, 90, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(91, 91, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(92, 92, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(93, 93, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(94, 94, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(95, 95, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(96, 96, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(97, 97, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(98, 98, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(99, 99, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(100, 100, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(101, 101, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(102, 102, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(103, 103, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(104, 104, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(105, 105, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(106, 106, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(107, 107, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(108, 108, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(109, 109, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(110, 110, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(111, 111, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(112, 112, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(113, 113, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(114, 114, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(115, 115, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(116, 116, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(117, 117, 'L', '0231203795', 'Cirebon', '0000-00-00', '', ''),
-(118, 118, 'P', '0231203795', 'Cirebon', '2017-02-01', '', ''),
-(119, 119, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '');
+INSERT INTO `detail_guru` (`id`, `id_guru`, `jk`, `telp`, `tmp_lahir`, `tgl_lahir`, `pangkat`, `email`, `alamat_lengkap`, `lain`) VALUES
+(1, 1, 'L', '0231203795', 'Cirebon', '0000-00-00', '', 'karyawan@waroengdahar.com', 'temanggung', ''),
+(2, 2, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(3, 3, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(4, 4, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(5, 5, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(6, 6, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(7, 7, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(8, 8, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(9, 9, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(10, 10, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(11, 11, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(12, 12, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(13, 13, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(14, 14, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(15, 15, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(16, 16, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(17, 17, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(18, 18, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(19, 19, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(20, 20, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(21, 21, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(22, 22, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(23, 23, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(24, 24, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(25, 25, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(26, 26, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(27, 27, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(28, 28, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(29, 29, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(30, 30, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(31, 31, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(32, 32, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(33, 33, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(34, 34, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(35, 35, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(36, 36, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(37, 37, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(38, 38, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(39, 39, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(40, 40, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(41, 41, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(42, 42, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(43, 43, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(44, 44, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(45, 45, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(46, 46, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(47, 47, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(48, 48, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(49, 49, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(50, 50, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(51, 51, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(52, 52, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(53, 53, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(54, 54, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(55, 55, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(56, 56, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(57, 57, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(58, 58, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(59, 59, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(60, 60, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(61, 61, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(62, 62, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(63, 63, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(64, 64, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(65, 65, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(66, 66, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(67, 67, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(68, 68, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(69, 69, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(70, 70, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(71, 71, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(72, 72, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(73, 73, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(74, 74, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(75, 75, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(76, 76, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(77, 77, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(78, 78, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(79, 79, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(80, 80, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(81, 81, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(82, 82, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(83, 83, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(84, 84, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(85, 85, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(86, 86, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(87, 87, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(88, 88, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(89, 89, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(90, 90, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(91, 91, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(92, 92, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(93, 93, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(94, 94, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(95, 95, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(96, 96, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(97, 97, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(98, 98, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(99, 99, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(100, 100, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(101, 101, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(102, 102, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(103, 103, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(104, 104, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(105, 105, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(106, 106, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(107, 107, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(108, 108, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(109, 109, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(110, 110, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(111, 111, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(112, 112, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(113, 113, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(114, 114, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(115, 115, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(116, 116, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(117, 117, 'L', '0231203795', 'Cirebon', '0000-00-00', '', '', '', ''),
+(118, 118, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', ''),
+(119, 119, 'P', '0231203795', 'Cirebon', '2017-02-01', '', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelompok_mapel`
+-- Struktur dari tabel `kelompok_mapel`
 --
 
 CREATE TABLE `kelompok_mapel` (
@@ -238,7 +240,7 @@ CREATE TABLE `kelompok_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelompok_mapel`
+-- Dumping data untuk tabel `kelompok_mapel`
 --
 
 INSERT INTO `kelompok_mapel` (`id`, `nama_kelompok`, `kelompok`, `ket`) VALUES
@@ -249,7 +251,7 @@ INSERT INTO `kelompok_mapel` (`id`, `nama_kelompok`, `kelompok`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profil_sekolah`
+-- Struktur dari tabel `profil_sekolah`
 --
 
 CREATE TABLE `profil_sekolah` (
@@ -267,7 +269,7 @@ CREATE TABLE `profil_sekolah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `profil_sekolah`
+-- Dumping data untuk tabel `profil_sekolah`
 --
 
 INSERT INTO `profil_sekolah` (`id`, `nama_sekolah`, `npsn`, `nis`, `alamat`, `kelurahan`, `kecamatan`, `kota_kab`, `provinsi`, `website`, `email`) VALUES
@@ -276,7 +278,7 @@ INSERT INTO `profil_sekolah` (`id`, `nama_sekolah`, `npsn`, `nis`, `alamat`, `ke
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Struktur dari tabel `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -288,19 +290,19 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_admin`
+-- Dumping data untuk tabel `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`id`, `username`, `password`, `super`, `ds`) VALUES
-(21, 'adminsuper', '$2y$12$eFJHcqqjqhRhA1kiCnJCtenL2QX5/Fbl6p5kTe9U/UaIjA1bB1xh6', 1, 0),
+(21, 'adminsuper', '$2y$12$GTOtZV9TSj7RxfKh3REBJOrS9ISorZdjoTgEMBZcqThnLfJGl0zPa', 1, 0),
 (22, 'paijo', '$2y$12$hzQB8wyEH7eo/.nYPbTp7uP6wEWIERORFTn6VfHyUvnpL6q1JY/4a', 2, 0),
-(18, 'admin', '$2y$12$rH/nqjEOFl/v3LTLw0vxe.FeHNJleSJxZZayzVn87LXqgHrrqMVR.', 1, 0),
+(18, 'admin', '$2y$12$GTOtZV9TSj7RxfKh3REBJOrS9ISorZdjoTgEMBZcqThnLfJGl0zPa', 1, 0),
 (20, 'operator', '$2y$12$nEt5yOCkPUSZ.PrcXfIcueld8Xw49.LioxWUGLiKrXowfhQ5dAICm', 2, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_deskripsi_ktr`
+-- Struktur dari tabel `tbl_deskripsi_ktr`
 --
 
 CREATE TABLE `tbl_deskripsi_ktr` (
@@ -312,7 +314,7 @@ CREATE TABLE `tbl_deskripsi_ktr` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_deskripsi_ktr`
+-- Dumping data untuk tabel `tbl_deskripsi_ktr`
 --
 
 INSERT INTO `tbl_deskripsi_ktr` (`id`, `kode_mapel`, `predikat`, `deskripsi`, `semester`) VALUES
@@ -1264,7 +1266,7 @@ INSERT INTO `tbl_deskripsi_ktr` (`id`, `kode_mapel`, `predikat`, `deskripsi`, `s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_deskripsi_pth`
+-- Struktur dari tabel `tbl_deskripsi_pth`
 --
 
 CREATE TABLE `tbl_deskripsi_pth` (
@@ -1276,7 +1278,7 @@ CREATE TABLE `tbl_deskripsi_pth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_deskripsi_pth`
+-- Dumping data untuk tabel `tbl_deskripsi_pth`
 --
 
 INSERT INTO `tbl_deskripsi_pth` (`id`, `kode_mapel`, `predikat`, `deskripsi`, `semester`) VALUES
@@ -2228,7 +2230,7 @@ INSERT INTO `tbl_deskripsi_pth` (`id`, `kode_mapel`, `predikat`, `deskripsi`, `s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_ekskul`
+-- Struktur dari tabel `tbl_ekskul`
 --
 
 CREATE TABLE `tbl_ekskul` (
@@ -2240,7 +2242,7 @@ CREATE TABLE `tbl_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_ekskul`
+-- Dumping data untuk tabel `tbl_ekskul`
 --
 
 INSERT INTO `tbl_ekskul` (`id`, `id_siswa`, `keg_ekskul`, `nilai`, `deskripsi`) VALUES
@@ -2253,7 +2255,7 @@ INSERT INTO `tbl_ekskul` (`id`, `id_siswa`, `keg_ekskul`, `nilai`, `deskripsi`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_guru`
+-- Struktur dari tabel `tbl_guru`
 --
 
 CREATE TABLE `tbl_guru` (
@@ -2274,7 +2276,7 @@ CREATE TABLE `tbl_guru` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_guru`
+-- Dumping data untuk tabel `tbl_guru`
 --
 
 INSERT INTO `tbl_guru` (`id`, `id_card`, `password`, `nip`, `nama_guru`, `jenis_ptk`, `wali_kelas`, `hadir`, `izin`, `tugas`, `sakit`, `lain`, `ds`, `foto`) VALUES
@@ -2299,11 +2301,11 @@ INSERT INTO `tbl_guru` (`id`, `id_card`, `password`, `nip`, `nama_guru`, `jenis_
 (19, '00020', '$2y$12$EmxkxRBLWJlfDQXyangdh.e1MTMHFJttICBAR2CdBAvpMmILBWZKi', '196304021988112000', 'Betty Setiawati', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (20, '00021', '$2y$12$avYRF2ECZFhx9MmIOQ4Fg.fRaWrfGibOMXDS0ntJpCQSSxCZtQAhq', '196305241989032000', 'Hj. Endah Widiawati', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (21, '00022', '$2y$12$yFH3hPzRIYvX/FSrr/HMc.J.OctfZBFcr00ioXr1BUDrK8QWrOR7q', '196306151985011008', 'Mujiyo', 'Tata Usaha', '0', '0', '0', '0', '0', '0', 0, ''),
-(22, '00023', '$2y$12$AEFh8g0Cz5bwKhqZUuJlTeRSqtwY6U90QcLxEKEgNcXd6r3FqFhey', '196403291994120992', 'Dulman', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
+(22, '00023', '$2y$12$AEFh8g0Cz5bwKhqZUuJlTeRSqtwY6U90QcLxEKEgNcXd6r3FqFhey', '196403291994120992', 'Dulman', 'Guru Mapel', '0', '0', '0', '0', '1', '0', 0, ''),
 (23, '00024', '$2y$12$QzOjhJFBjkQYLFK3IuTqref6vj4RrvDqD9XtXrV3IswN4CbNpl0Ha', '196407051989020992', 'H. Fuad', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (24, '00025', '$2y$12$C28rIbbO.WO5jJw5P7QOW.tXYXqcXBj0mGrTc7rjVfiDakv5WI0dG', '196407141992032000', 'Hj. AAM', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (25, '00026', '$2y$12$P2GdbyxRGssEh7wmZnmc6.u1Zor42DT9SYdSiBjthk6PVRqpT8TC6', '196411092007012000', 'Ismawati', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
-(26, '00027', '$2y$12$JFD7AehQITp2WkCilvGXze8tE9GO5nTQ5A4q/eyt0p./i3icmvVFK', '196501041988032000', 'Sri Mulyasih', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
+(26, '00027', '$2y$12$JFD7AehQITp2WkCilvGXze8tE9GO5nTQ5A4q/eyt0p./i3icmvVFK', '196501041988032000', 'Sri Mulyasih', 'Guru Mapel', '0', '0', '0', '1', '0', '0', 0, ''),
 (27, '00028', '$2y$12$4yCN5MWxxCiOyVRnFjTdy.aR5RJPBSTmI1dfzy639RqujGeJkKm8u', '196503161994120992', 'Budiyono', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (28, '00029', '$2y$12$Y204l4D1k5pGwkdW8pR5W.67e5BaO1x1rp.XHTPfwW8mCchVxvWFO', '196504211989022016', 'Eva Fauziah', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (29, '00030', '$2y$12$AWFPnVA.w..CWzenkWX4rO9jnATRio1f5s0/c8cvjBMEewhStnYCK', '196507141993032000', 'Hasih Nurlaeli', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
@@ -2381,7 +2383,7 @@ INSERT INTO `tbl_guru` (`id`, `id_card`, `password`, `nip`, `nama_guru`, `jenis_
 (101, '00103', '$2y$12$c8maGaFnlUrlSwsumuXNVOaYjaZTQs.SAsYAihboO3gq/9hcFJws.', '19640714201407000', 'Siti Humaeroh', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (102, '00104', '$2y$12$rRh9iQvMuLRb4md86OZzf.BqDupd57uKprYj5NvL/81CvAgWW4KZ6', '19630524201505000', 'Siti Mariyah', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
 (103, '00105', '$2y$12$obYaU7JNTDkqxijYAXIlF.wzJ4mUPgmWsEQVy.BABy8DcnkShobMK', '19720801201407000', 'Siti Yuliani Dewi Alfiyah', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
-(104, '00106', '$2y$12$3X82eQhlHcQ1pN6LRcyoOeMs8Czg3K3HIFxrvsVUsVD3VMMDy4hrS', '19741003200907000', 'Sri Sundari', 'Guru Mapel', '0', '0', '0', '0', '0', '0', 0, ''),
+(104, '00106', '$2y$12$3X82eQhlHcQ1pN6LRcyoOeMs8Czg3K3HIFxrvsVUsVD3VMMDy4hrS', '19741003200907000', 'Sri Sundari', 'Guru Mapel', '0', '0', '1', '0', '0', '0', 0, ''),
 (105, '00107', '$2y$12$ZV/gqgJUnM4v/joEgspMB.QPHe0j3E6Kd2RY01GoPSilnwNzJnWZG', '19690502200907000', 'Suhendi', 'Lainnya', '0', '0', '0', '0', '0', '0', 0, ''),
 (106, '00108', '$2y$12$kBvQby9WLbkEQIPm7G/WM.dKkBgK54wHjDlstqXFmh/p8QydA7r8i', '19691015198907000', 'Sukarsih', 'Lainnya', '0', '0', '0', '0', '0', '0', 0, ''),
 (107, '00109', '$2y$12$eLqKA.EYWSJJSkbrnj1m0eWDiLFMOaUQouFMwpfP5N4fp9k7LTMzq', '19620829201107000', 'Sumarjo', 'Lainnya', '0', '0', '0', '0', '0', '0', 0, ''),
@@ -2401,7 +2403,7 @@ INSERT INTO `tbl_guru` (`id`, `id_card`, `password`, `nip`, `nama_guru`, `jenis_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_guru_mapel`
+-- Struktur dari tabel `tbl_guru_mapel`
 --
 
 CREATE TABLE `tbl_guru_mapel` (
@@ -2411,7 +2413,7 @@ CREATE TABLE `tbl_guru_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_guru_mapel`
+-- Dumping data untuk tabel `tbl_guru_mapel`
 --
 
 INSERT INTO `tbl_guru_mapel` (`id`, `id_guru`, `id_mapel`) VALUES
@@ -2432,7 +2434,7 @@ INSERT INTO `tbl_guru_mapel` (`id`, `id_guru`, `id_mapel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_hari`
+-- Struktur dari tabel `tbl_hari`
 --
 
 CREATE TABLE `tbl_hari` (
@@ -2442,7 +2444,7 @@ CREATE TABLE `tbl_hari` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_hari`
+-- Dumping data untuk tabel `tbl_hari`
 --
 
 INSERT INTO `tbl_hari` (`id`, `nama_hari`, `ds`) VALUES
@@ -2456,7 +2458,7 @@ INSERT INTO `tbl_hari` (`id`, `nama_hari`, `ds`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_harian`
+-- Struktur dari tabel `tbl_harian`
 --
 
 CREATE TABLE `tbl_harian` (
@@ -2469,7 +2471,7 @@ CREATE TABLE `tbl_harian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_harian`
+-- Dumping data untuk tabel `tbl_harian`
 --
 
 INSERT INTO `tbl_harian` (`id`, `idg`, `hari`, `tanggal`, `jam_msk`, `jam_plg`) VALUES
@@ -2674,7 +2676,7 @@ INSERT INTO `tbl_harian` (`id`, `idg`, `hari`, `tanggal`, `jam_msk`, `jam_plg`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_info`
+-- Struktur dari tabel `tbl_info`
 --
 
 CREATE TABLE `tbl_info` (
@@ -2683,16 +2685,16 @@ CREATE TABLE `tbl_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_info`
+-- Dumping data untuk tabel `tbl_info`
 --
 
 INSERT INTO `tbl_info` (`id`, `isi`) VALUES
-(1, 'SMK 01 Mantab Jiwa');
+(1, 'SMK 01 Mantab Jiwa Sekali');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jadwal`
+-- Struktur dari tabel `tbl_jadwal`
 --
 
 CREATE TABLE `tbl_jadwal` (
@@ -2708,7 +2710,7 @@ CREATE TABLE `tbl_jadwal` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_jadwal`
+-- Dumping data untuk tabel `tbl_jadwal`
 --
 
 INSERT INTO `tbl_jadwal` (`id`, `hari`, `kelas`, `mapel`, `guru`, `jam_mulai`, `jam_selesai`, `kehadiran`, `ds`) VALUES
@@ -2751,7 +2753,7 @@ INSERT INTO `tbl_jadwal` (`id`, `hari`, `kelas`, `mapel`, `guru`, `jam_mulai`, `
 (37, 5, 34, 142, 26, '07:30:00', '08:30:00', 0, 0),
 (38, 5, 34, 119, 88, '08:30:00', '09:30:00', 0, 0),
 (39, 5, 34, 117, 8, '09:30:00', '11:30:00', 0, 0),
-(40, 6, 34, 122, 104, '07:00:00', '08:45:00', 0, 0),
+(40, 6, 34, 122, 104, '07:00:00', '08:45:00', 2, 0),
 (41, 6, 34, 114, 99, '09:00:00', '11:00:00', 0, 0),
 (42, 1, 31, 139, 36, '07:30:00', '09:00:00', 0, 0),
 (43, 1, 31, 137, 34, '09:00:00', '10:45:00', 0, 0),
@@ -2814,7 +2816,7 @@ INSERT INTO `tbl_jadwal` (`id`, `hari`, `kelas`, `mapel`, `guru`, `jam_mulai`, `
 (102, 5, 36, 123, 59, '09:45:00', '10:30:00', 0, 0),
 (103, 5, 36, 121, 16, '10:30:00', '11:45:00', 0, 0),
 (104, 6, 36, 144, 32, '07:00:00', '09:15:00', 4, 0),
-(105, 6, 36, 142, 26, '09:15:00', '11:30:00', 0, 0),
+(105, 6, 36, 142, 26, '09:15:00', '11:30:00', 3, 0),
 (106, 1, 35, 115, 77, '07:30:00', '09:00:00', 0, 0),
 (107, 1, 35, 118, 27, '09:00:00', '10:30:00', 0, 0),
 (108, 1, 35, 119, 40, '10:30:00', '12:30:00', 0, 0),
@@ -2835,12 +2837,13 @@ INSERT INTO `tbl_jadwal` (`id`, `hari`, `kelas`, `mapel`, `guru`, `jam_mulai`, `
 (123, 5, 35, 116, 88, '10:30:00', '11:45:00', 0, 0),
 (124, 6, 35, 141, 26, '07:00:00', '09:15:00', 0, 0),
 (125, 6, 35, 144, 32, '09:15:00', '11:30:00', 0, 0),
-(126, 1, 1, 30, 2, '17:40:00', '22:40:00', 1, 0);
+(126, 1, 1, 30, 2, '17:40:00', '22:40:00', 1, 0),
+(127, 6, 40, 114, 22, '06:44:00', '19:44:00', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kehadiran`
+-- Struktur dari tabel `tbl_kehadiran`
 --
 
 CREATE TABLE `tbl_kehadiran` (
@@ -2851,7 +2854,7 @@ CREATE TABLE `tbl_kehadiran` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_kehadiran`
+-- Dumping data untuk tabel `tbl_kehadiran`
 --
 
 INSERT INTO `tbl_kehadiran` (`id`, `nama_kehadiran`, `warna`, `ds`) VALUES
@@ -2864,7 +2867,7 @@ INSERT INTO `tbl_kehadiran` (`id`, `nama_kehadiran`, `warna`, `ds`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kelas`
+-- Struktur dari tabel `tbl_kelas`
 --
 
 CREATE TABLE `tbl_kelas` (
@@ -2876,7 +2879,7 @@ CREATE TABLE `tbl_kelas` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_kelas`
+-- Dumping data untuk tabel `tbl_kelas`
 --
 
 INSERT INTO `tbl_kelas` (`id`, `nama_kelas`, `paket`, `wali_kelas`, `ds`) VALUES
@@ -2926,7 +2929,7 @@ INSERT INTO `tbl_kelas` (`id`, `nama_kelas`, `paket`, `wali_kelas`, `ds`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kkm`
+-- Struktur dari tabel `tbl_kkm`
 --
 
 CREATE TABLE `tbl_kkm` (
@@ -2936,7 +2939,7 @@ CREATE TABLE `tbl_kkm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_kkm`
+-- Dumping data untuk tabel `tbl_kkm`
 --
 
 INSERT INTO `tbl_kkm` (`id`, `kode_mapel`, `kkm`) VALUES
@@ -3100,7 +3103,7 @@ INSERT INTO `tbl_kkm` (`id`, `kode_mapel`, `kkm`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_lain`
+-- Struktur dari tabel `tbl_lain`
 --
 
 CREATE TABLE `tbl_lain` (
@@ -3111,7 +3114,7 @@ CREATE TABLE `tbl_lain` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_lain`
+-- Dumping data untuk tabel `tbl_lain`
 --
 
 INSERT INTO `tbl_lain` (`id`, `opsi`, `isi`, `ds`) VALUES
@@ -3120,7 +3123,7 @@ INSERT INTO `tbl_lain` (`id`, `opsi`, `isi`, `ds`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_mapel`
+-- Struktur dari tabel `tbl_mapel`
 --
 
 CREATE TABLE `tbl_mapel` (
@@ -3134,7 +3137,7 @@ CREATE TABLE `tbl_mapel` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_mapel`
+-- Dumping data untuk tabel `tbl_mapel`
 --
 
 INSERT INTO `tbl_mapel` (`id`, `kode_mapel`, `nama_mapel`, `kelas`, `paket`, `kelompok`, `ds`) VALUES
@@ -3298,7 +3301,7 @@ INSERT INTO `tbl_mapel` (`id`, `kode_mapel`, `nama_mapel`, `kelas`, `paket`, `ke
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_nilai_harian`
+-- Struktur dari tabel `tbl_nilai_harian`
 --
 
 CREATE TABLE `tbl_nilai_harian` (
@@ -3318,7 +3321,7 @@ CREATE TABLE `tbl_nilai_harian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_nilai_harian`
+-- Dumping data untuk tabel `tbl_nilai_harian`
 --
 
 INSERT INTO `tbl_nilai_harian` (`id`, `id_kelas`, `id_mapel`, `id_guru`, `id_siswa`, `nilai1`, `nilai2`, `nilai3`, `nilai4`, `nilai5`, `nilai6`, `semester`, `lain`) VALUES
@@ -3328,7 +3331,7 @@ INSERT INTO `tbl_nilai_harian` (`id`, `id_kelas`, `id_mapel`, `id_guru`, `id_sis
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_nilai_uas`
+-- Struktur dari tabel `tbl_nilai_uas`
 --
 
 CREATE TABLE `tbl_nilai_uas` (
@@ -3349,7 +3352,7 @@ CREATE TABLE `tbl_nilai_uas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_nilai_uts`
+-- Struktur dari tabel `tbl_nilai_uts`
 --
 
 CREATE TABLE `tbl_nilai_uts` (
@@ -3370,7 +3373,37 @@ CREATE TABLE `tbl_nilai_uts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pesan`
+-- Struktur dari tabel `tbl_ortu_siswa`
+--
+
+CREATE TABLE `tbl_ortu_siswa` (
+  `id` int(11) NOT NULL,
+  `id_siswa` int(11) NOT NULL,
+  `nama_ayah` varchar(100) NOT NULL,
+  `nama_ibu` varchar(100) NOT NULL,
+  `alamat_ibu` varchar(100) NOT NULL,
+  `alamat_ayah` varchar(100) NOT NULL,
+  `pekerjaan_ayah` varchar(100) NOT NULL,
+  `pekerjaan_ibu` varchar(100) NOT NULL,
+  `tempat_lahir_ayah` varchar(100) NOT NULL,
+  `tempat_lahir_ibu` varchar(100) NOT NULL,
+  `tanggal_lahir_ayah` date NOT NULL,
+  `tanggal_lahir_ibu` date NOT NULL,
+  `telp_ayah` varchar(20) NOT NULL,
+  `telp_ibu` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_ortu_siswa`
+--
+
+INSERT INTO `tbl_ortu_siswa` (`id`, `id_siswa`, `nama_ayah`, `nama_ibu`, `alamat_ibu`, `alamat_ayah`, `pekerjaan_ayah`, `pekerjaan_ibu`, `tempat_lahir_ayah`, `tempat_lahir_ibu`, `tanggal_lahir_ayah`, `tanggal_lahir_ibu`, `telp_ayah`, `telp_ibu`) VALUES
+(1, 1, 'ayam', 'ayam', 'ayam', 'ayam', 'ayam', 'ayam', 'ayam', 'ayam', '2021-11-02', '2021-11-30', '2', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pesan`
 --
 
 CREATE TABLE `tbl_pesan` (
@@ -3382,7 +3415,7 @@ CREATE TABLE `tbl_pesan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pesan`
+-- Dumping data untuk tabel `tbl_pesan`
 --
 
 INSERT INTO `tbl_pesan` (`id`, `id_guru`, `judul`, `isi`, `lain`) VALUES
@@ -3390,12 +3423,13 @@ INSERT INTO `tbl_pesan` (`id`, `id_guru`, `judul`, `isi`, `lain`) VALUES
 (4, 1, 'Bagaimana cara mengisi nilai tugas siswa ?', 'Saya kesulitan untuk mengisi nilai tugas siswa :(', ''),
 (6, 82, 'Lupa Password', 'Hallo Admin! Saya mengalami lupa password untuk akun sayaMohon reset-kan password akun saya. Terima Kasih! :)', ''),
 (7, 12, 'Lupa Password', 'Hallo Admin! Saya mengalami lupa password untuk akun sayaMohon reset-kan password akun saya. Terima Kasih! :)', ''),
-(8, 20, 'Lupa Password', 'Hallo Admin! Saya mengalami lupa password untuk akun sayaMohon reset-kan password akun saya. Terima Kasih! :)', '');
+(8, 20, 'Lupa Password', 'Hallo Admin! Saya mengalami lupa password untuk akun sayaMohon reset-kan password akun saya. Terima Kasih! :)', ''),
+(9, 0, 'siswa 3 des', 'tes', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_prakerin`
+-- Struktur dari tabel `tbl_prakerin`
 --
 
 CREATE TABLE `tbl_prakerin` (
@@ -3409,7 +3443,7 @@ CREATE TABLE `tbl_prakerin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_prakerin`
+-- Dumping data untuk tabel `tbl_prakerin`
 --
 
 INSERT INTO `tbl_prakerin` (`id`, `id_siswa`, `mitra`, `lama`, `alamat`, `predikat`, `bid_kerja`) VALUES
@@ -3420,7 +3454,7 @@ INSERT INTO `tbl_prakerin` (`id`, `id_siswa`, `mitra`, `lama`, `alamat`, `predik
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_prestasi`
+-- Struktur dari tabel `tbl_prestasi`
 --
 
 CREATE TABLE `tbl_prestasi` (
@@ -3432,7 +3466,7 @@ CREATE TABLE `tbl_prestasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_prestasi`
+-- Dumping data untuk tabel `tbl_prestasi`
 --
 
 INSERT INTO `tbl_prestasi` (`id`, `id_siswa`, `jenis_prestasi`, `tingkat`, `bid_lomba`) VALUES
@@ -3445,7 +3479,7 @@ INSERT INTO `tbl_prestasi` (`id`, `id_siswa`, `jenis_prestasi`, `tingkat`, `bid_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_rapot`
+-- Struktur dari tabel `tbl_rapot`
 --
 
 CREATE TABLE `tbl_rapot` (
@@ -3464,7 +3498,7 @@ CREATE TABLE `tbl_rapot` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_rapot`
+-- Dumping data untuk tabel `tbl_rapot`
 --
 
 INSERT INTO `tbl_rapot` (`id`, `id_siswa`, `id_kelas`, `id_guru`, `id_mapel`, `semester`, `p_angka`, `p_predikat`, `k_angka`, `k_predikat`, `sikap`, `lain`) VALUES
@@ -3604,7 +3638,7 @@ INSERT INTO `tbl_rapot` (`id`, `id_siswa`, `id_kelas`, `id_guru`, `id_mapel`, `s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_rekap`
+-- Struktur dari tabel `tbl_rekap`
 --
 
 CREATE TABLE `tbl_rekap` (
@@ -3620,7 +3654,7 @@ CREATE TABLE `tbl_rekap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_rekap`
+-- Dumping data untuk tabel `tbl_rekap`
 --
 
 INSERT INTO `tbl_rekap` (`id`, `idg`, `nama_guru`, `kelas`, `mapel`, `tanggal`, `kehadiran`, `ds`, `ket`) VALUES
@@ -3658,12 +3692,15 @@ INSERT INTO `tbl_rekap` (`id`, `idg`, `nama_guru`, `kelas`, `mapel`, `tanggal`, 
 (41, 32, 'Rini Harjanti', '12 AP3', 'Administrasi Humas dan Keprotokolan', '2017-01-13', '4', 0, ''),
 (42, 62, 'Arief Zuhud Romdhon', '12 MM2', 'Teknik Animasi 3 Dimensi', '2017-01-13', '5', 0, ''),
 (43, 62, 'Arief Zuhud Romdhon', '12 MM2', 'Teknik Pengolahan Audio', '2017-01-31', '3', 0, ''),
-(44, 2, 'David Haryanto', '10 AK1', 'Etika Profesi', '2021-10-13', '1', 0, '');
+(44, 2, 'David Haryanto', '10 AK1', 'Etika Profesi', '2021-10-13', '1', 0, ''),
+(45, 22, 'Dulman', '12 MM2', 'Pendidikan Agama dan Budi Pekerti', '2021-11-29', '4', 0, ''),
+(46, 26, 'Sri Mulyasih', '12 AP3', 'Administrasi Keuangan', '2021-11-29', '3', 0, ''),
+(47, 104, 'Sri Sundari', '12 AP1', 'Pendidikan Jasmani, Olahraga dan Kesehatan', '2021-11-29', '2', 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_semester`
+-- Struktur dari tabel `tbl_semester`
 --
 
 CREATE TABLE `tbl_semester` (
@@ -3674,16 +3711,16 @@ CREATE TABLE `tbl_semester` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_semester`
+-- Dumping data untuk tabel `tbl_semester`
 --
 
 INSERT INTO `tbl_semester` (`id`, `semester`, `tahun_ajaran`, `lain`) VALUES
-(1, 'Genap', '2020/2021', '');
+(1, 'Genap', '2021/2022', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_siswa`
+-- Struktur dari tabel `tbl_siswa`
 --
 
 CREATE TABLE `tbl_siswa` (
@@ -3694,2087 +3731,2140 @@ CREATE TABLE `tbl_siswa` (
   `kelas` enum('10','11','12') NOT NULL,
   `rombel` varchar(50) NOT NULL,
   `jk` enum('L','P') NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `nomer_telp` varchar(200) NOT NULL,
+  `alamat_lengkap` varchar(255) NOT NULL,
+  `tempat` varchar(255) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `password` varchar(255) NOT NULL,
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_siswa`
+-- Dumping data untuk tabel `tbl_siswa`
 --
 
-INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `foto`) VALUES
-(1, '141510121', '9985856331', 'A Imam Taufik', '12', '12 AK1', 'L', ''),
-(2, '141510288', '9995958703', 'Aas Nurismah', '12', '12 AP1', 'P', ''),
-(3, '', '6299272', 'Aat Rahmawati', '10', '10 PB1', 'P', ''),
-(4, '151610042', '9995799699', 'Abdul Gofur', '11', '11 MM2', 'L', ''),
-(5, '141510041', '9996055699', 'Abdul Jaman', '12', '12 MM2', 'L', ''),
-(6, '141510415', '9984999783', 'Abdul Kafi', '12', '12 PM1', 'L', ''),
-(7, '161710112', '', 'Abdul Karim', '10', '10 AK1', 'L', ''),
-(8, '', '6986039', 'Abdul Qodir', '10', '10 AK3', 'L', ''),
-(9, '161710229', '9996430609', 'Abdul Rokim', '10', '10 AK4', 'L', ''),
-(10, '141510163', '9997796852', 'Achmad Gasim Al Jufri', '12', '12 AK2', 'L', ''),
-(11, '161710545', '11570838', 'Acmad Saefudin', '10', '10 PB2', 'L', ''),
-(12, '151610467', '2326550', 'Adam Damiri', '11', '11 PM1', 'L', ''),
-(13, '', '11253169', 'Adam Firdaus', '10', '10 MM1', 'L', ''),
-(14, '151610043', '9993424751', 'Adam Novansyah', '11', '11 MM2', 'L', ''),
-(15, '151610044', '151698679', 'Addly Fauzi Sulistianto', '11', '11 MM2', 'L', ''),
-(16, '', '11254433', 'Ade Arif Maulana', '10', '10 PB1', 'L', ''),
-(17, '151610252', '4815706', 'Ade Aysa Nur Phasa', '11', '11 AK4', 'P', ''),
-(18, '151610084', '9996017667', 'Ade Faujiah', '11', '11 UPW', 'P', ''),
-(19, '141510331', '9985772093', 'Ade Khaerunisah', '12', '12 AP2', 'P', ''),
-(20, '151610123', '4833299', 'Ade Nurkhafifah', '11', '11 AK1', 'P', ''),
-(21, '151610468', '9996058067', 'Ade Nurmiladiyah', '11', '11 PM1', 'P', ''),
-(22, '141510001', '9996051107', 'Ade Prayoga', '12', '12 MM1', 'L', ''),
-(23, '161710268', '11570459', 'Ade Sintia', '10', '10 AP1', 'P', ''),
-(24, '141510042', '9995958188', 'Ade Syahlan Prayoga', '12', '12 MM2', 'L', ''),
-(25, '141510373', '9996017087', 'Ade Wahyuni Lestari', '12', '12 AP3', 'P', ''),
-(26, '151610167', '9992882358', 'Ade Yuliani', '11', '11 AK2', 'P', ''),
-(27, '', '5177831', 'Adelia Puteri Lestari', '10', '10 AK2', 'P', ''),
-(28, '161710230', '11570614', 'Adetria Sholichati', '10', '10 AK4', 'P', ''),
-(29, '161710039', '9995978960', 'Adi Gunawan', '10', '10 MM2', 'L', ''),
-(30, '141510460', '9975894579', 'Adi Rusadi', '12', '12 PM2', 'L', ''),
-(31, '141510205', '9995811299', 'Adi Sutiono', '12', '12 AK3', 'L', ''),
-(32, '151610253', '6661900', 'Adinda Rizkiyanita', '11', '11 AK4', 'P', ''),
-(33, '141510247', '9985853320', 'Adit Setiawan', '12', '12 AK4', 'L', ''),
-(34, '141510122', '9999423273', 'Aditiya', '12', '12 AK1', 'L', ''),
-(35, '', '19844618', 'Adriansyah Riadi', '10', '10 MM1', 'L', ''),
-(36, '141510289', '9985852422', 'Aeniyah Nurkhasanah', '12', '12 AP1', 'P', ''),
-(37, '151610293', '4814481', 'Aenun Hardianingsih', '11', '11 AP1', 'P', ''),
-(38, '141510164', '9995978927', 'Afifah Nur Atikah', '12', '12 AK2', 'P', ''),
-(39, '151610556', '9995796596', 'Afifah Salsabil Ramadhani', '11', '11 PB1', 'P', ''),
-(40, '151610045', '7569658', 'Afifatus Sholihah', '11', '11 MM2', 'P', ''),
-(41, '141510083', '9995954604', 'Afra Lediya', '12', '12 UPW', 'P', ''),
-(42, '151610511', '9996058602', 'Afrilia Gustiani', '11', '11 PM2', 'P', ''),
-(43, '161710190', '5176520', 'Afrizal Juliyanto', '10', '10 AK3', 'L', ''),
-(44, '151610557', '7841321', 'Agbi Herlambang Permana', '11', '11 PB1', 'L', ''),
-(45, '151610598', '4813931', 'Ageng Mulyani', '11', '11 PB2', 'P', ''),
-(46, '', '10879451', 'Aghits Nidallah', '10', '10 MM2', 'L', ''),
-(47, '161710003', '10710419', 'Aghnia Nadhila', '10', '10 MM1', 'P', ''),
-(48, '141510332', '9985859069', 'Agnes Komara', '12', '12 AP2', 'P', ''),
-(49, '141510461', '9996058042', 'Agnes Listianti', '12', '12 PM2', 'P', ''),
-(50, '161710308', '11593163', 'Agnesa Rizki Anditiana', '10', '10 AP2', 'P', ''),
-(51, '151610168', '9996018121', 'Agung Gumelar', '11', '11 AK2', 'L', ''),
-(52, '16170348', '', 'Agung Mulyana', '10', '10 AP3', 'L', ''),
-(53, '141510417', '9975048705', 'Agung Nugraha', '12', '12 PM1', 'L', ''),
-(54, '141510002', '9995177535', 'Agung Pramoto', '12', '12 MM1', 'L', ''),
-(55, '161710467', '', 'Agung Pramudita', '10', '10 PM2', 'L', ''),
-(56, '141510206', '9985874064', 'Agung Wianto', '12', '12 AK3', 'L', ''),
-(57, '141510462', '9975715406', 'Agus Nata Kusuma', '12', '12 PM2', 'L', ''),
-(58, '161710041', '15046257', 'Agus Ni\'am Kholiq', '10', '10 MM2', 'L', ''),
-(59, '', '11592348', 'Ahmad Alif Fauzan', '10', '10 MM1', 'L', ''),
-(60, '141510084', '9985695497', 'Ahmad Almalik', '12', '12 UPW', 'L', ''),
-(61, '151610469', '9995990946', 'Ahmad Fathan Tholiban', '11', '11 PM1', 'L', ''),
-(62, '141510043', '9983782434', 'Ahmad Hanafi', '12', '12 MM2', 'L', ''),
-(63, '161710507', '11539283', 'Aida Octavia', '10', '10 PB1', 'P', ''),
-(64, '141510003', '4672647', 'Aidha Fuji Ayu Lestari', '12', '12 MM1', 'P', ''),
-(65, '161710468', '11593438', 'Ainul Farkhati', '10', '10 PM2', 'P', ''),
-(66, '151610124', '3952001', 'Ainun Aditia', '11', '11 AK1', 'L', ''),
-(67, '141510418', '9996092546', 'Ainun Febriyanih', '12', '12 PM1', 'P', ''),
-(68, '151610599', '5434909', 'Ainun Komala Indah', '11', '11 PB2', 'P', ''),
-(69, '141510374', '9995936471', 'Ainun Nur Khodijah', '12', '12 AP3', 'P', ''),
-(70, '141510248', '9985791275', 'Ainun Siti Qorrina', '12', '12 AK4', 'P', ''),
-(71, '151610381', '9995810718', 'Aisyah', '11', '11 AP3', 'P', ''),
-(72, '151610001', '4756188', 'Aisyah Monica', '11', '11 MM1', 'P', ''),
-(73, '151610169', '4478366', 'Aisyah Noor Qinthara', '11', '11 AK2', 'P', ''),
-(74, '161710388', '', 'Aisyah Sulistyawati', '10', '10 AP4', 'P', ''),
-(75, '161710269', '14596197', 'Ajat Saputra', '10', '10 AP1', 'L', ''),
-(76, '141510290', '9996091555', 'Ajeng Kintani Mustika', '12', '12 AP1', 'P', ''),
-(77, '151610170', '4304739', 'Ajeng Lestari', '11', '11 AK2', 'P', ''),
-(78, '151610294', '9996072309', 'Ajeng Suretno', '11', '11 AP1', 'P', ''),
-(79, '151610600', '9996091789', 'Aji Ramadhan', '11', '11 PB2', 'L', ''),
-(80, '', '5394466', 'Ajisuka Ismaniar Nurilmi', '10', '10 PB1', 'P', ''),
-(81, '151610470', '9672990', 'Akhmad Hidayat', '11', '11 PM1', 'L', ''),
-(82, '151610085', '9996053515', 'Akwa Asroni', '11', '11 UPW', 'L', ''),
-(83, '161710309', '5179087', 'Al-amahdi Syahrul Malik', '10', '10 AP2', 'L', ''),
-(84, '161710231', '5153318', 'Alanisa Dwi Suci', '10', '10 AK4', 'P', ''),
-(85, '151610002', '4574272', 'Aldera Rahsyawaesa Handaru', '11', '11 MM1', 'P', ''),
-(86, '151610086', '1838571', 'Aldi Gilang Permana', '11', '11 UPW', 'L', ''),
-(87, '151610003', '9995957943', 'Aldi Hidayat', '11', '11 MM1', 'L', ''),
-(88, '161710429', '5631287', 'Aldi Yana', '10', '10 PM1', 'L', ''),
-(89, '141510044', '9996091969', 'Aldiansah Agustianto', '12', '12 MM2', 'L', ''),
-(90, '161710349', '1528120', 'Aldinda Novitasari', '10', '10 AP3', 'P', ''),
-(91, '141510123', '9985859958', 'Aldo Riyanto', '12', '12 AK1', 'L', ''),
-(92, '161710546', '11570841', 'Alfani', '10', '10 PB2', 'P', ''),
-(93, '161710430', '', 'Alfattoni', '10', '10 PM1', 'L', ''),
-(94, '1617100421', '11550973', 'Alfian Teguh Arifiyanto', '10', '10 MM2', 'L', ''),
-(95, '141510165', '9985238208', 'Ali Jahidin', '12', '12 AK2', 'L', ''),
-(96, '151610125', '9987766253', 'Ali Resa', '11', '11 AK1', 'L', ''),
-(97, '141510207', '9996091375', 'Alif Farhan', '12', '12 AK3', 'L', ''),
-(98, '', '10974539', 'Alif Nur Alamsyah', '10', '10 MM2', 'L', ''),
-(99, '161710389', '', 'Alifia Apriliana', '10', '10 AP4', 'P', ''),
-(100, '141510249', '9985852423', 'Alin Alika', '12', '12 AK4', 'P', ''),
-(101, '', '11558580', 'Alinda Dewi', '10', '10 UPW', 'P', ''),
-(102, '151610601', '9995990864', 'Alip Nursipa', '11', '11 PB2', 'P', ''),
-(103, '151610171', '4839455', 'Alissa Fauzia Anasti', '11', '11 AK2', 'P', ''),
-(104, '141510463', '9984263300', 'Alit Faturrohma', '12', '12 PM2', 'P', ''),
-(105, '151610172', '4838731', 'Almiatulufti', '11', '11 AK2', 'P', ''),
-(106, '161710005', '13012140', 'Alqoeri Putri Insani', '10', '10 MM1', 'P', ''),
-(107, '', '18902831', 'Alvia Musyafa', '10', '10 MM1', 'P', ''),
-(108, '141510166', '9994810333', 'Alvioni Purnama', '12', '12 AK2', 'P', ''),
-(109, '161710270', '11559526', 'Alyfiah Rachmawati', '10', '10 AP1', 'P', ''),
-(110, '161710076', '', 'Amalia Kona\'ah', '10', '10 UPW', 'P', ''),
-(111, '161710310', '', 'Amalia Muharomah', '10', '10 AP2', 'P', ''),
-(112, '151610087', '7009735', 'Amaliya Ainun Sari', '11', '11 UPW', 'P', ''),
-(113, '141510004', '9996052642', 'Amanda Eka Azisavitri', '12', '12 MM1', 'P', ''),
-(114, '151610126', '7606248', 'Amanda Fauziah Widya Utami', '11', '11 AK1', 'P', ''),
-(115, '161710311', '12377771', 'Amathussyifa', '10', '10 AP2', 'P', ''),
-(116, '161710113', '11838925', 'Amelia Nur\'aeni', '10', '10 AK1', 'P', ''),
-(117, '', '5231657', 'Aminatun Khasanah', '10', '10 AK2', 'P', ''),
-(118, '161710390', '11592513', 'Amirah Deya Firzanah', '10', '10 AP4', 'P', ''),
-(119, '141510085', '9991909865', 'Amirah Yowanda Korangian', '12', '12 UPW', 'P', ''),
-(120, '', '11592319', 'Amri Mustakim', '10', '10 PB1', 'L', ''),
-(121, '141510208', '9985793973', 'Ana Mariana', '12', '12 AK3', 'P', ''),
-(122, '161710191', '20058715', 'Ana Tasha Oktavia Gunadi', '10', '10 AK3', 'P', ''),
-(123, '151610173', '4552991', 'Ananda Cecilia', '11', '11 AK2', 'P', ''),
-(124, '151610174', '9344403', 'Anastasia Rosmawangi', '11', '11 AK2', 'P', ''),
-(125, '141510250', '9984806049', 'Andi Mulyadi', '12', '12 AK4', 'L', ''),
-(126, '151610512', '4815351', 'Andini Ade Putri', '11', '11 PM2', 'P', ''),
-(127, '161710232', '5179071', 'Andrian Dwi Cahya', '10', '10 AK4', 'L', ''),
-(128, '161710312', '5174381', 'Andriyan', '10', '10 AP2', 'L', ''),
-(129, '151610127', '4756325', 'Ane Dwi Sonia', '11', '11 AK1', 'P', ''),
-(130, '151610004', '17284504', 'Angelika', '11', '11 MM1', 'P', ''),
-(131, '151610088', '4574387', 'Angelina Dwiyanti', '11', '11 UPW', 'P', ''),
-(132, '151610175', '9996091322', 'Angga Nur Ramadhan', '11', '11 AK2', 'L', ''),
-(133, '', '18724692', 'Anggara Achmad Rajasa', '10', '10 MM2', 'L', ''),
-(134, '151610089', '9999975897', 'Anggi Anggraeni', '11', '11 UPW', 'P', ''),
-(135, '151610471', '4833156', 'Anggi Anisa Fitri', '11', '11 PM1', 'P', ''),
-(136, '161710114', '6174343', 'Anggi Felinia', '10', '10 AK1', 'P', ''),
-(137, '151610602', '4792979', 'Anggi Ferlina', '11', '11 PB2', 'P', ''),
-(138, '151610382', '4830894', 'Anggi Istiani', '11', '11 AP3', 'P', ''),
-(139, '161710547', '5177735', 'Anggi Santika', '10', '10 PB2', 'P', ''),
-(140, '', '11523001', 'Anggi Widyaningrum', '10', '10 UPW', 'P', ''),
-(141, '141510333', '9996018967', 'Anggia Natasya Putri', '12', '12 AP2', 'P', ''),
-(142, '16171100000', '', 'Anggie Permata Dewi', '11', '11 UPW', 'P', ''),
-(143, '141510125', '9995991104', 'Anggita Ainun', '12', '12 AK1', 'P', ''),
-(144, '161710350', '15440351', 'Anggita Febriyanti', '10', '10 AP3', 'P', ''),
-(145, '141510375', '9994810611', 'Anggitha Sukmawarti Putri Priyadi', '12', '12 AP3', 'P', ''),
-(146, '141510167', '9996052957', 'Anggun Nur Hasanah', '12', '12 AK2', 'P', ''),
-(147, '141510419', '9995811298', 'Anggun Sekar Gendis', '12', '12 PM1', 'P', ''),
-(148, '161710469', '', 'Ani Nuryanti', '10', '10 PM2', 'P', ''),
-(149, '151610295', '8483738', 'Ani Rohaeni', '11', '11 AP1', 'P', ''),
-(150, '141510464', '9985773736', 'Anie Anzely', '12', '12 PM2', 'P', ''),
-(151, '151610337', '5380495', 'Anika Rahim', '11', '11 AP2', 'P', ''),
-(152, '151610558', '4831294', 'Anis Ambarwati', '11', '11 PB1', 'P', ''),
-(153, '151610296', '9995991377', 'Anis Fauziah', '11', '11 AP1', 'P', ''),
-(154, '151610128', '6926778', 'Anis Fitria', '11', '11 AK1', 'P', ''),
-(155, '161710391', '', 'Anis Viscianty', '10', '10 AP4', 'P', ''),
-(156, '141510209', '9995799314', 'Anisa Dina Fitriyani', '12', '12 AK3', 'P', ''),
-(157, '151610383', '4794203', 'Anisa Prasasti', '11', '11 AP3', 'P', ''),
-(158, '151610472', '9996042559', 'Anisa Sri Rizki', '11', '11 PM1', 'P', ''),
-(159, '161710548', '13563507', 'Anisah', '10', '10 PB2', 'P', ''),
-(160, '151610090', '4908514', 'Anita Fitri Amelia', '11', '11 UPW', 'P', ''),
-(161, '151610338', '9386692', 'Anita Permata Sari', '11', '11 AP2', 'P', ''),
-(162, '161710470', '', 'Anitah', '10', '10 PM2', 'P', ''),
-(163, '151610297', '4749870', 'Aniya Melviyani', '11', '11 AP1', 'P', ''),
-(164, '151610129', '9996092521', 'Anjas Perdana', '11', '11 AK1', 'L', ''),
-(165, '151610339', '9996053997', 'Anna Agustiyanna', '11', '11 AP2', 'P', ''),
-(166, '151610513', '4839435', 'Annisa Aprillia Zein', '11', '11 PM2', 'P', ''),
-(167, '151610603', '10114173', 'Annisa Ernis Rahmadini', '11', '11 PB2', 'P', ''),
-(168, '141510251', '9995150772', 'Annisa Nur Aimelyani', '12', '12 AK4', 'P', ''),
-(169, '141510126', '9985897596', 'Annisa Shoolihah', '12', '12 AK1', 'P', ''),
-(170, '', '12422954', 'Antin Nur Insani', '10', '10 AK3', 'P', ''),
-(171, '', '22844481', 'Apifsetiawan', '10', '10 UPW', 'L', ''),
-(172, '151610176', '3951382', 'Aprilia Hana Pramesti', '11', '11 AK2', 'P', ''),
-(173, '141510086', '9999728254', 'Aprilianti', '12', '12 UPW', 'P', ''),
-(174, '141510168', '9995979819', 'Apritha Ratih', '12', '12 AK2', 'P', ''),
-(175, '141510210', '9995970616', 'Arbi Ramdani', '12', '12 AK3', 'L', ''),
-(176, '11378473', '11378473', 'Arfan Triwijaya', '10', '10 MM1', 'L', ''),
-(177, '141510045', '9990147697', 'Arfi Subarkah', '12', '12 MM2', 'L', ''),
-(178, '151610514', '9995979781', 'Ari Apriliyani', '11', '11 PM2', 'P', ''),
-(179, '151610298', '4757951', 'Ari Rosita Putri', '11', '11 AP1', 'P', ''),
-(180, '151610424', '9996016813', 'Ari Sundari', '11', '11 AP4', 'P', ''),
-(181, '141510252', '9985010106', 'Ari Suryagara', '12', '12 AK4', 'L', ''),
-(182, '161710045', '5292569', 'Arief Rachman', '10', '10 MM2', 'L', ''),
-(183, '141510420', '9989759936', 'Arif Feri Laksono', '12', '12 PM1', 'L', ''),
-(184, '161710271', '4994898', 'Aris Dwi Saputra Hidayatullah', '10', '10 AP1', 'L', ''),
-(185, '151610254', '4839144', 'Aris Mayanti', '11', '11 AK4', 'P', ''),
-(186, '1617110', '9996031958', 'Arlisa Ferliyana', '11', '11 PM2', 'P', ''),
-(187, '151610130', '4795058', 'Armaylia Twistin', '11', '11 AK1', 'P', ''),
-(188, '161710313', '10974224', 'Arneta Belinda', '10', '10 AP2', 'P', ''),
-(189, '151610340', '4834257', 'Arra Ummilia Amingga', '11', '11 AP2', 'P', ''),
-(190, '151610046', '9996430270', 'Arvel Rivandy Hidarwan', '11', '11 MM2', 'L', ''),
-(191, '141510127', '9990608674', 'Asep Saeful Rohman', '12', '12 AK1', 'L', ''),
-(192, '141510046', '4817003', 'Asih Fitriyani', '12', '12 MM2', 'P', ''),
-(193, '141510291', '9995956827', 'Asih Juniarsih', '12', '12 AP1', 'P', ''),
-(194, '', '11570949', 'Asih Nuraeni', '10', '10 PB1', 'P', ''),
-(195, '151610341', '4815471', 'Asih Sahfitri', '11', '11 AP2', 'P', ''),
-(196, '151610425', '4300300', 'Asmi Assipa', '11', '11 AP4', 'P', ''),
-(197, '151610255', '4632460', 'Asmi Khairunnisa Rosiawati', '11', '11 AK4', 'P', ''),
-(198, '141510465', '8703270', 'Asni Ismi Ningsih', '12', '12 PM2', 'P', ''),
-(199, '151610005', '4793964', 'Asrani', '11', '11 MM1', 'P', ''),
-(200, '161710549', '15924177', 'Asri Handayani', '10', '10 PB2', 'P', ''),
-(201, '151610006', '4553442', 'Asshifa Rahmah Suhailla', '11', '11 MM1', 'P', ''),
-(202, '151610131', '9995151257', 'Assyfah', '11', '11 AK1', 'P', ''),
-(203, '151610177', '4116124', 'Asti Chodijah', '11', '11 AK2', 'P', ''),
-(204, '161710351', '5177757', 'Astri Tresna Angelita', '10', '10 AP3', 'P', ''),
-(205, '141510334', '9985891243', 'Astri Widyastuti', '12', '12 AP2', 'P', ''),
-(206, '13147177', '5232024', 'Atiek Anggraeni', '10', '10 AP4', 'P', ''),
-(207, '151610299', '7646570', 'Atika', '11', '11 AP1', 'P', ''),
-(208, '161710193', '11558787', 'Atun Ferliyana', '10', '10 AK3', 'P', ''),
-(209, '151610007', '7492411', 'August Axl Antawijaya', '11', '11 MM1', 'L', ''),
-(210, '151610132', '4835543', 'Aula Mustadhiro', '11', '11 AK1', 'P', ''),
-(211, '151610133', '4578002', 'Aulia Ayu Nindira', '11', '11 AK1', 'P', ''),
-(212, '151610178', '3033243', 'Aulia Citra Valeras', '11', '11 AK2', 'P', ''),
-(213, '161710272', '11539596', 'Aulia Fitriyani Kartikasari', '10', '10 AP1', 'P', ''),
-(214, '161710431', '20119766', 'Aulia Martina', '10', '10 PM1', 'P', ''),
-(215, '151610515', '4756117', 'Aulia Nur Fadhilah', '11', '11 PM2', 'P', ''),
-(216, '161710233', '5154365', 'Aulia Rahmayanti', '10', '10 AK4', 'P', ''),
-(217, '', '19783728', 'Auliya Shavira Putri', '10', '10 MM1', 'P', ''),
-(218, '141510005', '9995153098', 'Aulya Nursafira', '12', '12 MM1', 'P', ''),
-(219, '', '11634033', 'Aurela Fransika Ardiansyah', '10', '10 MM2', 'P', ''),
-(220, '161710115', '13428680', 'Avaf Indriani', '10', '10 AK1', 'P', ''),
-(221, '161710471', '', 'Avie Dwi Alamanda', '10', '10 PM2', 'P', ''),
-(222, '151610342', '4756615', 'Avifah', '11', '11 AP2', 'P', ''),
-(223, '', '5456984', 'Aviyah', '10', '10 UPW', 'P', ''),
-(224, '161710314', '13958702', 'Awidah', '10', '10 AP2', 'P', ''),
-(225, '141510169', '9985818668', 'Ayu Fatmawati', '12', '12 AK2', 'P', ''),
-(226, '161710080', '1398803', 'Ayu Fatmawati', '10', '10 UPW', 'P', ''),
-(227, '141510211', '9995313582', 'Ayu Juhariah', '12', '12 AK3', 'P', ''),
-(228, '141510376', '9996074480', 'Ayu Khotimatus Sa Diyah', '12', '12 AP3', 'P', ''),
-(229, '161710352', '11593413', 'Ayu Komalasari', '10', '10 AP3', 'P', ''),
-(230, '', '11753718', 'Ayu Lestari', '10', '10 PB1', 'P', ''),
-(231, '151610300', '4757952', 'Ayu Nifani', '11', '11 AP1', 'P', ''),
-(232, '161710550', '9792878', 'Ayu Noviana Putri Kawehedo', '10', '10 PB2', 'P', ''),
-(233, '151610516', '9996070935', 'Ayu Nurdewi', '11', '11 PM2', 'P', ''),
-(234, '151610426', '4791598', 'Ayu Safitri', '11', '11 AP4', 'P', ''),
-(235, '161710393', '12137737', 'Ayu Sri Setiawati', '10', '10 AP4', 'P', ''),
-(236, '141510292', '9985892967', 'Ayu Sugiyanti', '12', '12 AP1', 'P', ''),
-(237, '161710153', '3126664', 'Ayu Triviyani', '10', '10 AK2', 'P', ''),
-(238, '141510335', '9984691758', 'Ayu Widyanto', '12', '12 AP2', 'P', ''),
-(239, '151610427', '4796467', 'Ayuditha Tiara Faramadina', '11', '11 AP4', 'P', ''),
-(240, '151610256', '4814100', 'Ayum', '11', '11 AK4', 'P', ''),
-(241, '161710273', '20119224', 'Ayunda', '10', '10 AP1', 'P', ''),
-(242, '161710194', '10878367', 'Ayuni Fithrotun Nisa', '10', '10 AK3', 'P', ''),
-(243, '151610134', '4814245', 'Azharul Estu Prayoga', '11', '11 AK1', 'L', ''),
-(244, '151610257', '4814246', 'Azharul Estu Prayogi', '11', '11 AK4', 'L', ''),
-(245, '161710432', '9995991252', 'Azis Saputra', '10', '10 PM1', 'L', ''),
-(246, '151610091', '9994104198', 'Aziz Rusydi Tsany Hidayat', '11', '11 UPW', 'L', ''),
-(247, '161710234', '', 'Azril Raihan Miraj', '10', '10 AK4', 'L', ''),
-(248, '151610428', '4793629', 'Azzah Alfiyanita', '11', '11 AP4', 'P', ''),
-(249, '', '18402564', 'Azzahra Putri Rima Pratiwi', '10', '10 MM1', 'P', ''),
-(250, '151610343', '9996073484', 'Azzura Puspa Berliana', '11', '11 AP2', 'P', ''),
-(251, '161710472', '', 'Bada Rapi', '10', '10 PM2', 'L', ''),
-(252, '151610047', '4833221', 'Bagus Dwi Prayitno', '11', '11 MM2', 'L', ''),
-(253, '', '11559508', 'Bagus Prasetyo', '10', '10 PB1', 'L', ''),
-(254, '141510047', '9985858984', 'Baskara Putra', '12', '12 MM2', 'L', ''),
-(255, '151610473', '4833230', 'Bayu Pratama', '11', '11 PM1', 'L', ''),
-(256, '161710116', '11559311', 'Bela Supriyatin', '10', '10 AK1', 'P', ''),
-(257, '141510006', '9995990014', 'Belgis Soraya Firdhausa', '12', '12 MM1', 'P', ''),
-(258, '161710081', '11707775', 'Bella Safitri', '10', '10 UPW', 'P', ''),
-(259, '151610301', '4579105', 'Berliantin Indah Nuriana', '11', '11 AP1', 'P', ''),
-(260, '', '14471236', 'Bintang Herdi Ansyah', '10', '10 MM2', 'L', ''),
-(261, '141510253', '9995810636', 'Budiasih', '12', '12 AK4', 'P', ''),
-(262, '151610384', '9996056202', 'Budiyani', '11', '11 AP3', 'P', ''),
-(263, '', '5242238', 'Bunga Oktaviani', '10', '10 MM1', 'P', ''),
-(264, '161710154', '11592736', 'Bunga Silfia', '10', '10 AK2', 'P', ''),
-(265, '141510422', '9985612224', 'Cahya Yoga Pratama', '12', '12 PM1', 'L', ''),
-(266, '141510128', '9998323381', 'Cahyati', '12', '12 AK1', 'P', ''),
-(267, '151610604', '9995991873', 'Candra Pratama', '11', '11 PB2', 'L', ''),
-(268, '141510170', '9994810584', 'Candra Ramadhan', '12', '12 AK2', 'L', ''),
-(269, '', '5219992', 'Candrana', '10', '10 MM2', 'L', ''),
-(270, '141510212', '9996112681', 'Cantika Ajeng Amalia Pratiwi', '12', '12 AK3', 'P', ''),
-(271, '161710195', '5153307', 'Carini Dwi Yanna', '10', '10 AK3', 'P', ''),
-(272, '151610517', '9992253060', 'Carwini', '11', '11 PM2', 'P', ''),
-(273, '161710551', '11838572', 'Casono Anda', '10', '10 PB2', 'L', ''),
-(274, '141510504', '9991957046', 'Casriah Fitriana', '12', '12 AK3', 'P', ''),
-(275, '', '10711299', 'Catwari Diah Puspita', '10', '10 MM1', 'P', ''),
-(276, '', '12232499', 'Chelsie Cahyaningrum', '10', '10 MM2', 'P', ''),
-(277, '141510087', '9996055727', 'Chika Surya Fadilah', '12', '12 UPW', 'P', ''),
-(278, '', '9362266', 'Choirul Anam', '10', '10 MM1', 'L', ''),
-(279, '151610474', '4575957', 'Cicha Kemalasari', '11', '11 PM1', 'P', ''),
-(280, '161710315', '11559567', 'Cici Safitri', '10', '10 AP2', 'P', ''),
-(281, '151610135', '5434849', 'Cici Sintiani', '11', '11 AK1', 'P', ''),
-(282, '141510048', '9996091958', 'Cika Fadila Sari', '12', '12 MM2', 'P', ''),
-(283, '151610344', '4756472', 'Cindi Kurniasih', '11', '11 AP2', 'P', ''),
-(284, '', '3614286', 'Cindy Agustin', '10', '10 PB1', 'P', ''),
-(285, '151610429', '9996860271', 'Cindy Dewi Rizky', '11', '11 AP4', 'P', ''),
-(286, '161710552', '11633523', 'Cindy Elza Putri', '10', '10 PB2', 'P', ''),
-(287, '161710394', '11559570', 'Cindy Mustika Ayu', '10', '10 AP4', 'P', ''),
-(288, '150610179', '9996059814', 'Cindynia Asri Lestari', '11', '11 AK2', 'P', ''),
-(289, '161710274', '10711062', 'Cinta Noor Yulia', '10', '10 AP1', 'P', ''),
-(290, '141510007', '3755564', 'Cintiya Afriandi Erma Putri', '12', '12 MM1', 'P', ''),
-(291, '161710316', '11559791', 'Citra Indriyani', '10', '10 AP2', 'P', ''),
-(292, '151610385', '4796663', 'Citra Nur Amfelly', '11', '11 AP3', 'P', ''),
-(293, '161710353', '11252832', 'Claudia Letyzia Diaz Tarigan', '10', '10 AP3', 'P', ''),
-(294, '151610518', '9996090835', 'Cut Ismaya', '11', '11 PM2', 'P', ''),
-(295, '141510088', '9996014731', 'Danang Aditiya', '12', '12 UPW', 'L', ''),
-(296, '161710395', '10710603', 'Dandy Prayoga', '10', '10 AP4', 'L', ''),
-(297, '', '12377775', 'Dani Malik', '10', '10 MM2', 'L', ''),
-(298, '151610180', '9996072937', 'Danisa', '11', '11 AK2', 'P', ''),
-(299, '161710082', '11591307', 'Danti Sri Alwi Yanti', '10', '10 UPW', 'P', ''),
-(300, '', '4816367', 'Darlinda', '10', '10 PB1', 'P', ''),
-(301, '161710473', '', 'David Susanto', '10', '10 PM2', 'L', ''),
-(302, '161710396', '', 'Dea Dela Rosa', '10', '10 AP4', 'P', ''),
-(303, '141510377', '9985794293', 'Dea Indriyani', '12', '12 AP3', 'P', ''),
-(304, '', '13712093', 'Dea Nur Ananda', '10', '10 UPW', 'P', ''),
-(305, '151610209', '2921211', 'Dea Puji Lestari', '11', '11 AK3', 'P', ''),
-(306, '161710235', '5394012', 'Dea Safitri', '10', '10 AK4', 'P', ''),
-(307, '161710117', '11592297', 'Dede Ayunda', '10', '10 AK1', 'P', ''),
-(308, '141510336', '9985851741', 'Dede Tarwini', '12', '12 AP2', 'P', ''),
-(309, '161710155', '5178313', 'Dedeh Melani', '10', '10 AK2', 'P', ''),
-(310, '151610258', '4756564', 'Dela Nurahma', '11', '11 AK4', 'P', ''),
-(311, '151610048', '9995153266', 'Delia Amelia', '11', '11 MM2', 'P', ''),
-(312, '151610430', '4795530', 'Della Rahmawati', '11', '11 AP4', 'P', ''),
-(313, '141510254', '9995979136', 'Della Saraswaty', '12', '12 AK4', 'P', ''),
-(314, '161710317', '5454301', 'Della Sartika Sari', '10', '10 AP2', 'P', ''),
-(315, '151610092', '8724552', 'Della Wanti Rahayu', '11', '11 UPW', 'P', ''),
-(316, '151610431', '4794147', 'Deniati', '11', '11 AP4', 'P', ''),
-(317, '151610519', '4922962', 'Deraga Rizq', '11', '11 PM2', 'P', ''),
-(318, '151610008', '9996052268', 'Desi Ayu Lestari', '11', '11 MM1', 'P', ''),
-(319, '141510129', '9985873360', 'Desi Komalasari', '12', '12 AK1', 'P', ''),
-(320, '151610605', '9995811384', 'Desi Nuriyani', '11', '11 PB2', 'P', ''),
-(321, '141510378', '9985759326', 'Desi Purnama', '12', '12 AP3', 'P', ''),
-(322, '151610259', '19428931', 'Desi Rahmadani', '11', '11 AK4', 'P', ''),
-(323, '151610302', '9996053199', 'Dessy Fatma Wati', '11', '11 AP1', 'P', ''),
-(324, '141510423', '9985856337', 'Dessy Rachmalia', '12', '12 PM1', 'P', ''),
-(325, '161710433', '', 'Destari Fitriyani', '10', '10 PM1', 'P', ''),
-(326, '', '6693655', 'Desy Alhamdiana Putri', '10', '10 MM1', 'P', ''),
-(327, '141510294', '9985874925', 'Deti Kurnia', '12', '12 AP1', 'P', ''),
-(328, '151610009', '3951526', 'Deva Andhara Putri Rahayu', '11', '11 MM1', 'P', ''),
-(329, '', '11559610', 'Devani Natasya Cantika Qui', '10', '10 UPW', 'P', ''),
-(330, '151610520', '4757922', 'Devi', '11', '11 PM2', 'P', ''),
-(331, '151610210', '9995957932', 'Devi Komala Sari', '11', '11 AK3', 'P', ''),
-(332, '141510049', '9985772110', 'Devi Nurani', '12', '12 MM2', 'P', ''),
-(333, '141510171', '9996018317', 'Devi Nurlaeliyah', '12', '12 AK2', 'P', ''),
-(334, '1617101196', '5178332', 'Devi Triyanti', '10', '10 AK3', 'P', ''),
-(335, '161710936', '', 'Devi Umayyah', '10', '10 AP4', 'P', ''),
-(336, '141510468', '9985891162', 'Devi Widiawati', '12', '12 PM2', 'P', ''),
-(337, '151610606', '4833348', 'Devica Candra', '11', '11 PB2', 'P', ''),
-(338, '161710398', '', 'Devie Nopiyanti', '10', '10 AP4', 'P', ''),
-(339, '151610475', '9996053371', 'Devina Ayu Ningrum', '11', '11 PM1', 'P', ''),
-(340, '141510213', '9995873555', 'Devya Dwi Rizky Amaliana', '12', '12 AK3', 'P', ''),
-(341, '151610093', '8380331', 'Dewi Fajar', '11', '11 UPW', 'P', ''),
-(342, '151610607', '9995128025', 'Dewi Lestari', '11', '11 PB2', 'P', ''),
-(343, '141510089', '9996038022', 'Dewi Maharani', '12', '12 UPW', 'P', ''),
-(344, '151610476', '4737127', 'Dewi Ningsih', '11', '11 PM1', 'P', ''),
-(345, '151610608', '9988349564', 'Dewi Novita Sari', '11', '11 PB2', 'P', ''),
-(346, '141510090', '9989528949', 'Dewi Rahayu', '12', '12 UPW', 'P', ''),
-(347, '161710553', '9144056', 'Dewi Ratna Sari', '10', '10 PB2', 'P', ''),
-(348, '161710354', '11591752', 'Dewi Sekar Ningrum', '10', '10 AP3', 'P', ''),
-(349, '141510130', '9985891532', 'Dewi Tahta Alfian Fajriyani', '12', '12 AK1', 'P', ''),
-(350, '151610345', '4756100', 'Dewi Utari', '11', '11 AP2', 'P', ''),
-(351, '151610136', '9995605893', 'Dhandi Rizky Ramadhan', '11', '11 AK1', 'L', ''),
-(352, '151610260', '9996032054', 'Dhea Fitri Hardanti', '11', '11 AK4', 'P', ''),
-(353, '151610609', '4831468', 'Dhea Ines Prahastuti', '11', '11 PB2', 'P', ''),
-(354, '151610521', '9996059339', 'Dhea Nurul Nuha Fitriyani', '11', '11 PM2', 'P', ''),
-(355, '141510424', '9985154122', 'Dhevi Rohmah Mujiathi', '12', '12 PM1', 'P', ''),
-(356, '141510337', '9995150835', 'Dhiha Rizqa Erki Pratiwi', '12', '12 AP2', 'P', ''),
-(357, '141510008', '9995934792', 'Dhimas Tegar Kirana', '12', '12 MM1', 'L', ''),
-(358, '161710275', '7655690', 'Dhiniana Shari', '10', '10 AP1', 'P', ''),
-(359, '141510338', '9994810616', 'Dhita Septiani Setia Putri', '12', '12 AP2', 'P', ''),
-(360, '151610181', '4793248', 'Dian Apriliani', '11', '11 AK2', 'P', ''),
-(361, '141510379', '9996057955', 'Dian Ayu Lestari', '12', '12 AP3', 'P', ''),
-(362, '141510091', '9996091141', 'Dian Fadhilah', '12', '12 UPW', 'P', ''),
-(363, '151610010', '9998553992', 'Dian Fadhillah Putri', '11', '11 MM1', 'P', ''),
-(364, '161710355', '11570601', 'Dian Fadilah', '10', '10 AP3', 'P', ''),
-(365, '141510469', '9985771116', 'Dian Farida', '12', '12 PM2', 'P', ''),
-(366, '141510172', '9995150493', 'Dian Fitriani', '12', '12 AK2', 'P', ''),
-(367, '151610094', '9995991525', 'Dian Lestari', '11', '11 UPW', 'P', ''),
-(368, '151610522', '9985892314', 'Dian Mayasari', '11', '11 PM2', 'P', ''),
-(369, '141510214', '9989774632', 'Dian Novita Sari', '12', '12 AK3', 'P', ''),
-(370, '151610261', '4830659', 'Dian Nur Soleha', '11', '11 AK4', 'P', ''),
-(371, '151610610', '9995527462', 'Dian Pratiwi', '11', '11 PB2', 'P', ''),
-(372, '161710399', '', 'Dian Sefi Ferliyana', '10', '10 AP4', 'P', ''),
-(373, '151610559', '5434908', 'Dian Yulianingsih', '11', '11 PB1', 'P', ''),
-(374, '141510255', '9996090633', 'Diana', '12', '12 AK4', 'P', ''),
-(375, '141510295', '9996071399', 'Diana Aprilia', '12', '12 AP1', 'P', ''),
-(376, '', '11556836', 'Diana Rosverdiriyanti Karim', '10', '10 UPW', 'P', ''),
-(377, '151610211', '3614563', 'Diar Rahma Berliana', '11', '11 AK3', 'P', ''),
-(378, '151610262', '7494101', 'Didit Ttriyanto', '11', '11 AK4', 'L', ''),
-(379, '141510092', '9975957195', 'Diki Rahmat Maulana', '12', '12 UPW', 'L', ''),
-(380, '', '10710431', 'Dimas Anugrah Pramudita', '10', '10 PB1', 'L', ''),
-(381, '161710236', '12377800', 'Dimas Satria Pramayudha', '10', '10 AK4', 'L', ''),
-(382, '141510131', '9996073271', 'Dina Apriliana', '12', '12 AK1', 'P', ''),
-(383, '151610049', '4729632', 'Dina Apriliani', '11', '11 MM2', 'P', ''),
-(384, '161710474', '10710671', 'Dina Choirunnissa', '10', '10 PM2', 'P', ''),
-(385, '151610182', '1528111', 'Dina Deniarni', '11', '11 AK2', 'P', ''),
-(386, '161710554', '11750340', 'Dina Fadhilah', '10', '10 PB2', 'P', ''),
-(387, '151610212', '9158496', 'Dina Febrianti', '11', '11 AK3', 'P', ''),
-(388, '151610673', '9996090489', 'Dina Maryana', '11', '11 AP3', 'P', ''),
-(389, '151610303', '9995153420', 'Dina Rahmadani', '11', '11 AP1', 'P', ''),
-(390, '161710276', '11593414', 'Dina Ristiana', '10', '10 AP1', 'P', ''),
-(391, '161710118', '5177733', 'Dina Selawati', '10', '10 AK1', 'P', ''),
-(392, '141510339', '9985794042', 'Dina Septiana', '12', '12 AP2', 'P', ''),
-(393, '151610611', '9996092416', 'Dina Tri Yanuarita', '11', '11 PB2', 'P', ''),
-(394, '', '11551245', 'Dina Widya Annisa', '10', '10 MM2', 'P', ''),
-(395, '161710156', '11559435', 'Dinda', '10', '10 AK2', 'P', ''),
-(396, '151610213', '4756104', 'Dinda Andini', '11', '11 AK3', 'P', ''),
-(397, '151510050', '9995979550', 'Dinda Aurelia Putri', '11', '11 MM2', 'P', ''),
-(398, '161710197', '10655176', 'Dinda Dwi Yuliana', '10', '10 AK3', 'P', ''),
-(399, '151610137', '3952174', 'Dinda Gisela Resiyandi', '11', '11 AK1', 'P', ''),
-(400, '161710318', '12373125', 'Dinda Nurfajriyanti', '10', '10 AP2', 'P', ''),
-(401, '151610432', '7782028', 'Dinda Safiyah', '11', '11 AP4', 'P', ''),
-(402, '151610050', '4576723', 'Dinda Violita Amelia', '11', '11 MM2', 'L', ''),
-(403, '141510380', '9996054346', 'Dini Fitriani Wahidanti', '12', '12 AP3', 'P', ''),
-(404, '151610523', '4839477', 'Dini Herliani', '11', '11 PM2', 'P', ''),
-(405, '141510173', '9985010589', 'Dini Oktavia Wisudawati', '12', '12 AK2', 'P', ''),
-(406, '141510050', '9985770657', 'Dini Rosmawati', '12', '12 MM2', 'P', ''),
-(407, '161710237', '11253850', 'Dinni Nur Fadhillah', '10', '10 AK4', 'P', ''),
-(408, '161710356', '11496639', 'Dino Sapta Prasetyo', '10', '10 AP3', 'L', ''),
-(409, '141510296', '9996075028', 'Dipah', '12', '12 AP1', 'P', ''),
-(410, '141510093', '9996059616', 'Dita Ayu Fitrianingrum', '12', '12 UPW', 'P', ''),
-(411, '161710400', '', 'Dita Dwi Nurvanti', '10', '10 AP4', 'P', ''),
-(412, '161710119', '11551234', 'Dita Marissa Wahidanti', '10', '10 AK1', 'P', ''),
-(413, '161710000', '15087025', 'Dita Nur Aeni Agustin', '10', '10 AK2', 'P', ''),
-(414, '141510009', '9996030136', 'Divio Firmansyah', '12', '12 MM1', 'L', ''),
-(415, '', '4244793', 'Divya Anjani', '10', '10 UPW', 'P', ''),
-(416, '141510340', '9985770897', 'Diyah', '12', '12 AP2', 'P', ''),
-(417, '141510215', '9996051117', 'Dliya Awliya', '12', '12 AK3', 'P', ''),
-(418, '151610433', '4756474', 'Duvie Tianeke', '11', '11 AP4', 'P', ''),
-(419, '141510256', '9996058288', 'Dwi Ayu Febyanti', '12', '12 AK4', 'P', ''),
-(420, '141510381', '4833209', 'Dwi Deninta Shafitiri', '12', '12 AP3', 'P', ''),
-(421, '141510503', '9991554637', 'Dwi Harsiwi Ayummi', '12', '12 UPW', 'P', ''),
-(422, '', '5631326', 'Dwi Kirana', '10', '10 PB1', 'P', ''),
-(423, '151610346', '4831309', 'Dwi Kurnia Lestari', '11', '11 AP2', 'P', ''),
-(424, '161710277', '8374569', 'Dwi Meilan', '10', '10 AP1', 'P', ''),
-(425, '', '11570088', 'Dwi Muhamad Ali Yatama', '10', '10 MM1', 'L', ''),
-(426, '161710198', '5190844', 'Dwi Noviyanti', '10', '10 AK3', 'P', ''),
-(427, '151610434', '4795948', 'Dwi Rohmatun Saniyya', '11', '11 AP4', 'P', ''),
-(428, '161710238', '5230516', 'Dwi Salzabila', '10', '10 AK4', 'P', ''),
-(429, '141510257', '9996059263', 'Dwi Susanti', '12', '12 AK4', 'P', ''),
-(430, '161710319', '11559573', 'Dwiyana Merley', '10', '10 AP2', 'P', ''),
-(431, '141510132', '9985891965', 'Dyah Ayu Lintang Pratiwi', '12', '12 AK1', 'P', ''),
-(432, '151610183', '4737841', 'Dyah Fitriani', '11', '11 AK2', 'P', ''),
-(433, '151610214', '9996051490', 'Dzikri Abdillah', '11', '11 AK3', 'L', ''),
-(434, '', '11559599', 'Dzul Qarnain Syah', '10', '10 UPW', 'L', ''),
-(435, '141510010', '9998623509', 'Eby Febyola Lawrence', '12', '12 MM1', 'P', ''),
-(436, '161710088', '9998200720', 'Een Nurikha', '10', '10 UPW', 'P', ''),
-(437, '161710120', '11035237', 'Ega Feronika', '10', '10 AK1', 'P', ''),
-(438, '151610138', '9815762', 'Ega Lestari', '11', '11 AK1', 'P', ''),
-(439, '141510470', '9995223077', 'Ega Safitri', '12', '12 PM2', 'P', ''),
-(440, '141510426', '9995979818', 'Egi Azhar Saputra', '12', '12 PM1', 'L', ''),
-(441, '5572808', '5572808', 'Egi Azizah', '10', '10 AP3', 'P', ''),
-(442, '151610560', '9994748535', 'Eka Famelia', '11', '11 PB1', 'P', ''),
-(443, '141510174', '9996092227', 'Eka Fitriani', '12', '12 AK2', 'P', ''),
-(444, '151610477', '4733397', 'Eka Hayati Nufus', '11', '11 PM1', 'P', ''),
-(445, '151610263', '9996071276', 'Eka Safitri', '11', '11 AK4', 'P', ''),
-(446, '141510297', '9985851439', 'Eka Sinta', '12', '12 AP1', 'P', ''),
-(447, '161710434', '', 'Eko Ramadhan Santoso', '10', '10 PM1', 'L', ''),
-(448, '151610478', '4792694', 'Ela Ningsih', '11', '11 PM1', 'P', ''),
-(449, '161710052', '15667062', 'Elfitra Syahrani', '10', '10 MM2', 'P', ''),
-(450, '141510471', '9996053354', 'Elfiyan Agustn', '12', '12 PM2', 'P', ''),
-(451, '161710158', '', 'Elga Elgia Eprin', '10', '10 AK2', 'P', ''),
-(452, '161710475', '12137860', 'Elga Putri Elisabeth', '10', '10 PM2', 'P', ''),
-(453, '151610215', '9651350', 'Elgy Riyoni Firasti', '11', '11 AK3', 'P', ''),
-(454, '161710555', '5231428', 'Eli Kusmawati', '10', '10 PB2', 'P', ''),
-(455, '151610304', '4839295', 'Elin Vera', '11', '11 AP1', 'P', ''),
-(456, '161710435', '12090429', 'Elinawati', '10', '10 PM1', 'P', ''),
-(457, '141510341', '9985853319', 'Elipa', '12', '12 AP2', 'P', ''),
-(458, '161710053', '5231120', 'Elis Triani', '10', '10 MM2', 'P', ''),
-(459, '151610479', '9996053418', 'Eliya Nur Fajriyah', '11', '11 PM1', 'P', ''),
-(460, '161710278', '11635127', 'Eliyana', '10', '10 AP1', 'P', ''),
-(461, '151610184', '3033255', 'Ella Apriliyani', '11', '11 AK2', 'P', ''),
-(462, '', '5177759', 'Ella Damayanti', '10', '10 AK2', 'P', ''),
-(463, '141510258', '9996013817', 'Elsa Apriliani', '12', '12 AK4', 'P', ''),
-(464, '141510382', '9985792363', 'Elsa Isti Koma', '12', '12 AP3', 'P', ''),
-(465, '151610139', '4819780', 'Elsana Rahmanika', '11', '11 AK1', 'P', ''),
-(466, '141510052', '9995990457', 'Ely Nuridasari', '12', '12 MM2', 'P', ''),
-(467, '151610388', '9996030145', 'Endang Yustika', '11', '11 AP3', 'P', ''),
-(468, '151610347', '9996053196', 'Enno Chusnul Chotimah', '11', '11 AP2', 'P', ''),
-(469, '141510133', '9995956546', 'Erawati', '12', '12 AK1', 'P', ''),
-(470, '', '15624017', 'Erfina Ayu Damayanti', '10', '10 PB1', 'P', ''),
-(471, '141510298', '9985793624', 'Eri Evi Yanti', '12', '12 AP1', 'P', ''),
-(472, '141510342', '9995810550', 'Ericha Triutari', '12', '12 AP2', 'P', ''),
-(473, '141510011', '9996052377', 'Erik Febriyanto', '12', '12 MM1', 'L', ''),
-(474, '151610305', '4816217', 'Erika Efrianah', '11', '11 AP1', 'P', ''),
-(475, '161710358', '11550885', 'Erin Rismawati', '10', '10 AP3', 'P', ''),
-(476, '141510383', '9985674307', 'Erina', '12', '12 AP3', 'P', ''),
-(477, '151610480', '9995539764', 'Eriyanti Ahmar', '11', '11 PM1', 'P', ''),
-(478, '151610561', '3954071', 'Erlan Tedy Muflikh', '11', '11 PB1', 'L', ''),
-(479, '141510427', '9996070071', 'Erlina Rustiningsih', '12', '12 PM1', 'P', ''),
-(480, '161710401', '', 'Erna', '10', '10 AP4', 'P', ''),
-(481, '151610348', '4758197', 'Ernawati', '11', '11 AP2', 'P', ''),
-(482, '161710279', '11578864', 'Ersa Riyana', '10', '10 AP1', 'P', ''),
-(483, '', '11813257', 'Ervina Putri Windiyanti', '10', '10 AK3', 'P', ''),
-(484, '141510299', '9996971454', 'Ervina Rosa', '12', '12 AP1', 'P', ''),
-(485, '151610481', '8087842', 'Eryca Fitriyati Sholihah', '11', '11 PM1', 'P', ''),
-(486, '151610306', '4579021', 'Eva', '11', '11 AP1', 'P', ''),
-(487, '161710320', '5178000', 'Eva Evi Yana', '10', '10 AP2', 'P', ''),
-(488, '161710239', '11378465', 'Eva Gita Rostita', '10', '10 AK4', 'P', ''),
-(489, '151610011', '4574246', 'Eva Rahmawati', '11', '11 MM1', 'P', ''),
-(490, '151610562', '3951731', 'Evelyn Denita Varani', '11', '11 PB1', 'P', ''),
-(491, '141510175', '9995973175', 'Evi Lutfiyah', '12', '12 AK2', 'P', ''),
-(492, '151610524', '9994982381', 'Evi Yulistianingsih', '11', '11 PM2', 'P', ''),
-(493, '141510343', '9996031595', 'Eviana Melisa', '12', '12 AP2', 'P', ''),
-(494, '141510217', '9995956840', 'Evicha Nurul Izzah', '12', '12 AK3', 'P', ''),
-(495, '161710121', '5177810', 'Evien Jubaidah', '10', '10 AK1', 'P', ''),
-(496, '161710359', '4574313', 'Evita Bella Putri', '10', '10 AP3', 'P', ''),
-(497, '', '11593450', 'Evita Nurbayanti', '10', '10 UPW', 'P', ''),
-(498, '151610051', '4816014', 'Eviva', '11', '11 MM2', 'P', ''),
-(499, '161710160', '', 'Evy Rosyani Putri', '10', '10 AK2', 'P', ''),
-(500, '', '11634092', 'Fachri Febriyana', '10', '10 MM1', 'L', ''),
-(501, '151610053', '1656265', 'Facqyh Zaenal Marzuqy', '11', '11 MM2', 'L', ''),
-(502, '141510384', '9996053571', 'Fadhijah Islamiaty', '12', '12 AP3', 'P', ''),
-(503, '161710200', '10710280', 'Fadia Asya Zaharani', '10', '10 AK3', 'P', ''),
-(504, '161710402', '11753589', 'Fadia Hanin Hilya Jannah', '10', '10 AP4', 'P', ''),
-(505, '141510259', '9992262203', 'Fadilla Ajeng Lestari', '12', '12 AK4', 'P', ''),
-(506, '151610482', '9996054405', 'Fadilla Nur Larasati', '11', '11 PM1', 'P', ''),
-(507, '141510053', '9996052225', 'Fadjri Ilham Nurmawan', '12', '12 MM2', 'L', ''),
-(508, '151610612', '9900651', 'Fadly Yusron Analis', '11', '11 PB2', 'L', ''),
-(509, '151610054', '9996016366', 'Fahmi Hidayat', '11', '11 MM2', 'L', ''),
-(510, '151610264', '9999559054', 'Fahmy Sahab', '11', '11 AK4', 'L', ''),
-(511, '161710556', '11592044', 'Fahrurrozi', '10', '10 PB2', 'L', ''),
-(512, '141510012', '9996091303', 'Faisal Amiruddin Aditama', '12', '12 MM1', 'L', ''),
-(513, '141150054', '9985892472', 'Faiz Ridloh', '12', '12 MM2', 'L', ''),
-(514, '141510013', '9996621428', 'Fajar Istiqomah', '12', '12 MM1', 'P', ''),
-(515, '151610613', '4816758', 'Fajrin Tryguntara', '11', '11 PB2', 'L', ''),
-(516, '151610055', '3033259', 'Falah Safara Katulistiwa Gz', '11', '11 MM2', 'L', ''),
-(517, '1611000', '8980613', 'Faldi Ibrahim', '11', '11 AK4', 'L', ''),
-(518, '151610349', '4116009', 'Fani Maharani Sofyan', '11', '11 AP2', 'P', ''),
-(519, '', '5190038', 'Fani Rahmawati', '10', '10 PB1', 'P', ''),
-(520, '151610483', '4839488', 'Fania Marlina', '11', '11 PM1', 'P', ''),
-(521, '151610525', '9995311064', 'Fanji Waqhi Setiawan', '11', '11 PM2', 'L', ''),
-(522, '151610265', '6229987', 'Fanny Fanala', '11', '11 AK4', 'P', ''),
-(523, '141510134', '9995991101', 'Fanny Rizki Amanda', '12', '12 AK1', 'P', ''),
-(524, '161710240', '11559647', 'Fany Alvionita', '10', '10 AK4', 'P', ''),
-(525, '161710122', '13977419', 'Faradina Kholidah', '10', '10 AK1', 'P', ''),
-(526, '161710090', '', 'Farah Amalia Mahendra', '10', '10 UPW', 'P', ''),
-(527, '141510300', '9995990930', 'Farah Griselda Praboasti', '12', '12 AP1', 'P', ''),
-(528, '161710161', '11559748', 'Farhah Rihhadatul Aisy', '10', '10 AK2', 'P', ''),
-(529, '', '11572232', 'Farhan Fahrezi', '10', '10 PB1', 'L', ''),
-(530, '161710201', '19208785', 'Farhan Maulidar', '10', '10 AK3', 'L', ''),
-(531, '151610389', '4831122', 'Faridah Nurbaiti', '11', '11 AP3', 'P', ''),
-(532, '151610096', '4735780', 'Faridah Oktafiani', '11', '11 UPW', 'P', ''),
-(533, '141510344', '9998177328', 'Farikha', '12', '12 AP2', 'P', ''),
-(534, '161710241', '11252612', 'Farikhatus Syaadah', '10', '10 AK4', 'P', ''),
-(535, '161710321', '', 'Farrah Aulia', '10', '10 AP2', 'P', ''),
-(536, '151610140', '5308084', 'Farras Rihatul Aisy', '11', '11 AK1', 'P', ''),
-(537, '161710360', '', 'Fathan Izzatul Maula', '10', '10 AP3', 'L', ''),
-(538, '161710123', '11591906', 'Fathiyyah Nurfi Laily', '10', '10 AK1', 'P', ''),
-(539, '151610484', '9985770713', 'Fathuroji', '11', '11 PM1', 'L', ''),
-(540, '151610097', '9996070330', 'Fatma Fuzi Lestari', '11', '11 UPW', 'P', ''),
-(541, '151610526', '9997010072', 'Fatmawati', '11', '11 PM2', 'P', ''),
-(542, '141510176', '9984999780', 'Fatur Rahman', '12', '12 AK2', 'L', ''),
-(543, '161710403', '', 'Fauza Farohatul Jannah', '10', '10 AP4', 'P', ''),
-(544, '151610012', '4579068', 'Fauzan Akbar Maulana', '11', '11 MM1', 'L', ''),
-(545, '141510218', '9996092628', 'Fauziah', '12', '12 AK3', 'P', ''),
-(546, '151610527', '4756319', 'Fauziah Mulyaningrum', '11', '11 PM2', 'P', ''),
-(547, '', '5179079', 'Fauziyah', '10', '10 AK2', 'P', ''),
-(548, '141510260', '3954372', 'Faza Abdi Shohih', '12', '12 AK4', 'L', ''),
-(549, '141510135', '9994799538', 'Fazrina Apriliyani Permataningrum', '12', '12 AK1', 'P', ''),
-(550, '151610216', '3954498', 'Febry Ayu Nurhasanah', '11', '11 AK3', 'P', ''),
-(551, '141510055', '9996092436', 'Feby Alfian', '12', '12 MM2', 'L', ''),
-(552, '141510177', '9985793341', 'Feby Melinda', '12', '12 AK2', 'P', ''),
-(553, '141510219', '9995979399', 'Fellia Widya Pangestika', '12', '12 AK3', 'P', ''),
-(554, '141510385', '9985892958', 'Feni Melina Tussholekhah', '12', '12 AP3', 'P', ''),
-(555, '141510094', '9985794043', 'Feny Indiani', '12', '12 UPW', 'P', ''),
-(556, '151610185', '4831116', 'Fera Nita Rahayu', '11', '11 AK2', 'P', ''),
-(557, '151610217', '4792750', 'Fergi Ferdiansah', '11', '11 AK3', 'L', ''),
-(558, '141510301', '9996017551', 'Fhira Alfhiera', '12', '12 AP1', 'P', ''),
-(559, '141510345', '9995991609', 'Fianita', '12', '12 AP2', 'P', ''),
-(560, '', '5092721', 'Fifi Fitriyah', '10', '10 AK3', 'P', ''),
-(561, '151610098', '4839298', 'Fikki Amela', '11', '11 UPW', 'P', ''),
-(562, '161710476', '', 'Fikri Aolianti', '10', '10 PM2', 'P', ''),
-(563, '5230285', '5230285', 'Finasari', '10', '10 AP1', 'P', ''),
-(564, '161710436', '', 'Fiqi Alawi', '10', '10 PM1', 'L', ''),
-(565, '141510014', '9995990908', 'Fiqi Andri Reviansyah', '12', '12 MM1', 'L', ''),
-(566, '151610099', '4839489', 'Fira Dwi Charolina', '11', '11 UPW', 'P', ''),
-(567, '141510095', '9996031019', 'Fira Katerina', '12', '12 UPW', 'P', ''),
-(568, '151610563', '9996074829', 'Firda Elza Ramadhanty', '11', '11 PB1', 'P', ''),
-(569, '', '10974144', 'Firda Fatimah', '10', '10 UPW', 'P', ''),
-(570, '161710437', '10973958', 'Firda Meisya Nabila', '10', '10 PM1', 'P', ''),
-(571, '161710322', '5153322', 'Firda Neviliyani', '10', '10 AP2', 'P', ''),
-(572, '161710242', '4574395', 'Firda Prilia Aeni', '10', '10 AK4', 'P', ''),
-(573, '161710124', '5177762', 'Firman Almansyah', '10', '10 AK4', 'L', ''),
-(574, '16171010124', '5177762', 'Firman Almansyah', '10', '10 AK1', 'L', ''),
-(575, '151610056', '9998309760', 'Firmansyah', '11', '11 MM2', 'L', ''),
-(576, '151610141', '9996070035', 'Firmansyah Jaya Pradana', '11', '11 AK1', 'L', ''),
-(577, '151610435', '4814901', 'Firna Al Destin', '11', '11 AP4', 'P', ''),
-(578, '141510386', '9996018836', 'Fisa Nafisa', '12', '12 AP3', 'P', ''),
-(579, '141510178', '9996050772', 'Fisqi Fauziah', '12', '12 AK2', 'P', ''),
-(580, '141510261', '9985819865', 'Fitri Aisyah', '12', '12 AK4', 'P', ''),
-(581, '151610564', '9994799373', 'Fitri Amelia', '11', '11 PB1', 'P', ''),
-(582, '', '11593488', 'Fitri Fadhilah', '10', '10 AK2', 'P', ''),
-(583, '5631308', '5631308', 'Fitri Nur Aeni', '10', '10 AP3', 'P', ''),
-(584, '141510136', '4793798', 'Fitri Nurhidayati', '12', '12 AK1', 'P', ''),
-(585, '151610307', '9996090625', 'Fitri Nurmalasari', '11', '11 AP1', 'P', ''),
-(586, '141510302', '9996102410', 'Fitri Rahmayanti', '12', '12 AP1', 'P', ''),
-(587, '161710404', '5176506', 'Fitri Yani', '10', '10 AP4', 'P', ''),
-(588, '151610528', '4757931', 'Fitria Rossa', '11', '11 PM2', 'P', ''),
-(589, '', '6174106', 'Fitriah Nadilla', '10', '10 MM1', 'P', ''),
-(590, '151610350', '9996030623', 'Fitriyanah', '11', '11 AP2', 'P', ''),
-(591, '', '11558117', 'Fitriyani', '10', '10 UPW', 'P', ''),
-(592, '151610529', '11338140', 'Fiya Savarotuzzahro', '11', '11 PM2', 'P', ''),
-(593, '141510472', '9996053414', 'Frans Setiya Adi Putra', '12', '12 PM2', 'L', ''),
-(594, '141510220', '9995955862', 'Fristi Purnama Ichsani', '12', '12 AK3', 'P', ''),
-(595, '161710203', '11558561', 'Friti Mega Utami', '10', '10 AK3', 'P', ''),
-(596, '141510346', '9985859749', 'Futikha Nurfiyanti', '12', '12 AP2', 'P', ''),
-(597, '151610436', '9996018580', 'Galuh Aulia Fitriani', '11', '11 AP4', 'P', ''),
-(598, '141510428', '9994799485', 'Gani Agung Supriyatno', '12', '12 PM1', 'L', ''),
-(599, '141510056', '9996053191', 'Gesy Mawarni Berliana', '12', '12 MM2', 'P', ''),
-(600, '141510015', '9996227994', 'Ghina Amaliyah', '12', '12 MM1', 'P', ''),
-(601, '', '11550538', 'Ghina Amelia Fauziati', '10', '10 MM2', 'P', ''),
-(602, '141510262', '9994953260', 'Ghina Zhafirah Ulfa', '12', '12 AK4', 'P', ''),
-(603, '161710281', '', 'Ghiyanti Fanni', '10', '10 AP1', 'P', ''),
-(604, '151610013', '9996091940', 'Gilang Aghna Ramadhan', '11', '11 MM1', 'L', ''),
-(605, '161710557', '13010545', 'Gina Agiyatussolikha', '10', '10 PB2', 'P', ''),
-(606, '141510137', '9985791281', 'Gina Mawarni', '12', '12 AK1', 'P', ''),
-(607, '141510179', '9985892827', 'Gina Mayori', '12', '12 AK2', 'P', ''),
-(608, '1617105323', '11578094', 'Gina Triyatna', '10', '10 AP2', 'P', ''),
-(609, '', '11633607', 'Giofanny Risdiantoro', '10', '10 MM1', 'L', ''),
-(610, '161710362', '5190797', 'Gita Cutviani', '10', '10 AP3', 'P', ''),
-(611, '141510221', '9999355393', 'Gita Safitri', '12', '12 AK3', 'P', ''),
-(612, '151610186', '9995958220', 'Gita Safitri', '11', '11 AK2', 'P', ''),
-(613, '161710405', '5177803', 'Giti Meilina', '10', '10 AP4', 'P', ''),
-(614, '161710243', '12450455', 'Haaniyah Azzahrah', '10', '10 AK4', 'P', ''),
-(615, '151610218', '2523435', 'Habib Pratama', '11', '11 AK3', 'L', ''),
-(616, '151610308', '9997064354', 'Hadhimas Ramdanu', '11', '11 AP1', 'L', ''),
-(617, '', '5457218', 'Hadi Permadi', '10', '10 MM2', 'L', ''),
-(618, '161710558', '', 'Hadiyullah Muhlisin', '10', '10 PB2', 'L', ''),
-(619, '', '3954224', 'Haidar Bagir', '10', '10 PB2', 'L', ''),
-(620, '151610142', '4756555', 'Haidar Nur Putra', '11', '11 AK1', 'L', ''),
-(621, '151610187', '9992227787', 'Hajizah Khaerin', '11', '11 AK2', 'P', ''),
-(622, '141510057', '9995810736', 'Halim Faiz', '12', '12 MM2', 'L', ''),
-(623, '151610014', '4594054', 'Halimah Najiyah', '11', '11 MM1', 'P', ''),
-(624, '151610565', '4795992', 'Halimah Sa\'diyah', '11', '11 PB1', 'P', ''),
-(625, '161710324', '13010790', 'Halimatus Sa\'diyah', '10', '10 AP2', 'P', ''),
-(626, '', '19872857', 'Halimatusya\'diyah', '10', '10 PB1', 'P', ''),
-(627, '151610485', '4814108', 'Hamdan Al Anshori', '11', '11 PM1', 'L', ''),
-(628, '151610057', '9996054403', 'Hamdan Ibrahim', '11', '11 MM2', 'L', ''),
-(629, '141510263', '9995939142', 'Hamidah', '12', '12 AK4', 'P', ''),
-(630, '151610100', '9996052821', 'Hamidah', '11', '11 UPW', 'P', ''),
-(631, '151610614', '9139512', 'Hamzah Assadullah', '11', '11 PB2', 'L', ''),
-(632, '161710204', '', 'Hanella', '10', '10 AK3', 'P', ''),
-(633, '', '', 'Hanifah', '10', '10 AP3', 'P', ''),
-(634, '161710125', '11592109', 'Hanifatin Nisah', '10', '10 AK1', 'P', ''),
-(635, '151610058', '4737131', 'Haniyati', '11', '11 MM2', 'P', ''),
-(636, '', '5230500', 'Hanna Rasyidah Priyatna', '10', '10 AK2', 'P', ''),
-(637, '161710406', '11861907', 'Hannah Faulia', '10', '10 AP4', 'P', ''),
-(638, '141510387', '9995816411', 'Hanny Chaerunisya', '12', '12 AP3', 'P', ''),
-(639, '141510303', '9991529090', 'Hany Fauzia', '12', '12 AP1', 'P', ''),
-(640, '151610390', '7577453', 'Hany Redyta', '11', '11 AP3', 'P', ''),
-(641, '141510138', '9994799542', 'Hardi Junianto', '12', '12 AK1', 'L', ''),
-(642, '141510264', '9978080235', 'Hartajun', '12', '12 AK4', 'L', ''),
-(643, '151610059', '9996097516', 'Haryanti Octaviani', '11', '11 MM2', 'P', ''),
-(644, '151610015', '9995773803', 'Hasan Basri Sahab Gusduri', '11', '11 MM1', 'L', ''),
-(645, '141510429', '9998147953', 'Helda Arini', '12', '12 PM1', 'P', ''),
-(646, '151610219', '4736648', 'Helen Nilana Ningsih', '11', '11 AK3', 'P', ''),
-(647, '', '11559503', 'Heliyanti Dewi', '10', '10 AK3', 'P', ''),
-(648, '151610143', '4839752', 'Helmi Eka Sari', '11', '11 AK1', 'P', ''),
-(649, '161710244', '5230522', 'Henny Erlina', '10', '10 AK4', 'P', ''),
-(650, '161710126', '11550685', 'Herdiansah Yusuf', '10', '10 AK1', 'L', ''),
-(651, '151610530', '4757005', 'Heriyana', '11', '11 PM2', 'L', ''),
-(652, '151610531', '9985870362', 'Herlina', '11', '11 PM2', 'P', ''),
-(653, '', '19435303', 'Hermanto Kusnendar', '10', '10 MM1', 'L', ''),
-(654, '141510180', '9999412852', 'Herti', '12', '12 AK2', 'P', ''),
-(655, '', '11559636', 'Herti Saputri', '10', '10 MM2', 'P', ''),
-(656, '161710282', '4857583', 'Hikmah Nur Barikah', '10', '10 AP1', 'P', ''),
-(657, '151610220', '9996032856', 'Hikmatul Munawaroh', '11', '11 AK3', 'P', ''),
-(658, '151610060', '4795257', 'Hilmi Khoirulloh', '11', '11 MM2', 'L', ''),
-(659, '151610016', '9996415014', 'Hilmi Yahya', '11', '11 MM1', 'L', ''),
-(660, '141510222', '9996032035', 'Himy Maftuhah', '12', '12 AK3', 'P', ''),
-(661, '151610615', '9993311750', 'Ia Tamiah', '11', '11 PB2', 'P', ''),
-(662, '151610616', '4814373', 'Ibah Khoirul Bariyah', '11', '11 PB2', 'P', ''),
-(663, '151610566', '9999867884', 'Ibnu Huzein Ali Sidik', '11', '11 PB1', 'L', ''),
-(664, '151610532', '9995970625', 'Ibyati Suci', '11', '11 PM2', 'P', ''),
-(665, '141510388', '9983697093', 'Iche Tresna Lanopiani', '12', '12 AP3', 'P', ''),
-(666, '141510474', '9989856248', 'Ida Fitriyani', '12', '12 PM2', 'P', ''),
-(667, '151610437', '9996073242', 'Ifa Afwati', '11', '11 AP4', 'P', ''),
-(668, '151610567', '9994810662', 'Ihca Mustika Ratu', '11', '11 PB1', 'P', ''),
-(669, '141510265', '9985859811', 'Iin Inayani', '12', '12 AK4', 'P', ''),
-(670, '141510016', '9993064867', 'Iin Mariya Ningsih', '12', '12 MM1', 'P', ''),
-(671, '151610188', '4838730', 'Iip Afifah', '11', '11 AK2', 'P', ''),
-(672, '151610351', '4732056', 'Iip Fathuren', '11', '11 AP2', 'P', ''),
-(673, '141510139', '9995952965', 'Iip Juniyanti', '12', '12 AK1', 'P', ''),
-(674, '141510304', '9987518126', 'Iip Latifah', '12', '12 AP1', 'P', ''),
-(675, '141510347', '9995991615', 'Iis Diah Dwityah', '12', '12 AP2', 'P', ''),
-(676, '', '5179076', 'Iis Isnawati', '10', '10 AK2', 'P', ''),
-(677, '151610486', '9999094266', 'Iis Siti Solehah', '11', '11 PM1', 'P', ''),
-(678, '141510181', '9997798714', 'Ika Nurjannah', '12', '12 AK2', 'P', ''),
-(679, '', '5230061', 'Ika Nurliana', '10', '10 PB2', 'P', ''),
-(680, '161710206', '11558825', 'Ikawati', '10', '10 AK3', 'P', ''),
-(681, '141510058', '9995312910', 'Ike Noor Agustina', '12', '12 MM2', 'P', '');
-INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `foto`) VALUES
-(682, '151610487', '9995991618', 'Ike Octavia', '11', '11 PM1', 'P', ''),
-(683, '151610391', '4814700', 'Ike Santika', '11', '11 AP3', 'P', ''),
-(684, '', '5178673', 'Iko Suaditia', '10', '10 PB1', 'P', ''),
-(685, '151610101', '4831687', 'Ilaf Nabila', '11', '11 UPW', 'P', ''),
-(686, '161710245', '4756820', 'Ilan Fathurohman', '10', '10 AK4', 'L', ''),
-(687, '141510430', '9999975501', 'Ilfi', '12', '12 PM1', 'L', ''),
-(688, '161710477', '', 'Ilham Baharudin', '10', '10 PM2', 'L', ''),
-(689, '141510096', '9984227861', 'Ilham Ramadhan', '12', '12 UPW', 'L', ''),
-(690, '161710478', '11559699', 'Ilham Ramadhan', '10', '10 PM2', 'L', ''),
-(691, '', '3615918', 'Imam Mangkususilo Pramono', '10', '10 MM1', 'L', ''),
-(692, '141510389', '9986805892', 'Imel Amelia', '12', '12 AP3', 'P', ''),
-(693, '161710561', '1442943', 'Imelda', '10', '10 PB2', 'P', ''),
-(694, '151610266', '9799804', 'Imelda Tasya Fika Anggela', '11', '11 AK4', 'P', ''),
-(695, '141510305', '9975995759', 'Inayatul Maula', '12', '12 AP1', 'P', ''),
-(696, '151610221', '4832535', 'Indah Fajriyah', '11', '11 AK3', 'P', ''),
-(697, '161710057', '12091103', 'Indah Nur Hanifah', '10', '10 MM2', 'P', ''),
-(698, '151610438', '9995958353', 'Indah Puspa Sari', '11', '11 AP4', 'P', ''),
-(699, '151610309', '9996055269', 'Indah Rizkiyanti', '11', '11 AP1', 'P', ''),
-(700, '151610439', '9996091200', 'Indah Sari', '11', '11 AP4', 'P', ''),
-(701, '151610018', '9999084614', 'Indah Tri Wulandari', '11', '11 MM1', 'P', ''),
-(702, '161710325', '11559808', 'Indah Widia Ningsih', '10', '10 AP2', 'P', ''),
-(703, '141510348', '9997822970', 'Indah Wulan Dari', '12', '12 AP2', 'P', ''),
-(704, '1617210127', '5177598', 'Indah Wulandari', '10', '10 AK1', 'P', ''),
-(705, '161710364', '11558270', 'Indah Yanti', '10', '10 AP3', 'P', ''),
-(706, '151610668', '9995979797', 'Indah Yanti', '11', '11 AP3', 'P', ''),
-(707, '151610102', '9989961040', 'Indan Setia Wati', '11', '11 UPW', 'P', ''),
-(708, '141510017', '9985892828', 'Indra Yulianto', '12', '12 MM1', 'L', ''),
-(709, '151610222', '9996092086', 'Indri Prastika', '11', '11 AK3', 'P', ''),
-(710, '141510390', '9996091372', 'Indri Santika', '12', '12 AP3', 'P', ''),
-(711, '151610533', '4816659', 'Indri Syabila', '11', '11 PM2', 'L', ''),
-(712, '141510223', '9985674033', 'Indri Yani Saputri', '12', '12 AK3', 'P', ''),
-(713, '151610103', '4795053', 'Indriani', '11', '11 UPW', 'P', ''),
-(714, '151610393', '9992961474', 'Indriawati', '11', '11 AP3', 'P', ''),
-(715, '151610534', '9995991929', 'Ine Indriyani', '11', '11 PM2', 'P', ''),
-(716, '161710407', '5630742', 'Ine Sintiya', '10', '10 AP4', 'P', ''),
-(717, '151610568', '1790959', 'Ineke Julistya Nezuarense', '11', '11 PB1', 'P', ''),
-(718, '141510266', '9996091798', 'Ines Marwasari', '12', '12 AK4', 'P', ''),
-(719, '161710283', '11559310', 'Inggit Safitri', '10', '10 AP1', 'P', ''),
-(720, '161713026', '5630758', 'Inka Lidiya', '10', '10 AP2', 'P', ''),
-(721, '151610104', '5792943', 'Inka Putri Saffana', '11', '11 UPW', 'P', ''),
-(722, '161710408', '6075856', 'Inka Silvi Safitri', '10', '10 AP4', 'P', ''),
-(723, '141510306', '9995979805', 'Innas Tsurayya', '12', '12 AP1', 'P', ''),
-(724, '151610352', '4815584', 'Intan Aprillia', '11', '11 AP2', 'P', ''),
-(725, '161710479', '', 'Intan Lestari', '10', '10 PM2', 'P', ''),
-(726, '151610535', '9812798', 'Intan Mahira', '11', '11 PM2', 'P', ''),
-(727, '151610144', '4793476', 'Intan Melanisa', '11', '11 AK1', 'P', ''),
-(728, '151610394', '4794385', 'Intan Melati', '11', '11 AP3', 'P', ''),
-(729, '141510140', '9995990022', 'Intan Oktafiyanti', '12', '12 AK1', 'P', ''),
-(730, '', '11738172', 'Intan Pramita Dewi', '10', '10 AK2', 'P', ''),
-(731, '151610569', '4815716', 'Intan Resti Meylina', '11', '11 PB1', 'P', ''),
-(732, '', '6570949', 'Intan Sari', '10', '10 MM1', 'P', ''),
-(733, '', '11633507', 'Ira Itami', '10', '10 PB2', 'P', ''),
-(734, '', '11559344', 'Ira Karlina', '10', '10 AK3', 'P', ''),
-(735, '151610267', '4815707', 'Irfan Saputra Rosikin', '11', '11 AK4', 'L', ''),
-(736, '151610536', '4818955', 'Irma Mayasari', '11', '11 PM2', 'P', ''),
-(737, '151610440', '9996018744', 'Irna Wati', '11', '11 AP4', 'P', ''),
-(738, '161710284', '11255011', 'Irwan Mochamad Rizki', '10', '10 AP1', 'L', ''),
-(739, '151610310', '3952377', 'Isma Anjani', '11', '11 AP1', 'P', ''),
-(740, '151610353', '3171887', 'Isma Ayu Pandan Sari', '11', '11 AP2', 'P', ''),
-(741, '151610441', '4817240', 'Isma Hanifatul Salma', '11', '11 AP4', 'P', ''),
-(742, '161710327', '', 'Ismatul Maulani', '10', '10 AP2', 'P', ''),
-(743, '1617', '10775066', 'Ismi Azizah', '10', '10 MM2', 'P', ''),
-(744, '', '5190814', 'Isnaeni Fajar Saputri', '10', '10 AK4', 'P', ''),
-(745, '161710128', '11235903', 'Isneni Hendra Putri', '10', '10 AK1', 'P', ''),
-(746, '161710480', '', 'Istiadza', '10', '10 PM2', 'P', ''),
-(747, '161710208', '4832536', 'Istiana', '10', '10 AK3', 'P', ''),
-(748, '141510349', '9995957269', 'Istianah Fuddiyanah', '12', '12 AP2', 'P', ''),
-(749, '141510391', '9996032894', 'Istiqomah', '12', '12 AP3', 'P', ''),
-(750, '16170247', '5219186', 'Isvihana', '10', '10 AK4', 'P', ''),
-(751, '141510475', '9985770349', 'Ita Indriyana', '12', '12 PM2', 'P', ''),
-(752, '161710348', '', 'Ita Juwita', '10', '10 PM1', 'P', ''),
-(753, '151610617', '4736942', 'Ita Novita', '11', '11 PB2', 'P', ''),
-(754, '141510307', '9995990157', 'Ita Purnama Sari', '12', '12 AP1', 'P', ''),
-(755, '151610618', '9942238', 'Ivan Irhamna', '11', '11 PB2', 'L', ''),
-(756, '161710129', '12137865', 'Ivone Yunike Fajarwati Silas', '10', '10 AK1', 'P', ''),
-(757, '151610442', '9996030529', 'Jaka Pratama', '11', '11 AP4', 'L', ''),
-(758, '151610019', '8097684', 'Jean Rizal Wijanto', '11', '11 MM1', 'L', ''),
-(759, '141510182', '9995313579', 'Jeani Feliani', '12', '12 AK2', 'P', ''),
-(760, '141510059', '9995959453', 'Jeff Vanza Nasuha', '12', '12 MM2', 'L', ''),
-(761, '161710167', '', 'Jesica Permata Putri', '10', '10 AK2', 'P', ''),
-(762, '151610105', '4819656', 'Jia Azizah Fauziah', '11', '11 UPW', 'P', ''),
-(763, '', '18841447', 'Jidan Dwilaksana', '10', '10 PB1', 'L', ''),
-(764, '', '810878242', 'Jihan Maulina', '10', '10 MM1', 'P', ''),
-(765, '', '11634102', 'Jihan Pratama Anwar', '10', '10 MM1', 'P', ''),
-(766, '141510476', '9997406470', 'Jimmy Fabriyan', '12', '12 PM2', 'L', ''),
-(767, '141510097', '9991201991', 'Jiyan Permatasari', '12', '12 UPW', 'P', ''),
-(768, '151610395', '9996052761', 'Jodi Setiawan', '11', '11 AP3', 'L', ''),
-(769, '141510267', '9989779123', 'Jofanka Mirdalina Sugiarto Putri', '12', '12 AK4', 'P', ''),
-(770, '141510018', '9994176786', 'Jou Niluh Nagari', '12', '12 MM1', 'P', ''),
-(771, '151610311', '4833929', 'Juhaidah', '11', '11 AP1', 'P', ''),
-(772, '151610488', '3953266', 'Jumiati Puspa Sari', '11', '11 PM1', 'P', ''),
-(773, '141510477', '9988508930', 'Juwandi', '12', '12 PM2', 'L', ''),
-(774, '141510141', '9996070801', 'Kadmani', '12', '12 AK1', 'L', ''),
-(775, '151610106', '9995991887', 'Kamal Mubarokh', '11', '11 UPW', 'L', ''),
-(776, '141510098', '9991718482', 'Kameliawati', '12', '12 UPW', 'P', ''),
-(777, '151610537', '9995958358', 'Kanda Diyanto', '11', '11 PM2', 'L', ''),
-(778, '151610538', '4855132', 'Karina Ulul Azmi', '11', '11 PM2', 'P', ''),
-(779, '151610268', '9994043831', 'Karlina', '11', '11 AK4', 'P', ''),
-(780, '151610269', '9997214603', 'Kasmini', '11', '11 AK4', 'P', ''),
-(781, '141510183', '9994799377', 'Keke Sita Marfina', '12', '12 AK2', 'P', ''),
-(782, '151610107', '4574283', 'Kemala Ervia Damayanti', '11', '11 UPW', 'P', ''),
-(783, '141510060', '9985770449', 'Kerinah', '12', '12 MM2', 'P', ''),
-(784, '151610489', '8987923', 'Kevin Riwandy', '11', '11 PM1', 'L', ''),
-(785, '161710248', '11254949', 'Kevin Tri Putra', '10', '10 AK4', 'L', ''),
-(786, '161710365', '1541183', 'Kezia Rezani Nurzahra', '10', '10 AP3', 'P', ''),
-(787, '141510350', '9996203458', 'Khaerunnisah', '12', '12 AP2', 'P', ''),
-(788, '161710481', '11570581', 'Khamidah', '10', '10 PM2', 'P', ''),
-(789, '161710285', '5455382', 'Khanifah', '10', '10 AP1', 'P', ''),
-(790, '151610396', '3615499', 'Khoeriri Ummi Mardi', '11', '11 AP3', 'P', ''),
-(791, '161710130', '6163555', 'Khoirunnisya', '10', '10 AK1', 'P', ''),
-(792, '', '11253167', 'Kholifah Kuromah', '10', '10 PB2', 'P', ''),
-(793, '141510099', '9996025521', 'Khulalu Syarifah', '12', '12 UPW', 'P', ''),
-(794, '151610397', '6942465', 'Kiki Marini', '11', '11 AP3', 'P', ''),
-(795, '151610398', '4714490', 'Kiki Monika', '11', '11 AP3', 'P', ''),
-(796, '151610354', '4797346', 'Kiki Retno Apriana', '11', '11 AP2', 'P', ''),
-(797, '151610443', '4839069', 'Kiki Santiani', '11', '11 AP4', 'P', ''),
-(798, '141510268', '9985856321', 'Kiky Amalya', '12', '12 AK4', 'P', ''),
-(799, '141510392', '9995978711', 'Kintan Mawarti', '12', '12 AP3', 'P', ''),
-(800, '161710328', '2543750', 'Kintan Prastika Dwi Lingga', '10', '10 AP2', 'P', ''),
-(801, '151610312', '9996052503', 'Kiray Wanindri', '11', '11 AP1', 'P', ''),
-(802, '141510019', '9996072920', 'Kitriawati', '12', '12 MM1', 'P', ''),
-(803, '141510308', '9982252428', 'Kokom Komariah', '12', '12 AP1', 'P', ''),
-(804, '161710439', '17247062', 'Komariyah', '10', '10 PM1', 'P', ''),
-(805, '151610399', '11291753', 'Krisna Febriyani', '11', '11 AP3', 'P', ''),
-(806, '141510351', '9985877584', 'Krisna Levia', '12', '12 AP2', 'P', ''),
-(807, '151610223', '9994399806', 'Kunaeni Alfisyahri', '11', '11 AK3', 'P', ''),
-(808, '', '5175717', 'Kurniasih', '10', '10 AK2', 'P', ''),
-(809, '141510393', '9985759380', 'Kurniati', '12', '12 AP3', 'P', ''),
-(810, '141510224', '9985751859', 'Kursiyawati', '12', '12 AK3', 'P', ''),
-(811, '', '11572155', 'Kusnanti Aristiyani', '10', '10 PB1', 'P', ''),
-(812, '141510100', '9984301410', 'Laela', '12', '12 UPW', 'P', ''),
-(813, '161710440', '', 'Laela Bulan Cantika', '10', '10 PM1', 'P', ''),
-(814, '', '17607147', 'Laela Lutfiyah', '10', '10 MM2', 'P', ''),
-(815, '141510142', '9994953374', 'Laela Shalihah', '12', '12 AK1', 'P', ''),
-(816, '141510184', '9995978950', 'Laela Yuniar Sari', '12', '12 AK2', 'P', ''),
-(817, '161710366', '5154910', 'Laelatul Maolia', '10', '10 AP3', 'P', ''),
-(818, '51610619', '4833151', 'Laelaturrohmah', '11', '11 PB2', 'P', ''),
-(819, '161710409', '11572114', 'Lailatul Ichdah', '10', '10 AP4', 'P', ''),
-(820, '161710441', '14743930', 'Laily Miftahhul Jannah', '10', '10 PM1', 'P', ''),
-(821, '161710209', '11635133', 'Lala Leanita', '10', '10 AK3', 'P', ''),
-(822, '151610355', '4116213', 'Larasati Putri Fathiah', '11', '11 AP2', 'P', ''),
-(823, '161710564', '12034724', 'Lathifatin Fajril Fath', '10', '10 PB2', 'P', ''),
-(824, '151610620', '4663760', 'Latifah', '11', '11 PB2', 'P', ''),
-(825, '151610145', '9995485932', 'Latifah', '11', '11 AK1', 'P', ''),
-(826, '151610189', '4858265', 'Laurensius Hary Himawan', '11', '11 AK2', 'L', ''),
-(827, '161710286', '11698259', 'Leli Apriliyani', '10', '10 AP1', 'P', ''),
-(828, '', '241221', 'Leli Indriyani', '10', '10 UPW', 'P', ''),
-(829, '', '5190645', 'Leli Maulidiya', '10', '10 PM2', 'P', ''),
-(830, '151610313', '5225858', 'Lely Rahmawati', '11', '11 AP1', 'P', ''),
-(831, '', '11592496', 'Leman', '10', '10 MM1', 'L', ''),
-(832, '151610270', '4810095', 'Lena Lestari', '11', '11 AK4', 'P', ''),
-(833, '151610020', '4870171', 'Leni Rosyani', '11', '11 MM1', 'P', ''),
-(834, '151610356', '9985771182', 'Leni Widaningsih', '11', '11 AP2', 'P', ''),
-(835, '151610490', '9097889', 'Leo Sandy Prasethyo', '11', '11 PM1', 'L', ''),
-(836, '161710483', '', 'Leres Sanara', '10', '10 PM2', 'P', ''),
-(837, '141510225', '9996014751', 'Lestari', '12', '12 AK3', 'P', ''),
-(838, '151610224', '1643694', 'Lestari Sekar Ningrum', '11', '11 AK3', 'P', ''),
-(839, '151610400', '4839034', 'Lia Andani', '11', '11 AP3', 'P', ''),
-(840, '161710329', '5292678', 'Lia Anggraeni', '10', '10 AP2', 'P', ''),
-(841, '141510309', '4756127', 'Lia Febriliani', '12', '12 AP1', 'P', ''),
-(842, '151610444', '9996053358', 'Lia Ningsi', '11', '11 AP4', 'P', ''),
-(843, '161710131', '5214152', 'Lia Novianti', '10', '10 AK1', 'P', ''),
-(844, '151610146', '11370447', 'Lia Nur Apriyani', '11', '11 AK1', 'P', ''),
-(845, '161710367', '5991793', 'Like Figur Anggraeni', '10', '10 AP3', 'P', ''),
-(846, '151610314', '9995990123', 'Lilis Maulida', '11', '11 AP1', 'P', ''),
-(847, '142510061', '9995955551', 'Lilis Sulistiyani', '12', '12 MM2', 'P', ''),
-(848, '141510352', '9985856769', 'Lina Koesherawati', '12', '12 AP2', 'P', ''),
-(849, '151610357', '14481087', 'Lina Lestari', '11', '11 AP2', 'P', ''),
-(850, '', '11753850', 'Lina Melinda', '10', '10 AK2', 'P', ''),
-(851, '151610491', '3952315', 'Linanda Putri', '11', '11 PM1', 'P', ''),
-(852, '', '11557998', 'Linda Duwi Komala', '10', '10 PB1', 'P', ''),
-(853, '151610315', '9996052153', 'Linda Herliana', '11', '11 AP1', 'P', ''),
-(854, '151610401', '4838800', 'Linda Lestiana Waty Rahman', '11', '11 AP3', 'P', ''),
-(855, '151610190', '9996073474', 'Lintang Lin', '11', '11 AK2', 'P', ''),
-(856, '161710025', '115922533', 'Lisa Panca Indriyani', '10', '10 MM1', 'P', ''),
-(857, '151610358', '4793473', 'Lisa Uliya', '11', '11 AP2', 'P', ''),
-(858, '', '11753298', 'Lisah Agustin', '10', '10 MM2', 'P', ''),
-(859, '161710565', '20118446', 'Lisma Levia', '10', '10 PB2', 'P', ''),
-(860, '141510020', '9995959374', 'Lismia Wati', '12', '12 MM1', 'P', ''),
-(861, '141510143', '9996030113', 'Listiana Safitri', '12', '12 AK1', 'P', ''),
-(862, '151610225', '6779694', 'Lola Clodya Tamdi', '11', '11 AK3', 'P', ''),
-(863, '161710210', '11751582', 'Lola Oktavia', '10', '10 AK3', 'P', ''),
-(864, '151610316', '4814237', 'Lola Rosela', '11', '11 AP1', 'P', ''),
-(865, '3.20923480301E+15', '11539324', 'Lolla Alfareza', '10', '10 AP4', 'P', ''),
-(866, '161710484', '', 'Luckyana', '10', '10 PM2', 'P', ''),
-(867, '161410249', '11570342', 'Ludy Fawwaz Maulana', '10', '10 AK4', 'L', ''),
-(868, '151610271', '9996073454', 'Lukardo', '11', '11 AK4', 'L', ''),
-(869, '151610061', '9985791284', 'Luke Nugroho', '11', '11 MM2', 'L', ''),
-(870, '141510185', '9996055763', 'Lula Karmelia', '12', '12 AK2', 'P', ''),
-(871, '151610619', '4738795', 'Luli Laelatul Lafia', '11', '11 AK4', 'P', ''),
-(872, '151610402', '4832000', 'Lusi Lusita', '11', '11 AP3', 'P', ''),
-(873, '161710368', '', 'Lusianadewi', '10', '10 AP3', 'P', ''),
-(874, '', '11593497', 'Lusy Adelia', '10', '10 PB1', 'P', ''),
-(875, '161710330', '5394001', 'Lutfianah', '10', '10 AP2', 'P', ''),
-(876, '141510310', '9995811296', 'Lutfiyah Putri Agna', '12', '12 AP1', 'P', ''),
-(877, '151610359', '8047734', 'Luthfiah Rachmawati', '11', '11 AP2', 'P', ''),
-(878, '141510394', '9998062675', 'Luthfiyah Mutiah', '12', '12 AP3', 'P', ''),
-(879, '', '6174336', 'Lyssa Indriyani', '10', '10 PB2', 'P', ''),
-(880, '151610147', '4657501', 'Maefah Ipta Anugrah', '11', '11 AK1', 'P', ''),
-(881, '151610062', '4791903', 'Mai Rosmawati Simbolon', '11', '11 MM2', 'P', ''),
-(882, '151610403', '9996057574', 'Maimunah', '11', '11 AP3', 'P', ''),
-(883, '151610445', '4757947', 'Maisaroh', '11', '11 AP4', 'P', ''),
-(884, '', '5178969', 'Makmur Alamsyah', '10', '10 PB1', 'L', ''),
-(885, '161710369', '11592551', 'Mala Mahalia', '10', '10 AP3', 'P', ''),
-(886, '161710411', '11254428', 'Mariah Ulfah Prihastomo', '10', '10 AP4', 'P', ''),
-(887, '141510101', '9989938036', 'Mariam', '12', '12 UPW', 'P', ''),
-(888, '161710132', '5190829', 'Maryam', '10', '10 AK1', 'P', ''),
-(889, '141510226', '9985891739', 'Mashadah', '12', '12 AK3', 'P', ''),
-(890, '141510269', '9985874903', 'Masrifah', '12', '12 AK4', 'P', ''),
-(891, '151610404', '9300536', 'Masunah', '11', '11 AP3', 'P', ''),
-(892, '141510395', '9996070610', 'Mauhibatul Laila', '12', '12 AP3', 'P', ''),
-(893, '141510062', '9996053992', 'Maulid Ikhsanul Anshar', '12', '12 MM2', 'L', ''),
-(894, '141510102', '9994799966', 'Maulidya Rizky Yoghiswari', '12', '12 UPW', 'P', ''),
-(895, '161710442', '11593444', 'Mawar Munawaroh', '10', '10 PM1', 'P', ''),
-(896, '141510103', '9998781943', 'Maya Apriliani', '12', '12 UPW', 'P', ''),
-(897, '141510311', '9985792851', 'Maya Desyvia Mega Mardiyati', '12', '12 AP1', 'P', ''),
-(898, '161710170', '5230391', 'Maya Khoirunnisa', '10', '10 AK2', 'P', ''),
-(899, '141510353', '9985854622', 'Maya Sari', '12', '12 AP2', 'P', ''),
-(900, '141510144', '9995979815', 'Mayang Fuji Asih', '12', '12 AK1', 'P', ''),
-(901, '141510431', '9996054921', 'Mayang Sari', '12', '12 PM1', 'P', ''),
-(902, '141510478', '9994810907', 'Mayang Wiharyanti', '12', '12 PM2', 'P', ''),
-(903, '141510186', '9996073604', 'Mega Laraswaty', '12', '12 AK2', 'P', ''),
-(904, '161710211', '10710887', 'Mega Mustika Sari', '10', '10 AK3', 'P', ''),
-(905, '151610539', '9996092574', 'Mega Nur Fadillah', '11', '11 PM2', 'P', ''),
-(906, '13147162', '11633463', 'Mega Nur Sahera', '10', '10 AP1', 'P', ''),
-(907, '151610622', '9997640373', 'Mega Nurrohman Oktaviani', '11', '11 PB2', 'P', ''),
-(908, '151610191', '11374474', 'Mega Putri Adelia', '11', '11 AK2', 'P', ''),
-(909, '141510021', '9996057869', 'Mega Rosmayani', '12', '12 MM1', 'P', ''),
-(910, '141510432', '9985854425', 'Mega Sukawati', '12', '12 PM1', 'P', ''),
-(911, '13147056', '5219164', 'Meganisa Rizky Rahman', '10', '10 AK4', 'P', ''),
-(912, '', '4579114', 'Megarayuni', '10', '10 PB2', 'P', ''),
-(913, '151610273', '4839241', 'Meilyn Della Danistra', '11', '11 AK4', 'P', ''),
-(914, '151610226', '4834252', 'Mela Arena', '11', '11 AK3', 'P', ''),
-(915, '151610623', '4795238', 'Mela Triseli', '11', '11 PB2', 'P', ''),
-(916, '151610148', '8263132', 'Melati Liring Galih', '11', '11 AK1', 'P', ''),
-(917, '141510227', '9985831556', 'Melati Rachmawati', '12', '12 AK3', 'P', ''),
-(918, '141510396', '9999595696', 'Meli', '12', '12 AP3', 'P', ''),
-(919, '161710331', '', 'Meliyana', '10', '10 AP2', 'P', ''),
-(920, '151610274', '4536533', 'Meliyanah Nur Rokhimi', '11', '11 AK4', 'P', ''),
-(921, '161710443', '', 'Mella Maelany', '10', '10 PM1', 'P', ''),
-(922, '141510479', '9985755207', 'Mellie Nabiella', '12', '12 PM2', 'P', ''),
-(923, '', '9996430476', 'Melly Ana Rosa', '10', '10 MM1', 'P', ''),
-(924, '151610317', '9996074830', 'Melnia Ramadhan', '11', '11 AP1', 'P', ''),
-(925, '141510270', '9999556293', 'Merissa Effendi', '12', '12 AK4', 'P', ''),
-(926, '151610540', '4816181', 'Merlina Febriliany', '11', '11 PM2', 'P', ''),
-(927, '151610446', '4819182', 'Meta Mutiara', '11', '11 AP4', 'P', ''),
-(928, '151610192', '9996014903', 'Metia', '11', '11 AK2', 'P', ''),
-(929, '151610447', '4831744', 'Meylika Anggraeni', '11', '11 AP4', 'P', ''),
-(930, '151610448', '9996091436', 'Mia Amelia', '11', '11 AP4', 'P', ''),
-(931, '151610360', '9995314440', 'Mia Dwiyanti', '11', '11 AP2', 'P', ''),
-(932, '151610109', '4758090', 'Mia Komala Sari', '11', '11 UPW', 'P', ''),
-(933, '151610227', '9996091640', 'Miftahul Jannah', '11', '11 AK3', 'P', ''),
-(934, '161710444', '10879522', 'Mila Apriliani', '10', '10 PM1', 'P', ''),
-(935, '151610149', '4814355', 'Milik Ardini', '11', '11 AK1', 'P', ''),
-(936, '151610624', '3615534', 'Milna Sari', '11', '11 PB2', 'P', ''),
-(937, '', '5178839', 'Mira Adiska', '10', '10 UPW', 'P', ''),
-(938, '141510312', '9994799879', 'Miranti Ayu Andini', '12', '12 AP1', 'P', ''),
-(939, '151610193', '9998983138', 'Mita', '11', '11 AK2', 'P', ''),
-(940, '151610405', '9996071551', 'Mitha Dwi Cahyani', '11', '11 AP3', 'P', ''),
-(941, '151610492', '9983663368', 'Moch. Irfan Septiaji', '11', '11 PM1', 'L', ''),
-(942, '', '5427189', 'Mochamad Digjaya', '10', '10 MM2', 'L', ''),
-(943, '141510145', '9998240444', 'Mochamad Fajar Risky', '12', '12 AK1', 'L', ''),
-(944, '151610063', '9999719141', 'Mochammad Rizki Bayu Herlambang', '11', '11 MM2', 'L', ''),
-(945, '161711', '6250943', 'Moh. Fikri Husaeni', '11', '11 MM1', 'L', ''),
-(946, '141510104', '9987826830', 'Mohamad Aminudin', '12', '12 UPW', 'L', ''),
-(947, '141510063', '9995970907', 'Mohamad Fajar Adi Nugroho', '12', '12 MM2', 'L', ''),
-(948, '151610021', '9994366670', 'Mohamad Fauzan', '11', '11 MM1', 'L', ''),
-(949, '141510480', '9993720052', 'Mohamad Fikhan P.k', '12', '12 PM2', 'L', ''),
-(950, '151610110', '9996018995', 'Mohamad Novan', '11', '11 UPW', 'L', ''),
-(951, '161710212', '16215666', 'Mohamad Priana', '10', '10 AK3', 'L', ''),
-(952, '', '6077344', 'Mohamad Rhamdan', '10', '10 UPW', 'L', ''),
-(953, '141510187', '9995935355', 'Mohammad Arkan Hawari', '12', '12 AK2', 'L', ''),
-(954, '', '16206718', 'Mohammad Faisal', '10', '10 MM1', 'L', ''),
-(955, '141510105', '9979008351', 'Mohammad Fakhrurozi', '12', '12 UPW', 'L', ''),
-(956, '151610150', '9505462', 'Mohammad Jaenudin', '11', '11 AK1', 'L', ''),
-(957, '151610570', '6902096', 'Mohammad Luthfi', '11', '11 PB1', 'L', ''),
-(958, '141510434', '9985870693', 'Mohammad Najih', '12', '12 PM1', 'L', ''),
-(959, '151610194', '8285292', 'Mohammad Royhan', '11', '11 AK2', 'L', ''),
-(960, '141510023', '9994677570', 'Mohammad Yakub Wicaksono', '12', '12 MM1', 'L', ''),
-(961, '141510435', '9996059527', 'Mokhamad Ilham', '12', '12 PM1', 'L', ''),
-(962, '161710527', '16702973', 'Mona Murniawati Kris', '10', '10 PB1', 'P', ''),
-(963, '141510228', '9995979449', 'Monic Cahyani Wulandari', '12', '12 AK3', 'P', ''),
-(964, '161710370', '11559955', 'Monica Fitri', '10', '10 AP3', 'P', ''),
-(965, '161710251', '5178002', 'Monika', '10', '10 AK4', 'P', ''),
-(966, '151610228', '6362280', 'Monika', '11', '11 AK3', 'P', ''),
-(967, '161710288', '11559798', 'Muawiyah', '10', '10 AP1', 'L', ''),
-(968, '161710332', '3289783', 'Muazah', '10', '10 AP2', 'P', ''),
-(969, '141510354', '9981063546', 'Mufidatul Aziza', '12', '12 AP2', 'P', ''),
-(970, '161710371', '9996432232', 'Muhaimin', '10', '10 AP3', 'L', ''),
-(971, '141510022', '9976017026', 'Muhamad Fachri Rachmandita', '12', '12 MM1', 'L', ''),
-(972, '151610064', '9998423871', 'Muhamad Fajri', '11', '11 MM2', 'L', ''),
-(973, '151610026', '14408225', 'Muhamad Iman Fathur Rohman', '11', '11 MM1', 'L', ''),
-(974, '151610022', '4757765', 'Muhamad Lathoiful Minan', '11', '11 MM1', 'L', ''),
-(975, '151610023', '4838974', 'Muhamad Najibul Fata', '11', '11 MM1', 'L', ''),
-(976, '151610151', '9999910723', 'Muhamad Nur Ali', '11', '11 AK1', 'L', ''),
-(977, '151610029', '9999575968', 'Muhamad Rifqi Alidzanur', '11', '11 MM1', 'L', ''),
-(978, '151610066', '9999041615', 'Muhamad Taufik Hidayat', '11', '11 MM2', 'L', ''),
-(979, '151610108', '7982643', 'Muhamad Wildan Tri Pamungkas', '11', '11 UPW', 'L', ''),
-(980, '151610024', '3614801', 'Muhamad Zakaria', '11', '11 MM1', 'L', ''),
-(981, '141510271', '9991911503', 'Muhammad Afifudin', '12', '12 AK4', 'L', ''),
-(982, '141510064', '9983943521', 'Muhammad Alvin Mubarok', '12', '12 MM2', 'L', ''),
-(983, '161710445', '', 'Muhammad Arif Rohmanudin', '10', '10 PM1', 'L', ''),
-(984, '', '11571319', 'Muhammad Azis Faturrohman', '10', '10 MM2', 'L', ''),
-(985, '', '', 'Muhammad Cecep Adi Resa', '10', '10 AK2', 'L', ''),
-(986, '151610625', '9995978832', 'Muhammad Fahmil Huda', '11', '11 PB2', 'L', ''),
-(987, '141510481', '9976581181', 'Muhammad Gabriel', '12', '12 PM2', 'L', ''),
-(988, '141510146', '9984691641', 'Muhammad Gilang Mahardhika', '12', '12 AK1', 'L', ''),
-(989, '151610025', '9995150490', 'Muhammad Ilham', '11', '11 MM1', 'L', ''),
-(990, '141510436', '9991771074', 'Muhammad Iqbal Maulana', '12', '12 PM1', 'L', ''),
-(991, '151610027', '9995846844', 'Muhammad Iqza Guntoro', '11', '11 MM1', 'L', ''),
-(992, '151610028', '9993128648', 'Muhammad Mauluddin Nur', '11', '11 MM1', 'L', ''),
-(993, '151610621', '9879212', 'Muhammad Najmi Nugraha', '11', '11 PB2', 'L', ''),
-(994, '', '5191102', 'Muhammad Nur Khafid', '10', '10 PB2', 'L', ''),
-(995, '', '3614361', 'Muhammad Raihan Akbar', '10', '10 PB2', 'L', ''),
-(996, '141510065', '9990658151', 'Muhammad Rifqi Al Baihaqi', '12', '12 MM2', 'L', ''),
-(997, '', '6885513', 'Muhammad Rifqi Najib', '10', '10 UPW', 'L', ''),
-(998, '151610493', '9998786186', 'Muhammad Rifqillah', '11', '11 PM1', 'L', ''),
-(999, '141510482', '4653829', 'Muhammad Risal Adhan', '12', '12 PM2', 'L', ''),
-(1000, '151610030', '9017598', 'Muhammad Rizal Aryo Seno', '11', '11 MM1', 'L', ''),
-(1001, '151610065', '3951373', 'Muhammad Rizal Pratama', '11', '11 MM2', 'L', ''),
-(1002, '151610626', '4757540', 'Muhammad Wahyudi', '11', '11 PB2', 'L', ''),
-(1003, '161710133', '11559590', 'Muhammad Wildan', '10', '10 AK1', 'L', ''),
-(1004, '141510106', '4792519', 'Muhammad Yusuf', '12', '12 UPW', 'L', ''),
-(1005, '161710446', '', 'Muhyiyuddin', '10', '10 PM1', 'L', ''),
-(1006, '151610067', '4838011', 'Mukamad Alif', '11', '11 MM2', 'L', ''),
-(1007, '151610449', '1871084', 'Mukhamad Arifin Nur', '11', '11 AP4', 'L', ''),
-(1008, '', '20130048', 'Mukhamad Azis', '10', '10 MM1', 'L', ''),
-(1009, '151610031', '4757632', 'Mukhamad Cesar', '11', '11 MM1', 'L', ''),
-(1010, '', '5177576', 'Mukhamad Farhan Riyadi', '10', '10 MM2', 'L', ''),
-(1011, '', '5078597', 'Mukhamad Irfan Syah', '10', '10 AK3', 'L', ''),
-(1012, '161710252', '5292980', 'Mukhammad Arifin Maulana', '10', '10 AK4', 'L', ''),
-(1013, '141510188', '9985815925', 'Mulin Ni\'mah', '12', '12 AK2', 'P', ''),
-(1014, '', '5154550', 'Muna Agni', '10', '10 PB2', 'P', ''),
-(1015, '141510024', '9984999427', 'Muslikha Ayu', '12', '12 MM1', 'P', ''),
-(1016, '161710134', '10973955', 'Mustika Ratna Dewi', '10', '10 AK1', 'P', ''),
-(1017, '141510397', '4831995', 'Mutia Andini', '12', '12 AP3', 'P', ''),
-(1018, '141510229', '9995991116', 'Mutiara', '12', '12 AK3', 'P', ''),
-(1019, '151610318', '9747410', 'Mutiyah', '11', '11 AP1', 'P', ''),
-(1020, '151610032', '15223257', 'Nabila Febriyani', '11', '11 MM1', 'P', ''),
-(1021, '151610195', '9993424754', 'Nabila Ramadina', '11', '11 AK2', 'P', ''),
-(1022, '161710173', '', 'Nabilah Putri Milenia', '10', '10 AK2', 'P', ''),
-(1023, '161710214', '10775093', 'Nada Nur Janah', '10', '10 AK3', 'P', ''),
-(1024, '161710447', '', 'Nadhrotul Fikriyah', '10', '10 PM1', 'P', ''),
-(1025, '', '', 'Nadia Arum Putri', '10', '10 AP4', 'P', ''),
-(1026, '161710448', '', 'Nadia Ela Risqi', '10', '10 PM1', 'P', ''),
-(1027, '141510313', '9996052671', 'Nadila Ayu Harvianty', '12', '12 AP1', 'P', ''),
-(1028, '151610571', '9904269', 'Nadiya Baldatuzzahra', '11', '11 PB1', 'P', ''),
-(1029, '', '11830304', 'Nadya Krisma Anggareni', '10', '10 MM1', 'P', ''),
-(1030, '151610494', '5081276', 'Naelin Najah', '11', '11 PM1', 'P', ''),
-(1031, '161710289', '5153312', 'Nala Syarika', '10', '10 AP1', 'P', ''),
-(1032, '151610541', '9984691347', 'Nanda Fauziah', '11', '11 PM2', 'P', ''),
-(1033, '161710253', '11592683', 'Nanda Maulidah Azzahro', '10', '10 AK4', 'P', ''),
-(1034, '151610406', '4835863', 'Nanda Nurhaeni', '11', '11 AP3', 'P', ''),
-(1035, '151610068', '9996051338', 'Naoval Jafarid', '11', '11 MM2', 'L', ''),
-(1036, '151610407', '4795219', 'Natasa Yuandani', '11', '11 AP3', 'P', ''),
-(1037, '151610229', '4791549', 'Naufal Nurrofiq', '11', '11 AK3', 'L', ''),
-(1038, '151610572', '6007094', 'Nayanti', '11', '11 PB1', 'P', ''),
-(1039, '161710333', '20117374', 'Nazwa Khairana Prayudati', '10', '10 AP2', 'P', ''),
-(1040, '1617100372', '11559661', 'Neci Roslita Sari', '10', '10 AP3', 'P', ''),
-(1041, '141510025', '4815886', 'Nela Puji Rahayu', '12', '12 MM1', 'P', ''),
-(1042, '141510272', '9985871016', 'Neli', '12', '12 AK4', 'P', ''),
-(1043, '', '9696530', 'Neli Asriyati', '10', '10 PB2', 'P', ''),
-(1044, '', '11570334', 'Nelisha', '10', '10 AK2', 'P', ''),
-(1045, '141510147', '9996055332', 'Nella Elfira', '12', '12 AK1', 'P', ''),
-(1046, '161710215', '10526070', 'Nelly Meinissa Azahra', '10', '10 AK3', 'P', ''),
-(1047, '141510107', '9995811286', 'Neng Sri Jubaedah', '12', '12 UPW', 'P', ''),
-(1048, '141510355', '9997252840', 'Neni Mulyani', '12', '12 AP2', 'P', ''),
-(1049, '151610196', '4573924', 'Ni\'matur Rohmah', '11', '11 AK2', 'P', ''),
-(1050, '151610408', '9995874101', 'Nia Safitri', '11', '11 AP3', 'P', ''),
-(1051, '151610152', '4795331', 'Nida Fatiya Rahmah', '11', '11 AK1', 'P', ''),
-(1052, '', '17582082', 'Nida Salsabila', '10', '10 MM2', 'P', ''),
-(1053, '141510066', '9992264770', 'Niken Fahira Sonia', '12', '12 MM2', 'P', ''),
-(1054, '141510437', '9985792180', 'Nina Epani', '12', '12 PM1', 'P', ''),
-(1055, '141510026', '9993840586', 'Ninda Diniya', '12', '12 MM1', 'P', ''),
-(1056, '141510189', '9985695495', 'Ninda Nurjanah', '12', '12 AK2', 'P', ''),
-(1057, '151610230', '4738826', 'Nindi Putriana', '11', '11 AK3', 'P', ''),
-(1058, '141510356', '9985773126', 'Nindy Nofriyanti', '12', '12 AP2', 'P', ''),
-(1059, '141510398', '9985891653', 'Ning Sari', '12', '12 AP3', 'P', ''),
-(1060, '', '11591825', 'Nisa Alfiyyah Salsabila', '10', '10 AP1', 'P', ''),
-(1061, '151610153', '4578415', 'Nisa Marha Khairon', '11', '11 AK1', 'P', ''),
-(1062, '141510067', '9995991656', 'Nisa Ristianah', '12', '12 MM2', 'P', ''),
-(1063, '151610231', '7084279', 'Nissa Amelia Salicha', '11', '11 AK3', 'P', ''),
-(1064, '151610197', '4795532', 'Nita Dwi Lestari', '11', '11 AK2', 'P', ''),
-(1065, '141510483', '9996073276', 'Nita Widyaningsih', '12', '12 PM2', 'P', ''),
-(1066, '141510314', '9985871858', 'Noer Aeni', '12', '12 AP1', 'P', ''),
-(1067, '161710291', '5230117', 'Noerlaela', '10', '10 AP1', 'P', ''),
-(1068, '141510438', '9996018560', 'Noni Agnes', '12', '12 PM1', 'P', ''),
-(1069, '141510357', '9995958653', 'Noni Wahini', '12', '12 AP2', 'P', ''),
-(1070, '141510230', '9985893103', 'Noni Yohana', '12', '12 AK3', 'P', ''),
-(1071, '141510273', '9985770513', 'Nopianti', '12', '12 AK4', 'P', ''),
-(1072, '141510399', '9994274133', 'Nopita', '12', '12 AP3', 'P', ''),
-(1073, '151610542', '4758070', 'Nopitasari', '11', '11 PM2', 'P', ''),
-(1074, '141510148', '9995934801', 'Nova Kharisma', '12', '12 AK1', 'P', ''),
-(1075, '141510190', '9985870717', 'Novi Eliyana', '12', '12 AK2', 'P', ''),
-(1076, '151610069', '9996092811', 'Novi Lazuardini', '11', '11 MM2', 'P', ''),
-(1077, '141510439', '9985891638', 'Novi Oktavianti', '12', '12 PM1', 'P', ''),
-(1078, '151610495', '9996019190', 'Novi Rachmawati', '11', '11 PM1', 'P', ''),
-(1079, '141510315', '9995582233', 'Novia', '12', '12 AP1', 'P', ''),
-(1080, '161710334', '11559815', 'Novia', '10', '10 AP2', 'P', ''),
-(1081, '151610232', '9996355073', 'Novia', '11', '11 AK3', 'P', ''),
-(1082, '151710254', '5177730', 'Novianti Dwi Rihandjani', '10', '10 AK4', 'P', ''),
-(1083, '', '12204907', 'Noviar Tri Khaerina Ramdhani', '10', '10 PB1', 'P', ''),
-(1084, '151610361', '6764706', 'Noviati', '11', '11 AP2', 'P', ''),
-(1085, '161710373', '5631077', 'Novita Fitriyana', '10', '10 AP3', 'P', ''),
-(1086, '151610233', '9995810483', 'Novita Noerikhsan', '11', '11 AK3', 'P', ''),
-(1087, '161710530', '', 'Novita Putri', '10', '10 PB1', 'P', ''),
-(1088, '151610275', '9996030292', 'Noviyanti', '11', '11 AK4', 'P', ''),
-(1089, '141510231', '147192383', 'Nunung Julaeha', '12', '12 AK3', 'P', ''),
-(1090, '151610362', '9994488721', 'Nunung Nurhayati', '11', '11 AP2', 'P', ''),
-(1091, '151610276', '9039523', 'Nur\'aeni', '11', '11 AK4', 'P', ''),
-(1092, '151610575', '9996031011', 'Nur\'aeni', '11', '11 PB1', 'P', ''),
-(1093, '141510274', '9996091821', 'Nur \' Ariefa Arrizky', '12', '12 AK4', 'P', ''),
-(1094, '141510358', '9986909241', 'Nur Aeni', '12', '12 AP2', 'P', ''),
-(1095, '141510191', '9985818199', 'Nur Aeni', '12', '12 AK2', 'P', ''),
-(1096, '151610111', '9995970522', 'Nur Alifah', '11', '11 UPW', 'P', ''),
-(1097, '141510401', '9996054095', 'Nur Alimah', '12', '12 AP3', 'P', ''),
-(1098, '161710413', '5177808', 'Nur Alimah', '10', '10 AP4', 'P', ''),
-(1099, '141510316', '9994810255', 'Nur Amrillah', '12', '12 AP1', 'P', ''),
-(1100, '161710414', '11550734', 'Nur Anis', '10', '10 AP4', 'P', ''),
-(1101, '151610450', '9997292208', 'Nur Atika Dwi Yulistiana', '11', '11 AP4', 'P', ''),
-(1102, '141510485', '9985793290', 'Nur Ayuni Sabrina', '12', '12 PM2', 'P', ''),
-(1103, '141510149', '9985791273', 'Nur Azizah', '12', '12 AK1', 'P', ''),
-(1104, '161710030', '14134282', 'Nur Azizah', '10', '10 MM1', 'P', ''),
-(1105, '151610627', '152256136', 'Nur Eni', '11', '11 PB2', 'P', ''),
-(1106, '151610409', '9993999174', 'Nur Fadilah', '11', '11 AP3', 'P', ''),
-(1107, '151610410', '16288215', 'Nur Fadillah', '11', '11 AP3', 'P', ''),
-(1108, '141510440', '9985771131', 'Nur Fitri Aulia', '12', '12 PM1', 'P', ''),
-(1109, '161710292', '10878998', 'Nur Hanifah Setyawati', '10', '10 AP1', 'P', ''),
-(1110, '141510359', '9985891025', 'Nur Indah Asriani', '12', '12 AP2', 'P', ''),
-(1111, '151610573', '9996355078', 'Nur Khofifa', '11', '11 PB1', 'P', ''),
-(1112, '151610277', '8231720', 'Nur Kholifah Abas', '11', '11 AK4', 'P', ''),
-(1113, '161710572', '7653657', 'Nur Mahmudah V', '10', '10 PB2', 'P', ''),
-(1114, '151610154', '4839259', 'Nur Oktaviani', '11', '11 AK1', 'P', ''),
-(1115, '', '9861973', 'Nur Rahmah', '10', '10 MM2', 'P', ''),
-(1116, '151610411', '4751048', 'Nur Rantika', '11', '11 AP3', 'P', ''),
-(1117, '151610070', '4922067', 'Nur Reza Patievi', '11', '11 MM2', 'P', ''),
-(1118, '151610071', '4578985', 'Nur Rizqi Safarilah', '11', '11 MM2', 'P', ''),
-(1119, '141510400', '9996054942', 'Nur Rolinda Gustina', '12', '12 AP3', 'P', ''),
-(1120, '161710135', '11550550', 'Nur Ropi\'ah', '10', '10 AK1', 'P', ''),
-(1121, '151610574', '9996056209', 'Nur Siti Fatimah', '11', '11 PB1', 'P', ''),
-(1122, '', '11591762', 'Nur Syifah Faojiah', '10', '10 AK2', 'P', ''),
-(1123, '151610278', '4814095', 'Nur Taufiq Hidayat', '11', '11 AK4', 'L', ''),
-(1124, '151610072', '4792429', 'Nuraisah', '11', '11 MM2', 'P', ''),
-(1125, '151610451', '9996052127', 'Nurayuni', '11', '11 AP4', 'P', ''),
-(1126, '141510317', '9985751863', 'Nurazizah Dwi Septiyani', '12', '12 AP1', 'P', ''),
-(1127, '161710216', '5190286', 'Nurfatur Sholeha', '10', '10 AK3', 'P', ''),
-(1128, '141510232', '9995873070', 'Nurhabibah', '12', '12 AK3', 'P', ''),
-(1129, '151610073', '2569589', 'Nurhamzah Izzul Haq', '11', '11 MM2', 'L', ''),
-(1130, '161710335', '5154404', 'Nurhayati', '10', '10 AP2', 'P', ''),
-(1131, '151610452', '3090380', 'Nurhayati', '11', '11 AP4', 'P', ''),
-(1132, '151610198', '4795029', 'Nurhidayah Kautsar', '11', '11 AK2', 'P', ''),
-(1133, '', '11813291', 'Nurhikmah Adawiyah', '10', '10 UPW', 'P', ''),
-(1134, '141510360', '9985872871', 'Nurjannah', '12', '12 AP2', 'P', ''),
-(1135, '151610234', '4715966', 'Nurkholifa', '11', '11 AK3', 'P', ''),
-(1136, '161710415', '', 'Nurkhoriya', '10', '10 AP4', 'P', ''),
-(1137, '161710485', '', 'Nurlaelah', '10', '10 PM2', 'P', ''),
-(1138, '151610672', '4792415', 'Nurlaeli Kamalin', '11', '11 AK3', 'P', ''),
-(1139, '151610279', '4819671', 'Nurmaya', '11', '11 AK4', 'P', ''),
-(1140, '151610576', '4831302', 'Nuronniyatul Aliyah', '11', '11 PB1', 'P', ''),
-(1141, '161710293', '5177336', 'Nurrahmah Istiqomah', '10', '10 AP1', 'P', ''),
-(1142, '141510402', '9996033040', 'Nurrohmah', '12', '12 AP3', 'P', ''),
-(1143, '141510275', '9995152396', 'Nurrul Aisyah Dwi Putri', '12', '12 AK4', 'P', ''),
-(1144, '151610112', '4736777', 'Nursahid', '11', '11 UPW', 'L', ''),
-(1145, '161710486', '5214333', 'Nursela', '10', '10 PM2', 'P', ''),
-(1146, '151610319', '9996016673', 'Nursuci Ramadhani', '11', '11 AP1', 'P', ''),
-(1147, '151610113', '4832744', 'Nurtisari', '11', '11 UPW', 'P', ''),
-(1148, '151610320', '5027656', 'Nurul Aini', '11', '11 AP1', 'P', ''),
-(1149, '151610363', '9992597987', 'Nurul Aeni', '11', '11 AP2', 'P', ''),
-(1150, '161710487', '5231648', 'Nurul Alfiah', '10', '10 PM2', 'P', ''),
-(1151, '151610364', '9999724503', 'Nurul Fajriyah', '11', '11 AP2', 'P', ''),
-(1152, '161710449', '', 'Nurul Farkhuni', '10', '10 PM1', 'P', ''),
-(1153, '151610496', '9998465555', 'Nurul Fatikhah', '11', '11 PM1', 'P', ''),
-(1154, '141510150', '9999926309', 'Nurul Fatimah', '12', '12 PM1', 'P', ''),
-(1155, '151610577', '4830631', 'Nurul Fatimah', '11', '11 PB1', 'P', ''),
-(1156, '151610543', '6408399', 'Nurul Istikomah', '11', '11 PM2', 'P', ''),
-(1157, '161710255', '6078068', 'Nurul Izah', '10', '10 AK4', 'P', ''),
-(1158, '151610155', '4869923', 'Nurul Khidmah', '11', '11 AK1', 'P', ''),
-(1159, '151610544', '9996092560', 'Nurul Khotimah', '11', '11 PM2', 'P', ''),
-(1160, '151610321', '9995959489', 'Nurul Khotimah', '11', '11 AP1', 'P', ''),
-(1161, '161710136', '4575270', 'Nurul Novitasari', '10', '10 AK1', 'P', ''),
-(1162, '141510192', '9995979126', 'Nurul Rizki Hidayani', '12', '12 AK2', 'P', ''),
-(1163, '161710176', '5178318', 'Nurul Tifani', '10', '10 AK2', 'P', ''),
-(1164, '141510318', '9996058544', 'Nurul Zannah', '12', '12 AP1', 'P', ''),
-(1165, '161710374', '10710865', 'Nurullita Saphira Putri', '10', '10 AP3', 'P', ''),
-(1166, '161710217', '11559757', 'Okiawati', '10', '10 AK3', 'P', ''),
-(1167, '161710256', '5230517', 'Okta Ayuwandi Fauziah', '10', '10 AK4', 'P', ''),
-(1168, '151610199', '9995639508', 'Oktavia Diana Sari', '11', '11 AK2', 'P', ''),
-(1169, '151610578', '9995810402', 'Okti Prita Utami', '11', '11 PB1', 'P', ''),
-(1170, '9996051460', '9996051460', 'Oldy Noviyanti', '10', '10 AK1', 'P', ''),
-(1171, '151610236', '4578363', 'Olinda Windi Lestari', '11', '11 AK3', 'L', ''),
-(1172, '141510233', '9996092387', 'Olsa Maeda', '12', '12 AK3', 'P', ''),
-(1173, '', '5292710', 'Pajar Rifai', '10', '10 MM1', 'L', ''),
-(1174, '151610579', '4839418', 'Pandan Langit', '11', '11 PB1', 'P', ''),
-(1175, '161710416', '', 'Pandu Haryanto', '10', '10 AP4', 'L', ''),
-(1176, '151610033', '6702997', 'Panji Andana', '11', '11 MM1', 'L', ''),
-(1177, '151610074', '7768624', 'Paquita Hanny Auliatul Muhabbah', '11', '11 MM2', 'P', ''),
-(1178, '', '12099756', 'Pebi Dwi Maharani', '10', '10 UPW', 'P', ''),
-(1179, '151610580', '4814238', 'Pebri Fitriana', '11', '11 PB1', 'P', ''),
-(1180, '141510487', '9996052113', 'Peby', '12', '12 PM2', 'P', ''),
-(1181, '161710450', '5219545', 'Peri', '10', '10 PM1', 'L', ''),
-(1182, '151610365', '9995025075', 'Pertiwi Subandi', '11', '11 AP2', 'P', ''),
-(1183, '', '11550398', 'Pipit Safitri Fa\'at', '10', '10 PB1', 'P', ''),
-(1184, '161710177', '18328881', 'Pita Triya', '10', '10 AK2', 'P', ''),
-(1185, '161710294', '11838912', 'Ponika', '10', '10 AP1', 'P', ''),
-(1186, '161710218', '', 'Pratica Pramesti', '10', '10 AK3', 'P', ''),
-(1187, '141510442', '9996059836', 'Puja Pangesti', '12', '12 PM1', 'P', ''),
-(1188, '161710488', '9995978967', 'Puja Sukmawati', '10', '10 PM2', 'P', ''),
-(1189, '141510108', '9985751849', 'Puji Astuti', '12', '12 UPW', 'P', ''),
-(1190, '151610497', '4756558', 'Puji Deviyanti', '11', '11 PM1', 'P', ''),
-(1191, '141510151', '9996054010', 'Puput Evianti', '12', '12 AK1', 'P', ''),
-(1192, '141510193', '9998940496', 'Puput Santika', '12', '12 AK2', 'P', ''),
-(1193, '151610322', '4737671', 'Puput Sulistianti', '11', '11 AP1', 'P', ''),
-(1194, '141510276', '9995991885', 'Puspitasari', '12', '12 AK4', 'P', ''),
-(1195, '161710257', '11556934', 'Putri Ajizah Apriliani', '10', '10 AK4', 'P', ''),
-(1196, '151610156', '4816770', 'Putri Ani', '11', '11 AK1', 'P', ''),
-(1197, '', '11053279', 'Putri Diah Pramesti', '10', '10 PB1', 'P', ''),
-(1198, '151610366', '5164804', 'Putri Diana', '11', '11 AP2', 'P', ''),
-(1199, '', '11570837', 'Putri Erfrida Diannisa', '10', '10 PB1', 'P', ''),
-(1200, '141510361', '9998721274', 'Putri Febriyanti Rofeli', '12', '12 AP2', 'P', ''),
-(1201, '151610546', '9995979535', 'Putri Fitriyah', '11', '11 PM2', 'P', ''),
-(1202, '151610034', '4831470', 'Putri Hawa Azzahra', '11', '11 MM1', 'P', ''),
-(1203, '', '12090736', 'Putri Indah Lestari', '10', '10 PB2', 'P', ''),
-(1204, '11254923', '11254923', 'Putri Indah Puspita', '10', '10 AK1', 'P', ''),
-(1205, '161710489', '', 'Putri Mardiyanti', '10', '10 PM2', 'P', ''),
-(1206, '141510234', '9985819964', 'Putri Meilinda', '12', '12 AK3', 'P', ''),
-(1207, '161710375', '5392897', 'Putri Na Solekha', '10', '10 AP3', 'P', ''),
-(1208, '161710178', '10879131', 'Putri Nabila', '10', '10 AK2', 'P', ''),
-(1209, '151610323', '9996092803', 'Putri Nurwaqiah', '11', '11 AP1', 'P', ''),
-(1210, '151610453', '9994927599', 'Putri Oktaviani', '11', '11 AP4', 'P', ''),
-(1211, '', '8163928', 'Putri Oktaviani', '10', '10 PB1', 'P', ''),
-(1212, '141510403', '9999865517', 'Putri Saadah', '12', '12 AP3', 'P', ''),
-(1213, '', '16105358', 'Putri Utami', '10', '10 AK3', 'P', ''),
-(1214, '161710295', '5154406', 'Putri Utami Paramitha', '10', '10 AP1', 'P', ''),
-(1215, '151610581', '9996351457', 'Putriana Safitri', '11', '11 PB1', 'P', ''),
-(1216, '141510277', '9996091209', 'Qonita Dewi', '12', '12 AK4', 'P', ''),
-(1217, '151610114', '14079020', 'Qoriatun Nazilah', '11', '11 UPW', 'P', ''),
-(1218, '141510109', '9985831135', 'Qurrotu A\'yuni Dwi Novi Sofiyanti', '12', '12 UPW', 'P', ''),
-(1219, '131410000', '9014437667', 'R. Karina Ardith Ayuningtyas', '12', '12 MM1', 'P', ''),
-(1220, '151610035', '3516050', 'R.moch.rheza Aditya S', '11', '11 MM1', 'L', ''),
-(1221, '141510027', '9996015472', 'Rachmah Amelia', '12', '12 MM1', 'P', ''),
-(1222, '151610547', '4833933', 'Rachmah Zulfiyani', '11', '11 PM2', 'P', ''),
-(1223, '151610628', '4574240', 'Rachmat Dermawan', '11', '11 PB2', 'L', ''),
-(1224, '141510068', '143221046', 'Raden Annisa L', '12', '12 MM2', 'P', ''),
-(1225, '141510069', '148003203', 'Rafi Ash-shidqi Prayuda', '12', '12 MM2', 'L', ''),
-(1226, '141510070', '9996070943', 'Rahajeng Dwi Purwiyanti', '12', '12 MM2', 'P', ''),
-(1227, '141510319', '9985794271', 'Rahani', '12', '12 AP1', 'P', ''),
-(1228, '141510362', '9988523248', 'Rahayu', '12', '12 AP2', 'P', ''),
-(1229, '151610200', '9996072299', 'Rahayu', '11', '11 AK2', 'P', ''),
-(1230, '161710258', '13010784', 'Rahayu Ruliana', '10', '10 AK4', 'P', ''),
-(1231, '9995153726', '9995153726', 'Rahimah Safitri', '12', '12 MM1', 'P', ''),
-(1232, '', '5177394', 'Rahma Fikri Rizkiyani Noer Mu\'min', '10', '10 PB2', 'P', ''),
-(1233, '161710139', '11377445', 'Rahmah Kholis Fauziyah', '10', '10 AK1', 'P', ''),
-(1234, '141510071', '9995680375', 'Rahmat Hidayatullah', '12', '12 MM2', 'L', ''),
-(1235, '151610454', '4115504', 'Raka Aditya Prananda', '11', '11 AP4', 'L', ''),
-(1236, '', '9723422', 'Ramahdan', '10', '10 MM1', 'L', ''),
-(1237, '151610367', '9996072638', 'Rani Indriani', '11', '11 AP2', 'P', ''),
-(1238, '161710336', '5154839', 'Ranti Agnesta', '10', '10 AP2', 'P', ''),
-(1239, '141510404', '9996017253', 'Ratih Dwi Purwasih', '12', '12 AP3', 'P', ''),
-(1240, '151610324', '4795004', 'Ratih Pebduati', '11', '11 AP1', 'P', ''),
-(1241, '151610498', '3614880', 'Ratnasari', '11', '11 PM1', 'P', ''),
-(1242, '141510152', '9992847994', 'Ratnasari Dewi Hafman', '12', '12 AK1', 'P', ''),
-(1243, '151610115', '11371147', 'Ratu Aulia Randi', '11', '11 UPW', 'P', ''),
-(1244, '', '1541194', 'Ratu Dewi Fortuna', '10', '10 MM2', 'P', ''),
-(1245, '', '5453021', 'Ray Adhi Negoro', '10', '10 MM1', 'L', ''),
-(1246, '', '11424688', 'Raysan Duta Gemilang', '10', '10 AK2', 'L', ''),
-(1247, '', '5316460', 'Refaldy Ramadhan', '10', '10 MM2', 'L', ''),
-(1248, '', '5165410', 'Reghita Cahyani Puspa Wandani', '10', '10 MM2', 'P', ''),
-(1249, '161710490', '11838956', 'Regita Dwi Difani', '10', '10 PM2', 'P', ''),
-(1250, '161710376', '5292967', 'Rehan Pangestu', '10', '10 AP3', 'L', ''),
-(1251, '141510194', '9996091726', 'Rena Dwi Yolanda Rosdiana', '12', '12 AK2', 'P', ''),
-(1252, '141510110', '9999362181', 'Renita', '12', '12 UPW', 'P', ''),
-(1253, '151610280', '4832747', 'Renita Ardianti', '11', '11 AK4', 'P', ''),
-(1254, '161710451', '', 'Resa Liviyana', '10', '10 PM1', 'P', ''),
-(1255, '131407297', '11559575', 'Resa Restianawati', '10', '10 AK4', 'P', ''),
-(1256, '151610237', '4758421', 'Resliyani', '11', '11 AK3', 'P', ''),
-(1257, '161710140', '11572541', 'Resma Riyanti', '10', '10 AK1', 'P', ''),
-(1258, '151610157', '4795792', 'Reti Rismayanti Dewi', '11', '11 AK1', 'P', ''),
-(1259, '151610582', '4794387', 'Retno Wulandari', '11', '11 PB1', 'P', ''),
-(1260, '161710296', '11377127', 'Retta Aviva Adilla Wahid', '10', '10 AP1', 'P', ''),
-(1261, '151610201', '4815580', 'Reza Chaniago', '11', '11 AK2', 'L', ''),
-(1262, '151610075', '9783376', 'Reza Fadilla Ahmad', '11', '11 MM2', 'L', ''),
-(1263, '151610036', '4817456', 'Reza Nurfauzan', '11', '11 MM1', 'L', ''),
-(1264, '141510072', '9994799567', 'Rezha Julio Islami', '12', '12 MM2', 'L', ''),
-(1265, '', '5631298', 'Rezkiyola Dedehbetik', '10', '10 PB1', 'L', ''),
-(1266, '151610238', '9996091653', 'Rheza Ulliyanti', '11', '11 AK3', 'P', ''),
-(1267, '', '11633559', 'Ria Oktafiani', '10', '10 AK2', 'P', ''),
-(1268, '141510443', '9985891918', 'Ria Riyanti', '12', '12 PM1', 'P', ''),
-(1269, '151610413', '9996032866', 'Ria Ulifa', '11', '11 AP3', 'P', ''),
-(1270, '141510031', '9994522895', 'Ria Valentine Suwardi', '12', '12 MM1', 'P', ''),
-(1271, '141510235', '9985794046', 'Rian Nur Aeni', '12', '12 AK3', 'P', ''),
-(1272, '151610116', '9995959365', 'Rian Rizki Widiawan', '11', '11 UPW', 'L', ''),
-(1273, '161710337', '11559716', 'Rian Sabara', '10', '10 AP2', 'L', ''),
-(1274, '151610629', '5760348', 'Ricky Kuriawan', '11', '11 PB2', 'L', ''),
-(1275, '151510630', '9995990534', 'Ridha Naisa', '11', '11 PB2', 'P', ''),
-(1276, '151610076', '1839902', 'Ridhwan Budi Syaputra', '11', '11 MM2', 'L', ''),
-(1277, '151610414', '4578314', 'Rieke Agustiani', '11', '11 AP3', 'P', ''),
-(1278, '', '11559519', 'Rifaldi', '10', '10 PB2', 'L', ''),
-(1279, '', '1143785', 'Rifara Ananda Wari', '10', '10 PB1', 'P', ''),
-(1280, '141510032', '9998798170', 'Rifona Diksy', '12', '12 MM1', 'P', ''),
-(1281, '141510153', '9997388584', 'Rika Lestari', '12', '12 AK1', 'P', ''),
-(1282, '151610158', '3211615', 'Riki Nur Safitri', '11', '11 AK1', 'P', ''),
-(1283, '151610325', '4854967', 'Rima Riyana', '11', '11 AP1', 'P', ''),
-(1284, '161710452', '5154966', 'Rina Rismawati', '10', '10 PM1', 'P', ''),
-(1285, '151610499', '4714476', 'Rindi Antika', '11', '11 PM1', 'P', ''),
-(1286, '141510488', '9995990666', 'Rindi Fitria Rinjani', '12', '12 PM2', 'P', ''),
-(1287, '161710260', '5230059', 'Rindiani', '10', '10 AK4', 'P', ''),
-(1288, '151610631', '4757762', 'Rindiany Syafira', '11', '11 PB2', 'P', ''),
-(1289, '151610117', '9985891534', 'Rini Fatmawati', '11', '11 UPW', 'P', ''),
-(1290, '161710377', '11578213', 'Rini Purwati', '10', '10 AP3', 'P', ''),
-(1291, '141510074', '9987968090', 'Rio Firmansyah', '12', '12 MM2', 'L', ''),
-(1292, '151410489', '9985854576', 'Ririn Widiyasari', '12', '12 PM2', 'P', ''),
-(1293, '151610202', '4795059', 'Risa Widia Ningrum', '11', '11 AK2', 'P', ''),
-(1294, '161710518', '9996456657', 'Risbe Yudika Situmorang', '10', '10 AK1', 'P', ''),
-(1295, '151610583', '9995798586', 'Riska Dwiyanti', '11', '11 PB1', 'P', ''),
-(1296, '151610077', '3954871', 'Riska Handayani', '11', '11 MM2', 'P', ''),
-(1297, '151610632', '9999580922', 'Riska Yulianti', '11', '11 PB2', 'P', ''),
-(1298, '141510320', '9978107305', 'Riska Yulyandary', '12', '12 AP1', 'P', ''),
-(1299, '', '5464560', 'Riski Hadiansyah', '10', '10 MM1', 'L', ''),
-(1300, '151610584', '4816528', 'Riski Malika Nurani', '11', '11 PB1', 'P', ''),
-(1301, '', '11551249', 'Risky Setiawan', '10', '10 MM2', 'L', ''),
-(1302, '151610585', '3614707', 'Risma Umayah', '11', '11 PB1', 'P', ''),
-(1303, '151610633', '9996074510', 'Rismawati', '11', '11 PB2', 'P', ''),
-(1304, '161710417', '', 'Risna Oktavia Ceptaningsih', '10', '10 AP4', 'P', ''),
-(1305, '161710453', '5214177', 'Rista Gina Mawarni', '10', '10 PM1', 'P', ''),
-(1306, '151610500', '4792036', 'Rita Juliana Naibaho', '11', '11 PM1', 'P', ''),
-(1307, '', '5177993', 'Rita Maudina', '10', '10 AK2', 'P', ''),
-(1308, '141510444', '9996056660', 'Rita Mutiara Zunfani', '12', '12 PM1', 'P', ''),
-(1309, '', '5153339', 'Rita Oktafiani', '10', '10 AK3', 'P', ''),
-(1310, '141510195', '146978038', 'Riya', '12', '12 AK2', 'P', ''),
-(1311, '151610281', '8206565', 'Riyanto', '11', '11 AK4', 'L', ''),
-(1312, '16170261', '11559260', 'Riza Aditya', '10', '10 AK4', 'L', ''),
-(1313, '141510236', '9995796501', 'Rizki Kumala Dewi', '12', '12 AK3', 'P', ''),
-(1314, '161710142', '10878661', 'Rizki Sutrisna', '10', '10 AK1', 'L', ''),
-(1315, '', '11634111', 'Rizky Akbar Aripin', '10', '10 MM1', 'L', ''),
-(1316, '141510490', '9996030133', 'Rizky Aulia Hakim', '12', '12 PM2', 'L', ''),
-(1317, '', '6299120', 'Rizky Rifai Rojayana', '10', '10 AK2', 'L', ''),
-(1318, '151610548', '6426760', 'Rizky Zapar', '11', '11 PM2', 'L', ''),
-(1319, '141510033', '9995153752', 'Rizqiandini Ardelia Bakri', '12', '12 MM1', 'P', ''),
-(1320, '151610239', '9995991376', 'Ro\'atinah', '11', '11 AK3', 'P', ''),
-(1321, '151610159', '6815518', 'Robi\'atul Adawiyah', '11', '11 AK1', 'P', ''),
-(1322, '141510363', '9989358750', 'Robiatul Adawiyah', '12', '12 AP2', 'P', ''),
-(1323, '151610203', '9996018571', 'Rodijah', '11', '11 AK2', 'P', ''),
-(1324, '141510446', '9995152198', 'Rofatimah Desi', '12', '12 PM1', 'P', ''),
-(1325, '151610549', '9994799569', 'Rofifah Ramadanti', '11', '11 PM2', 'P', ''),
-(1326, '141510405', '9996057611', 'Rofiko Kumala', '12', '12 AP3', 'P', ''),
-(1327, '151610037', '9996764376', 'Rofiyani Dwi Putri', '11', '11 MM1', 'P', ''),
-(1328, '151610368', '9995955866', 'Roisatur Romdhoni', '11', '11 AP2', 'P', ''),
-(1329, '141510491', '9995979453', 'Roman Imanto', '12', '12 PM2', 'L', ''),
-(1330, '151610038', '4816861', 'Rosa Gabriela Leda Turu', '11', '11 MM1', 'P', ''),
-(1331, '141510321', '9989099766', 'Rosaliya', '12', '12 AP1', 'P', ''),
-(1332, '141510447', '9998396876', 'Rosanti', '12', '12 PM1', 'P', ''),
-(1333, '161710418', '', 'Rosdiana Agustin', '10', '10 AP4', 'P', ''),
-(1334, '141510278', '9985873216', 'Rose Ismi Yanti', '12', '12 AK4', 'P', ''),
-(1335, '141510154', '17199', 'Rosi Riyanti', '12', '12 AK1', 'P', ''),
-(1336, '151610550', '11370723', 'Rosita', '11', '11 PM2', 'P', ''),
-(1337, '151610551', '9996092198', 'Rosiyana', '11', '11 PM2', 'P', ''),
-(1338, '151610415', '4839050', 'Rosma Widiyaningsi', '11', '11 AP3', 'P', ''),
-(1339, '161710338', '20173248', 'Rosmawati Febriani', '10', '10 AP2', 'P', ''),
-(1340, '151610240', '9996091823', 'Rossalina', '11', '11 AK3', 'P', ''),
-(1341, '', '12137863', 'Royani Hutasoit', '10', '10 AK3', 'P', ''),
-(1342, '161710262', '10525585', 'Royfansyah Muhammad Razavi', '10', '10 AK4', 'L', ''),
-(1343, '141510196', '9975978834', 'Rusniasih', '12', '12 AK2', 'P', ''),
-(1344, '141510279', '4819194', 'Ryana Noer Kholiazmi', '12', '12 AK4', 'P', ''),
-(1345, '141510075', '9992095899', 'Ryfaldhi Wildan Maulana', '12', '12 MM2', 'L', ''),
-(1346, '151610160', '4792034', 'Ryomy Putri Sihotang', '11', '11 AK1', 'P', ''),
-(1347, '161710378', '11559751', 'Sa\'ada Lutfiyana', '10', '10 AP3', 'P', ''),
-(1348, '141510034', '9985892258', 'Sa\'adah', '12', '12 MM1', 'P', ''),
-(1349, '161710419', '11571564', 'Sabrina', '10', '10 AP4', 'P', ''),
-(1350, '151610078', '9995978823', 'Sadina', '11', '11 MM2', 'L', ''),
-(1351, '141510076', '9996019821', 'Safira Qintari Yudith Vitarani', '12', '12 MM2', 'P', ''),
-(1352, '151610204', '9990019504', 'Safrina Wulan Nur Amalia', '11', '11 AK2', 'P', ''),
-(1353, '141510237', '9995979323', 'Sahara', '12', '12 AK3', 'P', ''),
-(1354, '141510364', '9995956555', 'Sahsa Santika', '12', '12 AP2', 'P', ''),
-(1355, '141510492', '9996165258', 'Saifu Falkan', '12', '12 PM2', 'L', ''),
-(1356, '161710454', '', 'Salamah', '10', '10 PM1', 'P', ''),
-(1357, '151610282', '2331530', 'Salamatul Laela', '11', '11 AK4', 'P', ''),
-(1358, '141510035', '9995554027', 'Salma Insan Salsabila', '12', '12 MM1', 'P', ''),
-(1359, '161710455', '5178694', 'Salsa Bilarahmani', '10', '10 PM1', 'P', ''),
-(1360, '151610586', '9996948884', 'Salsabila Rahmah Hadaya Riadi', '11', '11 PB1', 'P', '');
-INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `foto`) VALUES
-(1361, '', '19674387', 'Salsabilla Dhea Lestia', '10', '10 UPW', 'P', ''),
-(1362, '161710222', '', 'Salwaa Mumtazah', '10', '10 AK3', 'P', ''),
-(1363, '141510406', '9999164795', 'Sandra Nurintani Dahlan', '12', '12 AP3', 'P', ''),
-(1364, '141510111', '9985892798', 'Saniah', '12', '12 UPW', 'P', ''),
-(1365, '11559804', '11559804', 'Santi Febrianti', '10', '10 AP1', 'P', ''),
-(1366, '151610326', '4115633', 'Santi Maelani', '11', '11 AP1', 'P', ''),
-(1367, '151610161', '9995799691', 'Saphira', '11', '11 AK1', 'P', ''),
-(1368, '141510448', '9995990899', 'Sarah Sri Maharani', '12', '12 PM1', 'P', ''),
-(1369, '151610369', '9995978752', 'Sari Putri Effendi', '11', '11 AP2', 'P', ''),
-(1370, '151610327', '4816312', 'Sari Widiyawati', '11', '11 AP1', 'P', ''),
-(1371, '161710456', '', 'Sartika', '10', '10 PM1', 'P', ''),
-(1372, '141510112', '9995891442', 'Satrianus Manue Kono Okki', '12', '12 UPW', 'L', ''),
-(1373, '141510280', '9985892836', 'Savira Anggriani', '12', '12 AK4', 'P', ''),
-(1374, '161710457', '15933169', 'Seila Nurhaliza', '10', '10 PM1', 'P', ''),
-(1375, '161710143', '11550845', 'Sekar', '10', '10 AK1', 'P', ''),
-(1376, '151610455', '9756222', 'Sekar Ayu Agustian', '11', '11 AP4', 'P', ''),
-(1377, '', '5230526', 'Sekar Ayu Dimas Savitri', '10', '10 AK2', 'P', ''),
-(1378, '141510077', '9994176854', 'Sekar Dhamayanti', '12', '12 MM2', 'P', ''),
-(1379, '161710339', '11592294', 'Sekar Dwi Yulianti', '10', '10 AP2', 'P', ''),
-(1380, '151610501', '9995151232', 'Sekar Melati', '11', '11 PM1', 'P', ''),
-(1381, '161710223', '11839006', 'Sekar Sayyida Fadhilah', '10', '10 AK3', 'P', ''),
-(1382, '141510322', '9996091048', 'Sekar Suti Mira Ningtyas', '12', '12 AP1', 'P', ''),
-(1383, '161710379', '5219781', 'Selfina', '10', '10 AP3', 'P', ''),
-(1384, '151610502', '9996092407', 'Selinda', '11', '11 PM1', 'P', ''),
-(1385, '141510365', '9996056550', 'Selvi Mayasari', '12', '12 AP2', 'P', ''),
-(1386, '161710491', '', 'Selviyani', '10', '10 PM2', 'P', ''),
-(1387, '161710100', '', 'Sendyawan Nagari', '10', '10 UPW', 'L', ''),
-(1388, '', '11572158', 'Septi Anggraeni', '10', '10 AK4', 'P', ''),
-(1389, '141510493', '9975974237', 'Septi Herdiyanti', '12', '12 PM2', 'P', ''),
-(1390, '161710492', '6174496', 'Septia Vania', '10', '10 PM2', 'P', ''),
-(1391, '161710144', '5219190', 'Serly Pratiwi', '10', '10 AK1', 'P', ''),
-(1392, '1617420', '11590866', 'Serly Rosyallina', '10', '10 AP4', 'P', ''),
-(1393, '161710299', '10879011', 'Shafira Nabila', '10', '10 AP1', 'P', ''),
-(1394, '', '5095068', 'Shafira Yunita', '10', '10 AK2', 'P', ''),
-(1395, '161710340', '5292977', 'Shalza Amanda', '10', '10 AP2', 'P', ''),
-(1396, '141510113', '9996032403', 'Shela Sefianah', '12', '12 UPW', 'P', ''),
-(1397, '151610670', '9986824846', 'Shelly Dhiana', '11', '11 AP2', 'P', ''),
-(1398, '151610118', '4653291', 'Sheril Fatimatuz Zahro', '11', '11 UPW', 'P', ''),
-(1399, '151610552', '9994953642', 'Sherly Silvana Hedy', '11', '11 PM2', 'P', ''),
-(1400, '161710380', '4806933', 'Sheryna Putri', '10', '10 AP3', 'P', ''),
-(1401, '161710458', '', 'Sheva Widodo', '10', '10 PM1', 'L', ''),
-(1402, '', '11559506', 'Shindy Aprilia', '10', '10 PB2', 'P', ''),
-(1403, '', '11804974', 'Shindy Patricia Purnomo', '10', '10 PB1', 'P', ''),
-(1404, '161710577', '5631279', 'Shintiya Agustiana', '10', '10 PB2', 'P', ''),
-(1405, '141510155', '9996018939', 'Sholikha Tunnisa', '12', '12 AK1', 'P', ''),
-(1406, '141510197', '9973074745', 'Sholikhah', '12', '12 AK2', 'P', ''),
-(1407, '161710421', '18632857', 'Sifa Fauziah Nur Ubaedah', '10', '10 AP4', 'P', ''),
-(1408, '151610205', '9029780', 'Sihab Ibnu Fadli', '11', '11 AK2', 'L', ''),
-(1409, '151610241', '9995991902', 'Silmi Kafah', '11', '11 AK3', 'P', ''),
-(1410, '161710300', '5293223', 'Silvana', '10', '10 AP1', 'P', ''),
-(1411, '', '12090579', 'Silvia Nirmala Dewi', '10', '10 AK3', 'P', ''),
-(1412, '151610587', '4833228', 'Silviani', '11', '11 PB1', 'P', ''),
-(1413, '151610162', '4818980', 'Silviya Pediyanti', '11', '11 AK1', 'P', ''),
-(1414, '141510238', '9999465972', 'Simi', '12', '12 AK3', 'P', ''),
-(1415, '161710264', '11550770', 'Sinaena Saeful Putri', '10', '10 AK4', 'P', ''),
-(1416, '141510407', '9982334960', 'Sindi Atika', '12', '12 AP3', 'P', ''),
-(1417, '', '11572125', 'Sindi Silviah', '10', '10 PB1', 'P', ''),
-(1418, '151610503', '9997802414', 'Sinta Bella', '11', '11 PM1', 'P', ''),
-(1419, '151610456', '4579103', 'Sinta Berliyani', '11', '11 AP4', 'P', ''),
-(1420, '151610416', '9996090458', 'Sintiya', '11', '11 AP3', 'P', ''),
-(1421, '141510036', '9996019500', 'Sintya Ristiana', '12', '12 MM1', 'P', ''),
-(1422, '151610242', '9999236598', 'Siska', '11', '11 AK3', 'P', ''),
-(1423, '', '19700581', 'Siska Alfina Putri', '10', '10 MM1', 'P', ''),
-(1424, '161710422', '20152009', 'Siska Awalliyah', '10', '10 AP4', 'P', ''),
-(1425, '141510078', '9996019898', 'Siska Febriyani', '12', '12 MM2', 'P', ''),
-(1426, '151610457', '9995979144', 'Siska Indriyani', '11', '11 AP4', 'P', ''),
-(1427, '161710301', '5154727', 'Siska Lestari', '10', '10 AP1', 'P', ''),
-(1428, '141510450', '9985891547', 'Siti Aisyah Ramadhani', '12', '12 PM1', 'P', ''),
-(1429, '141510281', '9995796527', 'Siti Almaidah', '12', '12 AK4', 'P', ''),
-(1430, '151610371', '4839646', 'Siti Alpiya', '11', '11 AP2', 'P', ''),
-(1431, '151610458', '4819708', 'Siti Alya', '11', '11 AP4', 'P', ''),
-(1432, '141510156', '9985793485', 'Siti Bariroh', '12', '12 AK1', 'P', ''),
-(1433, '', '5190031', 'Siti Duwi Jayanti', '10', '10 PB2', 'P', ''),
-(1434, '151610328', '9996017944', 'Siti Elisa', '11', '11 AP1', 'P', ''),
-(1435, '151610372', '9996393439', 'Siti Faizun', '11', '11 AP2', 'P', ''),
-(1436, '151610588', '9995827723', 'Siti Fatimah', '11', '11 PB1', 'P', ''),
-(1437, '151610206', '9995991107', 'Siti Fatimah', '11', '11 AK2', 'P', ''),
-(1438, '161710493', '10710302', 'Siti Fatimah Azahra', '10', '10 PM2', 'P', ''),
-(1439, '', '11559370', 'Siti Fatmah', '10', '10 UPW', 'P', ''),
-(1440, '151610283', '4815533', 'Siti Fikriyatul Hasanah', '11', '11 AK4', 'P', ''),
-(1441, '151610417', '8708902', 'Siti Hamami', '11', '11 AP3', 'P', ''),
-(1442, '161710342', '5292482', 'Siti Hanifah Rahayani', '10', '10 AP2', 'P', ''),
-(1443, '', '9996354472', 'Siti Indanafiah', '10', '10 UPW', 'P', ''),
-(1444, '141510198', '9985873997', 'Siti Istiqoma', '12', '12 AK2', 'P', ''),
-(1445, '', '11592491', 'Siti Jubaedah', '10', '10 PB2', 'P', ''),
-(1446, '141510037', '9996090963', 'Siti Jubaedah', '12', '12 MM1', 'P', ''),
-(1447, '141510323', '9994481698', 'Siti Julaeha', '12', '12 AP1', 'P', ''),
-(1448, '', '12313760', 'Siti Khodijah', '10', '10 UPW', 'P', ''),
-(1449, '151610589', '9996070290', 'Siti Khodijah', '11', '11 PB1', 'P', ''),
-(1450, '141510366', '9985794378', 'Siti Khodijah', '12', '12 AP2', 'P', ''),
-(1451, '141510239', '9985834450', 'Siti Khoirunnisa', '12', '12 AK3', 'P', ''),
-(1452, '161710494', '', 'Siti Khotimah', '10', '10 PM2', 'P', ''),
-(1453, '141510451', '9983404304', 'Siti Khotimah', '12', '12 PM1', 'P', ''),
-(1454, '151610504', '9996350942', 'Siti Khumaeroh', '11', '11 PM1', 'P', ''),
-(1455, '141510408', '9996016127', 'Siti Laelah', '12', '12 AP3', 'P', ''),
-(1456, '161710459', '', 'Siti Maemunah', '10', '10 PM1', 'P', ''),
-(1457, '141510282', '9975874316', 'Siti Maesaroh', '12', '12 AK4', 'P', ''),
-(1458, '141510495', '9985898118', 'Siti Maesaroh', '12', '12 PM2', 'P', ''),
-(1459, '151610329', '9505562', 'Siti Marwah Faradillah', '11', '11 AP1', 'P', ''),
-(1460, '141510324', '9999980810', 'Siti Maysaroh', '12', '12 AP1', 'P', ''),
-(1461, '111111', '5630754', 'Siti Mustika', '10', '10 AK1', 'P', ''),
-(1462, '141510452', '9996052662', 'Siti Naja Hafidah', '12', '12 PM1', 'P', ''),
-(1463, '161710146', '10878573', 'Siti Nur Faizah', '10', '10 AK1', 'P', ''),
-(1464, '151610590', '3952350', 'Siti Nurhalimah', '11', '11 PB1', 'P', ''),
-(1465, '', '10878482', 'Siti Nurhaliza', '10', '10 AK2', 'P', ''),
-(1466, '151610243', '4791248', 'Siti Nursela', '11', '11 AK3', 'P', ''),
-(1467, '151610163', '4814374', 'Siti Nururipa', '11', '11 AK1', 'P', ''),
-(1468, '161710831', '12090157', 'Siti Qowiyah Jamil Qomala', '10', '10 AP3', 'P', ''),
-(1469, '141510367', '9996092637', 'Siti Qoyyimah Yahdiyani', '12', '12 AP2', 'P', ''),
-(1470, '141510496', '9985854424', 'Siti Ratna Dewi', '12', '12 PM2', 'P', ''),
-(1471, '151610373', '9995089309', 'Siti Robaedah', '11', '11 AP2', 'P', ''),
-(1472, '151610591', '3614851', 'Siti Rohanah', '11', '11 PB1', 'P', ''),
-(1473, '161710539', '11812918', 'Siti Romlah', '10', '10 PB1', 'P', ''),
-(1474, '141510409', '9985819026', 'Siti Rosidah', '12', '12 AP3', 'P', ''),
-(1475, '161710495', '11559424', 'Siti Rostina', '10', '10 PM2', 'P', ''),
-(1476, '', '19466237', 'Siti Royani', '10', '10 UPW', 'P', ''),
-(1477, '141510079', '9975997268', 'Siti Salamah', '12', '12 MM2', 'P', ''),
-(1478, '151610284', '4792428', 'Siti Sarah Aulia', '11', '11 AK4', 'P', ''),
-(1479, '151610459', '4814708', 'Siti Supiya', '11', '11 AP4', 'P', ''),
-(1480, '151610418', '4715104', 'Siti Tuhfah Maulidina', '11', '11 AP3', 'P', ''),
-(1481, '16710423', '5230111', 'Siti Warina', '10', '10 AP4', 'P', ''),
-(1482, '161710302', '5177833', 'Sm Ade Kesuma Wardani', '10', '10 AP1', 'P', ''),
-(1483, '161710343', '4594061', 'Soffiah', '10', '10 AP2', 'P', ''),
-(1484, '141510038', '9985793294', 'Sofi Karunia', '12', '12 MM1', 'P', ''),
-(1485, '141510157', '9994810532', 'Sofia Salma', '12', '12 AK1', 'P', ''),
-(1486, '', '10203189', 'Sofyan Hadi Hidayat', '10', '10 AK3', 'L', ''),
-(1487, '', '11571830', 'Solekha', '10', '10 PB2', 'P', ''),
-(1488, '161710265', '11838871', 'Soniya', '10', '10 AK4', 'P', ''),
-(1489, '141510240', '9996070953', 'Sri Adi Ningsih', '12', '12 AK3', 'P', ''),
-(1490, '151610039', '9996054938', 'Sri Andini', '11', '11 MM1', 'P', ''),
-(1491, '141510199', '9995979546', 'Sri Atikah', '12', '12 AK2', 'P', ''),
-(1492, '161710382', '12136847', 'Sri Devi Puspitasari', '10', '10 AP3', 'P', ''),
-(1493, '161710071', '11377104', 'Sri Hartati', '10', '10 MM2', 'P', ''),
-(1494, '151610592', '4793376', 'Sri Hastuti', '11', '11 PB1', 'P', ''),
-(1495, '151610330', '4793980', 'Sri Putri', '11', '11 AP1', 'P', ''),
-(1496, '1617101471', '5177854', 'Sri Rahayu', '10', '10 AK1', 'P', ''),
-(1497, '141510241', '9996073264', 'Sri Saumaliyah', '12', '12 AK3', 'P', ''),
-(1498, '151610244', '4796993', 'Sri Sulyaningsih', '11', '11 AK3', 'P', ''),
-(1499, '151610634', '4838975', 'Sri Umamah', '11', '11 PB2', 'P', ''),
-(1500, '141510283', '9996018989', 'Sri Utami', '12', '12 AK4', 'P', ''),
-(1501, '141510114', '9985831834', 'Sri Widyarti', '12', '12 UPW', 'P', ''),
-(1502, '151610374', '9996052133', 'Sri Wulandari', '11', '11 AP2', 'P', ''),
-(1503, '141510325', '9999686407', 'Sriana', '12', '12 AP1', 'P', ''),
-(1504, '', '5177518', 'Sriyani', '10', '10 AK2', 'P', ''),
-(1505, '', '5003915', 'Stefani De La Rosa', '10', '10 PB1', 'P', ''),
-(1506, '161710460', '5177382', 'Subeki', '10', '10 PM1', 'L', ''),
-(1507, '141510158', '9995991459', 'Suci Aulia Hanifunnisa', '12', '12 AK1', 'P', ''),
-(1508, '141510200', '9985791288', 'Suci Desti Herliyani', '12', '12 AK2', 'P', ''),
-(1509, '151610635', '3954056', 'Suci Indah Novitasari', '11', '11 PB2', 'P', ''),
-(1510, '161710496', '5178865', 'Sugiarti', '10', '10 PM2', 'P', ''),
-(1511, '', '5393876', 'Suheni', '10', '10 UPW', 'P', ''),
-(1512, '141510115', '9996091714', 'Suherman', '12', '12 UPW', 'L', ''),
-(1513, '161710424', '', 'Sukiri', '10', '10 AP4', 'P', ''),
-(1514, '141510368', '9995978925', 'Sulastri', '12', '12 AP2', 'P', ''),
-(1515, '141510242', '9985794039', 'Sulastriani', '12', '12 AK3', 'P', ''),
-(1516, '141510410', '9994929396', 'Sulhah Amalia', '12', '12 AP3', 'P', ''),
-(1517, '141510284', '9996090701', 'Suliasih Lestari', '12', '12 AK4', 'P', ''),
-(1518, '151610079', '9992277066', 'Sultan Ramadhan', '11', '11 MM2', 'L', ''),
-(1519, '151610080', '9996019860', 'Sulthon Hafipz Fadhlurrohman', '11', '11 MM2', 'L', ''),
-(1520, '141510497', '9998727380', 'Sumiyati', '12', '12 PM2', 'P', ''),
-(1521, '', '14526883', 'Sunengsih', '10', '10 UPW', 'P', ''),
-(1522, '141510326', '9995956754', 'Sunenti', '12', '12 AP1', 'P', ''),
-(1523, '151610164', '9855835', 'Sunenti', '11', '11 AK1', 'P', ''),
-(1524, '151610207', '4735986', 'Suneri', '11', '11 AK2', 'P', ''),
-(1525, '151610245', '3952373', 'Surahman Nur Hijjah', '11', '11 AK3', 'L', ''),
-(1526, '141510080', '9994810969', 'Surya Muharram Khamidun', '12', '12 MM2', 'L', ''),
-(1527, '161710226', '', 'Susan Yulianti', '10', '10 AK3', 'P', ''),
-(1528, '151610419', '4839724', 'Susi Adiningsih', '11', '11 AP3', 'P', ''),
-(1529, '151610420', '4758190', 'Susiana', '11', '11 AP3', 'P', ''),
-(1530, '151610636', '9998405008', 'Susilawati', '11', '11 PB2', 'P', ''),
-(1531, '151610505', '9996053759', 'Suwandi', '11', '11 PM1', 'L', ''),
-(1532, '161710148', '11539825', 'Suyufi', '10', '10 AK1', 'P', ''),
-(1533, '', '18451517', 'Syahirah Nibras', '10', '10 AK2', 'P', ''),
-(1534, '161710497', '', 'Syahrani', '10', '10 PM2', 'P', ''),
-(1535, '151610119', '4839232', 'Syahri Arriffin', '11', '11 UPW', 'L', ''),
-(1536, '151610120', '9991774551', 'Syahrul Hidayat', '11', '11 UPW', 'L', ''),
-(1537, '151610506', '9996070093', 'Syahrul Ramadhan', '11', '11 PM1', 'L', ''),
-(1538, '151610331', '9477637', 'Syifa Berliana Hersanny', '11', '11 AP1', 'P', ''),
-(1539, '151610593', '9995956937', 'Syifa Bunga Syafira', '11', '11 PB1', 'P', ''),
-(1540, '141510369', '9975895601', 'Tami', '12', '12 AP2', 'P', ''),
-(1541, '151610460', '9236996', 'Tania Dwi Nur Hidayati', '11', '11 AP4', 'P', ''),
-(1542, '161710461', '11633465', 'Taniatun Nafiah', '10', '10 PM1', 'P', ''),
-(1543, '161710344', '5178186', 'Tanisa Damayanti', '10', '10 AP2', 'P', ''),
-(1544, '151610285', '5044783', 'Tanti Kusmawati', '11', '11 AK4', 'P', ''),
-(1545, '141510039', '9994041612', 'Tanzilal Azizie Rachim', '12', '12 MM1', 'L', ''),
-(1546, '151610553', '9996351458', 'Taofik', '11', '11 PM2', 'L', ''),
-(1547, '', '15200941', 'Taufik Hendrawan', '10', '10 UPW', 'L', ''),
-(1548, '16170383', '5292621', 'Teddy Arif Permana', '10', '10 AP3', 'L', ''),
-(1549, '151610165', '9996091149', 'Tedi Mulyadi', '11', '11 AK1', 'L', ''),
-(1550, '151610040', '4888454', 'Teguh Prasetiyo', '11', '11 MM1', 'L', ''),
-(1551, '', '4755991', 'Teguh Rokhman Saputra', '10', '10 MM1', 'L', ''),
-(1552, '', '3952346', 'Tessa Firmansah', '10', '10 AK3', 'L', ''),
-(1553, '151610208', '9802474', 'Thufailah Afifah Farahany', '11', '11 AK2', 'P', ''),
-(1554, '161710425', '', 'Tia Amalia', '10', '10 AP4', 'P', ''),
-(1555, '', '13122230', 'Tiana', '10', '10 UPW', 'P', ''),
-(1556, '161710345', '11550337', 'Tina Amelia', '10', '10 AP2', 'P', ''),
-(1557, '151610286', '8646385', 'Tina Rudiani', '11', '11 AK4', 'P', ''),
-(1558, '161710303', '9985771212', 'Tinah', '10', '10 AP1', 'P', ''),
-(1559, '141510159', '9985854951', 'Tita Kusumawati', '12', '12 AK1', 'P', ''),
-(1560, '151610287', '4815710', 'Titania Azzira Nurvaizah', '11', '11 AK4', 'P', ''),
-(1561, '141510411', '9996014176', 'Titin Nur\'ela', '12', '12 AP3', 'P', ''),
-(1562, '151610507', '4116182', 'Tiwi Suertiana', '11', '11 PM1', 'P', ''),
-(1563, '141510454', '9985617032', 'Tomi Wijaya', '12', '12 PM1', 'L', ''),
-(1564, '161710498', '', 'Toto Iswanto', '10', '10 PM2', 'L', ''),
-(1565, '161710499', '11559741', 'Tresnawati', '10', '10 PM2', 'P', ''),
-(1566, '', '11254951', 'Tri Ainul Yaqin', '10', '10 PB2', 'L', ''),
-(1567, '141510201', '9995991565', 'Tri Amelia', '12', '12 AK2', 'P', ''),
-(1568, '151610637', '2045157', 'Tri Anggraeni', '11', '11 PB2', 'P', ''),
-(1569, '', '10879471', 'Tri Aninda Venny Nurfitria', '10', '10 PB1', 'P', ''),
-(1570, '161710462', '', 'Tri Asini', '10', '10 PM1', 'P', ''),
-(1571, '151610462', '9996072303', 'Tri Mutia', '11', '11 AP4', 'P', ''),
-(1572, '141510243', '9985875359', 'Tri Nindiani', '12', '12 AK3', 'P', ''),
-(1573, '161710266', '11497370', 'Tri Winarni', '10', '10 AK4', 'P', ''),
-(1574, '161710384', '11255471', 'Triana Yunita', '10', '10 AP3', 'P', ''),
-(1575, '141510081', '9995991494', 'Trilaksana', '12', '12 MM2', 'L', ''),
-(1576, '', '5631109', 'Triya Gandesa', '10', '10 AK2', 'P', ''),
-(1577, '151610081', '3615897', 'Try Haryono Aprilium', '11', '11 MM2', 'L', ''),
-(1578, '161710500', '4578315', 'Tsaniyah Choirunnisa', '10', '10 PM2', 'P', ''),
-(1579, '', '11838950', 'Tubagus Azhar Asshidiqie', '10', '10 UPW', 'L', ''),
-(1580, '', '1541191', 'Tubagus Naufal Hidayat', '10', '10 MM2', 'L', ''),
-(1581, '161710073', '11557906', 'Tubagus Sajiwo', '10', '10 MM2', 'L', ''),
-(1582, '151610554', '9995958704', 'Tuneli', '11', '11 PM2', 'P', ''),
-(1583, '141510327', '9995442924', 'Tuti Alawiyah', '12', '12 AP1', 'P', ''),
-(1584, '141510370', '9985892831', 'Ucinah Yati', '12', '12 AP2', 'P', ''),
-(1585, '151610508', '9995990470', 'Uka Dwi Ayu Lestari', '11', '11 PM1', 'P', ''),
-(1586, '', '5154774', 'Uke Citra Diarti', '10', '10 PB1', 'P', ''),
-(1587, '151610375', '4795187', 'Ulfa Sari', '11', '11 AP2', 'P', ''),
-(1588, '141510285', '9985891916', 'Ulfiyatul Khotimah', '12', '12 AK4', 'P', ''),
-(1589, '151610332', '9999908275', 'Ully Fadhilah', '11', '11 AP1', 'P', ''),
-(1590, '141510116', '9986701260', 'Ulul Azmi', '12', '12 UPW', 'P', ''),
-(1591, '151610288', '4653683', 'Umi Khodijah Ayu Papilonisa', '11', '11 AK4', 'P', ''),
-(1592, '151610421', '9996092562', 'Umi Kulsum', '11', '11 AP3', 'P', ''),
-(1593, '151610246', '3693525', 'Ummul Farocha', '11', '11 AK3', 'P', ''),
-(1594, '141510455', '9985737610', 'Unaeni Fatmawati', '12', '12 PM1', 'P', ''),
-(1595, '141510117', '9984997338', 'Unasih', '12', '12 UPW', 'P', ''),
-(1596, '151610463', '4796214', 'Unti Suriani', '11', '11 AP4', 'P', ''),
-(1597, '141510160', '9995979926', 'Upit Kapitalia', '12', '12 AK1', 'P', ''),
-(1598, '151610464', '4830200', 'Uripah', '11', '11 AP4', 'P', ''),
-(1599, '161710426', '', 'Usnur Sarah Rofilia', '10', '10 AP4', 'P', ''),
-(1600, '151610376', '9995991185', 'Uswatun', '11', '11 AP2', 'P', ''),
-(1601, '141510202', '9996074514', 'Uswatun Hasanah', '12', '12 AK2', 'P', ''),
-(1602, '141510118', '9996070739', 'Utari Aptianingrum', '12', '12 UPW', 'P', ''),
-(1603, '151610289', '4795554', 'Vanessa', '11', '11 AK4', 'P', ''),
-(1604, '141510456', '9995978872', 'Vanny Fibriyani', '12', '12 PM1', 'P', ''),
-(1605, '', '11539255', 'Vannya Puspita Sari', '10', '10 UPW', 'P', ''),
-(1606, '141510244', '9996059111', 'Vena Yolanda', '12', '12 AK3', 'P', ''),
-(1607, '161710501', '11593439', 'Venti Vadilah', '10', '10 PM2', 'P', ''),
-(1608, '151610166', '4793378', 'Veranti', '11', '11 AK1', 'P', ''),
-(1609, '161710304', '11592060', 'Verlyn Rennijio', '10', '10 AP1', 'P', ''),
-(1610, '161710149', '15950322', 'Verra Verliana', '10', '10 AK1', 'P', ''),
-(1611, '161710346', '5154772', 'Via Nur Aenggita', '10', '10 AP2', 'P', ''),
-(1612, '141510328', '9984690683', 'Vicki Riana', '12', '12 AP1', 'P', ''),
-(1613, '141510412', '9985856287', 'Vicky Ismaliana Putri', '12', '12 AP3', 'P', ''),
-(1614, '', '5178250', 'Vika Dwi Utami', '10', '10 UPW', 'P', ''),
-(1615, '161710385', '6570955', 'Vina Aliyanti Ekarisma', '10', '10 AP3', 'P', ''),
-(1616, '151610422', '9996052733', 'Vina Elviana Putri', '11', '11 AP3', 'P', ''),
-(1617, '151610121', '4755922', 'Vina Febrianty Sofia', '11', '11 UPW', 'P', ''),
-(1618, '151610247', '11370122', 'Vina Nursyamsiyah', '11', '11 AK3', 'P', ''),
-(1619, '141510286', '9996030132', 'Viny Andriyani Subagja', '12', '12 AK4', 'P', ''),
-(1620, '151610638', '4739558', 'Vira Prasetia', '11', '11 PB2', 'P', ''),
-(1621, '151610594', '4578299', 'Vira Valentina', '11', '11 PB1', 'P', ''),
-(1622, '141510498', '9985874908', 'Vita Rahmawati', '12', '12 PM2', 'P', ''),
-(1623, '151610248', '4576272', 'Vita Savana', '11', '11 AK3', 'P', ''),
-(1624, '161710463', '5231797', 'Vivi Alfianti', '10', '10 PM1', 'P', ''),
-(1625, '151610290', '3615428', 'Vivi Dwi Yanti', '11', '11 AK4', 'P', ''),
-(1626, '141510413', '9985816402', 'Vivi Elinda Kuwati', '12', '12 AP3', 'P', ''),
-(1627, '141510329', '9996092384', 'Vivi Halimah', '12', '12 AP1', 'P', ''),
-(1628, '', '5178705', 'Vivi Luthfiyyah', '10', '10 AK3', 'P', ''),
-(1629, '161710427', '', 'Vivi Mawadah', '10', '10 AP4', 'P', ''),
-(1630, '161710305', '11571570', 'Vonny Priscilla Sofianto Putri', '10', '10 AP1', 'P', ''),
-(1631, '141510457', '9992537130', 'Wahyu Kurniawan', '12', '12 PM1', 'L', ''),
-(1632, '151610595', '9993429102', 'Wahyudi Sugiyanto', '11', '11 PB1', 'L', ''),
-(1633, '', '11572387', 'Wangun Adistia Galih', '10', '10 MM1', 'L', ''),
-(1634, '161710464', '', 'Warneci', '10', '10 PM1', 'P', ''),
-(1635, '151610555', '4816205', 'Wasrini Andriyani', '11', '11 PM2', 'P', ''),
-(1636, '151610509', '9995811292', 'Wati Andayani', '11', '11 PM1', 'P', ''),
-(1637, '161710386', '71658761', 'Widi Utami', '10', '10 AP3', 'P', ''),
-(1638, '151610465', '4830317', 'Widia Budi Rahayu', '11', '11 AP4', 'P', ''),
-(1639, '161710428', '11560065', 'Widia Ningsih', '10', '10 AP4', 'P', ''),
-(1640, '', '4727517', 'Widia Septianengsih', '10', '10 PB2', 'P', ''),
-(1641, '161710502', '5293916', 'Widian Rahmadini', '10', '10 PM2', 'P', ''),
-(1642, '141510161', '9982657427', 'Widianingsih', '12', '12 AK1', 'P', ''),
-(1643, '151610333', '4739019', 'Widianti', '11', '11 AP1', 'P', ''),
-(1644, '', '3951821', 'Widiantiwahidah', '10', '10 MM1', 'P', ''),
-(1645, '141510372', '9999270867', 'Widiawati', '12', '12 AP2', 'P', ''),
-(1646, '151610423', '9995627794', 'Widiyanti', '11', '11 AP3', 'P', ''),
-(1647, '151610377', '8324318', 'Widya Maharani Muharam', '11', '11 AP2', 'P', ''),
-(1648, '141510499', '9985855552', 'Wika Latifah', '12', '12 PM2', 'P', ''),
-(1649, '141510119', '9985856289', 'Wildan Muzakki', '12', '12 UPW', 'L', ''),
-(1650, '161710267', '11559641', 'Wildani Aditya', '10', '10 AK4', 'L', ''),
-(1651, '141510203', '9996055034', 'Winaheli', '12', '12 AK2', 'P', ''),
-(1652, '141510414', '9994243308', 'Windi Jayanti', '12', '12 AP3', 'P', ''),
-(1653, '141510458', '9986508727', 'Windy Nurrahayu', '12', '12 PM1', 'P', ''),
-(1654, '151610249', '3952250', 'Winnye Wibowo', '11', '11 AK3', 'P', ''),
-(1655, '', '11559518', 'Wisnu Wuldani', '10', '10 PB1', 'L', ''),
-(1656, '151610122', '9994925996', 'Wita Cahyani', '11', '11 UPW', 'P', ''),
-(1657, '151610334', '5727788', 'Wiwin Hartina', '11', '11 AP1', 'P', ''),
-(1658, '151610378', '4815571', 'Wulan Pratami Anugrah', '11', '11 AP2', 'P', ''),
-(1659, '141510120', '9995979394', 'Wulandari', '12', '12 UPW', 'P', ''),
-(1660, '141510459', '9997455085', 'Yani Heryanti', '12', '12 PM1', 'P', ''),
-(1661, '141510245', '9985819763', 'Yanti', '12', '12 AK3', 'P', ''),
-(1662, '151610291', '4737805', 'Yanti Safitri', '11', '11 AK4', 'P', ''),
-(1663, '141510040', '9995810421', 'Yasmine Muntazah', '12', '12 MM1', 'P', ''),
-(1664, '141510287', '9996015629', 'Yayan Sihombing', '12', '12 AK4', 'L', ''),
-(1665, '141510501', '9985774369', 'Yayu Ani', '12', '12 PM2', 'P', ''),
-(1666, '161710150', '12091117', 'Yelliana Afffantin', '10', '10 AK1', 'P', ''),
-(1667, '161710306', '5231791', 'Yeni', '10', '10 AP1', 'P', ''),
-(1668, '161710347', '5230335', 'Yeni Noviyani', '10', '10 AP2', 'P', ''),
-(1669, '161710582', '5190030', 'Yesi Fibriani', '10', '10 PB2', 'P', ''),
-(1670, '151610082', '4666587', 'Yeyen Rida Fadia', '11', '11 MM2', 'P', ''),
-(1671, '161710387', '11254585', 'Yoga Sugiro', '10', '10 AP3', 'L', ''),
-(1672, '', '6261726', 'Yovita Lorenji', '10', '10 MM2', 'P', ''),
-(1673, '141510330', '9995957912', 'Yuan Alecia Sugiarto', '12', '12 AP1', 'P', ''),
-(1674, '151610335', '9996548613', 'Yugi Pramana Putri', '11', '11 AP1', 'P', ''),
-(1675, '151610596', '3755604', 'Yuli Triana Lestari', '11', '11 PB1', 'P', ''),
-(1676, '161710584', '18632863', 'Yuliana Putri Anggraeni', '10', '10 PB2', 'P', ''),
-(1677, '141510162', '9985791929', 'Yuliani Widiawati', '12', '12 AK1', 'P', ''),
-(1678, '161710465', '', 'Yulindah', '10', '10 PM1', 'P', ''),
-(1679, '161710503', '11838990', 'Yulis Tyara Putri', '10', '10 PM2', 'P', ''),
-(1680, '151610379', '4756470', 'Yuliyanti', '11', '11 AP2', 'P', ''),
-(1681, '151610336', '4815574', 'Yuni Febi Lestari', '11', '11 AP1', 'P', ''),
-(1682, '151610597', '4734998', 'Yuni Marliani', '11', '11 PB1', 'P', ''),
-(1683, '141510204', '9995978707', 'Yuni Rohmawati', '12', '12 AK2', 'P', ''),
-(1684, '151610466', '9996058474', 'Yuniah', '11', '11 AP4', 'P', ''),
-(1685, '151610380', '4831569', 'Yuniarti Kusuma Dewi', '11', '11 AP2', 'P', ''),
-(1686, '161710466', '', 'Yunike Wijayanti', '10', '10 PM1', 'P', ''),
-(1687, '141510082', '9995056463', 'Yunita Indah Lestari', '12', '12 MM2', 'P', ''),
-(1688, '141510246', '9998800967', 'Yustika', '12', '12 AK3', 'P', ''),
-(1689, '151610250', '4815021', 'Yustriana Ayuninda', '11', '11 AK3', 'P', ''),
-(1690, '161710504', '11559304', 'Yusuf Ibrahim', '10', '10 PM2', 'L', ''),
-(1691, '161711132', '4970121', 'Yusuf Kurnia Adji', '11', '11 MM1', 'L', ''),
-(1692, '151610083', '9995461756', 'Yusuf Syamsudin', '11', '11 MM2', 'L', ''),
-(1693, '', '5219178', 'Yutda Ayu Puspa Ningrum', '10', '10 AP1', 'P', ''),
-(1694, '', '11877187', 'Zahara Ayuningtyas Ningrum', '10', '10 PB1', 'P', ''),
-(1695, '151610510', '4115940', 'Zakkiyah Putri Alfainiyah', '11', '11 PM1', 'P', ''),
-(1696, '151610251', '9996032960', 'Zihan Faujiyah', '11', '11 AK3', 'P', ''),
-(1697, '151610292', '4834250', 'Zuhriyani Salmah', '11', '11 AK4', 'P', ''),
-(1698, '223344', '123455678', 'agoes siswa', '10', '10 AK1', 'L', '');
+INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `email`, `nomer_telp`, `alamat_lengkap`, `tempat`, `tanggal_lahir`, `password`, `foto`) VALUES
+(1, '141510121', '9985856331', 'A Imam Taufik', '12', '12 AK1', 'L', 'karyawan@waroengdahar.com', '098989898989', 'temanggung', 'Bandung', '2021-11-28', '', ''),
+(2, '141510288', '9995958703', 'Aas Nurismah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(3, '', '6299272', 'Aat Rahmawati', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(4, '151610042', '9995799699', 'Abdul Gofur', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(5, '141510041', '9996055699', 'Abdul Jaman', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(6, '141510415', '9984999783', 'Abdul Kafi', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(7, '161710112', '', 'Abdul Karim', '10', '10 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(8, '', '6986039', 'Abdul Qodir', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(9, '161710229', '9996430609', 'Abdul Rokim', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(10, '141510163', '9997796852', 'Achmad Gasim Al Jufri', '12', '12 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(11, '161710545', '11570838', 'Acmad Saefudin', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(12, '151610467', '2326550', 'Adam Damiri', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(13, '', '11253169', 'Adam Firdaus', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(14, '151610043', '9993424751', 'Adam Novansyah', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(15, '151610044', '151698679', 'Addly Fauzi Sulistianto', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(16, '', '11254433', 'Ade Arif Maulana', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(17, '151610252', '4815706', 'Ade Aysa Nur Phasa', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(18, '151610084', '9996017667', 'Ade Faujiah', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(19, '141510331', '9985772093', 'Ade Khaerunisah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(20, '151610123', '4833299', 'Ade Nurkhafifah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(21, '151610468', '9996058067', 'Ade Nurmiladiyah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(22, '141510001', '9996051107', 'Ade Prayoga', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(23, '161710268', '11570459', 'Ade Sintia', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(24, '141510042', '9995958188', 'Ade Syahlan Prayoga', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(25, '141510373', '9996017087', 'Ade Wahyuni Lestari', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(26, '151610167', '9992882358', 'Ade Yuliani', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(27, '', '5177831', 'Adelia Puteri Lestari', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(28, '161710230', '11570614', 'Adetria Sholichati', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(29, '161710039', '9995978960', 'Adi Gunawan', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(30, '141510460', '9975894579', 'Adi Rusadi', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(31, '141510205', '9995811299', 'Adi Sutiono', '12', '12 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(32, '151610253', '6661900', 'Adinda Rizkiyanita', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(33, '141510247', '9985853320', 'Adit Setiawan', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(34, '141510122', '9999423273', 'Aditiya', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(35, '', '19844618', 'Adriansyah Riadi', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(36, '141510289', '9985852422', 'Aeniyah Nurkhasanah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(37, '151610293', '4814481', 'Aenun Hardianingsih', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(38, '141510164', '9995978927', 'Afifah Nur Atikah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(39, '151610556', '9995796596', 'Afifah Salsabil Ramadhani', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(40, '151610045', '7569658', 'Afifatus Sholihah', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(41, '141510083', '9995954604', 'Afra Lediya', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(42, '151610511', '9996058602', 'Afrilia Gustiani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(43, '161710190', '5176520', 'Afrizal Juliyanto', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(44, '151610557', '7841321', 'Agbi Herlambang Permana', '11', '11 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(45, '151610598', '4813931', 'Ageng Mulyani', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(46, '', '10879451', 'Aghits Nidallah', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(47, '161710003', '10710419', 'Aghnia Nadhila', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(48, '141510332', '9985859069', 'Agnes Komara', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(49, '141510461', '9996058042', 'Agnes Listianti', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(50, '161710308', '11593163', 'Agnesa Rizki Anditiana', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(51, '151610168', '9996018121', 'Agung Gumelar', '11', '11 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(52, '16170348', '', 'Agung Mulyana', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(53, '141510417', '9975048705', 'Agung Nugraha', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(54, '141510002', '9995177535', 'Agung Pramoto', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(55, '161710467', '', 'Agung Pramudita', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(56, '141510206', '9985874064', 'Agung Wianto', '12', '12 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(57, '141510462', '9975715406', 'Agus Nata Kusuma', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(58, '161710041', '15046257', 'Agus Ni\'am Kholiq', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(59, '', '11592348', 'Ahmad Alif Fauzan', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(60, '141510084', '9985695497', 'Ahmad Almalik', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(61, '151610469', '9995990946', 'Ahmad Fathan Tholiban', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(62, '141510043', '9983782434', 'Ahmad Hanafi', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(63, '161710507', '11539283', 'Aida Octavia', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(64, '141510003', '4672647', 'Aidha Fuji Ayu Lestari', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(65, '161710468', '11593438', 'Ainul Farkhati', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(66, '151610124', '3952001', 'Ainun Aditia', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(67, '141510418', '9996092546', 'Ainun Febriyanih', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(68, '151610599', '5434909', 'Ainun Komala Indah', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(69, '141510374', '9995936471', 'Ainun Nur Khodijah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(70, '141510248', '9985791275', 'Ainun Siti Qorrina', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(71, '151610381', '9995810718', 'Aisyah', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(72, '151610001', '4756188', 'Aisyah Monica', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(73, '151610169', '4478366', 'Aisyah Noor Qinthara', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(74, '161710388', '', 'Aisyah Sulistyawati', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(75, '161710269', '14596197', 'Ajat Saputra', '10', '10 AP1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(76, '141510290', '9996091555', 'Ajeng Kintani Mustika', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(77, '151610170', '4304739', 'Ajeng Lestari', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(78, '151610294', '9996072309', 'Ajeng Suretno', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(79, '151610600', '9996091789', 'Aji Ramadhan', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(80, '', '5394466', 'Ajisuka Ismaniar Nurilmi', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(81, '151610470', '9672990', 'Akhmad Hidayat', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(82, '151610085', '9996053515', 'Akwa Asroni', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(83, '161710309', '5179087', 'Al-amahdi Syahrul Malik', '10', '10 AP2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(84, '161710231', '5153318', 'Alanisa Dwi Suci', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(85, '151610002', '4574272', 'Aldera Rahsyawaesa Handaru', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(86, '151610086', '1838571', 'Aldi Gilang Permana', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(87, '151610003', '9995957943', 'Aldi Hidayat', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(88, '161710429', '5631287', 'Aldi Yana', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(89, '141510044', '9996091969', 'Aldiansah Agustianto', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(90, '161710349', '1528120', 'Aldinda Novitasari', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(91, '141510123', '9985859958', 'Aldo Riyanto', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(92, '161710546', '11570841', 'Alfani', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(93, '161710430', '', 'Alfattoni', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(94, '1617100421', '11550973', 'Alfian Teguh Arifiyanto', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(95, '141510165', '9985238208', 'Ali Jahidin', '12', '12 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(96, '151610125', '9987766253', 'Ali Resa', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(97, '141510207', '9996091375', 'Alif Farhan', '12', '12 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(98, '', '10974539', 'Alif Nur Alamsyah', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(99, '161710389', '', 'Alifia Apriliana', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(100, '141510249', '9985852423', 'Alin Alika', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(101, '', '11558580', 'Alinda Dewi', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(102, '151610601', '9995990864', 'Alip Nursipa', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(103, '151610171', '4839455', 'Alissa Fauzia Anasti', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(104, '141510463', '9984263300', 'Alit Faturrohma', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(105, '151610172', '4838731', 'Almiatulufti', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(106, '161710005', '13012140', 'Alqoeri Putri Insani', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(107, '', '18902831', 'Alvia Musyafa', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(108, '141510166', '9994810333', 'Alvioni Purnama', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(109, '161710270', '11559526', 'Alyfiah Rachmawati', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(110, '161710076', '', 'Amalia Kona\'ah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(111, '161710310', '', 'Amalia Muharomah', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(112, '151610087', '7009735', 'Amaliya Ainun Sari', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(113, '141510004', '9996052642', 'Amanda Eka Azisavitri', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(114, '151610126', '7606248', 'Amanda Fauziah Widya Utami', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(115, '161710311', '12377771', 'Amathussyifa', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(116, '161710113', '11838925', 'Amelia Nur\'aeni', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(117, '', '5231657', 'Aminatun Khasanah', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(118, '161710390', '11592513', 'Amirah Deya Firzanah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(119, '141510085', '9991909865', 'Amirah Yowanda Korangian', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(120, '', '11592319', 'Amri Mustakim', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(121, '141510208', '9985793973', 'Ana Mariana', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(122, '161710191', '20058715', 'Ana Tasha Oktavia Gunadi', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(123, '151610173', '4552991', 'Ananda Cecilia', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(124, '151610174', '9344403', 'Anastasia Rosmawangi', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(125, '141510250', '9984806049', 'Andi Mulyadi', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(126, '151610512', '4815351', 'Andini Ade Putri', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(127, '161710232', '5179071', 'Andrian Dwi Cahya', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(128, '161710312', '5174381', 'Andriyan', '10', '10 AP2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(129, '151610127', '4756325', 'Ane Dwi Sonia', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(130, '151610004', '17284504', 'Angelika', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(131, '151610088', '4574387', 'Angelina Dwiyanti', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(132, '151610175', '9996091322', 'Angga Nur Ramadhan', '11', '11 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(133, '', '18724692', 'Anggara Achmad Rajasa', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(134, '151610089', '9999975897', 'Anggi Anggraeni', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(135, '151610471', '4833156', 'Anggi Anisa Fitri', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(136, '161710114', '6174343', 'Anggi Felinia', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(137, '151610602', '4792979', 'Anggi Ferlina', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(138, '151610382', '4830894', 'Anggi Istiani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(139, '161710547', '5177735', 'Anggi Santika', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(140, '', '11523001', 'Anggi Widyaningrum', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(141, '141510333', '9996018967', 'Anggia Natasya Putri', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(142, '16171100000', '', 'Anggie Permata Dewi', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(143, '141510125', '9995991104', 'Anggita Ainun', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(144, '161710350', '15440351', 'Anggita Febriyanti', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(145, '141510375', '9994810611', 'Anggitha Sukmawarti Putri Priyadi', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(146, '141510167', '9996052957', 'Anggun Nur Hasanah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(147, '141510419', '9995811298', 'Anggun Sekar Gendis', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(148, '161710469', '', 'Ani Nuryanti', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(149, '151610295', '8483738', 'Ani Rohaeni', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(150, '141510464', '9985773736', 'Anie Anzely', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(151, '151610337', '5380495', 'Anika Rahim', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(152, '151610558', '4831294', 'Anis Ambarwati', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(153, '151610296', '9995991377', 'Anis Fauziah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(154, '151610128', '6926778', 'Anis Fitria', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(155, '161710391', '', 'Anis Viscianty', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(156, '141510209', '9995799314', 'Anisa Dina Fitriyani', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(157, '151610383', '4794203', 'Anisa Prasasti', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(158, '151610472', '9996042559', 'Anisa Sri Rizki', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(159, '161710548', '13563507', 'Anisah', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(160, '151610090', '4908514', 'Anita Fitri Amelia', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(161, '151610338', '9386692', 'Anita Permata Sari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(162, '161710470', '', 'Anitah', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(163, '151610297', '4749870', 'Aniya Melviyani', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(164, '151610129', '9996092521', 'Anjas Perdana', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(165, '151610339', '9996053997', 'Anna Agustiyanna', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(166, '151610513', '4839435', 'Annisa Aprillia Zein', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(167, '151610603', '10114173', 'Annisa Ernis Rahmadini', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(168, '141510251', '9995150772', 'Annisa Nur Aimelyani', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(169, '141510126', '9985897596', 'Annisa Shoolihah', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(170, '', '12422954', 'Antin Nur Insani', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(171, '', '22844481', 'Apifsetiawan', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(172, '151610176', '3951382', 'Aprilia Hana Pramesti', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(173, '141510086', '9999728254', 'Aprilianti', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(174, '141510168', '9995979819', 'Apritha Ratih', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(175, '141510210', '9995970616', 'Arbi Ramdani', '12', '12 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(176, '11378473', '11378473', 'Arfan Triwijaya', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(177, '141510045', '9990147697', 'Arfi Subarkah', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(178, '151610514', '9995979781', 'Ari Apriliyani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(179, '151610298', '4757951', 'Ari Rosita Putri', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(180, '151610424', '9996016813', 'Ari Sundari', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(181, '141510252', '9985010106', 'Ari Suryagara', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(182, '161710045', '5292569', 'Arief Rachman', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(183, '141510420', '9989759936', 'Arif Feri Laksono', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(184, '161710271', '4994898', 'Aris Dwi Saputra Hidayatullah', '10', '10 AP1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(185, '151610254', '4839144', 'Aris Mayanti', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(186, '1617110', '9996031958', 'Arlisa Ferliyana', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(187, '151610130', '4795058', 'Armaylia Twistin', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(188, '161710313', '10974224', 'Arneta Belinda', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(189, '151610340', '4834257', 'Arra Ummilia Amingga', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(190, '151610046', '9996430270', 'Arvel Rivandy Hidarwan', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(191, '141510127', '9990608674', 'Asep Saeful Rohman', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(192, '141510046', '4817003', 'Asih Fitriyani', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(193, '141510291', '9995956827', 'Asih Juniarsih', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(194, '', '11570949', 'Asih Nuraeni', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(195, '151610341', '4815471', 'Asih Sahfitri', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(196, '151610425', '4300300', 'Asmi Assipa', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(197, '151610255', '4632460', 'Asmi Khairunnisa Rosiawati', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(198, '141510465', '8703270', 'Asni Ismi Ningsih', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(199, '151610005', '4793964', 'Asrani', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(200, '161710549', '15924177', 'Asri Handayani', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(201, '151610006', '4553442', 'Asshifa Rahmah Suhailla', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(202, '151610131', '9995151257', 'Assyfah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(203, '151610177', '4116124', 'Asti Chodijah', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(204, '161710351', '5177757', 'Astri Tresna Angelita', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(205, '141510334', '9985891243', 'Astri Widyastuti', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(206, '13147177', '5232024', 'Atiek Anggraeni', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(207, '151610299', '7646570', 'Atika', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(208, '161710193', '11558787', 'Atun Ferliyana', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(209, '151610007', '7492411', 'August Axl Antawijaya', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(210, '151610132', '4835543', 'Aula Mustadhiro', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(211, '151610133', '4578002', 'Aulia Ayu Nindira', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(212, '151610178', '3033243', 'Aulia Citra Valeras', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(213, '161710272', '11539596', 'Aulia Fitriyani Kartikasari', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(214, '161710431', '20119766', 'Aulia Martina', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(215, '151610515', '4756117', 'Aulia Nur Fadhilah', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(216, '161710233', '5154365', 'Aulia Rahmayanti', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(217, '', '19783728', 'Auliya Shavira Putri', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(218, '141510005', '9995153098', 'Aulya Nursafira', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(219, '', '11634033', 'Aurela Fransika Ardiansyah', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(220, '161710115', '13428680', 'Avaf Indriani', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(221, '161710471', '', 'Avie Dwi Alamanda', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(222, '151610342', '4756615', 'Avifah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(223, '', '5456984', 'Aviyah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(224, '161710314', '13958702', 'Awidah', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(225, '141510169', '9985818668', 'Ayu Fatmawati', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(226, '161710080', '1398803', 'Ayu Fatmawati', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(227, '141510211', '9995313582', 'Ayu Juhariah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(228, '141510376', '9996074480', 'Ayu Khotimatus Sa Diyah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(229, '161710352', '11593413', 'Ayu Komalasari', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(230, '', '11753718', 'Ayu Lestari', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(231, '151610300', '4757952', 'Ayu Nifani', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(232, '161710550', '9792878', 'Ayu Noviana Putri Kawehedo', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(233, '151610516', '9996070935', 'Ayu Nurdewi', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(234, '151610426', '4791598', 'Ayu Safitri', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(235, '161710393', '12137737', 'Ayu Sri Setiawati', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(236, '141510292', '9985892967', 'Ayu Sugiyanti', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(237, '161710153', '3126664', 'Ayu Triviyani', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(238, '141510335', '9984691758', 'Ayu Widyanto', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(239, '151610427', '4796467', 'Ayuditha Tiara Faramadina', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(240, '151610256', '4814100', 'Ayum', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(241, '161710273', '20119224', 'Ayunda', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(242, '161710194', '10878367', 'Ayuni Fithrotun Nisa', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(243, '151610134', '4814245', 'Azharul Estu Prayoga', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(244, '151610257', '4814246', 'Azharul Estu Prayogi', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(245, '161710432', '9995991252', 'Azis Saputra', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(246, '151610091', '9994104198', 'Aziz Rusydi Tsany Hidayat', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(247, '161710234', '', 'Azril Raihan Miraj', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(248, '151610428', '4793629', 'Azzah Alfiyanita', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(249, '', '18402564', 'Azzahra Putri Rima Pratiwi', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(250, '151610343', '9996073484', 'Azzura Puspa Berliana', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(251, '161710472', '', 'Bada Rapi', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(252, '151610047', '4833221', 'Bagus Dwi Prayitno', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(253, '', '11559508', 'Bagus Prasetyo', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(254, '141510047', '9985858984', 'Baskara Putra', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(255, '151610473', '4833230', 'Bayu Pratama', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(256, '161710116', '11559311', 'Bela Supriyatin', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(257, '141510006', '9995990014', 'Belgis Soraya Firdhausa', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(258, '161710081', '11707775', 'Bella Safitri', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(259, '151610301', '4579105', 'Berliantin Indah Nuriana', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(260, '', '14471236', 'Bintang Herdi Ansyah', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(261, '141510253', '9995810636', 'Budiasih', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(262, '151610384', '9996056202', 'Budiyani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(263, '', '5242238', 'Bunga Oktaviani', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(264, '161710154', '11592736', 'Bunga Silfia', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(265, '141510422', '9985612224', 'Cahya Yoga Pratama', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(266, '141510128', '9998323381', 'Cahyati', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(267, '151610604', '9995991873', 'Candra Pratama', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(268, '141510170', '9994810584', 'Candra Ramadhan', '12', '12 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(269, '', '5219992', 'Candrana', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(270, '141510212', '9996112681', 'Cantika Ajeng Amalia Pratiwi', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(271, '161710195', '5153307', 'Carini Dwi Yanna', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(272, '151610517', '9992253060', 'Carwini', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(273, '161710551', '11838572', 'Casono Anda', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(274, '141510504', '9991957046', 'Casriah Fitriana', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(275, '', '10711299', 'Catwari Diah Puspita', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(276, '', '12232499', 'Chelsie Cahyaningrum', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(277, '141510087', '9996055727', 'Chika Surya Fadilah', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(278, '', '9362266', 'Choirul Anam', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(279, '151610474', '4575957', 'Cicha Kemalasari', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(280, '161710315', '11559567', 'Cici Safitri', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(281, '151610135', '5434849', 'Cici Sintiani', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(282, '141510048', '9996091958', 'Cika Fadila Sari', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(283, '151610344', '4756472', 'Cindi Kurniasih', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(284, '', '3614286', 'Cindy Agustin', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(285, '151610429', '9996860271', 'Cindy Dewi Rizky', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(286, '161710552', '11633523', 'Cindy Elza Putri', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(287, '161710394', '11559570', 'Cindy Mustika Ayu', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(288, '150610179', '9996059814', 'Cindynia Asri Lestari', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(289, '161710274', '10711062', 'Cinta Noor Yulia', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(290, '141510007', '3755564', 'Cintiya Afriandi Erma Putri', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(291, '161710316', '11559791', 'Citra Indriyani', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(292, '151610385', '4796663', 'Citra Nur Amfelly', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(293, '161710353', '11252832', 'Claudia Letyzia Diaz Tarigan', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(294, '151610518', '9996090835', 'Cut Ismaya', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(295, '141510088', '9996014731', 'Danang Aditiya', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(296, '161710395', '10710603', 'Dandy Prayoga', '10', '10 AP4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(297, '', '12377775', 'Dani Malik', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(298, '151610180', '9996072937', 'Danisa', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(299, '161710082', '11591307', 'Danti Sri Alwi Yanti', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(300, '', '4816367', 'Darlinda', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(301, '161710473', '', 'David Susanto', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(302, '161710396', '', 'Dea Dela Rosa', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(303, '141510377', '9985794293', 'Dea Indriyani', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(304, '', '13712093', 'Dea Nur Ananda', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(305, '151610209', '2921211', 'Dea Puji Lestari', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(306, '161710235', '5394012', 'Dea Safitri', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(307, '161710117', '11592297', 'Dede Ayunda', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(308, '141510336', '9985851741', 'Dede Tarwini', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(309, '161710155', '5178313', 'Dedeh Melani', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(310, '151610258', '4756564', 'Dela Nurahma', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(311, '151610048', '9995153266', 'Delia Amelia', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(312, '151610430', '4795530', 'Della Rahmawati', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(313, '141510254', '9995979136', 'Della Saraswaty', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(314, '161710317', '5454301', 'Della Sartika Sari', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(315, '151610092', '8724552', 'Della Wanti Rahayu', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(316, '151610431', '4794147', 'Deniati', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(317, '151610519', '4922962', 'Deraga Rizq', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(318, '151610008', '9996052268', 'Desi Ayu Lestari', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(319, '141510129', '9985873360', 'Desi Komalasari', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(320, '151610605', '9995811384', 'Desi Nuriyani', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(321, '141510378', '9985759326', 'Desi Purnama', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(322, '151610259', '19428931', 'Desi Rahmadani', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(323, '151610302', '9996053199', 'Dessy Fatma Wati', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(324, '141510423', '9985856337', 'Dessy Rachmalia', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(325, '161710433', '', 'Destari Fitriyani', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(326, '', '6693655', 'Desy Alhamdiana Putri', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(327, '141510294', '9985874925', 'Deti Kurnia', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(328, '151610009', '3951526', 'Deva Andhara Putri Rahayu', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(329, '', '11559610', 'Devani Natasya Cantika Qui', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(330, '151610520', '4757922', 'Devi', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(331, '151610210', '9995957932', 'Devi Komala Sari', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(332, '141510049', '9985772110', 'Devi Nurani', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(333, '141510171', '9996018317', 'Devi Nurlaeliyah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(334, '1617101196', '5178332', 'Devi Triyanti', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(335, '161710936', '', 'Devi Umayyah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(336, '141510468', '9985891162', 'Devi Widiawati', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(337, '151610606', '4833348', 'Devica Candra', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(338, '161710398', '', 'Devie Nopiyanti', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(339, '151610475', '9996053371', 'Devina Ayu Ningrum', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(340, '141510213', '9995873555', 'Devya Dwi Rizky Amaliana', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(341, '151610093', '8380331', 'Dewi Fajar', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(342, '151610607', '9995128025', 'Dewi Lestari', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(343, '141510089', '9996038022', 'Dewi Maharani', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(344, '151610476', '4737127', 'Dewi Ningsih', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(345, '151610608', '9988349564', 'Dewi Novita Sari', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(346, '141510090', '9989528949', 'Dewi Rahayu', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(347, '161710553', '9144056', 'Dewi Ratna Sari', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(348, '161710354', '11591752', 'Dewi Sekar Ningrum', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(349, '141510130', '9985891532', 'Dewi Tahta Alfian Fajriyani', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(350, '151610345', '4756100', 'Dewi Utari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(351, '151610136', '9995605893', 'Dhandi Rizky Ramadhan', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(352, '151610260', '9996032054', 'Dhea Fitri Hardanti', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(353, '151610609', '4831468', 'Dhea Ines Prahastuti', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(354, '151610521', '9996059339', 'Dhea Nurul Nuha Fitriyani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(355, '141510424', '9985154122', 'Dhevi Rohmah Mujiathi', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(356, '141510337', '9995150835', 'Dhiha Rizqa Erki Pratiwi', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(357, '141510008', '9995934792', 'Dhimas Tegar Kirana', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(358, '161710275', '7655690', 'Dhiniana Shari', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(359, '141510338', '9994810616', 'Dhita Septiani Setia Putri', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(360, '151610181', '4793248', 'Dian Apriliani', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(361, '141510379', '9996057955', 'Dian Ayu Lestari', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(362, '141510091', '9996091141', 'Dian Fadhilah', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(363, '151610010', '9998553992', 'Dian Fadhillah Putri', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(364, '161710355', '11570601', 'Dian Fadilah', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(365, '141510469', '9985771116', 'Dian Farida', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(366, '141510172', '9995150493', 'Dian Fitriani', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(367, '151610094', '9995991525', 'Dian Lestari', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(368, '151610522', '9985892314', 'Dian Mayasari', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(369, '141510214', '9989774632', 'Dian Novita Sari', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(370, '151610261', '4830659', 'Dian Nur Soleha', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(371, '151610610', '9995527462', 'Dian Pratiwi', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(372, '161710399', '', 'Dian Sefi Ferliyana', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(373, '151610559', '5434908', 'Dian Yulianingsih', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(374, '141510255', '9996090633', 'Diana', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(375, '141510295', '9996071399', 'Diana Aprilia', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(376, '', '11556836', 'Diana Rosverdiriyanti Karim', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(377, '151610211', '3614563', 'Diar Rahma Berliana', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(378, '151610262', '7494101', 'Didit Ttriyanto', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(379, '141510092', '9975957195', 'Diki Rahmat Maulana', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(380, '', '10710431', 'Dimas Anugrah Pramudita', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(381, '161710236', '12377800', 'Dimas Satria Pramayudha', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(382, '141510131', '9996073271', 'Dina Apriliana', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(383, '151610049', '4729632', 'Dina Apriliani', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(384, '161710474', '10710671', 'Dina Choirunnissa', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(385, '151610182', '1528111', 'Dina Deniarni', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(386, '161710554', '11750340', 'Dina Fadhilah', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(387, '151610212', '9158496', 'Dina Febrianti', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(388, '151610673', '9996090489', 'Dina Maryana', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(389, '151610303', '9995153420', 'Dina Rahmadani', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(390, '161710276', '11593414', 'Dina Ristiana', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(391, '161710118', '5177733', 'Dina Selawati', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(392, '141510339', '9985794042', 'Dina Septiana', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(393, '151610611', '9996092416', 'Dina Tri Yanuarita', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(394, '', '11551245', 'Dina Widya Annisa', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(395, '161710156', '11559435', 'Dinda', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(396, '151610213', '4756104', 'Dinda Andini', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(397, '151510050', '9995979550', 'Dinda Aurelia Putri', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(398, '161710197', '10655176', 'Dinda Dwi Yuliana', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(399, '151610137', '3952174', 'Dinda Gisela Resiyandi', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(400, '161710318', '12373125', 'Dinda Nurfajriyanti', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(401, '151610432', '7782028', 'Dinda Safiyah', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(402, '151610050', '4576723', 'Dinda Violita Amelia', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(403, '141510380', '9996054346', 'Dini Fitriani Wahidanti', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(404, '151610523', '4839477', 'Dini Herliani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(405, '141510173', '9985010589', 'Dini Oktavia Wisudawati', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(406, '141510050', '9985770657', 'Dini Rosmawati', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(407, '161710237', '11253850', 'Dinni Nur Fadhillah', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(408, '161710356', '11496639', 'Dino Sapta Prasetyo', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(409, '141510296', '9996075028', 'Dipah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(410, '141510093', '9996059616', 'Dita Ayu Fitrianingrum', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(411, '161710400', '', 'Dita Dwi Nurvanti', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(412, '161710119', '11551234', 'Dita Marissa Wahidanti', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(413, '161710000', '15087025', 'Dita Nur Aeni Agustin', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(414, '141510009', '9996030136', 'Divio Firmansyah', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(415, '', '4244793', 'Divya Anjani', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(416, '141510340', '9985770897', 'Diyah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(417, '141510215', '9996051117', 'Dliya Awliya', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(418, '151610433', '4756474', 'Duvie Tianeke', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(419, '141510256', '9996058288', 'Dwi Ayu Febyanti', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(420, '141510381', '4833209', 'Dwi Deninta Shafitiri', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(421, '141510503', '9991554637', 'Dwi Harsiwi Ayummi', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(422, '', '5631326', 'Dwi Kirana', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(423, '151610346', '4831309', 'Dwi Kurnia Lestari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(424, '161710277', '8374569', 'Dwi Meilan', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(425, '', '11570088', 'Dwi Muhamad Ali Yatama', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(426, '161710198', '5190844', 'Dwi Noviyanti', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(427, '151610434', '4795948', 'Dwi Rohmatun Saniyya', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(428, '161710238', '5230516', 'Dwi Salzabila', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(429, '141510257', '9996059263', 'Dwi Susanti', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(430, '161710319', '11559573', 'Dwiyana Merley', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(431, '141510132', '9985891965', 'Dyah Ayu Lintang Pratiwi', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(432, '151610183', '4737841', 'Dyah Fitriani', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(433, '151610214', '9996051490', 'Dzikri Abdillah', '11', '11 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(434, '', '11559599', 'Dzul Qarnain Syah', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(435, '141510010', '9998623509', 'Eby Febyola Lawrence', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(436, '161710088', '9998200720', 'Een Nurikha', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(437, '161710120', '11035237', 'Ega Feronika', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(438, '151610138', '9815762', 'Ega Lestari', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(439, '141510470', '9995223077', 'Ega Safitri', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(440, '141510426', '9995979818', 'Egi Azhar Saputra', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(441, '5572808', '5572808', 'Egi Azizah', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(442, '151610560', '9994748535', 'Eka Famelia', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(443, '141510174', '9996092227', 'Eka Fitriani', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(444, '151610477', '4733397', 'Eka Hayati Nufus', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(445, '151610263', '9996071276', 'Eka Safitri', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(446, '141510297', '9985851439', 'Eka Sinta', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(447, '161710434', '', 'Eko Ramadhan Santoso', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(448, '151610478', '4792694', 'Ela Ningsih', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(449, '161710052', '15667062', 'Elfitra Syahrani', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(450, '141510471', '9996053354', 'Elfiyan Agustn', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(451, '161710158', '', 'Elga Elgia Eprin', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(452, '161710475', '12137860', 'Elga Putri Elisabeth', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(453, '151610215', '9651350', 'Elgy Riyoni Firasti', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(454, '161710555', '5231428', 'Eli Kusmawati', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(455, '151610304', '4839295', 'Elin Vera', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(456, '161710435', '12090429', 'Elinawati', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(457, '141510341', '9985853319', 'Elipa', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(458, '161710053', '5231120', 'Elis Triani', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(459, '151610479', '9996053418', 'Eliya Nur Fajriyah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(460, '161710278', '11635127', 'Eliyana', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(461, '151610184', '3033255', 'Ella Apriliyani', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(462, '', '5177759', 'Ella Damayanti', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(463, '141510258', '9996013817', 'Elsa Apriliani', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(464, '141510382', '9985792363', 'Elsa Isti Koma', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', '');
+INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `email`, `nomer_telp`, `alamat_lengkap`, `tempat`, `tanggal_lahir`, `password`, `foto`) VALUES
+(465, '151610139', '4819780', 'Elsana Rahmanika', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(466, '141510052', '9995990457', 'Ely Nuridasari', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(467, '151610388', '9996030145', 'Endang Yustika', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(468, '151610347', '9996053196', 'Enno Chusnul Chotimah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(469, '141510133', '9995956546', 'Erawati', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(470, '', '15624017', 'Erfina Ayu Damayanti', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(471, '141510298', '9985793624', 'Eri Evi Yanti', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(472, '141510342', '9995810550', 'Ericha Triutari', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(473, '141510011', '9996052377', 'Erik Febriyanto', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(474, '151610305', '4816217', 'Erika Efrianah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(475, '161710358', '11550885', 'Erin Rismawati', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(476, '141510383', '9985674307', 'Erina', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(477, '151610480', '9995539764', 'Eriyanti Ahmar', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(478, '151610561', '3954071', 'Erlan Tedy Muflikh', '11', '11 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(479, '141510427', '9996070071', 'Erlina Rustiningsih', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(480, '161710401', '', 'Erna', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(481, '151610348', '4758197', 'Ernawati', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(482, '161710279', '11578864', 'Ersa Riyana', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(483, '', '11813257', 'Ervina Putri Windiyanti', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(484, '141510299', '9996971454', 'Ervina Rosa', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(485, '151610481', '8087842', 'Eryca Fitriyati Sholihah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(486, '151610306', '4579021', 'Eva', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(487, '161710320', '5178000', 'Eva Evi Yana', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(488, '161710239', '11378465', 'Eva Gita Rostita', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(489, '151610011', '4574246', 'Eva Rahmawati', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(490, '151610562', '3951731', 'Evelyn Denita Varani', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(491, '141510175', '9995973175', 'Evi Lutfiyah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(492, '151610524', '9994982381', 'Evi Yulistianingsih', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(493, '141510343', '9996031595', 'Eviana Melisa', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(494, '141510217', '9995956840', 'Evicha Nurul Izzah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(495, '161710121', '5177810', 'Evien Jubaidah', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(496, '161710359', '4574313', 'Evita Bella Putri', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(497, '', '11593450', 'Evita Nurbayanti', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(498, '151610051', '4816014', 'Eviva', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(499, '161710160', '', 'Evy Rosyani Putri', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(500, '', '11634092', 'Fachri Febriyana', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(501, '151610053', '1656265', 'Facqyh Zaenal Marzuqy', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(502, '141510384', '9996053571', 'Fadhijah Islamiaty', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(503, '161710200', '10710280', 'Fadia Asya Zaharani', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(504, '161710402', '11753589', 'Fadia Hanin Hilya Jannah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(505, '141510259', '9992262203', 'Fadilla Ajeng Lestari', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(506, '151610482', '9996054405', 'Fadilla Nur Larasati', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(507, '141510053', '9996052225', 'Fadjri Ilham Nurmawan', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(508, '151610612', '9900651', 'Fadly Yusron Analis', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(509, '151610054', '9996016366', 'Fahmi Hidayat', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(510, '151610264', '9999559054', 'Fahmy Sahab', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(511, '161710556', '11592044', 'Fahrurrozi', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(512, '141510012', '9996091303', 'Faisal Amiruddin Aditama', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(513, '141150054', '9985892472', 'Faiz Ridloh', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(514, '141510013', '9996621428', 'Fajar Istiqomah', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(515, '151610613', '4816758', 'Fajrin Tryguntara', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(516, '151610055', '3033259', 'Falah Safara Katulistiwa Gz', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(517, '1611000', '8980613', 'Faldi Ibrahim', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(518, '151610349', '4116009', 'Fani Maharani Sofyan', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(519, '', '5190038', 'Fani Rahmawati', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(520, '151610483', '4839488', 'Fania Marlina', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(521, '151610525', '9995311064', 'Fanji Waqhi Setiawan', '11', '11 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(522, '151610265', '6229987', 'Fanny Fanala', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(523, '141510134', '9995991101', 'Fanny Rizki Amanda', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(524, '161710240', '11559647', 'Fany Alvionita', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(525, '161710122', '13977419', 'Faradina Kholidah', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(526, '161710090', '', 'Farah Amalia Mahendra', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(527, '141510300', '9995990930', 'Farah Griselda Praboasti', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(528, '161710161', '11559748', 'Farhah Rihhadatul Aisy', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(529, '', '11572232', 'Farhan Fahrezi', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(530, '161710201', '19208785', 'Farhan Maulidar', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(531, '151610389', '4831122', 'Faridah Nurbaiti', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(532, '151610096', '4735780', 'Faridah Oktafiani', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(533, '141510344', '9998177328', 'Farikha', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(534, '161710241', '11252612', 'Farikhatus Syaadah', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(535, '161710321', '', 'Farrah Aulia', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(536, '151610140', '5308084', 'Farras Rihatul Aisy', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(537, '161710360', '', 'Fathan Izzatul Maula', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(538, '161710123', '11591906', 'Fathiyyah Nurfi Laily', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(539, '151610484', '9985770713', 'Fathuroji', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(540, '151610097', '9996070330', 'Fatma Fuzi Lestari', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(541, '151610526', '9997010072', 'Fatmawati', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(542, '141510176', '9984999780', 'Fatur Rahman', '12', '12 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(543, '161710403', '', 'Fauza Farohatul Jannah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(544, '151610012', '4579068', 'Fauzan Akbar Maulana', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(545, '141510218', '9996092628', 'Fauziah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(546, '151610527', '4756319', 'Fauziah Mulyaningrum', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(547, '', '5179079', 'Fauziyah', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(548, '141510260', '3954372', 'Faza Abdi Shohih', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(549, '141510135', '9994799538', 'Fazrina Apriliyani Permataningrum', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(550, '151610216', '3954498', 'Febry Ayu Nurhasanah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(551, '141510055', '9996092436', 'Feby Alfian', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(552, '141510177', '9985793341', 'Feby Melinda', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(553, '141510219', '9995979399', 'Fellia Widya Pangestika', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(554, '141510385', '9985892958', 'Feni Melina Tussholekhah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(555, '141510094', '9985794043', 'Feny Indiani', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(556, '151610185', '4831116', 'Fera Nita Rahayu', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(557, '151610217', '4792750', 'Fergi Ferdiansah', '11', '11 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(558, '141510301', '9996017551', 'Fhira Alfhiera', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(559, '141510345', '9995991609', 'Fianita', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(560, '', '5092721', 'Fifi Fitriyah', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(561, '151610098', '4839298', 'Fikki Amela', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(562, '161710476', '', 'Fikri Aolianti', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(563, '5230285', '5230285', 'Finasari', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(564, '161710436', '', 'Fiqi Alawi', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(565, '141510014', '9995990908', 'Fiqi Andri Reviansyah', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(566, '151610099', '4839489', 'Fira Dwi Charolina', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(567, '141510095', '9996031019', 'Fira Katerina', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(568, '151610563', '9996074829', 'Firda Elza Ramadhanty', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(569, '', '10974144', 'Firda Fatimah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(570, '161710437', '10973958', 'Firda Meisya Nabila', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(571, '161710322', '5153322', 'Firda Neviliyani', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(572, '161710242', '4574395', 'Firda Prilia Aeni', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(573, '161710124', '5177762', 'Firman Almansyah', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(574, '16171010124', '5177762', 'Firman Almansyah', '10', '10 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(575, '151610056', '9998309760', 'Firmansyah', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(576, '151610141', '9996070035', 'Firmansyah Jaya Pradana', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(577, '151610435', '4814901', 'Firna Al Destin', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(578, '141510386', '9996018836', 'Fisa Nafisa', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(579, '141510178', '9996050772', 'Fisqi Fauziah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(580, '141510261', '9985819865', 'Fitri Aisyah', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(581, '151610564', '9994799373', 'Fitri Amelia', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(582, '', '11593488', 'Fitri Fadhilah', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(583, '5631308', '5631308', 'Fitri Nur Aeni', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(584, '141510136', '4793798', 'Fitri Nurhidayati', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(585, '151610307', '9996090625', 'Fitri Nurmalasari', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(586, '141510302', '9996102410', 'Fitri Rahmayanti', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(587, '161710404', '5176506', 'Fitri Yani', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(588, '151610528', '4757931', 'Fitria Rossa', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(589, '', '6174106', 'Fitriah Nadilla', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(590, '151610350', '9996030623', 'Fitriyanah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(591, '', '11558117', 'Fitriyani', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(592, '151610529', '11338140', 'Fiya Savarotuzzahro', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(593, '141510472', '9996053414', 'Frans Setiya Adi Putra', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(594, '141510220', '9995955862', 'Fristi Purnama Ichsani', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(595, '161710203', '11558561', 'Friti Mega Utami', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(596, '141510346', '9985859749', 'Futikha Nurfiyanti', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(597, '151610436', '9996018580', 'Galuh Aulia Fitriani', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(598, '141510428', '9994799485', 'Gani Agung Supriyatno', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(599, '141510056', '9996053191', 'Gesy Mawarni Berliana', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(600, '141510015', '9996227994', 'Ghina Amaliyah', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(601, '', '11550538', 'Ghina Amelia Fauziati', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(602, '141510262', '9994953260', 'Ghina Zhafirah Ulfa', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(603, '161710281', '', 'Ghiyanti Fanni', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(604, '151610013', '9996091940', 'Gilang Aghna Ramadhan', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(605, '161710557', '13010545', 'Gina Agiyatussolikha', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(606, '141510137', '9985791281', 'Gina Mawarni', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(607, '141510179', '9985892827', 'Gina Mayori', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(608, '1617105323', '11578094', 'Gina Triyatna', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(609, '', '11633607', 'Giofanny Risdiantoro', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(610, '161710362', '5190797', 'Gita Cutviani', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(611, '141510221', '9999355393', 'Gita Safitri', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(612, '151610186', '9995958220', 'Gita Safitri', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(613, '161710405', '5177803', 'Giti Meilina', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(614, '161710243', '12450455', 'Haaniyah Azzahrah', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(615, '151610218', '2523435', 'Habib Pratama', '11', '11 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(616, '151610308', '9997064354', 'Hadhimas Ramdanu', '11', '11 AP1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(617, '', '5457218', 'Hadi Permadi', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(618, '161710558', '', 'Hadiyullah Muhlisin', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(619, '', '3954224', 'Haidar Bagir', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(620, '151610142', '4756555', 'Haidar Nur Putra', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(621, '151610187', '9992227787', 'Hajizah Khaerin', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(622, '141510057', '9995810736', 'Halim Faiz', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(623, '151610014', '4594054', 'Halimah Najiyah', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(624, '151610565', '4795992', 'Halimah Sa\'diyah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(625, '161710324', '13010790', 'Halimatus Sa\'diyah', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(626, '', '19872857', 'Halimatusya\'diyah', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(627, '151610485', '4814108', 'Hamdan Al Anshori', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(628, '151610057', '9996054403', 'Hamdan Ibrahim', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(629, '141510263', '9995939142', 'Hamidah', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(630, '151610100', '9996052821', 'Hamidah', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(631, '151610614', '9139512', 'Hamzah Assadullah', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(632, '161710204', '', 'Hanella', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(633, '', '', 'Hanifah', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(634, '161710125', '11592109', 'Hanifatin Nisah', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(635, '151610058', '4737131', 'Haniyati', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(636, '', '5230500', 'Hanna Rasyidah Priyatna', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(637, '161710406', '11861907', 'Hannah Faulia', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(638, '141510387', '9995816411', 'Hanny Chaerunisya', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(639, '141510303', '9991529090', 'Hany Fauzia', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(640, '151610390', '7577453', 'Hany Redyta', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(641, '141510138', '9994799542', 'Hardi Junianto', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(642, '141510264', '9978080235', 'Hartajun', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(643, '151610059', '9996097516', 'Haryanti Octaviani', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(644, '151610015', '9995773803', 'Hasan Basri Sahab Gusduri', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(645, '141510429', '9998147953', 'Helda Arini', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(646, '151610219', '4736648', 'Helen Nilana Ningsih', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(647, '', '11559503', 'Heliyanti Dewi', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(648, '151610143', '4839752', 'Helmi Eka Sari', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(649, '161710244', '5230522', 'Henny Erlina', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(650, '161710126', '11550685', 'Herdiansah Yusuf', '10', '10 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(651, '151610530', '4757005', 'Heriyana', '11', '11 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(652, '151610531', '9985870362', 'Herlina', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(653, '', '19435303', 'Hermanto Kusnendar', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(654, '141510180', '9999412852', 'Herti', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(655, '', '11559636', 'Herti Saputri', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(656, '161710282', '4857583', 'Hikmah Nur Barikah', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(657, '151610220', '9996032856', 'Hikmatul Munawaroh', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(658, '151610060', '4795257', 'Hilmi Khoirulloh', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(659, '151610016', '9996415014', 'Hilmi Yahya', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(660, '141510222', '9996032035', 'Himy Maftuhah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(661, '151610615', '9993311750', 'Ia Tamiah', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(662, '151610616', '4814373', 'Ibah Khoirul Bariyah', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(663, '151610566', '9999867884', 'Ibnu Huzein Ali Sidik', '11', '11 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(664, '151610532', '9995970625', 'Ibyati Suci', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(665, '141510388', '9983697093', 'Iche Tresna Lanopiani', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(666, '141510474', '9989856248', 'Ida Fitriyani', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(667, '151610437', '9996073242', 'Ifa Afwati', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(668, '151610567', '9994810662', 'Ihca Mustika Ratu', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(669, '141510265', '9985859811', 'Iin Inayani', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(670, '141510016', '9993064867', 'Iin Mariya Ningsih', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(671, '151610188', '4838730', 'Iip Afifah', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(672, '151610351', '4732056', 'Iip Fathuren', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(673, '141510139', '9995952965', 'Iip Juniyanti', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(674, '141510304', '9987518126', 'Iip Latifah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(675, '141510347', '9995991615', 'Iis Diah Dwityah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(676, '', '5179076', 'Iis Isnawati', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(677, '151610486', '9999094266', 'Iis Siti Solehah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(678, '141510181', '9997798714', 'Ika Nurjannah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(679, '', '5230061', 'Ika Nurliana', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(680, '161710206', '11558825', 'Ikawati', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(681, '141510058', '9995312910', 'Ike Noor Agustina', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(682, '151610487', '9995991618', 'Ike Octavia', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(683, '151610391', '4814700', 'Ike Santika', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(684, '', '5178673', 'Iko Suaditia', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(685, '151610101', '4831687', 'Ilaf Nabila', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(686, '161710245', '4756820', 'Ilan Fathurohman', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(687, '141510430', '9999975501', 'Ilfi', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(688, '161710477', '', 'Ilham Baharudin', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(689, '141510096', '9984227861', 'Ilham Ramadhan', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(690, '161710478', '11559699', 'Ilham Ramadhan', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(691, '', '3615918', 'Imam Mangkususilo Pramono', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(692, '141510389', '9986805892', 'Imel Amelia', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(693, '161710561', '1442943', 'Imelda', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(694, '151610266', '9799804', 'Imelda Tasya Fika Anggela', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(695, '141510305', '9975995759', 'Inayatul Maula', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(696, '151610221', '4832535', 'Indah Fajriyah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(697, '161710057', '12091103', 'Indah Nur Hanifah', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(698, '151610438', '9995958353', 'Indah Puspa Sari', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(699, '151610309', '9996055269', 'Indah Rizkiyanti', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(700, '151610439', '9996091200', 'Indah Sari', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(701, '151610018', '9999084614', 'Indah Tri Wulandari', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(702, '161710325', '11559808', 'Indah Widia Ningsih', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(703, '141510348', '9997822970', 'Indah Wulan Dari', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(704, '1617210127', '5177598', 'Indah Wulandari', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(705, '161710364', '11558270', 'Indah Yanti', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(706, '151610668', '9995979797', 'Indah Yanti', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(707, '151610102', '9989961040', 'Indan Setia Wati', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(708, '141510017', '9985892828', 'Indra Yulianto', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(709, '151610222', '9996092086', 'Indri Prastika', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(710, '141510390', '9996091372', 'Indri Santika', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(711, '151610533', '4816659', 'Indri Syabila', '11', '11 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(712, '141510223', '9985674033', 'Indri Yani Saputri', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(713, '151610103', '4795053', 'Indriani', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(714, '151610393', '9992961474', 'Indriawati', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(715, '151610534', '9995991929', 'Ine Indriyani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(716, '161710407', '5630742', 'Ine Sintiya', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(717, '151610568', '1790959', 'Ineke Julistya Nezuarense', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(718, '141510266', '9996091798', 'Ines Marwasari', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(719, '161710283', '11559310', 'Inggit Safitri', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(720, '161713026', '5630758', 'Inka Lidiya', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(721, '151610104', '5792943', 'Inka Putri Saffana', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(722, '161710408', '6075856', 'Inka Silvi Safitri', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(723, '141510306', '9995979805', 'Innas Tsurayya', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(724, '151610352', '4815584', 'Intan Aprillia', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(725, '161710479', '', 'Intan Lestari', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(726, '151610535', '9812798', 'Intan Mahira', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(727, '151610144', '4793476', 'Intan Melanisa', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(728, '151610394', '4794385', 'Intan Melati', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(729, '141510140', '9995990022', 'Intan Oktafiyanti', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(730, '', '11738172', 'Intan Pramita Dewi', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(731, '151610569', '4815716', 'Intan Resti Meylina', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(732, '', '6570949', 'Intan Sari', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(733, '', '11633507', 'Ira Itami', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(734, '', '11559344', 'Ira Karlina', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(735, '151610267', '4815707', 'Irfan Saputra Rosikin', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(736, '151610536', '4818955', 'Irma Mayasari', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(737, '151610440', '9996018744', 'Irna Wati', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(738, '161710284', '11255011', 'Irwan Mochamad Rizki', '10', '10 AP1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(739, '151610310', '3952377', 'Isma Anjani', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(740, '151610353', '3171887', 'Isma Ayu Pandan Sari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(741, '151610441', '4817240', 'Isma Hanifatul Salma', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(742, '161710327', '', 'Ismatul Maulani', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(743, '1617', '10775066', 'Ismi Azizah', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(744, '', '5190814', 'Isnaeni Fajar Saputri', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(745, '161710128', '11235903', 'Isneni Hendra Putri', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(746, '161710480', '', 'Istiadza', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(747, '161710208', '4832536', 'Istiana', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(748, '141510349', '9995957269', 'Istianah Fuddiyanah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(749, '141510391', '9996032894', 'Istiqomah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(750, '16170247', '5219186', 'Isvihana', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(751, '141510475', '9985770349', 'Ita Indriyana', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(752, '161710348', '', 'Ita Juwita', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(753, '151610617', '4736942', 'Ita Novita', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(754, '141510307', '9995990157', 'Ita Purnama Sari', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(755, '151610618', '9942238', 'Ivan Irhamna', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(756, '161710129', '12137865', 'Ivone Yunike Fajarwati Silas', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(757, '151610442', '9996030529', 'Jaka Pratama', '11', '11 AP4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(758, '151610019', '8097684', 'Jean Rizal Wijanto', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(759, '141510182', '9995313579', 'Jeani Feliani', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(760, '141510059', '9995959453', 'Jeff Vanza Nasuha', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(761, '161710167', '', 'Jesica Permata Putri', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(762, '151610105', '4819656', 'Jia Azizah Fauziah', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(763, '', '18841447', 'Jidan Dwilaksana', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(764, '', '810878242', 'Jihan Maulina', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(765, '', '11634102', 'Jihan Pratama Anwar', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(766, '141510476', '9997406470', 'Jimmy Fabriyan', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(767, '141510097', '9991201991', 'Jiyan Permatasari', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(768, '151610395', '9996052761', 'Jodi Setiawan', '11', '11 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(769, '141510267', '9989779123', 'Jofanka Mirdalina Sugiarto Putri', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(770, '141510018', '9994176786', 'Jou Niluh Nagari', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(771, '151610311', '4833929', 'Juhaidah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(772, '151610488', '3953266', 'Jumiati Puspa Sari', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(773, '141510477', '9988508930', 'Juwandi', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(774, '141510141', '9996070801', 'Kadmani', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(775, '151610106', '9995991887', 'Kamal Mubarokh', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(776, '141510098', '9991718482', 'Kameliawati', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(777, '151610537', '9995958358', 'Kanda Diyanto', '11', '11 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(778, '151610538', '4855132', 'Karina Ulul Azmi', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(779, '151610268', '9994043831', 'Karlina', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(780, '151610269', '9997214603', 'Kasmini', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(781, '141510183', '9994799377', 'Keke Sita Marfina', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(782, '151610107', '4574283', 'Kemala Ervia Damayanti', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(783, '141510060', '9985770449', 'Kerinah', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(784, '151610489', '8987923', 'Kevin Riwandy', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(785, '161710248', '11254949', 'Kevin Tri Putra', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(786, '161710365', '1541183', 'Kezia Rezani Nurzahra', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(787, '141510350', '9996203458', 'Khaerunnisah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(788, '161710481', '11570581', 'Khamidah', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(789, '161710285', '5455382', 'Khanifah', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(790, '151610396', '3615499', 'Khoeriri Ummi Mardi', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(791, '161710130', '6163555', 'Khoirunnisya', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(792, '', '11253167', 'Kholifah Kuromah', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(793, '141510099', '9996025521', 'Khulalu Syarifah', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(794, '151610397', '6942465', 'Kiki Marini', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(795, '151610398', '4714490', 'Kiki Monika', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(796, '151610354', '4797346', 'Kiki Retno Apriana', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(797, '151610443', '4839069', 'Kiki Santiani', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(798, '141510268', '9985856321', 'Kiky Amalya', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(799, '141510392', '9995978711', 'Kintan Mawarti', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(800, '161710328', '2543750', 'Kintan Prastika Dwi Lingga', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(801, '151610312', '9996052503', 'Kiray Wanindri', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(802, '141510019', '9996072920', 'Kitriawati', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(803, '141510308', '9982252428', 'Kokom Komariah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(804, '161710439', '17247062', 'Komariyah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(805, '151610399', '11291753', 'Krisna Febriyani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(806, '141510351', '9985877584', 'Krisna Levia', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(807, '151610223', '9994399806', 'Kunaeni Alfisyahri', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(808, '', '5175717', 'Kurniasih', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(809, '141510393', '9985759380', 'Kurniati', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(810, '141510224', '9985751859', 'Kursiyawati', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(811, '', '11572155', 'Kusnanti Aristiyani', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(812, '141510100', '9984301410', 'Laela', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(813, '161710440', '', 'Laela Bulan Cantika', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(814, '', '17607147', 'Laela Lutfiyah', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(815, '141510142', '9994953374', 'Laela Shalihah', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(816, '141510184', '9995978950', 'Laela Yuniar Sari', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(817, '161710366', '5154910', 'Laelatul Maolia', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(818, '51610619', '4833151', 'Laelaturrohmah', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(819, '161710409', '11572114', 'Lailatul Ichdah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(820, '161710441', '14743930', 'Laily Miftahhul Jannah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(821, '161710209', '11635133', 'Lala Leanita', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(822, '151610355', '4116213', 'Larasati Putri Fathiah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(823, '161710564', '12034724', 'Lathifatin Fajril Fath', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(824, '151610620', '4663760', 'Latifah', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(825, '151610145', '9995485932', 'Latifah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(826, '151610189', '4858265', 'Laurensius Hary Himawan', '11', '11 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(827, '161710286', '11698259', 'Leli Apriliyani', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(828, '', '241221', 'Leli Indriyani', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(829, '', '5190645', 'Leli Maulidiya', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(830, '151610313', '5225858', 'Lely Rahmawati', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(831, '', '11592496', 'Leman', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(832, '151610270', '4810095', 'Lena Lestari', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(833, '151610020', '4870171', 'Leni Rosyani', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(834, '151610356', '9985771182', 'Leni Widaningsih', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(835, '151610490', '9097889', 'Leo Sandy Prasethyo', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(836, '161710483', '', 'Leres Sanara', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(837, '141510225', '9996014751', 'Lestari', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(838, '151610224', '1643694', 'Lestari Sekar Ningrum', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(839, '151610400', '4839034', 'Lia Andani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(840, '161710329', '5292678', 'Lia Anggraeni', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(841, '141510309', '4756127', 'Lia Febriliani', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(842, '151610444', '9996053358', 'Lia Ningsi', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(843, '161710131', '5214152', 'Lia Novianti', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(844, '151610146', '11370447', 'Lia Nur Apriyani', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(845, '161710367', '5991793', 'Like Figur Anggraeni', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(846, '151610314', '9995990123', 'Lilis Maulida', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(847, '142510061', '9995955551', 'Lilis Sulistiyani', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(848, '141510352', '9985856769', 'Lina Koesherawati', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(849, '151610357', '14481087', 'Lina Lestari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(850, '', '11753850', 'Lina Melinda', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(851, '151610491', '3952315', 'Linanda Putri', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(852, '', '11557998', 'Linda Duwi Komala', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(853, '151610315', '9996052153', 'Linda Herliana', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(854, '151610401', '4838800', 'Linda Lestiana Waty Rahman', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(855, '151610190', '9996073474', 'Lintang Lin', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(856, '161710025', '115922533', 'Lisa Panca Indriyani', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(857, '151610358', '4793473', 'Lisa Uliya', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(858, '', '11753298', 'Lisah Agustin', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(859, '161710565', '20118446', 'Lisma Levia', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(860, '141510020', '9995959374', 'Lismia Wati', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(861, '141510143', '9996030113', 'Listiana Safitri', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(862, '151610225', '6779694', 'Lola Clodya Tamdi', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(863, '161710210', '11751582', 'Lola Oktavia', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(864, '151610316', '4814237', 'Lola Rosela', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(865, '3.20923480301E+15', '11539324', 'Lolla Alfareza', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(866, '161710484', '', 'Luckyana', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(867, '161410249', '11570342', 'Ludy Fawwaz Maulana', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(868, '151610271', '9996073454', 'Lukardo', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(869, '151610061', '9985791284', 'Luke Nugroho', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(870, '141510185', '9996055763', 'Lula Karmelia', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(871, '151610619', '4738795', 'Luli Laelatul Lafia', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(872, '151610402', '4832000', 'Lusi Lusita', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(873, '161710368', '', 'Lusianadewi', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(874, '', '11593497', 'Lusy Adelia', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(875, '161710330', '5394001', 'Lutfianah', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(876, '141510310', '9995811296', 'Lutfiyah Putri Agna', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(877, '151610359', '8047734', 'Luthfiah Rachmawati', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(878, '141510394', '9998062675', 'Luthfiyah Mutiah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(879, '', '6174336', 'Lyssa Indriyani', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(880, '151610147', '4657501', 'Maefah Ipta Anugrah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(881, '151610062', '4791903', 'Mai Rosmawati Simbolon', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(882, '151610403', '9996057574', 'Maimunah', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(883, '151610445', '4757947', 'Maisaroh', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(884, '', '5178969', 'Makmur Alamsyah', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(885, '161710369', '11592551', 'Mala Mahalia', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(886, '161710411', '11254428', 'Mariah Ulfah Prihastomo', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(887, '141510101', '9989938036', 'Mariam', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(888, '161710132', '5190829', 'Maryam', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(889, '141510226', '9985891739', 'Mashadah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(890, '141510269', '9985874903', 'Masrifah', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(891, '151610404', '9300536', 'Masunah', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(892, '141510395', '9996070610', 'Mauhibatul Laila', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(893, '141510062', '9996053992', 'Maulid Ikhsanul Anshar', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(894, '141510102', '9994799966', 'Maulidya Rizky Yoghiswari', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(895, '161710442', '11593444', 'Mawar Munawaroh', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(896, '141510103', '9998781943', 'Maya Apriliani', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(897, '141510311', '9985792851', 'Maya Desyvia Mega Mardiyati', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(898, '161710170', '5230391', 'Maya Khoirunnisa', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(899, '141510353', '9985854622', 'Maya Sari', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(900, '141510144', '9995979815', 'Mayang Fuji Asih', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(901, '141510431', '9996054921', 'Mayang Sari', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(902, '141510478', '9994810907', 'Mayang Wiharyanti', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(903, '141510186', '9996073604', 'Mega Laraswaty', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(904, '161710211', '10710887', 'Mega Mustika Sari', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(905, '151610539', '9996092574', 'Mega Nur Fadillah', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(906, '13147162', '11633463', 'Mega Nur Sahera', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(907, '151610622', '9997640373', 'Mega Nurrohman Oktaviani', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(908, '151610191', '11374474', 'Mega Putri Adelia', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(909, '141510021', '9996057869', 'Mega Rosmayani', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(910, '141510432', '9985854425', 'Mega Sukawati', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(911, '13147056', '5219164', 'Meganisa Rizky Rahman', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(912, '', '4579114', 'Megarayuni', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(913, '151610273', '4839241', 'Meilyn Della Danistra', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(914, '151610226', '4834252', 'Mela Arena', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(915, '151610623', '4795238', 'Mela Triseli', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(916, '151610148', '8263132', 'Melati Liring Galih', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(917, '141510227', '9985831556', 'Melati Rachmawati', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(918, '141510396', '9999595696', 'Meli', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(919, '161710331', '', 'Meliyana', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(920, '151610274', '4536533', 'Meliyanah Nur Rokhimi', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(921, '161710443', '', 'Mella Maelany', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(922, '141510479', '9985755207', 'Mellie Nabiella', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(923, '', '9996430476', 'Melly Ana Rosa', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(924, '151610317', '9996074830', 'Melnia Ramadhan', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(925, '141510270', '9999556293', 'Merissa Effendi', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(926, '151610540', '4816181', 'Merlina Febriliany', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(927, '151610446', '4819182', 'Meta Mutiara', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(928, '151610192', '9996014903', 'Metia', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(929, '151610447', '4831744', 'Meylika Anggraeni', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(930, '151610448', '9996091436', 'Mia Amelia', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', '');
+INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `email`, `nomer_telp`, `alamat_lengkap`, `tempat`, `tanggal_lahir`, `password`, `foto`) VALUES
+(931, '151610360', '9995314440', 'Mia Dwiyanti', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(932, '151610109', '4758090', 'Mia Komala Sari', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(933, '151610227', '9996091640', 'Miftahul Jannah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(934, '161710444', '10879522', 'Mila Apriliani', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(935, '151610149', '4814355', 'Milik Ardini', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(936, '151610624', '3615534', 'Milna Sari', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(937, '', '5178839', 'Mira Adiska', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(938, '141510312', '9994799879', 'Miranti Ayu Andini', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(939, '151610193', '9998983138', 'Mita', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(940, '151610405', '9996071551', 'Mitha Dwi Cahyani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(941, '151610492', '9983663368', 'Moch. Irfan Septiaji', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(942, '', '5427189', 'Mochamad Digjaya', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(943, '141510145', '9998240444', 'Mochamad Fajar Risky', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(944, '151610063', '9999719141', 'Mochammad Rizki Bayu Herlambang', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(945, '161711', '6250943', 'Moh. Fikri Husaeni', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(946, '141510104', '9987826830', 'Mohamad Aminudin', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(947, '141510063', '9995970907', 'Mohamad Fajar Adi Nugroho', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(948, '151610021', '9994366670', 'Mohamad Fauzan', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(949, '141510480', '9993720052', 'Mohamad Fikhan P.k', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(950, '151610110', '9996018995', 'Mohamad Novan', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(951, '161710212', '16215666', 'Mohamad Priana', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(952, '', '6077344', 'Mohamad Rhamdan', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(953, '141510187', '9995935355', 'Mohammad Arkan Hawari', '12', '12 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(954, '', '16206718', 'Mohammad Faisal', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(955, '141510105', '9979008351', 'Mohammad Fakhrurozi', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(956, '151610150', '9505462', 'Mohammad Jaenudin', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(957, '151610570', '6902096', 'Mohammad Luthfi', '11', '11 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(958, '141510434', '9985870693', 'Mohammad Najih', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(959, '151610194', '8285292', 'Mohammad Royhan', '11', '11 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(960, '141510023', '9994677570', 'Mohammad Yakub Wicaksono', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(961, '141510435', '9996059527', 'Mokhamad Ilham', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(962, '161710527', '16702973', 'Mona Murniawati Kris', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(963, '141510228', '9995979449', 'Monic Cahyani Wulandari', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(964, '161710370', '11559955', 'Monica Fitri', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(965, '161710251', '5178002', 'Monika', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(966, '151610228', '6362280', 'Monika', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(967, '161710288', '11559798', 'Muawiyah', '10', '10 AP1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(968, '161710332', '3289783', 'Muazah', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(969, '141510354', '9981063546', 'Mufidatul Aziza', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(970, '161710371', '9996432232', 'Muhaimin', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(971, '141510022', '9976017026', 'Muhamad Fachri Rachmandita', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(972, '151610064', '9998423871', 'Muhamad Fajri', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(973, '151610026', '14408225', 'Muhamad Iman Fathur Rohman', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(974, '151610022', '4757765', 'Muhamad Lathoiful Minan', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(975, '151610023', '4838974', 'Muhamad Najibul Fata', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(976, '151610151', '9999910723', 'Muhamad Nur Ali', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(977, '151610029', '9999575968', 'Muhamad Rifqi Alidzanur', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(978, '151610066', '9999041615', 'Muhamad Taufik Hidayat', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(979, '151610108', '7982643', 'Muhamad Wildan Tri Pamungkas', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(980, '151610024', '3614801', 'Muhamad Zakaria', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(981, '141510271', '9991911503', 'Muhammad Afifudin', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(982, '141510064', '9983943521', 'Muhammad Alvin Mubarok', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(983, '161710445', '', 'Muhammad Arif Rohmanudin', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(984, '', '11571319', 'Muhammad Azis Faturrohman', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(985, '', '', 'Muhammad Cecep Adi Resa', '10', '10 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(986, '151610625', '9995978832', 'Muhammad Fahmil Huda', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(987, '141510481', '9976581181', 'Muhammad Gabriel', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(988, '141510146', '9984691641', 'Muhammad Gilang Mahardhika', '12', '12 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(989, '151610025', '9995150490', 'Muhammad Ilham', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(990, '141510436', '9991771074', 'Muhammad Iqbal Maulana', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(991, '151610027', '9995846844', 'Muhammad Iqza Guntoro', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(992, '151610028', '9993128648', 'Muhammad Mauluddin Nur', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(993, '151610621', '9879212', 'Muhammad Najmi Nugraha', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(994, '', '5191102', 'Muhammad Nur Khafid', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(995, '', '3614361', 'Muhammad Raihan Akbar', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(996, '141510065', '9990658151', 'Muhammad Rifqi Al Baihaqi', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(997, '', '6885513', 'Muhammad Rifqi Najib', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(998, '151610493', '9998786186', 'Muhammad Rifqillah', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(999, '141510482', '4653829', 'Muhammad Risal Adhan', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1000, '151610030', '9017598', 'Muhammad Rizal Aryo Seno', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1001, '151610065', '3951373', 'Muhammad Rizal Pratama', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1002, '151610626', '4757540', 'Muhammad Wahyudi', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1003, '161710133', '11559590', 'Muhammad Wildan', '10', '10 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1004, '141510106', '4792519', 'Muhammad Yusuf', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1005, '161710446', '', 'Muhyiyuddin', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1006, '151610067', '4838011', 'Mukamad Alif', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1007, '151610449', '1871084', 'Mukhamad Arifin Nur', '11', '11 AP4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1008, '', '20130048', 'Mukhamad Azis', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1009, '151610031', '4757632', 'Mukhamad Cesar', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1010, '', '5177576', 'Mukhamad Farhan Riyadi', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1011, '', '5078597', 'Mukhamad Irfan Syah', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1012, '161710252', '5292980', 'Mukhammad Arifin Maulana', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1013, '141510188', '9985815925', 'Mulin Ni\'mah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1014, '', '5154550', 'Muna Agni', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1015, '141510024', '9984999427', 'Muslikha Ayu', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1016, '161710134', '10973955', 'Mustika Ratna Dewi', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1017, '141510397', '4831995', 'Mutia Andini', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1018, '141510229', '9995991116', 'Mutiara', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1019, '151610318', '9747410', 'Mutiyah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1020, '151610032', '15223257', 'Nabila Febriyani', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1021, '151610195', '9993424754', 'Nabila Ramadina', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1022, '161710173', '', 'Nabilah Putri Milenia', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1023, '161710214', '10775093', 'Nada Nur Janah', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1024, '161710447', '', 'Nadhrotul Fikriyah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1025, '', '', 'Nadia Arum Putri', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1026, '161710448', '', 'Nadia Ela Risqi', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1027, '141510313', '9996052671', 'Nadila Ayu Harvianty', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1028, '151610571', '9904269', 'Nadiya Baldatuzzahra', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1029, '', '11830304', 'Nadya Krisma Anggareni', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1030, '151610494', '5081276', 'Naelin Najah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1031, '161710289', '5153312', 'Nala Syarika', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1032, '151610541', '9984691347', 'Nanda Fauziah', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1033, '161710253', '11592683', 'Nanda Maulidah Azzahro', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1034, '151610406', '4835863', 'Nanda Nurhaeni', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1035, '151610068', '9996051338', 'Naoval Jafarid', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1036, '151610407', '4795219', 'Natasa Yuandani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1037, '151610229', '4791549', 'Naufal Nurrofiq', '11', '11 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1038, '151610572', '6007094', 'Nayanti', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1039, '161710333', '20117374', 'Nazwa Khairana Prayudati', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1040, '1617100372', '11559661', 'Neci Roslita Sari', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1041, '141510025', '4815886', 'Nela Puji Rahayu', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1042, '141510272', '9985871016', 'Neli', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1043, '', '9696530', 'Neli Asriyati', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1044, '', '11570334', 'Nelisha', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1045, '141510147', '9996055332', 'Nella Elfira', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1046, '161710215', '10526070', 'Nelly Meinissa Azahra', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1047, '141510107', '9995811286', 'Neng Sri Jubaedah', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1048, '141510355', '9997252840', 'Neni Mulyani', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1049, '151610196', '4573924', 'Ni\'matur Rohmah', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1050, '151610408', '9995874101', 'Nia Safitri', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1051, '151610152', '4795331', 'Nida Fatiya Rahmah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1052, '', '17582082', 'Nida Salsabila', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1053, '141510066', '9992264770', 'Niken Fahira Sonia', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1054, '141510437', '9985792180', 'Nina Epani', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1055, '141510026', '9993840586', 'Ninda Diniya', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1056, '141510189', '9985695495', 'Ninda Nurjanah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1057, '151610230', '4738826', 'Nindi Putriana', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1058, '141510356', '9985773126', 'Nindy Nofriyanti', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1059, '141510398', '9985891653', 'Ning Sari', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1060, '', '11591825', 'Nisa Alfiyyah Salsabila', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1061, '151610153', '4578415', 'Nisa Marha Khairon', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1062, '141510067', '9995991656', 'Nisa Ristianah', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1063, '151610231', '7084279', 'Nissa Amelia Salicha', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1064, '151610197', '4795532', 'Nita Dwi Lestari', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1065, '141510483', '9996073276', 'Nita Widyaningsih', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1066, '141510314', '9985871858', 'Noer Aeni', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1067, '161710291', '5230117', 'Noerlaela', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1068, '141510438', '9996018560', 'Noni Agnes', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1069, '141510357', '9995958653', 'Noni Wahini', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1070, '141510230', '9985893103', 'Noni Yohana', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1071, '141510273', '9985770513', 'Nopianti', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1072, '141510399', '9994274133', 'Nopita', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1073, '151610542', '4758070', 'Nopitasari', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1074, '141510148', '9995934801', 'Nova Kharisma', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1075, '141510190', '9985870717', 'Novi Eliyana', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1076, '151610069', '9996092811', 'Novi Lazuardini', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1077, '141510439', '9985891638', 'Novi Oktavianti', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1078, '151610495', '9996019190', 'Novi Rachmawati', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1079, '141510315', '9995582233', 'Novia', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1080, '161710334', '11559815', 'Novia', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1081, '151610232', '9996355073', 'Novia', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1082, '151710254', '5177730', 'Novianti Dwi Rihandjani', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1083, '', '12204907', 'Noviar Tri Khaerina Ramdhani', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1084, '151610361', '6764706', 'Noviati', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1085, '161710373', '5631077', 'Novita Fitriyana', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1086, '151610233', '9995810483', 'Novita Noerikhsan', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1087, '161710530', '', 'Novita Putri', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1088, '151610275', '9996030292', 'Noviyanti', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1089, '141510231', '147192383', 'Nunung Julaeha', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1090, '151610362', '9994488721', 'Nunung Nurhayati', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1091, '151610276', '9039523', 'Nur\'aeni', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1092, '151610575', '9996031011', 'Nur\'aeni', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1093, '141510274', '9996091821', 'Nur \' Ariefa Arrizky', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1094, '141510358', '9986909241', 'Nur Aeni', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1095, '141510191', '9985818199', 'Nur Aeni', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1096, '151610111', '9995970522', 'Nur Alifah', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1097, '141510401', '9996054095', 'Nur Alimah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1098, '161710413', '5177808', 'Nur Alimah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1099, '141510316', '9994810255', 'Nur Amrillah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1100, '161710414', '11550734', 'Nur Anis', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1101, '151610450', '9997292208', 'Nur Atika Dwi Yulistiana', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1102, '141510485', '9985793290', 'Nur Ayuni Sabrina', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1103, '141510149', '9985791273', 'Nur Azizah', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1104, '161710030', '14134282', 'Nur Azizah', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1105, '151610627', '152256136', 'Nur Eni', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1106, '151610409', '9993999174', 'Nur Fadilah', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1107, '151610410', '16288215', 'Nur Fadillah', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1108, '141510440', '9985771131', 'Nur Fitri Aulia', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1109, '161710292', '10878998', 'Nur Hanifah Setyawati', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1110, '141510359', '9985891025', 'Nur Indah Asriani', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1111, '151610573', '9996355078', 'Nur Khofifa', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1112, '151610277', '8231720', 'Nur Kholifah Abas', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1113, '161710572', '7653657', 'Nur Mahmudah V', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1114, '151610154', '4839259', 'Nur Oktaviani', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1115, '', '9861973', 'Nur Rahmah', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1116, '151610411', '4751048', 'Nur Rantika', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1117, '151610070', '4922067', 'Nur Reza Patievi', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1118, '151610071', '4578985', 'Nur Rizqi Safarilah', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1119, '141510400', '9996054942', 'Nur Rolinda Gustina', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1120, '161710135', '11550550', 'Nur Ropi\'ah', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1121, '151610574', '9996056209', 'Nur Siti Fatimah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1122, '', '11591762', 'Nur Syifah Faojiah', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1123, '151610278', '4814095', 'Nur Taufiq Hidayat', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1124, '151610072', '4792429', 'Nuraisah', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1125, '151610451', '9996052127', 'Nurayuni', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1126, '141510317', '9985751863', 'Nurazizah Dwi Septiyani', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1127, '161710216', '5190286', 'Nurfatur Sholeha', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1128, '141510232', '9995873070', 'Nurhabibah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1129, '151610073', '2569589', 'Nurhamzah Izzul Haq', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1130, '161710335', '5154404', 'Nurhayati', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1131, '151610452', '3090380', 'Nurhayati', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1132, '151610198', '4795029', 'Nurhidayah Kautsar', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1133, '', '11813291', 'Nurhikmah Adawiyah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1134, '141510360', '9985872871', 'Nurjannah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1135, '151610234', '4715966', 'Nurkholifa', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1136, '161710415', '', 'Nurkhoriya', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1137, '161710485', '', 'Nurlaelah', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1138, '151610672', '4792415', 'Nurlaeli Kamalin', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1139, '151610279', '4819671', 'Nurmaya', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1140, '151610576', '4831302', 'Nuronniyatul Aliyah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1141, '161710293', '5177336', 'Nurrahmah Istiqomah', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1142, '141510402', '9996033040', 'Nurrohmah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1143, '141510275', '9995152396', 'Nurrul Aisyah Dwi Putri', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1144, '151610112', '4736777', 'Nursahid', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1145, '161710486', '5214333', 'Nursela', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1146, '151610319', '9996016673', 'Nursuci Ramadhani', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1147, '151610113', '4832744', 'Nurtisari', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1148, '151610320', '5027656', 'Nurul Aini', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1149, '151610363', '9992597987', 'Nurul Aeni', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1150, '161710487', '5231648', 'Nurul Alfiah', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1151, '151610364', '9999724503', 'Nurul Fajriyah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1152, '161710449', '', 'Nurul Farkhuni', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1153, '151610496', '9998465555', 'Nurul Fatikhah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1154, '141510150', '9999926309', 'Nurul Fatimah', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1155, '151610577', '4830631', 'Nurul Fatimah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1156, '151610543', '6408399', 'Nurul Istikomah', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1157, '161710255', '6078068', 'Nurul Izah', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1158, '151610155', '4869923', 'Nurul Khidmah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1159, '151610544', '9996092560', 'Nurul Khotimah', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1160, '151610321', '9995959489', 'Nurul Khotimah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1161, '161710136', '4575270', 'Nurul Novitasari', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1162, '141510192', '9995979126', 'Nurul Rizki Hidayani', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1163, '161710176', '5178318', 'Nurul Tifani', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1164, '141510318', '9996058544', 'Nurul Zannah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1165, '161710374', '10710865', 'Nurullita Saphira Putri', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1166, '161710217', '11559757', 'Okiawati', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1167, '161710256', '5230517', 'Okta Ayuwandi Fauziah', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1168, '151610199', '9995639508', 'Oktavia Diana Sari', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1169, '151610578', '9995810402', 'Okti Prita Utami', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1170, '9996051460', '9996051460', 'Oldy Noviyanti', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1171, '151610236', '4578363', 'Olinda Windi Lestari', '11', '11 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1172, '141510233', '9996092387', 'Olsa Maeda', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1173, '', '5292710', 'Pajar Rifai', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1174, '151610579', '4839418', 'Pandan Langit', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1175, '161710416', '', 'Pandu Haryanto', '10', '10 AP4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1176, '151610033', '6702997', 'Panji Andana', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1177, '151610074', '7768624', 'Paquita Hanny Auliatul Muhabbah', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1178, '', '12099756', 'Pebi Dwi Maharani', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1179, '151610580', '4814238', 'Pebri Fitriana', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1180, '141510487', '9996052113', 'Peby', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1181, '161710450', '5219545', 'Peri', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1182, '151610365', '9995025075', 'Pertiwi Subandi', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1183, '', '11550398', 'Pipit Safitri Fa\'at', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1184, '161710177', '18328881', 'Pita Triya', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1185, '161710294', '11838912', 'Ponika', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1186, '161710218', '', 'Pratica Pramesti', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1187, '141510442', '9996059836', 'Puja Pangesti', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1188, '161710488', '9995978967', 'Puja Sukmawati', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1189, '141510108', '9985751849', 'Puji Astuti', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1190, '151610497', '4756558', 'Puji Deviyanti', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1191, '141510151', '9996054010', 'Puput Evianti', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1192, '141510193', '9998940496', 'Puput Santika', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1193, '151610322', '4737671', 'Puput Sulistianti', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1194, '141510276', '9995991885', 'Puspitasari', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1195, '161710257', '11556934', 'Putri Ajizah Apriliani', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1196, '151610156', '4816770', 'Putri Ani', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1197, '', '11053279', 'Putri Diah Pramesti', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1198, '151610366', '5164804', 'Putri Diana', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1199, '', '11570837', 'Putri Erfrida Diannisa', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1200, '141510361', '9998721274', 'Putri Febriyanti Rofeli', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1201, '151610546', '9995979535', 'Putri Fitriyah', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1202, '151610034', '4831470', 'Putri Hawa Azzahra', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1203, '', '12090736', 'Putri Indah Lestari', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1204, '11254923', '11254923', 'Putri Indah Puspita', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1205, '161710489', '', 'Putri Mardiyanti', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1206, '141510234', '9985819964', 'Putri Meilinda', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1207, '161710375', '5392897', 'Putri Na Solekha', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1208, '161710178', '10879131', 'Putri Nabila', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1209, '151610323', '9996092803', 'Putri Nurwaqiah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1210, '151610453', '9994927599', 'Putri Oktaviani', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1211, '', '8163928', 'Putri Oktaviani', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1212, '141510403', '9999865517', 'Putri Saadah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1213, '', '16105358', 'Putri Utami', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1214, '161710295', '5154406', 'Putri Utami Paramitha', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1215, '151610581', '9996351457', 'Putriana Safitri', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1216, '141510277', '9996091209', 'Qonita Dewi', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1217, '151610114', '14079020', 'Qoriatun Nazilah', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1218, '141510109', '9985831135', 'Qurrotu A\'yuni Dwi Novi Sofiyanti', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1219, '131410000', '9014437667', 'R. Karina Ardith Ayuningtyas', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1220, '151610035', '3516050', 'R.moch.rheza Aditya S', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1221, '141510027', '9996015472', 'Rachmah Amelia', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1222, '151610547', '4833933', 'Rachmah Zulfiyani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1223, '151610628', '4574240', 'Rachmat Dermawan', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1224, '141510068', '143221046', 'Raden Annisa L', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1225, '141510069', '148003203', 'Rafi Ash-shidqi Prayuda', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1226, '141510070', '9996070943', 'Rahajeng Dwi Purwiyanti', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1227, '141510319', '9985794271', 'Rahani', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1228, '141510362', '9988523248', 'Rahayu', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1229, '151610200', '9996072299', 'Rahayu', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1230, '161710258', '13010784', 'Rahayu Ruliana', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1231, '9995153726', '9995153726', 'Rahimah Safitri', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1232, '', '5177394', 'Rahma Fikri Rizkiyani Noer Mu\'min', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1233, '161710139', '11377445', 'Rahmah Kholis Fauziyah', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1234, '141510071', '9995680375', 'Rahmat Hidayatullah', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1235, '151610454', '4115504', 'Raka Aditya Prananda', '11', '11 AP4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1236, '', '9723422', 'Ramahdan', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1237, '151610367', '9996072638', 'Rani Indriani', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1238, '161710336', '5154839', 'Ranti Agnesta', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1239, '141510404', '9996017253', 'Ratih Dwi Purwasih', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1240, '151610324', '4795004', 'Ratih Pebduati', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1241, '151610498', '3614880', 'Ratnasari', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1242, '141510152', '9992847994', 'Ratnasari Dewi Hafman', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1243, '151610115', '11371147', 'Ratu Aulia Randi', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1244, '', '1541194', 'Ratu Dewi Fortuna', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1245, '', '5453021', 'Ray Adhi Negoro', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1246, '', '11424688', 'Raysan Duta Gemilang', '10', '10 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1247, '', '5316460', 'Refaldy Ramadhan', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1248, '', '5165410', 'Reghita Cahyani Puspa Wandani', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1249, '161710490', '11838956', 'Regita Dwi Difani', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1250, '161710376', '5292967', 'Rehan Pangestu', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1251, '141510194', '9996091726', 'Rena Dwi Yolanda Rosdiana', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1252, '141510110', '9999362181', 'Renita', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1253, '151610280', '4832747', 'Renita Ardianti', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1254, '161710451', '', 'Resa Liviyana', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1255, '131407297', '11559575', 'Resa Restianawati', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1256, '151610237', '4758421', 'Resliyani', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1257, '161710140', '11572541', 'Resma Riyanti', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1258, '151610157', '4795792', 'Reti Rismayanti Dewi', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1259, '151610582', '4794387', 'Retno Wulandari', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1260, '161710296', '11377127', 'Retta Aviva Adilla Wahid', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1261, '151610201', '4815580', 'Reza Chaniago', '11', '11 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1262, '151610075', '9783376', 'Reza Fadilla Ahmad', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1263, '151610036', '4817456', 'Reza Nurfauzan', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1264, '141510072', '9994799567', 'Rezha Julio Islami', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1265, '', '5631298', 'Rezkiyola Dedehbetik', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1266, '151610238', '9996091653', 'Rheza Ulliyanti', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1267, '', '11633559', 'Ria Oktafiani', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1268, '141510443', '9985891918', 'Ria Riyanti', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1269, '151610413', '9996032866', 'Ria Ulifa', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1270, '141510031', '9994522895', 'Ria Valentine Suwardi', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1271, '141510235', '9985794046', 'Rian Nur Aeni', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1272, '151610116', '9995959365', 'Rian Rizki Widiawan', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1273, '161710337', '11559716', 'Rian Sabara', '10', '10 AP2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1274, '151610629', '5760348', 'Ricky Kuriawan', '11', '11 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1275, '151510630', '9995990534', 'Ridha Naisa', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1276, '151610076', '1839902', 'Ridhwan Budi Syaputra', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1277, '151610414', '4578314', 'Rieke Agustiani', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1278, '', '11559519', 'Rifaldi', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1279, '', '1143785', 'Rifara Ananda Wari', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1280, '141510032', '9998798170', 'Rifona Diksy', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1281, '141510153', '9997388584', 'Rika Lestari', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1282, '151610158', '3211615', 'Riki Nur Safitri', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1283, '151610325', '4854967', 'Rima Riyana', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1284, '161710452', '5154966', 'Rina Rismawati', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1285, '151610499', '4714476', 'Rindi Antika', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1286, '141510488', '9995990666', 'Rindi Fitria Rinjani', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1287, '161710260', '5230059', 'Rindiani', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1288, '151610631', '4757762', 'Rindiany Syafira', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1289, '151610117', '9985891534', 'Rini Fatmawati', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1290, '161710377', '11578213', 'Rini Purwati', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1291, '141510074', '9987968090', 'Rio Firmansyah', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1292, '151410489', '9985854576', 'Ririn Widiyasari', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1293, '151610202', '4795059', 'Risa Widia Ningrum', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1294, '161710518', '9996456657', 'Risbe Yudika Situmorang', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1295, '151610583', '9995798586', 'Riska Dwiyanti', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1296, '151610077', '3954871', 'Riska Handayani', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1297, '151610632', '9999580922', 'Riska Yulianti', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1298, '141510320', '9978107305', 'Riska Yulyandary', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1299, '', '5464560', 'Riski Hadiansyah', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1300, '151610584', '4816528', 'Riski Malika Nurani', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1301, '', '11551249', 'Risky Setiawan', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1302, '151610585', '3614707', 'Risma Umayah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1303, '151610633', '9996074510', 'Rismawati', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1304, '161710417', '', 'Risna Oktavia Ceptaningsih', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1305, '161710453', '5214177', 'Rista Gina Mawarni', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1306, '151610500', '4792036', 'Rita Juliana Naibaho', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1307, '', '5177993', 'Rita Maudina', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1308, '141510444', '9996056660', 'Rita Mutiara Zunfani', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1309, '', '5153339', 'Rita Oktafiani', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1310, '141510195', '146978038', 'Riya', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1311, '151610281', '8206565', 'Riyanto', '11', '11 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1312, '16170261', '11559260', 'Riza Aditya', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1313, '141510236', '9995796501', 'Rizki Kumala Dewi', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1314, '161710142', '10878661', 'Rizki Sutrisna', '10', '10 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1315, '', '11634111', 'Rizky Akbar Aripin', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1316, '141510490', '9996030133', 'Rizky Aulia Hakim', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1317, '', '6299120', 'Rizky Rifai Rojayana', '10', '10 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1318, '151610548', '6426760', 'Rizky Zapar', '11', '11 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1319, '141510033', '9995153752', 'Rizqiandini Ardelia Bakri', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1320, '151610239', '9995991376', 'Ro\'atinah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1321, '151610159', '6815518', 'Robi\'atul Adawiyah', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1322, '141510363', '9989358750', 'Robiatul Adawiyah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1323, '151610203', '9996018571', 'Rodijah', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1324, '141510446', '9995152198', 'Rofatimah Desi', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1325, '151610549', '9994799569', 'Rofifah Ramadanti', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1326, '141510405', '9996057611', 'Rofiko Kumala', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1327, '151610037', '9996764376', 'Rofiyani Dwi Putri', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1328, '151610368', '9995955866', 'Roisatur Romdhoni', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1329, '141510491', '9995979453', 'Roman Imanto', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1330, '151610038', '4816861', 'Rosa Gabriela Leda Turu', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1331, '141510321', '9989099766', 'Rosaliya', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1332, '141510447', '9998396876', 'Rosanti', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1333, '161710418', '', 'Rosdiana Agustin', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1334, '141510278', '9985873216', 'Rose Ismi Yanti', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1335, '141510154', '17199', 'Rosi Riyanti', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1336, '151610550', '11370723', 'Rosita', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1337, '151610551', '9996092198', 'Rosiyana', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1338, '151610415', '4839050', 'Rosma Widiyaningsi', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1339, '161710338', '20173248', 'Rosmawati Febriani', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1340, '151610240', '9996091823', 'Rossalina', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1341, '', '12137863', 'Royani Hutasoit', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1342, '161710262', '10525585', 'Royfansyah Muhammad Razavi', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1343, '141510196', '9975978834', 'Rusniasih', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1344, '141510279', '4819194', 'Ryana Noer Kholiazmi', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1345, '141510075', '9992095899', 'Ryfaldhi Wildan Maulana', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1346, '151610160', '4792034', 'Ryomy Putri Sihotang', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1347, '161710378', '11559751', 'Sa\'ada Lutfiyana', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1348, '141510034', '9985892258', 'Sa\'adah', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1349, '161710419', '11571564', 'Sabrina', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1350, '151610078', '9995978823', 'Sadina', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1351, '141510076', '9996019821', 'Safira Qintari Yudith Vitarani', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1352, '151610204', '9990019504', 'Safrina Wulan Nur Amalia', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1353, '141510237', '9995979323', 'Sahara', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1354, '141510364', '9995956555', 'Sahsa Santika', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1355, '141510492', '9996165258', 'Saifu Falkan', '12', '12 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1356, '161710454', '', 'Salamah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1357, '151610282', '2331530', 'Salamatul Laela', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1358, '141510035', '9995554027', 'Salma Insan Salsabila', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1359, '161710455', '5178694', 'Salsa Bilarahmani', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1360, '151610586', '9996948884', 'Salsabila Rahmah Hadaya Riadi', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1361, '', '19674387', 'Salsabilla Dhea Lestia', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1362, '161710222', '', 'Salwaa Mumtazah', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1363, '141510406', '9999164795', 'Sandra Nurintani Dahlan', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1364, '141510111', '9985892798', 'Saniah', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1365, '11559804', '11559804', 'Santi Febrianti', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1366, '151610326', '4115633', 'Santi Maelani', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1367, '151610161', '9995799691', 'Saphira', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1368, '141510448', '9995990899', 'Sarah Sri Maharani', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1369, '151610369', '9995978752', 'Sari Putri Effendi', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1370, '151610327', '4816312', 'Sari Widiyawati', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1371, '161710456', '', 'Sartika', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1372, '141510112', '9995891442', 'Satrianus Manue Kono Okki', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1373, '141510280', '9985892836', 'Savira Anggriani', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1374, '161710457', '15933169', 'Seila Nurhaliza', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1375, '161710143', '11550845', 'Sekar', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1376, '151610455', '9756222', 'Sekar Ayu Agustian', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1377, '', '5230526', 'Sekar Ayu Dimas Savitri', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1378, '141510077', '9994176854', 'Sekar Dhamayanti', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1379, '161710339', '11592294', 'Sekar Dwi Yulianti', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1380, '151610501', '9995151232', 'Sekar Melati', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1381, '161710223', '11839006', 'Sekar Sayyida Fadhilah', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1382, '141510322', '9996091048', 'Sekar Suti Mira Ningtyas', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1383, '161710379', '5219781', 'Selfina', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1384, '151610502', '9996092407', 'Selinda', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1385, '141510365', '9996056550', 'Selvi Mayasari', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1386, '161710491', '', 'Selviyani', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1387, '161710100', '', 'Sendyawan Nagari', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1388, '', '11572158', 'Septi Anggraeni', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1389, '141510493', '9975974237', 'Septi Herdiyanti', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1390, '161710492', '6174496', 'Septia Vania', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', '');
+INSERT INTO `tbl_siswa` (`id`, `nis`, `nisn`, `nama`, `kelas`, `rombel`, `jk`, `email`, `nomer_telp`, `alamat_lengkap`, `tempat`, `tanggal_lahir`, `password`, `foto`) VALUES
+(1391, '161710144', '5219190', 'Serly Pratiwi', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1392, '1617420', '11590866', 'Serly Rosyallina', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1393, '161710299', '10879011', 'Shafira Nabila', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1394, '', '5095068', 'Shafira Yunita', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1395, '161710340', '5292977', 'Shalza Amanda', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1396, '141510113', '9996032403', 'Shela Sefianah', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1397, '151610670', '9986824846', 'Shelly Dhiana', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1398, '151610118', '4653291', 'Sheril Fatimatuz Zahro', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1399, '151610552', '9994953642', 'Sherly Silvana Hedy', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1400, '161710380', '4806933', 'Sheryna Putri', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1401, '161710458', '', 'Sheva Widodo', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1402, '', '11559506', 'Shindy Aprilia', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1403, '', '11804974', 'Shindy Patricia Purnomo', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1404, '161710577', '5631279', 'Shintiya Agustiana', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1405, '141510155', '9996018939', 'Sholikha Tunnisa', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1406, '141510197', '9973074745', 'Sholikhah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1407, '161710421', '18632857', 'Sifa Fauziah Nur Ubaedah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1408, '151610205', '9029780', 'Sihab Ibnu Fadli', '11', '11 AK2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1409, '151610241', '9995991902', 'Silmi Kafah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1410, '161710300', '5293223', 'Silvana', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1411, '', '12090579', 'Silvia Nirmala Dewi', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1412, '151610587', '4833228', 'Silviani', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1413, '151610162', '4818980', 'Silviya Pediyanti', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1414, '141510238', '9999465972', 'Simi', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1415, '161710264', '11550770', 'Sinaena Saeful Putri', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1416, '141510407', '9982334960', 'Sindi Atika', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1417, '', '11572125', 'Sindi Silviah', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1418, '151610503', '9997802414', 'Sinta Bella', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1419, '151610456', '4579103', 'Sinta Berliyani', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1420, '151610416', '9996090458', 'Sintiya', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1421, '141510036', '9996019500', 'Sintya Ristiana', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1422, '151610242', '9999236598', 'Siska', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1423, '', '19700581', 'Siska Alfina Putri', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1424, '161710422', '20152009', 'Siska Awalliyah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1425, '141510078', '9996019898', 'Siska Febriyani', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1426, '151610457', '9995979144', 'Siska Indriyani', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1427, '161710301', '5154727', 'Siska Lestari', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1428, '141510450', '9985891547', 'Siti Aisyah Ramadhani', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1429, '141510281', '9995796527', 'Siti Almaidah', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1430, '151610371', '4839646', 'Siti Alpiya', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1431, '151610458', '4819708', 'Siti Alya', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1432, '141510156', '9985793485', 'Siti Bariroh', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1433, '', '5190031', 'Siti Duwi Jayanti', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1434, '151610328', '9996017944', 'Siti Elisa', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1435, '151610372', '9996393439', 'Siti Faizun', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1436, '151610588', '9995827723', 'Siti Fatimah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1437, '151610206', '9995991107', 'Siti Fatimah', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1438, '161710493', '10710302', 'Siti Fatimah Azahra', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1439, '', '11559370', 'Siti Fatmah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1440, '151610283', '4815533', 'Siti Fikriyatul Hasanah', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1441, '151610417', '8708902', 'Siti Hamami', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1442, '161710342', '5292482', 'Siti Hanifah Rahayani', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1443, '', '9996354472', 'Siti Indanafiah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1444, '141510198', '9985873997', 'Siti Istiqoma', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1445, '', '11592491', 'Siti Jubaedah', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1446, '141510037', '9996090963', 'Siti Jubaedah', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1447, '141510323', '9994481698', 'Siti Julaeha', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1448, '', '12313760', 'Siti Khodijah', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1449, '151610589', '9996070290', 'Siti Khodijah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1450, '141510366', '9985794378', 'Siti Khodijah', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1451, '141510239', '9985834450', 'Siti Khoirunnisa', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1452, '161710494', '', 'Siti Khotimah', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1453, '141510451', '9983404304', 'Siti Khotimah', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1454, '151610504', '9996350942', 'Siti Khumaeroh', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1455, '141510408', '9996016127', 'Siti Laelah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1456, '161710459', '', 'Siti Maemunah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1457, '141510282', '9975874316', 'Siti Maesaroh', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1458, '141510495', '9985898118', 'Siti Maesaroh', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1459, '151610329', '9505562', 'Siti Marwah Faradillah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1460, '141510324', '9999980810', 'Siti Maysaroh', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1461, '111111', '5630754', 'Siti Mustika', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1462, '141510452', '9996052662', 'Siti Naja Hafidah', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1463, '161710146', '10878573', 'Siti Nur Faizah', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1464, '151610590', '3952350', 'Siti Nurhalimah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1465, '', '10878482', 'Siti Nurhaliza', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1466, '151610243', '4791248', 'Siti Nursela', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1467, '151610163', '4814374', 'Siti Nururipa', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1468, '161710831', '12090157', 'Siti Qowiyah Jamil Qomala', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1469, '141510367', '9996092637', 'Siti Qoyyimah Yahdiyani', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1470, '141510496', '9985854424', 'Siti Ratna Dewi', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1471, '151610373', '9995089309', 'Siti Robaedah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1472, '151610591', '3614851', 'Siti Rohanah', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1473, '161710539', '11812918', 'Siti Romlah', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1474, '141510409', '9985819026', 'Siti Rosidah', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1475, '161710495', '11559424', 'Siti Rostina', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1476, '', '19466237', 'Siti Royani', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1477, '141510079', '9975997268', 'Siti Salamah', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1478, '151610284', '4792428', 'Siti Sarah Aulia', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1479, '151610459', '4814708', 'Siti Supiya', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1480, '151610418', '4715104', 'Siti Tuhfah Maulidina', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1481, '16710423', '5230111', 'Siti Warina', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1482, '161710302', '5177833', 'Sm Ade Kesuma Wardani', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1483, '161710343', '4594061', 'Soffiah', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1484, '141510038', '9985793294', 'Sofi Karunia', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1485, '141510157', '9994810532', 'Sofia Salma', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1486, '', '10203189', 'Sofyan Hadi Hidayat', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1487, '', '11571830', 'Solekha', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1488, '161710265', '11838871', 'Soniya', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1489, '141510240', '9996070953', 'Sri Adi Ningsih', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1490, '151610039', '9996054938', 'Sri Andini', '11', '11 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1491, '141510199', '9995979546', 'Sri Atikah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1492, '161710382', '12136847', 'Sri Devi Puspitasari', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1493, '161710071', '11377104', 'Sri Hartati', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1494, '151610592', '4793376', 'Sri Hastuti', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1495, '151610330', '4793980', 'Sri Putri', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1496, '1617101471', '5177854', 'Sri Rahayu', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1497, '141510241', '9996073264', 'Sri Saumaliyah', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1498, '151610244', '4796993', 'Sri Sulyaningsih', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1499, '151610634', '4838975', 'Sri Umamah', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1500, '141510283', '9996018989', 'Sri Utami', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1501, '141510114', '9985831834', 'Sri Widyarti', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1502, '151610374', '9996052133', 'Sri Wulandari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1503, '141510325', '9999686407', 'Sriana', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1504, '', '5177518', 'Sriyani', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1505, '', '5003915', 'Stefani De La Rosa', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1506, '161710460', '5177382', 'Subeki', '10', '10 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1507, '141510158', '9995991459', 'Suci Aulia Hanifunnisa', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1508, '141510200', '9985791288', 'Suci Desti Herliyani', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1509, '151610635', '3954056', 'Suci Indah Novitasari', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1510, '161710496', '5178865', 'Sugiarti', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1511, '', '5393876', 'Suheni', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1512, '141510115', '9996091714', 'Suherman', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1513, '161710424', '', 'Sukiri', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1514, '141510368', '9995978925', 'Sulastri', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1515, '141510242', '9985794039', 'Sulastriani', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1516, '141510410', '9994929396', 'Sulhah Amalia', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1517, '141510284', '9996090701', 'Suliasih Lestari', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1518, '151610079', '9992277066', 'Sultan Ramadhan', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1519, '151610080', '9996019860', 'Sulthon Hafipz Fadhlurrohman', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1520, '141510497', '9998727380', 'Sumiyati', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1521, '', '14526883', 'Sunengsih', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1522, '141510326', '9995956754', 'Sunenti', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1523, '151610164', '9855835', 'Sunenti', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1524, '151610207', '4735986', 'Suneri', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1525, '151610245', '3952373', 'Surahman Nur Hijjah', '11', '11 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1526, '141510080', '9994810969', 'Surya Muharram Khamidun', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1527, '161710226', '', 'Susan Yulianti', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1528, '151610419', '4839724', 'Susi Adiningsih', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1529, '151610420', '4758190', 'Susiana', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1530, '151610636', '9998405008', 'Susilawati', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1531, '151610505', '9996053759', 'Suwandi', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1532, '161710148', '11539825', 'Suyufi', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1533, '', '18451517', 'Syahirah Nibras', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1534, '161710497', '', 'Syahrani', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1535, '151610119', '4839232', 'Syahri Arriffin', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1536, '151610120', '9991774551', 'Syahrul Hidayat', '11', '11 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1537, '151610506', '9996070093', 'Syahrul Ramadhan', '11', '11 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1538, '151610331', '9477637', 'Syifa Berliana Hersanny', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1539, '151610593', '9995956937', 'Syifa Bunga Syafira', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1540, '141510369', '9975895601', 'Tami', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1541, '151610460', '9236996', 'Tania Dwi Nur Hidayati', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1542, '161710461', '11633465', 'Taniatun Nafiah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1543, '161710344', '5178186', 'Tanisa Damayanti', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1544, '151610285', '5044783', 'Tanti Kusmawati', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1545, '141510039', '9994041612', 'Tanzilal Azizie Rachim', '12', '12 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1546, '151610553', '9996351458', 'Taofik', '11', '11 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1547, '', '15200941', 'Taufik Hendrawan', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1548, '16170383', '5292621', 'Teddy Arif Permana', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1549, '151610165', '9996091149', 'Tedi Mulyadi', '11', '11 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1550, '151610040', '4888454', 'Teguh Prasetiyo', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1551, '', '4755991', 'Teguh Rokhman Saputra', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1552, '', '3952346', 'Tessa Firmansah', '10', '10 AK3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1553, '151610208', '9802474', 'Thufailah Afifah Farahany', '11', '11 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1554, '161710425', '', 'Tia Amalia', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1555, '', '13122230', 'Tiana', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1556, '161710345', '11550337', 'Tina Amelia', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1557, '151610286', '8646385', 'Tina Rudiani', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1558, '161710303', '9985771212', 'Tinah', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1559, '141510159', '9985854951', 'Tita Kusumawati', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1560, '151610287', '4815710', 'Titania Azzira Nurvaizah', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1561, '141510411', '9996014176', 'Titin Nur\'ela', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1562, '151610507', '4116182', 'Tiwi Suertiana', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1563, '141510454', '9985617032', 'Tomi Wijaya', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1564, '161710498', '', 'Toto Iswanto', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1565, '161710499', '11559741', 'Tresnawati', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1566, '', '11254951', 'Tri Ainul Yaqin', '10', '10 PB2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1567, '141510201', '9995991565', 'Tri Amelia', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1568, '151610637', '2045157', 'Tri Anggraeni', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1569, '', '10879471', 'Tri Aninda Venny Nurfitria', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1570, '161710462', '', 'Tri Asini', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1571, '151610462', '9996072303', 'Tri Mutia', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1572, '141510243', '9985875359', 'Tri Nindiani', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1573, '161710266', '11497370', 'Tri Winarni', '10', '10 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1574, '161710384', '11255471', 'Triana Yunita', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1575, '141510081', '9995991494', 'Trilaksana', '12', '12 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1576, '', '5631109', 'Triya Gandesa', '10', '10 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1577, '151610081', '3615897', 'Try Haryono Aprilium', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1578, '161710500', '4578315', 'Tsaniyah Choirunnisa', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1579, '', '11838950', 'Tubagus Azhar Asshidiqie', '10', '10 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1580, '', '1541191', 'Tubagus Naufal Hidayat', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1581, '161710073', '11557906', 'Tubagus Sajiwo', '10', '10 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1582, '151610554', '9995958704', 'Tuneli', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1583, '141510327', '9995442924', 'Tuti Alawiyah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1584, '141510370', '9985892831', 'Ucinah Yati', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1585, '151610508', '9995990470', 'Uka Dwi Ayu Lestari', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1586, '', '5154774', 'Uke Citra Diarti', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1587, '151610375', '4795187', 'Ulfa Sari', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1588, '141510285', '9985891916', 'Ulfiyatul Khotimah', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1589, '151610332', '9999908275', 'Ully Fadhilah', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1590, '141510116', '9986701260', 'Ulul Azmi', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1591, '151610288', '4653683', 'Umi Khodijah Ayu Papilonisa', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1592, '151610421', '9996092562', 'Umi Kulsum', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1593, '151610246', '3693525', 'Ummul Farocha', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1594, '141510455', '9985737610', 'Unaeni Fatmawati', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1595, '141510117', '9984997338', 'Unasih', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1596, '151610463', '4796214', 'Unti Suriani', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1597, '141510160', '9995979926', 'Upit Kapitalia', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1598, '151610464', '4830200', 'Uripah', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1599, '161710426', '', 'Usnur Sarah Rofilia', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1600, '151610376', '9995991185', 'Uswatun', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1601, '141510202', '9996074514', 'Uswatun Hasanah', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1602, '141510118', '9996070739', 'Utari Aptianingrum', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1603, '151610289', '4795554', 'Vanessa', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1604, '141510456', '9995978872', 'Vanny Fibriyani', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1605, '', '11539255', 'Vannya Puspita Sari', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1606, '141510244', '9996059111', 'Vena Yolanda', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1607, '161710501', '11593439', 'Venti Vadilah', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1608, '151610166', '4793378', 'Veranti', '11', '11 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1609, '161710304', '11592060', 'Verlyn Rennijio', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1610, '161710149', '15950322', 'Verra Verliana', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1611, '161710346', '5154772', 'Via Nur Aenggita', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1612, '141510328', '9984690683', 'Vicki Riana', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1613, '141510412', '9985856287', 'Vicky Ismaliana Putri', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1614, '', '5178250', 'Vika Dwi Utami', '10', '10 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1615, '161710385', '6570955', 'Vina Aliyanti Ekarisma', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1616, '151610422', '9996052733', 'Vina Elviana Putri', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1617, '151610121', '4755922', 'Vina Febrianty Sofia', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1618, '151610247', '11370122', 'Vina Nursyamsiyah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1619, '141510286', '9996030132', 'Viny Andriyani Subagja', '12', '12 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1620, '151610638', '4739558', 'Vira Prasetia', '11', '11 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1621, '151610594', '4578299', 'Vira Valentina', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1622, '141510498', '9985874908', 'Vita Rahmawati', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1623, '151610248', '4576272', 'Vita Savana', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1624, '161710463', '5231797', 'Vivi Alfianti', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1625, '151610290', '3615428', 'Vivi Dwi Yanti', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1626, '141510413', '9985816402', 'Vivi Elinda Kuwati', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1627, '141510329', '9996092384', 'Vivi Halimah', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1628, '', '5178705', 'Vivi Luthfiyyah', '10', '10 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1629, '161710427', '', 'Vivi Mawadah', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1630, '161710305', '11571570', 'Vonny Priscilla Sofianto Putri', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1631, '141510457', '9992537130', 'Wahyu Kurniawan', '12', '12 PM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1632, '151610595', '9993429102', 'Wahyudi Sugiyanto', '11', '11 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1633, '', '11572387', 'Wangun Adistia Galih', '10', '10 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1634, '161710464', '', 'Warneci', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1635, '151610555', '4816205', 'Wasrini Andriyani', '11', '11 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1636, '151610509', '9995811292', 'Wati Andayani', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1637, '161710386', '71658761', 'Widi Utami', '10', '10 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1638, '151610465', '4830317', 'Widia Budi Rahayu', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1639, '161710428', '11560065', 'Widia Ningsih', '10', '10 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1640, '', '4727517', 'Widia Septianengsih', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1641, '161710502', '5293916', 'Widian Rahmadini', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1642, '141510161', '9982657427', 'Widianingsih', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1643, '151610333', '4739019', 'Widianti', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1644, '', '3951821', 'Widiantiwahidah', '10', '10 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1645, '141510372', '9999270867', 'Widiawati', '12', '12 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1646, '151610423', '9995627794', 'Widiyanti', '11', '11 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1647, '151610377', '8324318', 'Widya Maharani Muharam', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1648, '141510499', '9985855552', 'Wika Latifah', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1649, '141510119', '9985856289', 'Wildan Muzakki', '12', '12 UPW', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1650, '161710267', '11559641', 'Wildani Aditya', '10', '10 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1651, '141510203', '9996055034', 'Winaheli', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1652, '141510414', '9994243308', 'Windi Jayanti', '12', '12 AP3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1653, '141510458', '9986508727', 'Windy Nurrahayu', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1654, '151610249', '3952250', 'Winnye Wibowo', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1655, '', '11559518', 'Wisnu Wuldani', '10', '10 PB1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1656, '151610122', '9994925996', 'Wita Cahyani', '11', '11 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1657, '151610334', '5727788', 'Wiwin Hartina', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1658, '151610378', '4815571', 'Wulan Pratami Anugrah', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1659, '141510120', '9995979394', 'Wulandari', '12', '12 UPW', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1660, '141510459', '9997455085', 'Yani Heryanti', '12', '12 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1661, '141510245', '9985819763', 'Yanti', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1662, '151610291', '4737805', 'Yanti Safitri', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1663, '141510040', '9995810421', 'Yasmine Muntazah', '12', '12 MM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1664, '141510287', '9996015629', 'Yayan Sihombing', '12', '12 AK4', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1665, '141510501', '9985774369', 'Yayu Ani', '12', '12 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1666, '161710150', '12091117', 'Yelliana Afffantin', '10', '10 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1667, '161710306', '5231791', 'Yeni', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1668, '161710347', '5230335', 'Yeni Noviyani', '10', '10 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1669, '161710582', '5190030', 'Yesi Fibriani', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1670, '151610082', '4666587', 'Yeyen Rida Fadia', '11', '11 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1671, '161710387', '11254585', 'Yoga Sugiro', '10', '10 AP3', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1672, '', '6261726', 'Yovita Lorenji', '10', '10 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1673, '141510330', '9995957912', 'Yuan Alecia Sugiarto', '12', '12 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1674, '151610335', '9996548613', 'Yugi Pramana Putri', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1675, '151610596', '3755604', 'Yuli Triana Lestari', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1676, '161710584', '18632863', 'Yuliana Putri Anggraeni', '10', '10 PB2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1677, '141510162', '9985791929', 'Yuliani Widiawati', '12', '12 AK1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1678, '161710465', '', 'Yulindah', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1679, '161710503', '11838990', 'Yulis Tyara Putri', '10', '10 PM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1680, '151610379', '4756470', 'Yuliyanti', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1681, '151610336', '4815574', 'Yuni Febi Lestari', '11', '11 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1682, '151610597', '4734998', 'Yuni Marliani', '11', '11 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1683, '141510204', '9995978707', 'Yuni Rohmawati', '12', '12 AK2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1684, '151610466', '9996058474', 'Yuniah', '11', '11 AP4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1685, '151610380', '4831569', 'Yuniarti Kusuma Dewi', '11', '11 AP2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1686, '161710466', '', 'Yunike Wijayanti', '10', '10 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1687, '141510082', '9995056463', 'Yunita Indah Lestari', '12', '12 MM2', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1688, '141510246', '9998800967', 'Yustika', '12', '12 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1689, '151610250', '4815021', 'Yustriana Ayuninda', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1690, '161710504', '11559304', 'Yusuf Ibrahim', '10', '10 PM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1691, '161711132', '4970121', 'Yusuf Kurnia Adji', '11', '11 MM1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1692, '151610083', '9995461756', 'Yusuf Syamsudin', '11', '11 MM2', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1693, '', '5219178', 'Yutda Ayu Puspa Ningrum', '10', '10 AP1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1694, '', '11877187', 'Zahara Ayuningtyas Ningrum', '10', '10 PB1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1695, '151610510', '4115940', 'Zakkiyah Putri Alfainiyah', '11', '11 PM1', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1696, '151610251', '9996032960', 'Zihan Faujiyah', '11', '11 AK3', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1697, '151610292', '4834250', 'Zuhriyani Salmah', '11', '11 AK4', 'P', '', '', '', '', '0000-00-00', '', ''),
+(1698, '223344', '123455678', 'agoes siswa', '10', '10 AK1', 'L', '', '', '', '', '0000-00-00', '', ''),
+(1699, '00001', '00001', 'saya dari hp', '12', '10 AK2', 'L', 'karyawan@waroengdahar.com', '00001', 'temanggung', 'Bandung', '2021-11-17', '', ''),
+(1700, '00001', '00001', 'owner ', '11', '10 AK4', 'L', 'ilzamafif09@gmail.com', '089509518000', 'temanggung', 'Bandung', '2021-12-03', '', ''),
+(1701, '11510', '11510', 'alfi', '11', '10 AK3', 'L', 'alfi@war.com', '098989898989', 'temanggung', 'Bandung', '2021-12-03', '$2y$12$CxXyanK3.8It0ubPoHmv4.ocRRY4pB9QrEE9/PuEEF.9nvehRy5/W', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_waka`
+--
+
+CREATE TABLE `tbl_waka` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_waka`
+--
+
+INSERT INTO `tbl_waka` (`id`, `username`, `password`) VALUES
+(1, 'waka', '$2y$12$lsG7p7TN.lVW.9aBFqip0.gftj.KWvftp6HIq7WYqXk15lCVk19Sa');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `absensi_siswa`
+-- Indeks untuk tabel `absensi_siswa`
 --
 ALTER TABLE `absensi_siswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_rapot`
+-- Indeks untuk tabel `data_rapot`
 --
 ALTER TABLE `data_rapot`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `detail_guru`
+-- Indeks untuk tabel `detail_guru`
 --
 ALTER TABLE `detail_guru`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kelompok_mapel`
+-- Indeks untuk tabel `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `profil_sekolah`
+-- Indeks untuk tabel `profil_sekolah`
 --
 ALTER TABLE `profil_sekolah`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_admin`
+-- Indeks untuk tabel `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_deskripsi_ktr`
+-- Indeks untuk tabel `tbl_deskripsi_ktr`
 --
 ALTER TABLE `tbl_deskripsi_ktr`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_deskripsi_pth`
+-- Indeks untuk tabel `tbl_deskripsi_pth`
 --
 ALTER TABLE `tbl_deskripsi_pth`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_ekskul`
+-- Indeks untuk tabel `tbl_ekskul`
 --
 ALTER TABLE `tbl_ekskul`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_guru`
+-- Indeks untuk tabel `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_guru_mapel`
+-- Indeks untuk tabel `tbl_guru_mapel`
 --
 ALTER TABLE `tbl_guru_mapel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_hari`
+-- Indeks untuk tabel `tbl_hari`
 --
 ALTER TABLE `tbl_hari`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_harian`
+-- Indeks untuk tabel `tbl_harian`
 --
 ALTER TABLE `tbl_harian`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_info`
+-- Indeks untuk tabel `tbl_info`
 --
 ALTER TABLE `tbl_info`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_jadwal`
+-- Indeks untuk tabel `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_kehadiran`
+-- Indeks untuk tabel `tbl_kehadiran`
 --
 ALTER TABLE `tbl_kehadiran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_kelas`
+-- Indeks untuk tabel `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_kkm`
+-- Indeks untuk tabel `tbl_kkm`
 --
 ALTER TABLE `tbl_kkm`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `kode_mapel` (`kode_mapel`);
 
 --
--- Indexes for table `tbl_lain`
+-- Indeks untuk tabel `tbl_lain`
 --
 ALTER TABLE `tbl_lain`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_mapel`
+-- Indeks untuk tabel `tbl_mapel`
 --
 ALTER TABLE `tbl_mapel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_nilai_harian`
+-- Indeks untuk tabel `tbl_nilai_harian`
 --
 ALTER TABLE `tbl_nilai_harian`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_nilai_uas`
+-- Indeks untuk tabel `tbl_nilai_uas`
 --
 ALTER TABLE `tbl_nilai_uas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_semester` (`semester`);
 
 --
--- Indexes for table `tbl_nilai_uts`
+-- Indeks untuk tabel `tbl_nilai_uts`
 --
 ALTER TABLE `tbl_nilai_uts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_semester` (`semester`);
 
 --
--- Indexes for table `tbl_pesan`
+-- Indeks untuk tabel `tbl_ortu_siswa`
+--
+ALTER TABLE `tbl_ortu_siswa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tbl_pesan`
 --
 ALTER TABLE `tbl_pesan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_guru` (`id_guru`);
 
 --
--- Indexes for table `tbl_prakerin`
+-- Indeks untuk tabel `tbl_prakerin`
 --
 ALTER TABLE `tbl_prakerin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_prestasi`
+-- Indeks untuk tabel `tbl_prestasi`
 --
 ALTER TABLE `tbl_prestasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_rapot`
+-- Indeks untuk tabel `tbl_rapot`
 --
 ALTER TABLE `tbl_rapot`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_semester` (`semester`);
 
 --
--- Indexes for table `tbl_rekap`
+-- Indeks untuk tabel `tbl_rekap`
 --
 ALTER TABLE `tbl_rekap`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_semester`
+-- Indeks untuk tabel `tbl_semester`
 --
 ALTER TABLE `tbl_semester`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_siswa`
+-- Indeks untuk tabel `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `tbl_waka`
+--
+ALTER TABLE `tbl_waka`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `absensi_siswa`
+-- AUTO_INCREMENT untuk tabel `absensi_siswa`
 --
 ALTER TABLE `absensi_siswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `data_rapot`
+-- AUTO_INCREMENT untuk tabel `data_rapot`
 --
 ALTER TABLE `data_rapot`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `detail_guru`
+-- AUTO_INCREMENT untuk tabel `detail_guru`
 --
 ALTER TABLE `detail_guru`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
--- AUTO_INCREMENT for table `kelompok_mapel`
+-- AUTO_INCREMENT untuk tabel `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `profil_sekolah`
+-- AUTO_INCREMENT untuk tabel `profil_sekolah`
 --
 ALTER TABLE `profil_sekolah`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT untuk tabel `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `tbl_deskripsi_ktr`
+-- AUTO_INCREMENT untuk tabel `tbl_deskripsi_ktr`
 --
 ALTER TABLE `tbl_deskripsi_ktr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=943;
 
 --
--- AUTO_INCREMENT for table `tbl_deskripsi_pth`
+-- AUTO_INCREMENT untuk tabel `tbl_deskripsi_pth`
 --
 ALTER TABLE `tbl_deskripsi_pth`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=943;
 
 --
--- AUTO_INCREMENT for table `tbl_ekskul`
+-- AUTO_INCREMENT untuk tabel `tbl_ekskul`
 --
 ALTER TABLE `tbl_ekskul`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_guru`
+-- AUTO_INCREMENT untuk tabel `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 
 --
--- AUTO_INCREMENT for table `tbl_guru_mapel`
+-- AUTO_INCREMENT untuk tabel `tbl_guru_mapel`
 --
 ALTER TABLE `tbl_guru_mapel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `tbl_hari`
+-- AUTO_INCREMENT untuk tabel `tbl_hari`
 --
 ALTER TABLE `tbl_hari`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbl_harian`
+-- AUTO_INCREMENT untuk tabel `tbl_harian`
 --
 ALTER TABLE `tbl_harian`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
--- AUTO_INCREMENT for table `tbl_info`
+-- AUTO_INCREMENT untuk tabel `tbl_info`
 --
 ALTER TABLE `tbl_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_jadwal`
+-- AUTO_INCREMENT untuk tabel `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT for table `tbl_kehadiran`
+-- AUTO_INCREMENT untuk tabel `tbl_kehadiran`
 --
 ALTER TABLE `tbl_kehadiran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_kelas`
+-- AUTO_INCREMENT untuk tabel `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `tbl_kkm`
+-- AUTO_INCREMENT untuk tabel `tbl_kkm`
 --
 ALTER TABLE `tbl_kkm`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
--- AUTO_INCREMENT for table `tbl_lain`
+-- AUTO_INCREMENT untuk tabel `tbl_lain`
 --
 ALTER TABLE `tbl_lain`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_mapel`
+-- AUTO_INCREMENT untuk tabel `tbl_mapel`
 --
 ALTER TABLE `tbl_mapel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
--- AUTO_INCREMENT for table `tbl_nilai_harian`
+-- AUTO_INCREMENT untuk tabel `tbl_nilai_harian`
 --
 ALTER TABLE `tbl_nilai_harian`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_nilai_uas`
+-- AUTO_INCREMENT untuk tabel `tbl_nilai_uas`
 --
 ALTER TABLE `tbl_nilai_uas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_nilai_uts`
+-- AUTO_INCREMENT untuk tabel `tbl_nilai_uts`
 --
 ALTER TABLE `tbl_nilai_uts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_pesan`
+-- AUTO_INCREMENT untuk tabel `tbl_ortu_siswa`
 --
-ALTER TABLE `tbl_pesan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `tbl_ortu_siswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_prakerin`
+-- AUTO_INCREMENT untuk tabel `tbl_pesan`
+--
+ALTER TABLE `tbl_pesan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_prakerin`
 --
 ALTER TABLE `tbl_prakerin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tbl_prestasi`
+-- AUTO_INCREMENT untuk tabel `tbl_prestasi`
 --
 ALTER TABLE `tbl_prestasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_rapot`
+-- AUTO_INCREMENT untuk tabel `tbl_rapot`
 --
 ALTER TABLE `tbl_rapot`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
--- AUTO_INCREMENT for table `tbl_rekap`
+-- AUTO_INCREMENT untuk tabel `tbl_rekap`
 --
 ALTER TABLE `tbl_rekap`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT for table `tbl_semester`
+-- AUTO_INCREMENT untuk tabel `tbl_semester`
 --
 ALTER TABLE `tbl_semester`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_siswa`
+-- AUTO_INCREMENT untuk tabel `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1699;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1702;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_waka`
+--
+ALTER TABLE `tbl_waka`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
