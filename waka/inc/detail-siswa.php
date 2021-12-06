@@ -131,9 +131,9 @@ $detail = mysqli_fetch_assoc($siswa_g);
     </tr>
   </table>
   <br>
-  <a href="<?= base('admin/tambah-ortu/'. $s['id'].''); ?>" class="btn btn-primary">Tambah Ortu</a>
-  <a href="<?= base('admin/edit-siswa/'.$s["id"].''); ?>" class="btn btn-primary">Edit</a>
-  <a href="<?= base('admin/siswa');?>" class="btn btn-default">Kembali</a>
+  <a href="<?= base('waka/tambah-ortu/'. $s['id'].''); ?>" class="btn btn-primary">Tambah Ortu</a>
+  <a href="<?= base('waka/edit-siswa/'.$s["id"].''); ?>" class="btn btn-primary">Edit</a>
+  <a href="<?= base('waka/siswa');?>" class="btn btn-default">Kembali</a>
 </div>
 <div class="col-md-4">
 

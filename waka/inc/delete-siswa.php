@@ -14,7 +14,7 @@ if (delete('tbl_siswa', $id) === TRUE) {
 <script type="text/javascript">
   $(document).ready(function() {
     $('button.confirm').on("click", function() {
-      window.location='<?= base("admin/siswa");?>';
+      window.location='<?= base("waka/siswa");?>';
     });
   });
 </script>

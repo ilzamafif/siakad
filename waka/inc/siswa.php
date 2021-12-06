@@ -1,5 +1,4 @@
 <?php
-$lv = @$_SESSION['adm']['super'];
 $siswa = gabung('tbl_kelas', 'tbl_siswa', 'tbl_kelas.nama_kelas = tbl_siswa.rombel');
 $no = 1;
 ?>
@@ -45,9 +44,7 @@ $no = 1;
         <td  class="ctr">
           <a href="detail-siswa/<?= $s['id']; ?>" class="btn btn-primary">Detail</a>
           <a href="edit-siswa/<?= $s['id']; ?>" class="btn btn-success">Edit</a>
-          <?php if($lv == "1"): ?>
           <a onclick="return konfirmasi()" href="delete-siswa/<?= $s['id']; ?>" class="btn btn-danger">Hapus</a>
-        <?php endif; ?>
         </td>
       </tr>
 

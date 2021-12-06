@@ -106,7 +106,7 @@ $s = mysqli_fetch_object($sis);
 <script type="text/javascript">
   $(document).ready(function() {
     $("#back").click(function() {
-      window.location='<?= base("admin/siswa");?>';
+      window.location='<?= base("waka/siswa");?>';
     });
   });
 </script>
@@ -150,7 +150,7 @@ if (isset($_POST['submit'])) {
     if ($update === TRUE) {
       echo "<script>swal('Yosh!', 'Data berhasil disimpan', 'success');</script>";
       echo notice(1);
-      echo location(base('admin/siswa'));
+      echo location(base('waka/siswa'));
     } else {
       echo "<script>sweetAlert('Oops!', 'Data siswa gagal disimpan!', 'error');</script>";
       echo location('window.history.go(-1)');
