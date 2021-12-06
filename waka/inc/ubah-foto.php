@@ -18,7 +18,7 @@ $ge = mysqli_fetch_assoc($sqlg);
 
     echo input('submit', 'upload', "class='btn btn-primary' value='Upload'");
   ?>
-    <a href="<?= base("admin/guru"); ?>" class="btn btn-default">Kembali</a>
+    <a href="<?= base("waka/guru"); ?>" class="btn btn-default">Kembali</a>
   <?php echo close_form(); ?>
 </div>
 <div class="col-md-6">
@@ -39,7 +39,7 @@ if (isset($_POST['upload'])) {
   if ($moving === TRUE) {
     echo "<script>swal('Yosh!', 'Berhasil merubah foto!', 'success');</script>";
     echo notice(1);
-    echo location(base('admin/guru'));
+    echo location(base('waka/guru'));
   } else {
     echo "<script>sweetAlert('Oops!', 'Gagal merubah foto!', 'error');</script>";
     echo notice(0);

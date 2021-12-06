@@ -35,7 +35,7 @@ $g = mysqli_fetch_assoc($sel_gid);
         echo input('text', 'alamat_lengkap', "class='form-control' value='$g[alamat_lengkap]'")."<br>";
         
         echo input('submit', 'submit', "class='btn btn-primary' value='Simpan'")." &nbsp; ";
-        echo "<a href=".base("admin/guru")." class='btn btn-default'>Kembali</a>";
+        echo "<a href=".base("waka/guru")." class='btn btn-default'>Kembali</a>";
         ?>
     </div>
     <div class="col-md-6">
@@ -103,6 +103,6 @@ if (isset($_POST['submit'])) {
 ?>
 <script>
     $('button.confirm').on('click', function() {
-      window.location='<?= base("admin/guru"); ?>'
+      window.location='<?= base("waka/guru"); ?>'
     });
 </script>

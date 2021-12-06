@@ -2,15 +2,14 @@
 
 $sqlguru = select('*', 'tbl_guru', "ds = 0 ORDER BY id_card");
 $no = 1;
-$lv = @$_SESSION['adm']['super'];
 ?>
 <script type="text/javascript">
   $(document).ready(function() {
     $(".row > .col-sm-6:first").append(
       '<a href="tambah-guru" class="btn btn-primary">Tambah Data Guru</a>'
     );
-    $(".row > .col-sm-6:first").append(' <a href="<?= base('admin/import-guru'); ?>" class="btn btn-info">Import Guru</a>');
-    $(".row > .col-sm-6:first").append(' <a href="<?=base('admin/export-guru-pdf');?>" target="_blank" class="btn btn-default">Export PDF</a>');
+    $(".row > .col-sm-6:first").append(' <a href="<?= base('waka/import-guru'); ?>" class="btn btn-info">Import Guru</a>');
+    $(".row > .col-sm-6:first").append(' <a href="<?=base('waka/export-guru-pdf');?>" target="_blank" class="btn btn-default">Export PDF</a>');
     $(".row > .col-sm-6:first").append(' <a href="export.php?data=guru" class="btn btn-success">Export Ms. Excel</a>');
   });
 </script>
@@ -47,9 +46,7 @@ $lv = @$_SESSION['adm']['super'];
           <a href="ubah-foto/<?= $g['id']; ?>" class="btn btn-primary">Ubah Foto</a>
           <a href="edit-guru/<?= $g['id']; ?>" class="btn btn-warning">Edit</a>
           <a href="detail-guru/<?= $g['id']; ?>" class="btn btn-success">Detail</a>
-          <?php if($lv == "1"){ ?>
           <a onclick="return konfirmasi()" href="delete-guru/<?= $g['id']; ?>" class="btn btn-danger">Hapus</a>
-          <?php } ?>
         </td>
       </tr>
 

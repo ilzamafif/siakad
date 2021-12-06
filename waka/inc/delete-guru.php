@@ -17,7 +17,7 @@ if ($del_guru === TRUE && $del_detail) {
 <script type="text/javascript">
   $(document).ready(function() {
     $('button.confirm').on("click", function() {
-      window.location='<?= base("admin/guru"); ?>';
+      window.location='<?= base("waka/guru"); ?>';
     });
   });
 </script>

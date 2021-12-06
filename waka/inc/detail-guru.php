@@ -58,14 +58,15 @@ $s = mysqli_fetch_assoc($guru);
     </tr>
   </table>
   <br>
-  <a href="<?= base('admin/edit-guru/'.$s["id"].''); ?>" class="btn btn-primary">Edit</a>
-  <a href="<?= base('admin/guru');?>" class="btn btn-default">Kembali</a>
+  <a href="<?= base('waka/edit-guru/'.$s["id"].''); ?>" class="btn btn-primary">Edit</a>
+  <a href="<?= base('waka/guru');?>" class="btn btn-default">Kembali</a>
 </div>
 <div class="col-md-6">
+  <img src="<?= base("/images/guru/".$s['id_card']); ?>.jpg" class="img img-responsive" alt="" width="300px" />
 
-  <?php if($s['jk'] == "L"){ ?>
-    <img src="<?= base('images/guru/male.jpg'); ?>" width="300px" class="img img-responsive" alt="" />
+  <!-- <?php if($s['jk'] == "L"){ ?>
+    <img src="<?= base('images/guru/male.jpg'); ?>"  class="img img-responsive" alt="" />
   <?php } else {  ?>
   <img src="<?= base('images/guru/female.jpg'); ?>" width="300px" class="img img-responsive" alt="" />
-  <?php } ?>
+  <?php } ?> -->
 </div>
