@@ -14,7 +14,7 @@ if (delete('tbl_jadwal', $id) === TRUE) {
 <script type="text/javascript">
   $(document).ready(function() {
     $('button.confirm').on("click", function() {
-      window.location='<?= base("admin/jadwal");?>';
+      window.location='<?= base("waka/jadwal");?>';
     });
   });
 </script>

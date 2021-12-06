@@ -2,7 +2,6 @@
 include_once '../function/core.php';
 $hari = date('N');
 $no = 1;
-$lv = @$_SESSION['adm']['super'];
 
 //Queries
 $jadwal = select('*', 'tbl_jadwal', "ds = 0 ORDER BY hari DESC");
@@ -101,9 +100,7 @@ $jadwal = select('*', 'tbl_jadwal', "ds = 0 ORDER BY hari DESC");
         <td class="ctr">
           <div class="btn-group" role="group">
             <a href="edit-jadwal/<?= $j['id']; ?>" class="btn btn-sm btn-success">Edit</a>
-            <?php if($lv == "1"){ ?>
             <a onclick="return konfirmasi();" href="delete-jadwal/<?= $j['id']; ?>" class="btn btn-sm btn-danger">Hapus</a>
-            <?php } else { } ?>
           </div>
         </td>
       </tr>

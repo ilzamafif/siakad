@@ -150,7 +150,7 @@ if (isset($_POST['submit'])) {
     if ($insert === TRUE) {
       echo "<script>swal('Yosh!', 'Berhasil menambahkan jadwal baru!', 'success');</script>";
       echo notice(1);
-      echo location(base('admin/jadwal'));
+      echo location(base('waka/jadwal'));
     } else {
       echo "<script>sweetAlert('Oops!', 'Gagal menambahkan jadwal baru!', 'error');</script>";
       echo notice(0);

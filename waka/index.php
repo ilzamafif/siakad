@@ -258,7 +258,7 @@ $up = mysqli_num_rows($jur_up);
                   <div class="alert alert-info" role="alert">
                     <strong>Catatan :</strong>
                     Semester saat ini adalah <strong>Semester <?= $o->semester; ?></strong> Tahun Ajaran <strong><?= $o->tahun_ajaran; ?></strong>, Anda dapat merubah semester di menu
-                    <a href="<?= base('admin/pengaturan'); ?>">Pengaturan</a>
+                    <a href="<?= base('waka/pengaturan'); ?>">Pengaturan</a>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   </div>
                 </div>
@@ -475,7 +475,7 @@ $up = mysqli_num_rows($jur_up);
                 include_once 'inc/edit-sekolah.php';
               } else {
                 echo "<script>sweetAlert('Oops!', 'Halaman tidak ditemukan!', 'error');</script>";
-                echo location(base('admin/dashboard'));
+                echo location(base('waka/dashboard'));
               }
             ?>
           </div> <!-- end of class panel-body -->

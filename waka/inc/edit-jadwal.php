@@ -125,7 +125,7 @@ $sqlhadir  = select('*', 'tbl_kehadiran');
           <?php echo input('submit', 'submit', "class='btn btn-primary form-control' value='Simpan'") ?>
         </div>
         <div class="col-sm-6">
-          <a href="<?= base('admin/jadwal'); ?>" class="btn btn-default form-control">Batalkan</a>
+          <a href="<?= base('waka/jadwal'); ?>" class="btn btn-default form-control">Batalkan</a>
         </div>
       </div>
     </div>
@@ -169,6 +169,6 @@ if (isset($_POST['submit'])) {
 
 <script type="text/javascript">
   $('button.confirm').click(function() {
-    window.location="<?= base('admin/jadwal'); ?>";
+    window.location="<?= base('waka/jadwal'); ?>";
   });
 </script>
