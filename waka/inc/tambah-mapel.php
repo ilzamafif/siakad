@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
       if ($insert == TRUE) {
         echo "<script>sweetAlert('Yosh!', 'Berhasil menambahkan mata pelajaran baru!', 'success');</script>";
         echo notice(1);
-        echo location(base('admin/mata-pelajaran'));
+        echo location(base('waka/mata-pelajaran'));
       } else {
         echo "<script>sweetAlert('Oops!', 'Gagal menambahkan mata pelajaran baru!', 'error');</script>";
         echo notice(0);

@@ -1,7 +1,6 @@
 <?php
 $sqlmapel = select('*', 'tbl_mapel', 'ds=0 ORDER BY id ASC');
 $no = 1;
-$lv = @$_SESSION['adm']['super'];
 $cek = mysqli_num_rows($sqlmapel);
 ?>
 
@@ -11,9 +10,9 @@ $cek = mysqli_num_rows($sqlmapel);
     $(".row > .col-sm-6:first").append(
       '<a href="tambah-mata-pelajaran" class="btn btn-primary">Tambah Data</a>'
     );
-    $(".row > .col-sm-6:first").append(' <a href="<?= base('admin/import-mapel'); ?>" class="btn btn-info">Import Mapel</a>');
+    $(".row > .col-sm-6:first").append(' <a href="<?= base('waka/import-mapel'); ?>" class="btn btn-info">Import Mapel</a>');
     $(".row > .col-sm-6:first").append(' <a href="export.php?data=mapel" class="btn btn-success">Export Ms. Excel</a>');
-    $(".row > .col-sm-6:first").append(' <a href="<?= base('admin/export-mapel-pdf'); ?>" target="_blank" class="btn btn-default">Export PDF</a>');
+    $(".row > .col-sm-6:first").append(' <a href="<?= base('waka/export-mapel-pdf'); ?>" target="_blank" class="btn btn-default">Export PDF</a>');
   });
 </script>
 <div class="col-md-12">
@@ -44,9 +43,7 @@ $cek = mysqli_num_rows($sqlmapel);
         <td class="ctr"><?= $m['kelas']; ?></td>
         <td class="ctr">
           <a href="edit-mapel/<?= $m['id']; ?>" class="btn btn-success">Edit</a>
-          <?php if($lv == "1"): ?>
           <a onclick="return konfirmasi()" href="delete-mapel/<?= $m['id']; ?>" class="btn btn-danger">Hapus</a>
-        <?php endif; ?>
         </td>
       </tr>
 

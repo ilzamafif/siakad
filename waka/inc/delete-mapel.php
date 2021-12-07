@@ -14,7 +14,7 @@ if (delete('tbl_mapel', $id) === TRUE) {
 <script type="text/javascript">
   $(document).ready(function() {
     $('button.confirm').on("click", function() {
-      window.location='<?= base("admin/mata-pelajaran"); ?>';
+      window.location='<?= base("waka/mata-pelajaran"); ?>';
     });
   });
 </script>

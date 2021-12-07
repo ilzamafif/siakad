@@ -62,7 +62,7 @@ $map = mysqli_fetch_object($mpl);
 </div>
 <script type="text/javascript">
   $('#back').click(function() {
-    window.location='<?= base("admin/mata-pelajaran"); ?>';
+    window.location='<?= base("waka/mata-pelajaran"); ?>';
   });
 </script>
 
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
     if ($update == TRUE) {
       echo "<script>sweetAlert('Yosh!', 'Berhasil mengubah data mata pelajaran!', 'success');</script>";
       echo notice(1);
-      echo location(base('admin/mata-pelajaran'));
+      echo location(base('waka/mata-pelajaran'));
     } else {
       echo "<script>sweetAlert('Oops!', 'Gagal mengubah mata pelajaran!', 'error');</script>";
       echo notice(0);
