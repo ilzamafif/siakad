@@ -1,10 +1,10 @@
 <script type='text/javascript'>
 	$(function(){
-		$(".row > .col-sm-6:first-child").append('<a href="<?= base('admin/data-deskripsi'); ?>" class="btn btn-primary">Pth. Ganjil</a>');
-		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('admin/deskripsi/pth_genap'); ?>" class="btn btn-primary">Pth. Genap</a>');
-		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('admin/deskripsi/ktr_ganjil'); ?>" class="btn btn-primary">Ktr. Ganjil</a>');
-		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('admin/deskripsi/ktr_genap'); ?>" class="btn btn-primary">Ktr. Genap</a>');
-		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('admin/import-deskripsi'); ?>" class="btn btn-info">Import Data</a>');
+		$(".row > .col-sm-6:first-child").append('<a href="<?= base('waka/data-deskripsi'); ?>" class="btn btn-primary">Pth. Ganjil</a>');
+		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('waka/deskripsi/pth_genap'); ?>" class="btn btn-primary">Pth. Genap</a>');
+		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('waka/deskripsi/ktr_ganjil'); ?>" class="btn btn-primary">Ktr. Ganjil</a>');
+		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('waka/deskripsi/ktr_genap'); ?>" class="btn btn-primary">Ktr. Genap</a>');
+		$(".row > .col-sm-6:first-child").append(' <a href="<?= base('waka/import-deskripsi'); ?>" class="btn btn-info">Import Data</a>');
 	})
 </script>
 <style>
@@ -81,7 +81,7 @@ if ($data == "") {
 				</td>
 				<?php endwhile; ?>
 				<td class="ctr" width="20px;">
-					<a href="<?= base('admin/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode('pth_ganjil')); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="<?= base('waka/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode('pth_ganjil')); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
 				</td>
 			</tr>
 		<?php endwhile; ?>
@@ -143,7 +143,7 @@ if ($data == "") {
 				</td>
 				<?php endwhile; ?>
 				<td class="ctr" width="20px;">
-					<a href="<?= base('admin/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode($data)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="<?= base('waka/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode($data)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
 				</td>
 			</tr>
 		<?php endwhile; ?>
@@ -205,7 +205,7 @@ if ($data == "") {
 				</td>
 				<?php endwhile; ?>
 				<td class="ctr" width="20px;">
-					<a href="<?= base('admin/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode($data)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="<?= base('waka/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode($data)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
 				</td>
 			</tr>
 		<?php endwhile; ?>
@@ -267,7 +267,7 @@ if ($data == "") {
 				</td>
 				<?php endwhile; ?>
 				<td class="ctr" width="20px;">
-					<a href="<?= base('admin/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode($data)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="<?= base('waka/edit-deskripsi/'.base64_encode($m->kode_mapel).'/'.base64_encode($data)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
 				</td>
 			</tr>
 		<?php endwhile; ?>

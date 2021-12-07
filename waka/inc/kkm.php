@@ -5,7 +5,7 @@ $no = 1;
 ?>
 <script type="text/javascript">
 	$(function(){
-		$(".row > .col-sm-6:first-child").append("<a href='<?= base("admin/import-kkm"); ?>' class='btn btn-info'>Import KKM</a>");
+		$(".row > .col-sm-6:first-child").append("<a href='<?= base("waka/import-kkm"); ?>' class='btn btn-info'>Import KKM</a>");
 	});
 </script>
 <div class="col-md-12">
@@ -31,7 +31,7 @@ $no = 1;
 				<td class="ctr"><?= $kkm->kelas; ?></td>
 				<td class="ctr"><?= $kkm->kkm; ?></td>
 				<td class="ctr">
-					<a href="<?= base('admin/edit-kkm/'.base64_encode($kkm->kode_mapel)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="<?= base('waka/edit-kkm/'.base64_encode($kkm->kode_mapel)); ?>" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
 				</td>
 			</tr>
 		<?php endwhile; ?>

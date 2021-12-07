@@ -67,16 +67,16 @@ if (isset($_GET['kode']) && isset($_GET['q'])) {
 
 		if ($upd_A === TRUE && $upd_B === TRUE && $upd_C === TRUE) {
 			echo "<script>swal('Yosh!', 'Berhasil memperbarui deskripsi mata pelajaran', 'success');</script>";
-			echo location(base('admin/data-deskripsi'));
+			echo location(base('waka/data-deskripsi'));
 		} else {
 			echo "<script>sweetAlert('Oops!', 'Gagal memperbarui deskripsi mata pelajaran','error');</script>";
-			echo location(base('admin/data-deskripsi'));
+			echo location(base('waka/data-deskripsi'));
 		}
 
 	}
 
 } else {
-	redirect(base('admin/data-deskripsi'));
+	redirect(base('waka/data-deskripsi'));
 }
 
 ?>

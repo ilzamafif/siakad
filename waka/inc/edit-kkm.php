@@ -26,7 +26,7 @@ if (isset($_GET['kode'])) {
 	<br>
 	<?php
 		echo input('submit', "submit", "class='btn btn-primary' value='Simpan'");
-		echo " <a href='".base('admin/data-kkm')."' class='btn btn-default'>Kembali</a>";
+		echo " <a href='".base('waka/data-kkm')."' class='btn btn-default'>Kembali</a>";
 		echo close_form();
 	?>
 </div>
@@ -41,7 +41,7 @@ if (isset($_GET['kode'])) {
 		if ($upd === TRUE) {
 			echo "<script>swal('Yosh!', 'Data KKM berhasil diperbarui!', 'success');</script>";
 			echo notice(1);
-			echo location(base('admin/data-kkm'));
+			echo location(base('waka/data-kkm'));
 		} else {
 			echo "<script>sweetAlert('Oops!', 'Data KKM gagal diperbarui', 'error');</script>";
 			echo notice(0);
@@ -49,7 +49,7 @@ if (isset($_GET['kode'])) {
 	}
 
 } else {
-	redirect(base('admin/data-kkm'));
+	redirect(base('waka/data-kkm'));
 }
 
 ?>
