@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 	@$_SESSION['id_mapel'] = $mapel;
 	if (empty(trim($kelas)) || empty(trim($mapel))) {
 		echo "<script>sweetAlert('Oops!', 'Form tidak boleh ada yang kosong!', 'error');</script>";
-		echo location(base('admin/nilai'));
+		echo location(base('waka/nilai'));
 	} else {
 		$sqlkls = select("*", 'tbl_kelas', "nama_kelas='$kelas'");
 		$kls = mysqli_fetch_object($sqlkls);
@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 		});
 		$("#main-data_info").remove();
 		$("#main-data_length").remove();
-		$("#main-data_wrapper>.row:first-child >.col-sm-6:first-child").append('<a href="<?= base('admin/nilai');?>" class="btn btn-primary">Kembali</a> ');
+		$("#main-data_wrapper>.row:first-child >.col-sm-6:first-child").append('<a href="<?= base('waka/nilai');?>" class="btn btn-primary">Kembali</a> ');
 		$("#main-data_wrapper>.row:first-child >.col-sm-6:first-child").append(' <a href="javascript:document.location.reload(true);" class="btn btn-primary">Refresh  <span class="glyphicon glyphicon-refresh"></span></a>')
 
 		//Handle for update value
@@ -502,7 +502,7 @@ if (isset($_POST['submit'])) {
 <?php
 	}
 } else {
-	redirect(base('admin/nilai'));
+	redirect(base('waka/nilai'));
 }
 
 ?>

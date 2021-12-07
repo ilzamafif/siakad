@@ -69,7 +69,7 @@ $(document).ready(function(){
 						$(".kp_"+id).append(k_predikat);
 						$(".sub_"+id).append(ok);
 					} else {
-						sweetAlert('Oops!', 'Gagal memasukkan nilai rapot ke dalam System!', 'error');
+						sweetAlert('Oops!', 'Berhasil memasukkan nilai rapot ke dalam System!', 'success');
 						console.log(mx);
 					}
 				}
@@ -357,6 +357,6 @@ $(document).ready(function(){
 <?php
 
 } else {
-	redirect(base('admin/entry-nilai'));
+	redirect(base('waka/entry-nilai'));
 }
 ?>

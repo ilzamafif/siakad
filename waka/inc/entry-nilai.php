@@ -47,7 +47,7 @@ $sqlkls = select('*', 'tbl_kelas ORDER BY nama_kelas ASC');
   <div class="row">
     <div class="col-md-8">
       <div id="select">
-        <form class="form-group" action="<?= base('admin/entry-rapot'); ?>" method="post">
+        <form class="form-group" action="<?= base('waka/entry-rapot'); ?>" method="post">
           <label for="nilai">Pilih Jenis Nilai</label>
           <select class="form-control" name="nilai" disabled>
             <option value="">-- Pilih Jenis Nilai --</option>
