@@ -219,7 +219,6 @@ $up = mysqli_num_rows($jur_up);
               </li>
               <li><a href="<?= base('waka/absensi-harian'); ?>">Absensi Harian</a></li>
               <li><a href="<?= base('waka/rekap-absensi'); ?>">Rekap Absen</a></li>
-              <li><a href="<?= base('waka/pesan'); ?>">Pesan</a></li>
               <li><a href="<?= base('waka/pengumuman'); ?>">Pengumuman</a></li>
               <li><a href="<?= base('waka/pengaturan'); ?>">Pengaturan</a></li>
             </ul>
@@ -455,10 +454,6 @@ $up = mysqli_num_rows($jur_up);
                 include_once 'inc/deskripsi.php';
 
               //Routing lainnuya
-              } else if($page == "pesan") {
-                include_once 'inc/pesan.php';
-              } else if($page == "delete-pesan") {
-                include_once 'inc/delete-pesan.php';
               } else if($page == "hasil-nilai") {
                 include_once 'inc/result-nilai.php';
               } else if($page == "tambah-admin") {

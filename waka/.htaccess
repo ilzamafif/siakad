@@ -88,12 +88,7 @@ RewriteRule ^pengumuman$ index.php?page=pengumuman
 
 #pengaturan
 
-RewriteRule ^pesan$ index.php?page=pesan
-RewriteRule ^delete-pesan/(.*)$ index.php?page=delete-pesan&id=$1
 RewriteRule ^pengaturan$ index.php?page=pengaturan
-RewriteRule ^edit-admin/([0-9]+)$ index.php?page=edit-admin&id=$1
-RewriteRule ^delete-admin/([0-9]+)$ index.php?page=delete-admin&id=$1
-RewriteRule ^proses-tambah-admin$ index.php?page=tambah-admin
 RewriteRule ^proses-edit-sekolah$ index.php?page=edit-sekolah
 
 #import
