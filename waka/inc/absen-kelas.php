@@ -11,7 +11,7 @@ $detail = mysqli_fetch_object($data);
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $(".row > .col-sm-6:first").append('<a href="<?= base('admin/rekap-absensi'); ?>" class="btn btn-primary">Kembali</a>  ');
+    $(".row > .col-sm-6:first").append('<a href="<?= base('waka/rekap-absensi'); ?>" class="btn btn-primary">Kembali</a>  ');
     $(".row > .col-sm-6:first").append('   <a href="export.php?data=absensi-kelas&id=<?= $idg; ?>" class="btn btn-default">Export Ms. Excel</a>');
   });
 </script>

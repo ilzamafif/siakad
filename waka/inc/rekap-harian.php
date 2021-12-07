@@ -8,8 +8,8 @@ $no =1;
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $(".row > .col-sm-6:first").append('<a href="<?= base("admin/absensi-harian"); ?>" class="btn btn-primary">Kembali</a> ');
-    $(".row > .col-sm-6:first").append('   <a href="<?= base("admin/export.php?data=rekap-harian&id=$id");?>" class="btn btn-default">Export Ms. Excel</a>');
+    $(".row > .col-sm-6:first").append('<a href="<?= base("waka/absensi-harian"); ?>" class="btn btn-primary">Kembali</a> ');
+    $(".row > .col-sm-6:first").append('   <a href="<?= base("waka/export.php?data=rekap-harian&id=$id");?>" class="btn btn-default">Export Ms. Excel</a>');
   });
 </script>
 <div class="col-md-12">
