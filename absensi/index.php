@@ -53,7 +53,7 @@ require_once '../templates/header.php';
 				<div class="panel-body" style="max-height:500px;background-color: #efefef;">
 					<form class="form form-group-lg" action="" method="post">
 						<div class="col-sm-10">
-							<input type="number" class="form-control" oninput="maxChars(this, 5)" maxlength="5" id="inp-idcard" min="00000" max="99999" name="nis" placeholder="Masukkan NIS Anda disini" autofocus>
+							<input type="number" class="form-control" oninput="maxChars(this, 5)" maxlength="15" id="inp-idcard" min="00000" max="99999999999" name="nis" placeholder="Masukkan NIS Anda disini" autofocus>
 						</div>
 						<div class="col-sm-2">
 							<input type="submit" class="btn btn-lg btn-default" name="submit" value="Cek" style="padding-left:35px;padding-right:35px;">
@@ -173,7 +173,7 @@ if (isset($_POST['submit'])) {
 			}
 
 		} else {
-			echo "<script>sweetAlert('Oops!', 'Nomor ID Card tidak terdaftar di database!', 'error');</script>";
+			echo "<script>sweetAlert('Oops!', 'Nomor NIS tidak terdaftar di database!', 'error');</script>";
 			echo "<audio autoplay><source src='".base('music/error2.wav')."'></audio>";
 		}
 	}

@@ -64,7 +64,7 @@ require_once '../templates/header.php';
 				<div class="panel-body" style="max-height:550px;">
 					<form class="form form-group-lg" action="" method="post">
 						<div class="col-sm-10">
-							<input type="number" oninput="maxChars(this, 5)" maxlength="5" class="form-control" id="inp-nis"  min="00000" max="99999" name="nis" placeholder="Masukkan NIS Anda disini" autofocus>
+							<input type="number" class="form-control" oninput="maxChars(this, 5)" maxlength="15" id="inp-idcard" min="00000" max="99999999999" name="nis" placeholder="Masukkan NIS Anda disini" autofocus>
 						</div>
 						<div class="col-sm-2">
 							<input type="submit" class="btn btn-lg btn-default" name="submit" value="Cek" style="padding-left:35px;padding-right:35px;">

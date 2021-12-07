@@ -57,44 +57,55 @@ $hasil = substr($server, 8);
 							<?php
 							$hari = date('w');
 							$tgl	= date('Y-m-d');
-							echo hari($hari).', '.tglskrg($tgl); ?>
+							echo hari($hari).', '.tglskrg($tgl);?>
 						</h4>
 						</li>
 
 						<?php
-							if ($hasil == "waka/index.php" || $hasil == "admin/index.php" || $hasil == "guru/index.php" || $hasil == "siswa/index.php")
-							{
+							if ($hasil == "waka/index.php" || $hasil == "admin/index.php" || $hasil == "guru/index.php" || $hasil == "siswa/index.php") {
 								$potong = substr($hasil, 0, -10);
-								if ($potong == "admin") 
-								{ 
-								?>
 
-								<li class="active"><a href="<?= base('admin/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+								if ($potong == "admin") { ?>
+
+									<li class="active"><a href="<?= base('admin/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
 								<?php	} else if ($potong == "guru") { ?>
 
-								<li class="active"><a href="<?= base('guru/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+									<li class="active"><a href="<?= base('guru/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
 								<?php	} else if ($potong == "siswa") { ?>
 
-								<li class="active"><a href="<?= base('siswa/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
+									<li class="active"><a href="<?= base('siswa/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
-							<?php	} else if ($potong == "waka") { ?>
+								<?php	} 
+
+								else if ($potong == "waka") { ?>
 
 								<li class="active"><a href="<?= base('waka/logout'); ?>">Logout &nbsp; <span class="glyphicon glyphicon-log-out"></span></a></li>
 
 								<?php	}
-							} else { ?>
 
-							<?php if($file == "index.php") { ?>
+								} 
 
-								<li class="active"><a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a></li>
-								<li><a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a></li>
+							else if ($hasil == "absensi/index.php" || $hasil == "harian/index.php") { 
 
-							<?php } else if($file == "pulang.php") { ?>
+								$potong = substr($hasil, 0, -10);
 
-								<li><a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a></li>
-								<li  class="active"><a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a></li>
+								if ($potong == "absensi") { ?>
+
+									<li class="active"><a href="<?= base('absensi/absen-masuk'); ?>">Absen Masuk</a></li>
+									<li><a href="<?= base('absensi/absen-pulang'); ?>">Absen Pulang</a></li>
+
+								<?php } 
+
+								else if($potong == "harian") { ?>
+
+									<li  class="active">
+										<a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a>
+									</li>
+									<li>
+										<a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a>
+									</li>
 
 							<?php } ?>
 
