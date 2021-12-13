@@ -15,3 +15,4 @@ RewriteRule ^logout$ logout.php
 
 RewriteRule ^pengaturan$ index.php?page=pengaturan
 RewriteRule ^hubungi-admin$ index.php?page=hubungi-admin
+RewriteRule ^data-jadwal$ index.php?page=data-jadwal
