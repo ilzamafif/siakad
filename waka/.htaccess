@@ -76,11 +76,22 @@ RewriteRule ^edit-kelas/([0-9]+)$ index.php?page=edit-kelas&id=$1
 RewriteRule ^absensi-harian$ index.php?page=absensi-harian
 RewriteRule ^rekap-harian/([0-9]+)$ index.php?page=rekap-harian&id=$1
 
+#absensihariansiswa
+
+RewriteRule ^absensi-harian-siswa$ index.php?page=absensi-harian-siswa
+RewriteRule ^rekap-harian-siswa/([0-9]+)$ index.php?page=rekap-harian-siswa&id=$1
+
 #rekapabsen
 
 RewriteRule ^rekap-absensi$ index.php?page=rekap-absensi
 RewriteRule ^absensi-kelas/([0-9]+)$ index.php?page=absensi-kelas&id=$1
 RewriteRule ^absensi-mata-pelajaran/([0-9]+)$ index.php?page=absensi-mata-pelajaran&id=$1
+
+#rekapabsensiswa
+
+RewriteRule ^rekap-absensi-siswa$ index.php?page=rekap-absensi-siswa
+RewriteRule ^absensi-kelas-siswa/([0-9]+)$ index.php?page=absensi-kelas-siswa&id=$1
+RewriteRule ^absensi-mata-pelajaran-siswa/([0-9]+)$ index.php?page=absensi-mata-pelajaran-siswa&id=$1
 
 #pengumuman
 

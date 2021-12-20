@@ -165,6 +165,16 @@ $up = mysqli_num_rows($jur_up);
           'display':'block'
         });
       });
+      $(".data-absen").mouseenter(function(){
+        $(".menu-absen").css({
+          'display':'block'
+        });
+      });
+      $(".data-rekap").mouseenter(function(){
+        $(".menu-rekap").css({
+          'display':'block'
+        });
+      });
       $(".dropdown").mouseleave(function(){
         $(".dropdown-menu").slideUp(800);
       });
@@ -217,8 +227,20 @@ $up = mysqli_num_rows($jur_up);
                   <li><a href="<?= base('waka/data-kkm'); ?>">KKM</a></li>
                 </ul>
               </li>
-              <li><a href="<?= base('waka/absensi-harian'); ?>">Absensi Harian</a></li>
-              <li><a href="<?= base('waka/rekap-absensi'); ?>">Rekap Absen</a></li>
+              <li class="dropdown data-absen">
+                <a class="dropdown-toggle" id="dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Absensi Harian <span class="caret"></span></a>
+                <ul class="dropdown-menu menu-absen">
+                  <li><a href="<?= base('waka/absensi-harian-siswa'); ?>">Siswa</a></li>
+                  <li><a href="<?= base('waka/absensi-harian'); ?>">Guru</a></li>
+                </ul>
+              </li>
+              <li class="dropdown data-rekap">
+                <a class="dropdown-toggle" id="dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Rekap Absen<span class="caret"></span></a>
+                <ul class="dropdown-menu menu-rekap">
+                  <li><a href="<?= base('waka/rekap-absensi-siswa'); ?>">Siswa</a></li>
+                  <li><a href="<?= base('waka/rekap-absensi'); ?>">Guru</a></li>
+                </ul>
+              </li>
               <li><a href="<?= base('waka/pengumuman'); ?>">Pengumuman</a></li>
               <li><a href="<?= base('waka/pengaturan'); ?>">Pengaturan</a></li>
             </ul>
@@ -448,6 +470,17 @@ $up = mysqli_num_rows($jur_up);
                 include_once 'inc/absen-kelas.php';
               } else if($page == "absensi-mata-pelajaran") {
                 include_once 'inc/absen-mapel.php';
+
+              } else if($page == "absensi-harian-siswa") {
+                include_once 'inc/absensi-harian-siswa.php';
+              } else if($page == "rekap-harian-siswa") {
+                include_once 'inc/rekap-harian-siswa.php';
+              } else if($page == "rekap-absensi-siswa") {
+                include_once 'inc/rekap-absensi-siswa.php';
+              } else if($page == "absensi-kelas-siswa") {
+                include_once 'inc/absen-kelas-siswa.php';
+              } else if($page == "absensi-mata-pelajaran-siswa") {
+                include_once 'inc/absen-mapel-siswa.php';
 
               //Routing Deskripsi
               } else if($page == "deskripsi"){

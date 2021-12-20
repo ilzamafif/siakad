@@ -79,8 +79,71 @@ if (isset($_GET['data'])) {
       </div>
 
   <?php
+
+  }else if($data == "rekap-harian-siswa") {
+    $data = gabung('tbl_absensi','tbl_siswa', 'tbl_absensi.idg = tbl_siswa.nis', "tbl_siswa.nis='$id'");
+    $sqlg = select('*', "tbl_siswa", "nis='$id'");
+    $detail = mysqli_fetch_object($sqlg);
+    $no =1;
+  ?>
+
+    <h3>Rekap Data Absen Harian</h3>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <table class="table">
+          <tr>
+            <td>Nama</td>
+            <td>:</td>
+            <td><?= $detail->nama; ?></td>
+          </tr>
+          <tr>
+            <td>NIS</td>
+            <td>:</td>
+            <td><?= $detail->nis; ?></td>
+          </tr>
+          <tr>
+            <td>NISN</td>
+            <td>:</td>
+            <td><?= $detail->nisn; ?></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-8">
+        <table class="table table-bordered table-striped" id="list-data" border="1">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Hari</th>
+              <th>Tanggal</th>
+              <th>Jam Masuk</th>
+              <th>Jam Pulang</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          <?php while ($hr = mysqli_fetch_object($data)) : ?>
+
+            <tr>
+              <td><?= $no++; ?></td>
+              <td><?= $hr->hari; ?></td>
+              <td><?= $hr->tanggal; ?></td>
+              <td><?= $hr->jam_msk; ?></td>
+              <td><?= $hr->jam_plg; ?></td>
+            </tr>
+
+          <?php endwhile; ?>
+
+          </tbody>
+        </table>
+      </div>
+
+  <?php
+  
   } else if($data == "absensi-kelas") {
     include_once 'inc/absen-kelas.php';
+  } else if($data == "absensi-kelas-siswa") {
+    include_once 'inc/absen-kelas-siswa.php';
   } else {
     redirect(base('waka/dashboard'));
   }
