@@ -175,3 +175,4 @@ $email = @$_SESSION['siswa']['email'];
       </div> <!-- end of modal content -->
     </div> <!-- end of modal dialog -->
   </div> <!-- end of class modal fade -->
+  <?php include_once '../templates/footer.php'; ?>

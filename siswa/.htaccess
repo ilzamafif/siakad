@@ -14,5 +14,7 @@ RewriteRule ^login$ login.php
 RewriteRule ^logout$ logout.php
 
 RewriteRule ^pengaturan$ index.php?page=pengaturan
+RewriteRule ^absensi$ index.php?page=absensi
+RewriteRule ^absensi-pulang$ index.php?page=absensi-pulang
 RewriteRule ^hubungi-admin$ index.php?page=hubungi-admin
 RewriteRule ^data-jadwal$ index.php?page=data-jadwal
