@@ -77,12 +77,6 @@ if ($page == "") {
 } else if ($page == "data-siswa") {
   include_once 'inc/data-siswa.php';
   echo active('data-siswa');
-} else if ($page == "absensi") {
-  include_once 'inc/absensi.php';
-  echo active('absensi');
-} else if ($page == "absensi-pulang") {
-  include_once 'inc/absensi-pulang.php';
-  echo active('absensi pulang');
 } else if ($page == "data-kelas") {
   include_once 'inc/data-kelas.php';
   echo active('data-kelas');
@@ -146,6 +140,8 @@ if ($page == "") {
   include_once 'inc/detail-siswa.php';
 } else if ($page == "export-kelas") {
   include_once 'inc/export-kelas.php';
+} else if ($page == "keuangan") {
+  include_once 'inc/keuangan.php';
 } else {
   echo "<script>sweetAlert('Oops!', 'Halaman tidak ditemukan!', 'error');</script>";
   echo location(base('siswa'));

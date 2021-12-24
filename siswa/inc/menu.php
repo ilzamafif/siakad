@@ -64,12 +64,6 @@ $cekwali = $cekyo;
     </ul>
   </li>
   <li role="presentation" class="pengaturan">
-    <a href="<?= base('siswa/absensi'); ?>"><span target="_blank" class="glyphicon glyphicon-cog"></span>&nbsp; Absens Masuk</a>
-  </li>
-  <li role="presentation" class="pengaturan">
-    <a href="<?= base('siswa/absensi-pulang'); ?>"><span target="_blank" class="glyphicon glyphicon-cog"></span>&nbsp; Absens Pulang</a>
-  </li>
-  <li role="presentation" class="pengaturan">
     <a href="<?= base('siswa/pengaturan'); ?>"><span class="glyphicon glyphicon-cog"></span>&nbsp; Pengaturan</a>
   </li>
   <li role="<?= base('siswa/presentation" class="hub-admin">

@@ -87,18 +87,21 @@ $hasil = substr($server, 8);
 
 								} 
 
-							else if ($hasil == "absensi/index.php" || $hasil == "harian/index.php") { 
+							else if ($hasil == true) { ?>
 
-								$potong = substr($hasil, 0, -10);
+								<?php $potong = substr($hasil, 0, -10);
 
-								if ($potong == "absensi") { ?>
+								if ($hasil == "absensi/index.php") { ?>
 
-									<li class="active"><a href="<?= base('absensi/absen-masuk'); ?>">Absen Masuk</a></li>
+									<li class="active"><a href="<?= base('absensi/absen-masuk'); ?>">absenn Masuk</a></li>
 									<li><a href="<?= base('absensi/absen-pulang'); ?>">Absen Pulang</a></li>
+									<li>
+										<a href="<?= base(''); ?>">Kembali</a>
+									</li>
 
 								<?php } 
 
-								else if($potong == "harian") { ?>
+								else if($hasil == "harian/index.php") { ?>
 
 									<li  class="active">
 										<a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a>
@@ -106,8 +109,38 @@ $hasil = substr($server, 8);
 									<li>
 										<a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a>
 									</li>
+									<li>
+										<a href="<?= base(''); ?>">Kembali</a>
+									</li>
 
-							<?php } ?>
+								<?php } 
+
+								else if($hasil == "harian/pulang.php") { ?>
+
+									<li>
+										<a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a>
+									</li>
+									<li class="active">
+										<a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a>
+									</li>
+									<li>
+										<a href="<?= base(''); ?>">Kembali</a>
+									</li>
+
+								<?php } 
+
+								else if($hasil == "absensi/pulang.php") { ?>
+
+									<li>
+										<a href="<?= base('harian/absen-masuk'); ?>">Absen Masuk</a>
+									</li>
+									<li class="active">
+										<a href="<?= base('harian/absen-pulang'); ?>">Absen Pulang</a>
+									</li>
+									<li>
+										<a href="<?= base(''); ?>">Kembali</a>
+									</li>
+								<?php } ?>
 
 						<?php } ?>
 
