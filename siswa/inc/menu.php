@@ -25,17 +25,11 @@ $cekwali = $cekyo;
     <a href="#" class="xyz"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Master Data &nbsp;<span class="caret"></span></a>
     <ul class="nav nav-pills nav-stacked" id="list-of-data">
       <li role="presentation" class="data-jadwal">
-        <a href="<?= base('siswa/data-jadwal'); ?>"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Data Absensi</a>
+        <a href="<?= base('siswa/data-jadwal'); ?>"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Data Jadwal</a>
       </li>
-      <?php if ($cekwali != 0) { ?>
-        <li role="presentation" class="data-siswa">
-          <a href="<?= base('siswa/data-siswa'); ?>"><span class="glyphicon glyphicon-user"></span>&nbsp; Data Siswa</a>
-        </li>
-      <?php } else { ?>
-        <li role="presentation" class="data-kelas">
-          <a href="<?= base('siswa/data-kelas'); ?>"><span class="glyphicon glyphicon-home"></span>&nbsp; Data Kelas</a>
-        </li>
-      <?php } ?>
+      <li role="presentation" class="data-siswa">
+        <a href="<?= base('absensi'); ?>"><span class="glyphicon glyphicon-user"></span>&nbsp; Absensi Harian</a>
+      </li>
       <li role="presentation" class="data-kehadiran">
         <a href="<?= base('siswa/data-kehadiran'); ?>"><span class="glyphicon glyphicon-signal"></span>&nbsp; Data Kehadiran</a>
       </li>
