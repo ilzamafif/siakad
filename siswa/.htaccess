@@ -19,3 +19,4 @@ RewriteRule ^absensi-pulang$ index.php?page=absensi-pulang
 RewriteRule ^hubungi-admin$ index.php?page=hubungi-admin
 RewriteRule ^data-jadwal$ index.php?page=data-jadwal
 RewriteRule ^data-kehadiran$ index.php?page=data-kehadiran
+RewriteRule ^data-keuangan$ index.php?page=data-keuangan

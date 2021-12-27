@@ -33,6 +33,9 @@ $cekwali = $cekyo;
       <li role="presentation" class="data-kehadiran">
         <a href="<?= base('siswa/data-kehadiran'); ?>"><span class="glyphicon glyphicon-signal"></span>&nbsp; Data Kehadiran</a>
       </li>
+      <li role="presentation" class="data-keuangan">
+        <a href="<?= base('siswa/data-keuangan'); ?>"><span class="glyphicon glyphicon-signal"></span>&nbsp; Keuangan</a>
+      </li>
     </ul>
   </li>
   <li role="presentation" id="nilai">

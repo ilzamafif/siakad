@@ -8,12 +8,20 @@ Aplikasi Sistem Informasi Akademik untuk Sekolah Menengah Kejuruan
 - pass = 123456
 	
 ### Siswa
-- id = alfi@war.com
-- pass = 123456
+Login : - username : namasiswa@gmail.com
+				- password : 123456
+home : ok
+absensi : ok
+data kehadiran : ok
+data jadwal : ok
+pengaturan : ok
+hubungi admin : ok
+nilai : -
+Keuangan : -
 
 ### Waka
 Login : - username : waka
-				- password : waka
+				- password : waka123
 home : ok
 menerapkan tahun pelajaran : ok
 CRUD kelas & kompetensi dan program keahlian : ok

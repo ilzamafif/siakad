@@ -140,8 +140,8 @@ if ($page == "") {
   include_once 'inc/detail-siswa.php';
 } else if ($page == "export-kelas") {
   include_once 'inc/export-kelas.php';
-} else if ($page == "keuangan") {
-  include_once 'inc/keuangan.php';
+} else if ($page == "data-keuangan") {
+  include_once 'inc/data-keuangan.php';
 } else {
   echo "<script>sweetAlert('Oops!', 'Halaman tidak ditemukan!', 'error');</script>";
   echo location(base('siswa'));
