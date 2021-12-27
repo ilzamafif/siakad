@@ -22,3 +22,4 @@ RewriteRule ^data-kehadiran$ index.php?page=data-kehadiran
 RewriteRule ^data-keuangan$ index.php?page=data-keuangan
 RewriteRule ^lihat-nilai$ index.php?page=lihat-nilai
 RewriteRule ^result-nilai$ index.php?page=result-nilai
+RewriteRule ^nilai-rapot$ index.php?page=nilai-rapot

@@ -146,6 +146,8 @@ if ($page == "") {
   include_once 'inc/lihat-nilai.php';
 } else if ($page == "result-nilai") {
   include_once 'inc/result-nilai.php';
+} else if ($page == "nilai-rapot") {
+  include_once 'inc/nilai-rapot.php';
 } else {
   echo "<script>sweetAlert('Oops!', 'Halaman tidak ditemukan!', 'error');</script>";
   echo location(base('siswa'));
