@@ -20,3 +20,5 @@ RewriteRule ^hubungi-admin$ index.php?page=hubungi-admin
 RewriteRule ^data-jadwal$ index.php?page=data-jadwal
 RewriteRule ^data-kehadiran$ index.php?page=data-kehadiran
 RewriteRule ^data-keuangan$ index.php?page=data-keuangan
+RewriteRule ^lihat-nilai$ index.php?page=lihat-nilai
+RewriteRule ^result-nilai$ index.php?page=result-nilai

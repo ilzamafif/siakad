@@ -142,6 +142,10 @@ if ($page == "") {
   include_once 'inc/export-kelas.php';
 } else if ($page == "data-keuangan") {
   include_once 'inc/data-keuangan.php';
+} else if ($page == "lihat-nilai") {
+  include_once 'inc/lihat-nilai.php';
+} else if ($page == "result-nilai") {
+  include_once 'inc/result-nilai.php';
 } else {
   echo "<script>sweetAlert('Oops!', 'Halaman tidak ditemukan!', 'error');</script>";
   echo location(base('siswa'));

@@ -5,8 +5,9 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
 } else {
 ?>
 
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
+
   <head>
     <meta charset="utf-8">
     <title>Login Siswa</title>
@@ -23,17 +24,17 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
   <script type="text/javascript" src="<?= base('assets/dataTables/js/jquery.dataTables.min.js'); ?>"></script>
   <script type="text/javascript" src="<?= base('assets/dataTables/js/dataTables.bootstrap.js'); ?>"></script>
   <script type="text/javascript">
-    $(document).ready(function(){
-      var lost  = $("#lost");
+    $(document).ready(function() {
+      var lost = $("#lost");
       var modal = $("#lost-password");
       var error = $(".error");
 
-      lost.click(function(){
+      lost.click(function() {
         var email = $("#email").val();
-        var nama    = $("#nama").val();
-        var button  = $("button.confirm");
+        var nama = $("#nama").val();
+        var button = $("button.confirm");
 
-        if(email == "" || nama == ""){
+        if (email == "" || nama == "") {
           //sweetAlert('Oops!', 'Form harus diisi!', 'error');
           error.append("<div class='alert alert-danger'><strong>Oops!...</strong> Form tidak boleh ada yang kosong...</div>");
           $(".alert").fadeOut(3000);
@@ -41,14 +42,14 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
 
           //Make Ajax processing
           $.ajax({
-            method  : "POST",
-            url     : "lost-pass.php",
-            cache   : false,
-            data    : {
-              email   : email,
-              nama_guru : nama
+            method: "POST",
+            url: "lost-pass.php",
+            cache: false,
+            data: {
+              email: email,
+              nama_guru: nama
             },
-            success : function(result){
+            success: function(result) {
               if (result == "1") {
                 // swal('Yosh!', 'Permintaan reset password sudah terkirim!', 'success');
                 // button.on("click", function(){
@@ -70,16 +71,17 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
       //$("#login-box").hide();
     });
 
-    function load(){
+    function load() {
       $(".login").addClass('animated flipInX');
     }
 
-    function maxChars(el, max){
+    function maxChars(el, max) {
       if (el.value.length > el.maxLength) {
         el.value = el.value.slice(0, el.maxLength);
       }
     }
   </script>
+
   <body onload="load();" style="background-size: cover;">
 
     <div class="container">
@@ -89,11 +91,11 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
         </div>
         <div class="box-content">
           <?php
-            echo open_form('', 'post', "class='form-group'");
-            echo input('email', 'email', "class='form-control' placeholder='Email' autofocus oninput='maxChars(this, 5) min='00000'")."<br>";
-            echo input('password', 'password', "class='form-control' placeholder='Password'")."<br>";
-            echo input('submit', 'submit', "class='btn btn-primary form-control' value='Login'")."<br>";
-            echo close_form();
+          echo open_form('', 'post', "class='form-group'");
+          echo input('email', 'email', "class='form-control' placeholder='Email' autofocus oninput='maxChars(this, 5) min='00000'") . "<br>";
+          echo input('password', 'password', "class='form-control' placeholder='Password'") . "<br>";
+          echo input('submit', 'submit', "class='btn btn-primary form-control' value='Login'") . "<br>";
+          echo close_form();
           ?>
           <p>
             <a href="#" data-toggle="modal" data-target="#lost-password">Saya Lupa Password </a>
@@ -110,15 +112,16 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
               Lupa Password ?
             </h4>
           </div>
-          <?php //echo open_form('', 'post', "class='form-group' id='form-lost'"); ?>
+          <?php //echo open_form('', 'post', "class='form-group' id='form-lost'"); 
+          ?>
           <div class="modal-body">
             <?php
-              echo "<div class='error'></div>";
-              echo label('id', "Email");
-              echo input('email', "email", "class='form-control' id='email'")."<br>";
+            echo "<div class='error'></div>";
+            echo label('id', "Email");
+            echo input('email', "email", "class='form-control' id='email'") . "<br>";
 
-              echo label('nama', "Atas Nama");
-              echo input('nama', "nama", "class='form-control' id='nama'")."<br>";
+            echo label('nama', "Atas Nama");
+            echo input('nama', "nama", "class='form-control' id='nama'") . "<br>";
 
             ?>
           </div>
@@ -126,58 +129,58 @@ if (isset($_SESSION['siswa']['email']) && isset($_SESSION['siswa']['pass']) && i
             <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
             <button type="submit" name="lost" class="btn btn-primary" id="lost">Kirim</button>
           </div>
-          <?php //echo close_form(); ?>
+          <?php //echo close_form(); 
+          ?>
         </div>
       </div>
     </div>
   </body>
-</html>
+
+  </html>
 
 <?php
-if (isset($_POST['submit'])) {
-  $email   = anti_inject($_POST['email']);
-  $password   = anti_inject($_POST['password']);
+  if (isset($_POST['submit'])) {
+    $email   = anti_inject($_POST['email']);
+    $password   = anti_inject($_POST['password']);
 
-  if (empty(trim($email)) || empty(trim($password))) {
-    echo "<script>sweetAlert('Oops!', 'Kolom Email dan Password harus diisi!', 'error');</script>";
-    echo notice(0);
-  } else {
-
-    $cekSiswa = cekSiswa($email);
-    $ceknow   = mysqli_num_rows($cekSiswa);
-
-    if ($ceknow != 0) {
-      $data = mysqli_fetch_object($cekSiswa);
-
-      //Checking password match
-      $cekpass = password_verify($password, $data->password);
-
-      if ($cekpass === TRUE) {
-        $smstr  = select('*', 'tbl_semester', "id=1 LIMIT 1");
-        $sms    = mysqli_fetch_object($smstr);
-        $token                       = md5(sha1($data->email));
-        @$_SESSION['token_siswa']          = $token;
-        @$_SESSION['semester']       = $sms->semester;
-        @$_SESSION['thn_ajaran']     = $sms->tahun_ajaran;
-        @$_SESSION['siswa']['pass']   = $data->password;
-        @$_SESSION['siswa']['email']  = $data->email;
-        @$_SESSION['siswa']['nama']   = $data->nama;
-        @$_SESSION['siswa']['id']     = $data->id;
-        @$_SESSION['siswa']['nis']    = $data->nis;
-
-        redirect('dashboard');
-
-      } else {
-        echo "<script>sweetAlert('Oops!', 'Email atau Password tidak cocok!', 'error');</script>";
-        echo notice(0);
-      }
-
+    if (empty(trim($email)) || empty(trim($password))) {
+      echo "<script>sweetAlert('Oops!', 'Kolom Email dan Password harus diisi!', 'error');</script>";
+      echo notice(0);
     } else {
+
+      $cekSiswa = cekSiswa($email);
+      $ceknow   = mysqli_num_rows($cekSiswa);
+
+      if ($ceknow != 0) {
+        $data = mysqli_fetch_object($cekSiswa);
+
+        //Checking password match
+        $cekpass = password_verify($password, $data->password);
+
+        if ($cekpass === TRUE) {
+          $smstr  = select('*', 'tbl_semester', "id=1 LIMIT 1");
+          $sms    = mysqli_fetch_object($smstr);
+          $token                       = md5(sha1($data->email));
+          @$_SESSION['token_siswa']          = $token;
+          @$_SESSION['semester']       = $sms->semester;
+          @$_SESSION['thn_ajaran']     = $sms->tahun_ajaran;
+          @$_SESSION['siswa']['pass']   = $data->password;
+          @$_SESSION['siswa']['email']  = $data->email;
+          @$_SESSION['siswa']['nama']   = $data->nama;
+          @$_SESSION['siswa']['id']     = $data->id;
+          @$_SESSION['siswa']['nis']    = $data->nis;
+          @$_SESSION['siswa']['kelas']    = $data->rombel;
+
+          redirect('dashboard');
+        } else {
+          echo "<script>sweetAlert('Oops!', 'Email atau Password tidak cocok!', 'error');</script>";
+          echo notice(0);
+        }
+      } else {
         echo "<script>sweetAlert('Oops!', 'Email atau Password salah!', 'error');</script>";
         echo notice(0);
+      }
     }
   }
-
-}
 }
 ?>

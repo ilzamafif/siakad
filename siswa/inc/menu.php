@@ -44,19 +44,8 @@ $cekwali = $cekyo;
       <li role="presentation" class="lihat-nilai">
         <a href="<?= base('siswa/lihat-nilai'); ?>" class=""><span class="glyphicon glyphicon-file"></span>&nbsp; Lihat Nilai</a>
       </li>
-      <?php if ($cekyo != 0) : ?>
-
-        <li role="presentation" class="nilai-rapot">
-          <a href="<?= base('siswa/nilai-rapot'); ?>"><span class="glyphicon glyphicon-book"></span>&nbsp; Nilai Rapot</a>
-        </li>
-        <li role="presentation" class="data-rapot">
-          <a href="<?= base('siswa/input-data-rapot'); ?>"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Input Data Rapot</a>
-        </li>
-
-      <?php endif; ?>
-
-      <li role="presentation" class="entry-nilai">
-        <a href="<?= base('siswa/opsi-entry') ?>"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Entry Nilai Rapot</a>
+      <li role="presentation" class="nilai-rapot">
+        <a href="<?= base('siswa/nilai-rapot'); ?>"><span class="glyphicon glyphicon-book"></span>&nbsp; Nilai Rapot</a>
       </li>
     </ul>
   </li>
