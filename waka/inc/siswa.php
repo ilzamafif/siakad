@@ -12,7 +12,7 @@ $no = 1;
         '<a href="tambah-siswa" class="btn btn-primary">Tambah Siswa Baru</a>'
       );
       $(".row > .col-sm-6:first").append(' <a href="export.php?data=siswa" class="btn btn-default">Export Ms. Excel</a>');
-      $(".row > .col-sm-6:first").append(' <a href="<?= base('admin/import-siswa'); ?>" class="btn btn-success">Import Siswa</a>');
+      $(".row > .col-sm-6:first").append(' <a href="<?= base('waka/import-siswa'); ?>" class="btn btn-success">Import Siswa</a>');
     });
   </script>
 
